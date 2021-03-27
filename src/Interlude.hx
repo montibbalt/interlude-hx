@@ -17,6 +17,8 @@ typedef IteratorTools       = interlude.IteratorTools;
 typedef KVIterableTools     = interlude.KeyValueIterableTools;
 typedef KVIteratorTools     = interlude.KeyValueIterableTools.KeyValueIteratorTools;
 
+typedef MapTools            = interlude.MapTools;
+
 typedef NullTools           = interlude.NullTools;
 typedef Option<X>           = haxe.ds.Option<X>;
 typedef OptionTools         = interlude.OptionTools;
