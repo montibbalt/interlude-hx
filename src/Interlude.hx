@@ -12,3 +12,7 @@ typedef FunctionTools       = interlude.FunctionTools;
 typedef ValueTools          = interlude.ValueTools;
 
 typedef KeyValuePair<K, V>  = { key:K, value:V };
+typedef Pair<X, Y>          = interlude.PairTools.Pair<X, Y>;
+typedef PairTools           = interlude.PairTools.PairTools;
+typedef Trio<X, Y, Z>       = interlude.PairTools.Trio<X, Y, Z>;
+typedef TrioTools           = interlude.PairTools.TrioTools;
