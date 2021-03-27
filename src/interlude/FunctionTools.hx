@@ -40,4 +40,11 @@ class FunctionTools {
     **/
     inline static function to<A, B, C>(ab:A->B, bc:B->C):A->C return
         bc.of(ab);
+
+    /**
+        Builds a function that returns a transformed value if it matches some `predicate`, or `None` if it doesn't
+    **/
+    inline static function when<A, B>(transform:A->B, predicate:A->Bool):A->Option<B> return a -> predicate(a)
+        ? transform(a).asOption()
+        : None;
 }
