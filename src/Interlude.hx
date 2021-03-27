@@ -39,3 +39,6 @@ typedef Pair<X, Y>          = interlude.PairTools.Pair<X, Y>;
 typedef PairTools           = interlude.PairTools.PairTools;
 typedef Trio<X, Y, Z>       = interlude.PairTools.Trio<X, Y, Z>;
 typedef TrioTools           = interlude.PairTools.TrioTools;
+
+typedef Trampoline<X>       = interlude.Trampoline<X>;
+typedef TrampolineTools     = interlude.Trampoline.TrampolineTools;
