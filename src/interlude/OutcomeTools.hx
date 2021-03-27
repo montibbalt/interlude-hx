@@ -1,7 +1,5 @@
 package interlude;
 
-using Interlude;
-
 enum Outcome<A> {
     Success(a:A);
     Failure(message:String, ?pos:haxe.PosInfos);

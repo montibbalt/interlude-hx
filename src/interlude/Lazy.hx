@@ -1,6 +1,5 @@
 package interlude;
 
-
 @:nullSafety(Strict)
 class Lazy<A:NotVoid> {
     var result:Null<A> = null;

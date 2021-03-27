@@ -45,6 +45,7 @@ class TrioTools {
 
     inline static function with<A, B, C>(b:Pair<A, B>, a:C):Trio<A, B, C> return
         { _1: b._1, _2: b._2, _3: a };
+
     inline static function with3<A, B, C>(a:A, b:B, c:C):Trio<A, B, C> return
         { _1: a, _2: b, _3: c };
 }

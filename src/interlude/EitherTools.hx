@@ -1,7 +1,5 @@
 package interlude;
 
-using Interlude;
-
 @:publicFields
 @:nullSafety(Strict)
 class EitherTools {

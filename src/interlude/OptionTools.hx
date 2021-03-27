@@ -1,7 +1,5 @@
 package interlude;
 
-using Interlude;
-
 @:nullSafety(Strict)
 @:publicFields
 class OptionTools {
