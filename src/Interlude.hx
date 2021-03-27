@@ -22,6 +22,8 @@ typedef IteratorTools       = interlude.IteratorTools;
 typedef KVIterableTools     = interlude.KeyValueIterableTools;
 typedef KVIteratorTools     = interlude.KeyValueIterableTools.KeyValueIteratorTools;
 
+typedef Lazy<X>             = interlude.Lazy<X>;
+
 typedef MapTools            = interlude.MapTools;
 
 typedef NullTools           = interlude.NullTools;
