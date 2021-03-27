@@ -7,7 +7,15 @@ typedef Curry4              = interlude.Curry.Curry4;
 typedef Curry5              = interlude.Curry.Curry5;
 typedef Curry6              = interlude.Curry.Curry6;
 
+typedef Either<X, Y>        = haxe.ds.Either<X, Y>;
+typedef EitherTools         = interlude.EitherTools;
+
 typedef FunctionTools       = interlude.FunctionTools;
+
+typedef Option<X>           = haxe.ds.Option<X>;
+typedef OptionTools         = interlude.OptionTools;
+typedef Outcome<X>          = interlude.OutcomeTools.Outcome<X>;
+typedef OutcomeTools        = interlude.OutcomeTools;
 
 typedef ValueTools          = interlude.ValueTools;
 
