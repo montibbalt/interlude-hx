@@ -42,3 +42,7 @@ typedef TrioTools           = interlude.PairTools.TrioTools;
 
 typedef Trampoline<X>       = interlude.Trampoline<X>;
 typedef TrampolineTools     = interlude.Trampoline.TrampolineTools;
+
+// Might as well throw these in
+typedef DateTools_          = DateTools;
+typedef StringTools_        = StringTools;
