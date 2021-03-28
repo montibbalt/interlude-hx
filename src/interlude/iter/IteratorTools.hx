@@ -9,6 +9,15 @@ typedef MappableIterator<A, B> = { hasNext:()->Bool, next:(A->B)->B }
 @:nullSafety(Strict)
 @:publicFields
 class IteratorTools {
+
+    /**
+        Returns an empty `Iterator`
+    **/
+    inline static function empty<A>():Iterator<A> return {
+        hasNext : () -> false
+    ,   next    : () -> throw 'Calling .next() on an empty Iterable'
+    }
+
     static function filtered<A>(as:Iterator<A>):FilteredIterator<A> return {
         var cache:Null<A> = null;
         var cacheSet = false;

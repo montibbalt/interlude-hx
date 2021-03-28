@@ -154,12 +154,6 @@ class IterableTools {
         : as.skip(index).maybeFirst();
 
     /**
-        Returns an empty `Iterable`
-    **/
-    inline static function empty<A>():Iterable<A> return
-        [];
-
-    /**
         An alternative to `indexed`. Pairs every element of `as` with its index
     **/
     inline static function enumerate<A>(as:Iterable<A>):Iterable<Pair<Int, A>> return
@@ -218,17 +212,15 @@ class IterableTools {
     /**
         A fused combination of `filter` and `flatMap`
     **/
-    @:nullSafety(Off)
     static function filterFMap<A, B>(as:Iterable<A>, predicate:A->Bool, fn:A->Iterable<B>):Iterable<B> return {
         iterator: () -> {
             var as_iter = as.iterator().filtered();
-            var cache:Iterator<B> = null;
+            var cache:Iterator<B> = IteratorTools.empty();
 
-            var cacheEmpty = () -> (cache == null || !cache.hasNext());
             var notEmpty = () -> {
-                while(cacheEmpty() && as_iter.hasNextWhere(predicate))
+                while(!cache.hasNext() && as_iter.hasNextWhere(predicate))
                     cache = fn(as_iter.next()).iterator();
-                !cacheEmpty();
+                cache.hasNext();
             }
             var next = () -> {
                 notEmpty();
@@ -262,17 +254,15 @@ class IterableTools {
         See [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
         `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
     **/
-    @:nullSafety(Off)
     static function flatMap<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Iterable<B> return
         { iterator: () -> {
             var as_iter = as.iterator();
-            var cache:Iterator<B> = null;
+            var cache:Iterator<B> = IteratorTools.empty();
 
-            var cacheEmpty = () -> (cache == null || !cache.hasNext());
             var notEmpty = () -> {
-                while(cacheEmpty() && as_iter.hasNext())
+                while(!cache.hasNext() && as_iter.hasNext())
                     cache = fn(as_iter.next()).iterator();
-                !cacheEmpty();
+                cache.hasNext();
             }
             var next = () -> {
                 notEmpty();
