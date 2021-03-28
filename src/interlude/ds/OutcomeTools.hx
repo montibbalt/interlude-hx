@@ -1,4 +1,4 @@
-package interlude;
+package interlude.ds;
 
 enum Outcome<A> {
     Success(a:A);

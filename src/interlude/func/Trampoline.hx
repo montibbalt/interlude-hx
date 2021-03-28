@@ -1,4 +1,4 @@
-package interlude;
+package interlude.func;
 
 enum Trampoline<T> {
     Done(t:T);

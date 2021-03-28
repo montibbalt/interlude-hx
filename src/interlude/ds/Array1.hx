@@ -1,4 +1,4 @@
-package interlude;
+package interlude.ds;
 
 @:nullSafety(Strict)
 abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> {

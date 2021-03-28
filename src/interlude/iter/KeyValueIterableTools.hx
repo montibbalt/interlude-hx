@@ -1,4 +1,4 @@
-package interlude;
+package interlude.iter;
 
 @:publicFields
 @:nullSafety(Strict)

@@ -1,4 +1,4 @@
-package interlude;
+package interlude.iter;
 
 /** A type of `Iterator` that only yields elements matching some predicate **/
 typedef FilteredIterator<A> = { hasNextWhere:(A->Bool)->Bool, next: ()->A }

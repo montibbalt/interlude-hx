@@ -1,4 +1,4 @@
-package interlude;
+package interlude.ds;
 
 @:nullSafety(Strict)
 abstract Iterable1<A:NotVoid>(Pair<A, Iterable<A>>) from Pair<A, Iterable<A>> {

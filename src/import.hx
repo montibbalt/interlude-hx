@@ -2,5 +2,5 @@ using Interlude;
 
 import haxe.Constraints.NotVoid;
 
-import interlude.ValueTools.*;
-import interlude.FunctionTools.*;
+import interlude.func.ValueTools.*;
+import interlude.func.FunctionTools.*;

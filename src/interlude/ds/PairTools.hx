@@ -1,5 +1,6 @@
-package interlude;
+package interlude.ds;
 
+typedef KeyValuePair<K:NotVoid, V:NotVoid>  = { key:K, value:V };
 typedef Pair<X:NotVoid, Y:NotVoid> = { _1: X, _2: Y }
 typedef Trio<X:NotVoid, Y:NotVoid, Z:NotVoid> = { _1: X, _2: Y, _3: Z }
 

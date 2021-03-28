@@ -1,4 +1,4 @@
-package interlude;
+package interlude.ds;
 
 @:nullSafety(Strict)
 @:publicFields

@@ -1,4 +1,4 @@
-package interlude;
+package interlude.func;
 
 @:nullSafety(Strict)
 @:publicFields
