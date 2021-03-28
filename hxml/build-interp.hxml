@@ -1,3 +1,6 @@
 -cp src
 
 Interlude
+interlude.DS
+interlude.Func
+interlude.Iter

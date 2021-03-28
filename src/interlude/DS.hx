@@ -1,0 +1,20 @@
+package interlude;
+
+typedef Array1<X>           = interlude.ds.Array1<X>;
+typedef Array1Tools         = interlude.ds.Array1.Array1Tools;
+typedef Either<X, Y>        = haxe.ds.Either<X, Y>;
+typedef EitherTools         = interlude.ds.EitherTools;
+typedef Iterable1<X>        = interlude.ds.Iterable1<X>;
+typedef Iterable1Tools      = interlude.ds.Iterable1.Iterable1Tools;
+typedef Lazy<X>             = interlude.ds.Lazy<X>;
+typedef MapTools            = interlude.ds.MapTools;
+typedef NullTools           = interlude.ds.NullTools;
+typedef Option<X>           = haxe.ds.Option<X>;
+typedef OptionTools         = interlude.ds.OptionTools;
+typedef Outcome<X>          = interlude.ds.OutcomeTools.Outcome<X>;
+typedef OutcomeTools        = interlude.ds.OutcomeTools;
+typedef KeyValuePair<K, V>  = interlude.ds.PairTools.KeyValuePair<K, V>;
+typedef Pair<X, Y>          = interlude.ds.PairTools.Pair<X, Y>;
+typedef PairTools           = interlude.ds.PairTools.PairTools;
+typedef Trio<X, Y, Z>       = interlude.ds.PairTools.Trio<X, Y, Z>;
+typedef TrioTools           = interlude.ds.PairTools.TrioTools;
