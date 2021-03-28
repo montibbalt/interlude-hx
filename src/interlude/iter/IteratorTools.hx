@@ -18,6 +18,9 @@ class IteratorTools {
     ,   next    : () -> throw 'Calling .next() on an empty Iterable'
     }
 
+    /**
+        converts an `Iterator` into a `FilteredIterator`
+    **/
     static function filtered<A>(as:Iterator<A>):FilteredIterator<A> return {
         var cache:Null<A> = null;
         var cacheSet = false;
@@ -31,6 +34,9 @@ class IteratorTools {
         }
     }
 
+    /**
+        Converts an `Iterator` into one that maintains an index for its elements
+    **/
     static function indexed<A>(as:Iterator<A>):KeyValueIterator<Int, A> return {
         var n = 0;
         {   hasNext : () -> as.hasNext()
@@ -38,6 +44,9 @@ class IteratorTools {
         }
     }
 
+    /**
+        Converts an `Iterator` into a `MappableIterator`
+    **/
     static function mapped<A, B>(as:Iterator<A>):MappableIterator<A, B> return {
         hasNext : as.hasNext
     ,   next    : fn -> as.next().let(fn)
