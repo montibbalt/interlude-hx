@@ -38,8 +38,8 @@ typedef IteratorTools       = interlude.iter.IteratorTools;
 typedef KVIterableTools     = interlude.iter.KeyValueIterableTools;
 typedef KVIteratorTools     = interlude.iter.KeyValueIterableTools.KeyValueIteratorTools;
 
-typedef Task<X>     = interlude.reactive.Task<X>;
-typedef TaskTools   = interlude.reactive.Task.TaskTools;
+typedef Task<X>             = interlude.reactive.Task<X>;
+typedef TaskTools           = interlude.reactive.Task.TaskTools;
 
 // Might as well throw these in
 typedef DateTools_          = DateTools;

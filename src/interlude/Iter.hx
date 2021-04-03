@@ -1,6 +1,6 @@
 package interlude;
 
-typedef IterableTools       = interlude.iter.IterableTools;
-typedef IteratorTools       = interlude.iter.IteratorTools;
-typedef KVIterableTools     = interlude.iter.KeyValueIterableTools;
-typedef KVIteratorTools     = interlude.iter.KeyValueIterableTools.KeyValueIteratorTools;
+@:dox(hide) typedef IterableTools       = interlude.iter.IterableTools;
+@:dox(hide) typedef IteratorTools       = interlude.iter.IteratorTools;
+@:dox(hide) typedef KVIterableTools     = interlude.iter.KeyValueIterableTools;
+@:dox(hide) typedef KVIteratorTools     = interlude.iter.KeyValueIterableTools.KeyValueIteratorTools;

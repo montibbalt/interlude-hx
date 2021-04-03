@@ -1,1 +1,4 @@
-hxml/build-interp.hxml
+--each
+
+--next hxml/build-interp.hxml
+#--next hxml/build-dox.hxml

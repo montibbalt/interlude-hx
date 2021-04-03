@@ -1,0 +1,38 @@
+
+-cp src
+-D doc-gen
+Interlude
+interlude.DS
+interlude.Func
+interlude.Iter
+interlude.Reactive
+
+--each
+
+--next
+--no-output
+-xml docs/doc.xml
+--interp
+
+#--next
+#--no-output
+#-xml docs/hl.xml
+#--hl bin/out.hl
+#
+#--next
+#--no-output
+#-xml docs/neko.xml
+#--neko bin/out
+#
+#--next
+#--no-output
+#-xml docs/js.xml
+#--js bin/out.js
+#
+#--next
+#--no-output
+#-xml docs/python.xml
+#--python bin/out.py
+
+--next
+--cmd haxelib run dox -i docs -o docs/pages --toplevel-package interlude -D source-path "https://github.com/montibbalt/interlude-hx/tree/default/src"
