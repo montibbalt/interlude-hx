@@ -3,7 +3,7 @@
     "url": "https://github.com/montibbalt/interlude-hx",
     "license": "MIT",
     "tags": ["cross", "functional", "utility"],
-    "description": "",
+    "description": "A library of helpful static extensions for Haxe",
     "version": "0.0.1",
     "releasenote": "Initial release",
     "contributors": ["montibbalt"],
