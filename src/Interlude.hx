@@ -19,6 +19,7 @@ typedef EitherTools         = interlude.ds.EitherTools;
 typedef Iterable1<X>        = interlude.ds.Iterable1<X>;
 typedef Iterable1Tools      = interlude.ds.Iterable1.Iterable1Tools;
 typedef Lazy<X>             = interlude.ds.Lazy<X>;
+typedef LazyTools           = interlude.ds.Lazy.LazyTools;
 typedef MapTools            = interlude.ds.MapTools;
 typedef NullTools           = interlude.ds.NullTools;
 typedef Option<X>           = haxe.ds.Option<X>;
