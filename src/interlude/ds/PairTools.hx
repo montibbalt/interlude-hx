@@ -19,6 +19,16 @@ class PairTools {
     inline static function fromNC<A, B, Z>(fn:A->(B->Z), t:Pair<A, B>):Z return
         fn(t._1)(t._2);
 
+    static function map_1<A, B, Z>(t:Pair<A, B>, fn:A->Z):Pair<Z, B> return {
+        _1: fn(t._1)
+    ,   _2: t._2
+    }
+
+    static function map_2<A, B, Z>(t:Pair<A, B>, fn:B->Z):Pair<A, Z> return {
+        _1: t._1
+    ,   _2: fn(t._2)
+    }
+
     inline static function fst<A>(tup:{_1:A}):A return
         tup._1;
 
@@ -40,6 +50,24 @@ class TrioTools {
 
     inline static function fromNC<A, B, C, Z>(fn:A->(B->(C->Z)), t:Trio<A, B, C>):Z return
         fn(t._1)(t._2)(t._3);
+
+    static function map_1<A, B, C, Z>(t:Trio<A, B, C>, fn:A->Z):Trio<Z, B, C> return {
+        _1: fn(t._1)
+    ,   _2: t._2
+    ,   _3: t._3
+    }
+
+    static function map_2<A, B, C, Z>(t:Trio<A, B, C>, fn:B->Z):Trio<A, Z, C> return {
+        _1: t._1
+    ,   _2: fn(t._2)
+    ,   _3: t._3
+    }
+
+    static function map_3<A, B, C, Z>(t:Trio<A, B, C>, fn:C->Z):Trio<A, B, Z> return {
+        _1: t._1
+    ,   _2: t._2
+    ,   _3: fn(t._3)
+    }
 
     inline static function thd<A>(tup:{_3:A}):A return
         tup._3;
