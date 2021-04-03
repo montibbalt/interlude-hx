@@ -26,7 +26,7 @@ A library of helpful static extensions for Haxe
 | orElse           | :x:                 | :x:                                    | :x:                                                        | :heavy_check_mark: | :heavy_check_mark:                    |
 | toArray          | :x:                 | :heavy_check_mark:                     | :heavy_check_mark:, also `toArray1`                        | :heavy_check_mark: | :heavy_check_mark:                    |
 | toEither         |                     | :x:                                    | :x:                                                        | :heavy_check_mark: | :heavy_check_mark:                    |
-| toIterable       | :x:                 |                                        | :heavy_check_mark:, also`toIterable1`                      | :x:                | :x:                                   |
+| toIterable       | :x:                 |                                        | :heavy_check_mark:, also`toIterable1`                      | :heavy_check_mark: | :heavy_check_mark:                    |
 | toNullable       | :heavy_check_mark:  | :x:                                    | :x:                                                        | :heavy_check_mark: | :heavy_check_mark:                    |
 | toOption         | :heavy_check_mark:  | `elementAt`, `maybeFirst`, `maybeLast` | `toIterable`                                               |                    | :heavy_check_mark:                    |
 | toOutcome        | :heavy_check_mark:  | :x:                                    | :x:                                                        | :heavy_check_mark: |                                       |

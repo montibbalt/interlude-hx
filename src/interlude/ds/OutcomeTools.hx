@@ -112,6 +112,10 @@ class OutcomeTools {
         case Failure(_)     : [];
     }
 
+    static function toIterable<A>(o:Outcome<A>):Iterable<A> return {
+        iterator: o.iterator
+    }
+
     static function toEither<A>(o:Outcome<A>):Either<String, A> return switch o {
         case Success(value)     : value.asRight();
         case Failure(message, _): message.asLeft();

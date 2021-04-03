@@ -113,6 +113,10 @@ class OptionTools {
         case None   : 'Option.None converted to Either.Left'.asLeft();
     }
 
+    static function toIterable<A>(maybe:Option<A>):Iterable<A> return {
+        iterator: maybe.iterator
+    }
+
     static function toNullable<A>(maybe:Option<A>):Null<A> return switch maybe {
         case Some(a): a;
         case None   : null;
