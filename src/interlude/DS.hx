@@ -19,3 +19,4 @@ typedef Pair<X, Y>          = interlude.ds.PairTools.Pair<X, Y>;
 typedef PairTools           = interlude.ds.PairTools.PairTools;
 typedef Trio<X, Y, Z>       = interlude.ds.PairTools.Trio<X, Y, Z>;
 typedef TrioTools           = interlude.ds.PairTools.TrioTools;
+typedef Unit                = interlude.ds.Unit;

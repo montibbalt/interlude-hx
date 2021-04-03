@@ -31,11 +31,15 @@ typedef Pair<X, Y>          = interlude.ds.PairTools.Pair<X, Y>;
 typedef PairTools           = interlude.ds.PairTools.PairTools;
 typedef Trio<X, Y, Z>       = interlude.ds.PairTools.Trio<X, Y, Z>;
 typedef TrioTools           = interlude.ds.PairTools.TrioTools;
+typedef Unit                = interlude.ds.Unit;
 
 typedef IterableTools       = interlude.iter.IterableTools;
 typedef IteratorTools       = interlude.iter.IteratorTools;
 typedef KVIterableTools     = interlude.iter.KeyValueIterableTools;
 typedef KVIteratorTools     = interlude.iter.KeyValueIterableTools.KeyValueIteratorTools;
+
+typedef Task<X>     = interlude.reactive.Task<X>;
+typedef TaskTools   = interlude.reactive.Task.TaskTools;
 
 // Might as well throw these in
 typedef DateTools_          = DateTools;
