@@ -9,8 +9,13 @@ enum Outcome<A> {
 @:publicFields
 class OutcomeTools {
     static function any<A>(o:Outcome<A>):Bool return switch o {
-        case Success(_): true;
-        case Failure(_, _)  : false;
+        case Success(_) : true;
+        case Failure(_) : false;
+    }
+
+    static function anyMatch<A>(o:Outcome<A>, predicate:A->Bool):Bool return switch o {
+        case Success(a) : predicate(a);
+        case Failure(_) : false;
     }
 
     static function ap<A, B>(fn:Outcome<A->B>, o:Outcome<A>):Outcome<B> return
@@ -25,9 +30,39 @@ class OutcomeTools {
     inline static function asSuccess<A>(value:A):Outcome<A> return
         value.asOutcome();
 
+    static function contains<A>(o:Outcome<A>, value:A):Bool return switch o {
+        case Success(a) : a == value;
+        case Failure(_) : false;
+    }
+
+    static function filter<A>(o:Outcome<A>, predicate:A->Bool):Outcome<A> return switch o {
+        case Success(a) : predicate(a) ? o : Failure('$a did not match a filter predicate');
+        case Failure(_) : o;
+    }
+
+    static function filterFmap<A, B>(o:Outcome<A>, predicate:A->Bool, fn:A->Outcome<B>):Outcome<B> return switch o {
+        case Success(a)             : predicate(a) ? fn(a) : Failure('$a did not match a filter predicate');
+        case Failure(message, pos)  : Failure(message, pos);
+    }
+
+    static function filterMap<A, B>(o:Outcome<A>, predicate:A->Bool, fn:A->B):Outcome<B> return switch o {
+        case Success(a)             : predicate(a) ? fn(a).asSuccess() : Failure('$a did not match a filter predicate');
+        case Failure(message, pos)  : Failure(message, pos);
+    }
+
     static function flatMap<A, B>(o:Outcome<A>, fn:A->Outcome<B>):Outcome<B> return switch o {
         case Success(value)         : fn(value);
         case Failure(message, pos)  : message.asFailure(pos);
+    }
+
+    static function flatten<A>(oo:Outcome<Outcome<A>>):Outcome<A> return switch oo {
+        case Success(o)             : o;
+        case Failure(message, pos)  : Failure(message, pos);
+    }
+
+    static function fold<A, B>(o:Outcome<A>, seed:B, fn:(accumulator:B, current:A)->B):B return switch o {
+        case Success(a) : fn(seed, a);
+        case Failure(_) : seed;
     }
 
     static function iterator<A>(o:Outcome<A>):Iterator<A> return inline o.match(
@@ -56,9 +91,17 @@ class OutcomeTools {
     static function mutate_<A>(o:Outcome<A>, whenSuccess:A->Void):Outcome<A> return {
         switch o {
             case Success(value) : whenSuccess(value);
-            case Failure(_, _)  :
+            case Failure(_)     :
         }
         o;
+    }
+
+    static function orDefault<A>(o:Outcome<A>, whenFailure:(message:String, ?pos:haxe.PosInfos)->A):A return
+        o.match(identity, whenFailure);
+
+    static function orElse<A>(o:Outcome<A>, genOther:()->Outcome<A>):Outcome<A> return switch o {
+        case Success(_): o;
+        case Failure(_): genOther();
     }
 
     static function toArray<A>(o:Outcome<A>):Iterable<A> return switch o {
@@ -69,6 +112,11 @@ class OutcomeTools {
     static function toEither<A>(o:Outcome<A>):Either<String, A> return switch o {
         case Success(value)     : value.asRight();
         case Failure(message, _): message.asLeft();
+    }
+
+    static function toNullable<A>(o:Outcome<A>):Null<A> return switch o {
+        case Success(a) : a;
+        case Failure(_) : null;
     }
 
     static function toOption<A>(o:Outcome<A>):Option<A> return switch o {

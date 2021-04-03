@@ -11,11 +11,21 @@ typedef MappableIterator<A, B> = { hasNext:()->Bool, next:(A->B)->B }
 class IteratorTools {
 
     /**
+        Converts a single element to an `Iterator` containing that element  
+    **/
+    inline static function asIterator<A>(a:A):Iterator<A> return {
+        var done = false;
+        {   hasNext: () -> !done
+        ,   next   : () -> { done = true; a; }
+        }
+    }
+
+    /**
         Returns an empty `Iterator`
     **/
     inline static function empty<A>():Iterator<A> return {
         hasNext : () -> false
-    ,   next    : () -> throw 'Calling .next() on an empty Iterable'
+    ,   next    : () -> throw 'Calling .next() on an empty Iterator'
     }
 
     /**

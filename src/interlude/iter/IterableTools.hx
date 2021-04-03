@@ -285,8 +285,8 @@ class IterableTools {
         See [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
         `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
     **/
-    static function flatMap<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Iterable<B> return
-        { iterator: () -> {
+    static function flatMap<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Iterable<B> return {
+        iterator: () -> {
             var as_iter = as.iterator();
             var cache:Iterator<B> = IteratorTools.empty();
 
@@ -303,7 +303,8 @@ class IterableTools {
             {   hasNext : notEmpty
             ,   next    : next
             }
-        }};
+        }
+    };
 
     /**
         Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
@@ -400,9 +401,9 @@ class IterableTools {
             var as_it = as.iterator();
             var needSep = false;
             {   hasNext : () -> as_it.hasNext()
-            ,   next    : () -> needSep
-                                ? { needSep = false; separator; }
-                                : { needSep = true; as_it.next(); }
+            ,   next    : () -> needSep 
+                              ? { needSep = false; separator; }
+                              : { needSep = true; as_it.next(); }
             }
         }
     }
@@ -496,7 +497,8 @@ class IterableTools {
     **/
     static function maybeLast<A>(as:Iterable<A>):Option<A> return {
         var last:Null<A> = null;
-        for (a in as) last = a;
+        for (a in as)
+            last = a;
         last.asOption();
     }
 

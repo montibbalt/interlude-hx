@@ -19,11 +19,9 @@ class TrampolineTools {
     **/
     static function trampoline<T>(t:Trampoline<T>):T {
         var cache = t;
-        while(true) {
-            switch(cache) {
-                case Done(t): return t;
-                case Continue(f): cache = f();
-            }
+        while(true) switch(cache) {
+            case Done(t): return t;
+            case Continue(f): cache = f();
         }
     }
 }

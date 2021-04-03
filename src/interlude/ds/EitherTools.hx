@@ -30,8 +30,29 @@ class EitherTools {
         case Right(b)   : whenRight(b);
     }
 
+    static function mutate<A, B>(e:Either<A, B>, whenLeft:A->Void, whenRight:B->Void):Either<A, B> return {
+        switch e {
+            case Left(a)    : whenLeft(a);
+            case Right(b)   : whenRight(b);
+        }
+        e;
+    }
+
+    static function mutate_<A, B>(e:Either<A, B>, whenRight:B->Void):Either<A, B> return {
+        switch e {
+            case Left(a)    :
+            case Right(b)   : whenRight(b);
+        }
+        e;
+    }
+
     static function rights<A, B>(es:Iterable<Either<A, B>>):Iterable<B> return
         es.flatMap(either -> either.match(l -> [], r -> [r]));
+
+    static function toNullable<A, B>(e:Either<A, B>):Null<B> return switch e {
+        case Left(_)    : null;
+        case Right(b)   : b;
+    }
 
     static function toOption<A, B:NotVoid>(e:Either<A, B>):Option<B> return switch e {
         case Left(a)    : None;

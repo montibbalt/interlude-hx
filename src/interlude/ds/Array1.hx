@@ -37,6 +37,11 @@ abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> {
         };
     }
 
+
+    @:to
+    inline public function toArray():Array<A> return
+        [for(a in iterator()) a];
+
     @:to
     public function toIterable():Iterable<A> return {
         iterator: iterator
