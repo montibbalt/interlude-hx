@@ -8,6 +8,9 @@ enum Outcome<A> {
 @:nullSafety(Strict)
 @:publicFields
 class OutcomeTools {
+    inline static function all<A>(o:Outcome<A>, predicate:A->Bool):Bool return
+        o.anyMatch(predicate);
+
     static function any<A>(o:Outcome<A>):Bool return switch o {
         case Success(_) : true;
         case Failure(_) : false;

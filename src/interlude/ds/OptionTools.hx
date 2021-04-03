@@ -3,6 +3,9 @@ package interlude.ds;
 @:nullSafety(Strict)
 @:publicFields
 class OptionTools {
+    inline static function all<A>(maybe:Option<A>, predicate:A->Bool) return
+        maybe.anyMatch(predicate);
+
     static function any<A>(maybe:Option<A>):Bool return switch maybe {
         case Some(_): true;
         case None   : false;
