@@ -558,6 +558,10 @@ class IterableTools {
     static function orderByDesc<A>(as:Iterable<A>, selector:A->Int):Array<A> return
         as.toArray().mut(arr -> arr.sort((a1, a2) -> selector(a2) - selector(a1)));
 
+    static function orElse<A>(as:Iterable<A>, genOther:()->Iterable<A>):Iterable<A> return as.any()
+        ? as
+        : genOther();
+
     /**
         Common use of `zip`, useful for comparing an element with the next one  
         `[1, 2, 3, 4].pairs()` == `[(1, 2), (2, 3), (3, 4)]`
