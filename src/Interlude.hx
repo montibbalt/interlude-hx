@@ -40,6 +40,10 @@ typedef KVIteratorTools     = interlude.iter.KeyValueIterableTools.KeyValueItera
 
 typedef Task<X>             = interlude.reactive.Task<X>;
 typedef TaskTools           = interlude.reactive.Task.TaskTools;
+typedef Surprise<X>         = interlude.reactive.Surprise<X>;
+typedef SurpriseTools       = interlude.reactive.Surprise.SurpriseTools;
+typedef Observable<X>       = interlude.reactive.Observable<X>;
+typedef ObservableTools     = interlude.reactive.Observable.ObservableTools;
 
 // Might as well throw these in
 typedef DateTools_          = DateTools;
