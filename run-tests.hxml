@@ -1,0 +1,6 @@
+--library utest
+-cp src
+-cp tests
+
+--main TestMain
+--interp
