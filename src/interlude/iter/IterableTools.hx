@@ -96,15 +96,15 @@ class IterableTools {
     /**
         If possible, draws a random element from `as`, using `genRandom` as a source of randomness
     **/
-    //static function choice<A>(as:Iterable<A>, genRandom:()->Float):Option<A> return as.any()
-    //    ? as.uniform().draw(genRandom).asOption()
-    //    : None;
+    static function choice<A>(as:Iterable<A>, genRandom:()->Float):Option<A> return as.any()
+        ? as.uniform().draw(genRandom).asOption()
+        : None;
 
     /**
         If possible, draws a random element from `as`, using `Math.random` as a source of randomness
     **/
-    //inline static function choiceStd<A>(as:Iterable<A>):Option<A> return
-    //    as.choice(Math.random);
+    inline static function choiceStd<A>(as:Iterable<A>):Option<A> return
+        as.choice(Math.random);
 
     /**
         Adds a value to the front of an `Iterable`

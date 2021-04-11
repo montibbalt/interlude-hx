@@ -10,6 +10,7 @@ typedef KeyValuePair<K, V>          = interlude.ds.PairTools.KeyValuePair<K, V>;
 typedef Pair<X, Y>                  = interlude.ds.PairTools.Pair<X, Y>;
 typedef Trio<X, Y, Z>               = interlude.ds.PairTools.Trio<X, Y, Z>;
 typedef Unit                        = interlude.ds.Unit;
+typedef Weighted<X>                 = interlude.ds.Weighted<X>;
 
 @:dox(hide) typedef Array1Tools     = interlude.ds.Array1.Array1Tools;
 @:dox(hide) typedef EitherTools     = interlude.ds.EitherTools;
@@ -21,3 +22,4 @@ typedef Unit                        = interlude.ds.Unit;
 @:dox(hide) typedef OutcomeTools    = interlude.ds.OutcomeTools;
 @:dox(hide) typedef PairTools       = interlude.ds.PairTools.PairTools;
 @:dox(hide) typedef TrioTools       = interlude.ds.PairTools.TrioTools;
+@:dox(hide) typedef WeightedTools   = interlude.ds.Weighted.WeightedTools;

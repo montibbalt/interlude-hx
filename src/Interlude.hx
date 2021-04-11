@@ -32,6 +32,8 @@ typedef PairTools           = interlude.ds.PairTools.PairTools;
 typedef Trio<X, Y, Z>       = interlude.ds.PairTools.Trio<X, Y, Z>;
 typedef TrioTools           = interlude.ds.PairTools.TrioTools;
 typedef Unit                = interlude.ds.Unit;
+typedef Weighted<X>         = interlude.ds.Weighted<X>;
+typedef WeightedTools       = interlude.ds.Weighted.WeightedTools;
 
 typedef IterableTools       = interlude.iter.IterableTools;
 typedef IteratorTools       = interlude.iter.IteratorTools;
@@ -47,4 +49,5 @@ typedef ObservableTools     = interlude.reactive.Observable.ObservableTools;
 
 // Might as well throw these in
 typedef DateTools_          = DateTools;
+typedef Math_               = Math;
 typedef StringTools_        = StringTools;
