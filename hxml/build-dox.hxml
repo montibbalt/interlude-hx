@@ -35,4 +35,4 @@ interlude.Reactive
 #--python bin/out.py
 
 --next
---cmd haxelib run dox -i docs -o docs/pages --toplevel-package interlude -D source-path "https://github.com/montibbalt/interlude-hx/tree/default/src"
+--cmd haxelib run dox -i docs -o docs --toplevel-package interlude -D source-path "https://github.com/montibbalt/interlude-hx/tree/default/src"
