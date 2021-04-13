@@ -40,7 +40,7 @@ class ValueTools {
 
     /**
         A function that always returns its input unchanged  
-        `Some(123).map(identity)` = `Some(123)`
+        `Some(123).map(identity)` == `Some(123)`
     **/
     inline static function identity<A>(a:A):A return
         a;

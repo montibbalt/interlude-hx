@@ -26,7 +26,11 @@ shortcut. For example, to import everything in the `func` package, you can add
 For fine control, each of the "Tools" classes are usable in a similar way
 individually.
 
-### Building
+### API Documentation
+Dox-generated API documentation is
+[available here](https://montibbalt.github.io/interlude-hx/). (needs work)
+
+## Building
 To build the package, simply run `haxe build.hxml`. Individual targets can be 
 found in `/hxml`.  
 
