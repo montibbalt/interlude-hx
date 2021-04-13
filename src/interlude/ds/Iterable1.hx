@@ -43,6 +43,9 @@ abstract Iterable1<A:NotVoid>(Pair<A, Iterable<A>>) from Pair<A, Iterable<A>> {
     inline public function toArray():Array<A> return
         [for(a in iterator()) a];
 
+    public function of(fst:A, ...rest:A):Array1<A> return
+        new Iterable1(fst.with(cast rest.toArray()));
+
     public function flatMap1<B>(fn:A->Iterable1<B>):Iterable1<B> return
         fn(this._1).mut(tmp -> tmp.first()
             .with(tmp.tail

@@ -51,6 +51,9 @@ abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> {
     public function toIterable1():Iterable1<A> return
         new Iterable1(this._1.with((this._2:Iterable<A>)));
 
+    public function of(fst:A, ...rest:A):Array1<A> return
+        new Array1(fst.with(rest.toArray()));
+
     public function flatMap1<B>(fn:A->Array1<B>):Array1<B> return
         fn(this._1).mut(tmp -> tmp.first()
             .with(tmp.tail

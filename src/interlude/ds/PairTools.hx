@@ -13,6 +13,9 @@ class PairTools {
     inline static function toKeyValue<A, B>(t:Pair<A, B>):KeyValuePair<A, B> return
         { key: t._1, value: t._2 };
 
+    inline static function eval<A, Z>(t:Pair<A->Z, A>):Z return
+        t._1(t._2);
+
     inline static function fromN<A, B, Z>(fn:(A, B)->Z, t:Pair<A, B>):Z return
         fn(t._1, t._2);
 
@@ -44,6 +47,9 @@ class PairTools {
 class TrioTools {
     inline static function apply<A, B, C, Z>(t:Trio<A, B, C>, fn:(A, B, C)->Z):Z return
         fn(t._1, t._2, t._3);
+
+    inline static function eval<A, B, Z>(t:Trio<A->B->Z, A, B>):Z return
+        t._1(t._2, t._3);
 
     inline static function fromN<A, B, C, Z>(fn:(A, B, C)->Z, t:Trio<A, B, C>):Z return
         fn(t._1, t._2, t._3);
