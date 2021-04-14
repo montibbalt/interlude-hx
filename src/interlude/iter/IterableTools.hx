@@ -120,7 +120,7 @@ class IterableTools {
 
     /**
         Counts the number of elements in `as`  
-        *NOTE* This will fully evaluate `as`, so be careful with infinite `Iterable`s
+        *NOTE*: This will fully evaluate `as`, so be careful with infinite `Iterable`s
     **/
     static function count<A>(as:Iterable<A>):Int return {
         var count = 0;
@@ -648,7 +648,7 @@ class IterableTools {
         Returns elements of `as` in a random order, using `Std.random` as a
         source of randomness
     **/
-    inline function shuffledStd<A>(as:Iterable<A>):Array<A> return
+    inline static function shuffledStd<A>(as:Iterable<A>):Array<A> return
         as.shuffled(Std.random);
 
     /**

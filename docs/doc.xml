@@ -6682,7 +6682,7 @@
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Counts the number of elements in `as`  
-        *NOTE* This will fully evaluate `as`, so be careful with infinite `Iterable`s</haxe_doc>
+        *NOTE*: This will fully evaluate `as`, so be careful with infinite `Iterable`s</haxe_doc>
 		</count>
 		<cycle public="1" params="A" set="method" line="135" static="1">
 			<f a="as">
@@ -7230,6 +7230,14 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `genRandom` as a
         source of randomness</haxe_doc>
 		</shuffled>
+		<shuffledStd public="1" params="A" get="inline" set="null" line="651" static="1">
+			<f a="as">
+				<t path="Iterable"><c path="shuffledStd.A"/></t>
+				<c path="Array"><c path="shuffledStd.A"/></c>
+			</f>
+			<haxe_doc>Returns elements of `as` in a random order, using `Std.random` as a
+        source of randomness</haxe_doc>
+		</shuffledStd>
 		<skip public="1" params="A" set="method" line="660" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="skip.A"/></t>
@@ -7363,14 +7371,6 @@
         will only apply until it reaches the end of the shorter one  
         `[1, 2, 3].zipWith([4, 5, 6], (x, y) -> x + y)` == `[1+4, 2+5, 3+6]` == `[5, 7, 9]`]]></haxe_doc>
 		</zipWith>
-		<shuffledStd public="1" params="A" get="inline" set="null" line="651">
-			<f a="as">
-				<t path="Iterable"><c path="shuffledStd.A"/></t>
-				<c path="Array"><c path="shuffledStd.A"/></c>
-			</f>
-			<haxe_doc>Returns elements of `as` in a random order, using `Std.random` as a
-        source of randomness</haxe_doc>
-		</shuffledStd>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
