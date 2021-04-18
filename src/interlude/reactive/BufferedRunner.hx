@@ -1,22 +1,23 @@
 package interlude.reactive;
 
 @:nullSafety(Strict)
+@:publicFields
 @:structInit
 class BufferedRunner {
-    var frontBuffer:Array<()->Void> = [];
-    var backBuffer:Array<()->Void> = [];
+    var frontBuffer(default, null):Array<()->Void> = [];
+    var backBuffer(default, null):Array<()->Void> = [];
 
-    public function new() {}
+    function new() {}
 
-    public function queue(fn:()->Void):Int return frontBuffer.any()
+    function queue(fn:()->Void):Int return frontBuffer.any()
         ? backBuffer.push(fn)
         : frontBuffer.push(fn);
 
-    public function queueMany(fns:Array<()->Void>):Array<()->Void> return frontBuffer.any()
+    function queueMany(fns:Array<()->Void>):Array<()->Void> return frontBuffer.any()
         ? backBuffer = backBuffer.concat(fns)
         : frontBuffer = fns;
 
-    public function resolve():Void
+    function resolve():Void
         do {
             frontBuffer.mutate(gen);
             frontBuffer = backBuffer;

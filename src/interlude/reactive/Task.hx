@@ -1,22 +1,22 @@
 package interlude.reactive;
 
 @:nullSafety(Strict)
+@:publicFields
 class Task<A:NotVoid> {
-    public static final runner:BufferedRunner = {}
-    public var data(default, null):Null<A> = null;
-    public var isComplete(default, null):Bool = false;
+    static final runner:BufferedRunner = {}
+    var data(default, null):Null<A> = null;
+    var isComplete(default, null):Bool = false;
 
-    @:allow(interlude.reactive)
-    var observers:Array<A->Void> = [];
+    var observers(default, null):Array<A->Void> = [];
 
-    public function new(?data:A = null) {
+    function new(?data:A = null) {
         if(data != null) {
             this.data = data;
             this.isComplete = true;
         }
     }
 
-    public function resolve(data:A):A return {
+    function resolve(data:A):A return {
         if(!this.isComplete) {
             this.data = data;
             this.isComplete = true;
@@ -29,11 +29,7 @@ class Task<A:NotVoid> {
 
         data;
     }
-}
 
-@:publicFields
-@:nullSafety(Strict)
-class TaskTools {
     static function always<A, B>(t:Task<A>, value:B):Task<B> return
         t.map(value.v_);
 
@@ -70,7 +66,7 @@ class TaskTools {
         t.flatMap(identity);
 
     static function map<A, B>(t:Task<A>, fn:A->B):Task<B> return inline
-        t.flatMap(TaskTools.asTask.of(fn));
+        t.flatMap(Task.asTask.of(fn));
 
     static function mutate<A>(t:Task<A>, fn:A->Void):Task<A> return {
         t.isComplete && t.data != null

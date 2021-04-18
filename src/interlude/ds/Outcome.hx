@@ -1,5 +1,6 @@
 package interlude.ds;
 
+@:using(interlude.ds.Outcome.OutcomeTools)
 enum Outcome<A> {
     Success(a:A);
     Failure(message:String, ?pos:haxe.PosInfos);

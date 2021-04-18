@@ -25,11 +25,6 @@ class Lazy<A:NotVoid> {
         ? '$result'
         : 'Lazy<>';
 
-}
-
-@:nullSafety(Strict)
-@:publicFields
-class LazyTools {
     inline static function any<A>(l:Lazy<A>):Bool return
         l.result != null;
 

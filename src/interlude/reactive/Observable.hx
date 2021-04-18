@@ -1,31 +1,28 @@
 package interlude.reactive;
 
 @:nullSafety(Strict)
+@:publicFields
 class Observable<A:NotVoid> {
-    var subscribers:Array<A->Void> = [];
-    public var lastDispatched(default, null):Option<A> = None;
+    var subscribers(default, null):Array<A->Void> = [];
+    var lastDispatched(default, null):Option<A> = None;
 
-    public function new(?initial:A)
+    function new(?initial:A)
         if(initial != null) {
             lastDispatched = initial.asOption();
         }
 
-    public function mutate(fn:A->Void, last:Bool = true):Observable<A> return {
+    function mutate(fn:A->Void, last:Bool = true):Observable<A> return {
         subscribers.push(fn);
         if(last) lastDispatched.mutate_(fn);
         this;
     }
 
-    public function resolve(value:A):A return {
+    function resolve(value:A):A return {
         Task.runner.queueMany([for(fn in subscribers) fn.bind(value)]);
         lastDispatched = value.asOption();
         value;
     }
-}
 
-@:nullSafety(Strict)
-@:publicFields
-class ObservableTools {
     static function always<A, B>(o:Observable<A>, value:B):Observable<B> return
         o.map(value.v_);
 
@@ -77,4 +74,5 @@ class ObservableTools {
         sB.mutate(b -> sA.lastDispatched.mutate_(a -> fn(a, b).mut(stream.resolve)));
         stream;
     }
+
 }

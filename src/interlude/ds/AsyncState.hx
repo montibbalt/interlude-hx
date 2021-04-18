@@ -12,7 +12,7 @@ class AsyncStateTools {
         fn.flatMap(s.map);
 
     static function asAsyncState<X, A>(a:A):AsyncState<X, A> return
-        TaskTools.asTask.of(a.with);
+        Task.asTask.of(a.with);
 
     static function eval<X, A>(s:AsyncState<X, A>, x:X):Task<A> return
         s(x).map(fst);
