@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ default ]
+  pull_request:
+    branches: [ default ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        haxe-version: ['4.2.1']
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      # Checks-out repository under $GITHUB_WORKSPACE
+      - name: Checkout
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+      - uses: krdlab/setup-haxe@v1.1.5
+        with:
+          haxe-version: ${{ matrix.haxe-version }}
+      
+      - name: Run haxe build
+        run: haxe build.hxml
