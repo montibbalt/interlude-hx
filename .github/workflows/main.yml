@@ -17,10 +17,10 @@ jobs:
     steps:
       # Checks-out repository under $GITHUB_WORKSPACE
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Install dependencies
-      - uses: krdlab/setup-haxe@v1.1.5
+        uses: krdlab/setup-haxe@v1.1.5
         with:
           haxe-version: ${{ matrix.haxe-version }}
       
