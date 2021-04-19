@@ -77,8 +77,8 @@ class IterableTools {
         Converts a single element to an `Iterable` containing that element  
         TODO: should this return `Iterable1`?
     **/
-    inline static function asIterable<A>(a:A):Iterable<A> return
-        [a];
+    inline static function asIterable<A>(a:A, ...rest:A):Iterable<A> return
+        a.cons(rest);
 
     /**
         If `as` has any elements, returns the element at a positive `index`  
@@ -108,7 +108,7 @@ class IterableTools {
         Adds a value to the front of an `Iterable`
     **/
     inline static function cons<A>(a:A, as:Iterable<A>):Iterable<A> return
-        a.asIterable().append(as);
+        [a].append(as);
 
     /**
         Returns `true` if `a` is present in `as`  
@@ -181,6 +181,13 @@ class IterableTools {
     static function elementAt<A>(as:Iterable<A>, index:Int):Option<A> return as.isEmpty() || index < 0
         ? None
         : as.skip(index).maybeFirst();
+
+    /**
+        Returns an empty `Iterable`
+    **/
+    static function empty<A>():Iterable<A> return {
+        iterator: IteratorTools.empty
+    }
 
     /**
         An alternative to `indexed`. Pairs every element of `as` with its index
