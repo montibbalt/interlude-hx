@@ -1,0 +1,28 @@
+name: Publish Docs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install haxe
+        uses: krdlab/setup-haxe@v1.1.5
+        with:
+          haxe-version: '4.2.1'
+
+      - name: Install packages
+        run: haxelib install dox
+
+      - name: Generate docs
+        run: haxe hxml/build-dox.hxml
+      
+      - name: Commit updated docs
+        uses: EndBug/add-and-commit@v7.1.2
+        with:
+          branch: default
+          add: 'docs'
+          message: '(GitHub Actions) Publishing updated API docs'
