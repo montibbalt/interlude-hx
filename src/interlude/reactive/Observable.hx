@@ -66,7 +66,7 @@ class Observable<A:NotVoid> {
         o.always(Unit);
 
     static function zip<A, B>(sA:Observable<A>, sB:Observable<B>):Observable<Pair<A, B>> return
-        sA.zipWith(sB, PairTools.with);
+        sA.zipWith(sB, Pair.with);
 
     static function zipWith<A, B, C>(sA:Observable<A>, sB:Observable<B>, fn:A->B->C):Observable<C> return {
         var stream = new Observable<C>();

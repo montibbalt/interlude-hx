@@ -140,7 +140,7 @@ class OptionTools {
         );
 
     static function zip<A, B>(mA:Option<A>, mB:Option<B>):Option<Pair<A, B>> return
-        mA.zipWith(mB, PairTools.with);
+        mA.zipWith(mB, Pair.with);
 
     static function zipWith<A, B, C>(mA:Option<A>, mB:Option<B>, fn:A->B->C):Option<C> return switch [mA, mB] {
         case [Some(a), Some(b)]: Some(fn(a, b));

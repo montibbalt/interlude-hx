@@ -77,7 +77,7 @@ class Task<A:NotVoid> {
     }
 
     static function zip<A, B>(ta:Task<A>, tb:Task<B>):Task<Pair<A, B>> return
-        ta.zipWith(tb, PairTools.with);
+        ta.zipWith(tb, Pair.with);
 
     static function zipWith<A, B, C>(a:Task<A>, b:Task<B>, fn:A->B->C):Task<C> return
         a.flatMap(fn.curry().to(b.map));

@@ -58,7 +58,7 @@ class Lazy<A:NotVoid> {
         [l.eval()];
 
     inline static function zip<A, B>(la:Lazy<A>, lb:Lazy<B>):Lazy<Pair<A, B>> return
-        la.zipWith(lb, PairTools.with);
+        la.zipWith(lb, Pair.with);
 
     static function zipWith<A, B, C>(la:Lazy<A>, lb:Lazy<B>, fn:A->B->C):Lazy<C> return
         new Lazy(() -> fn(la.eval(), lb.eval()));

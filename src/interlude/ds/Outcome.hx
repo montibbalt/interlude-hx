@@ -143,7 +143,7 @@ class OutcomeTools {
     );
 
     static function zip<A, B>(mA:Outcome<A>, mB:Outcome<B>):Outcome<Pair<A, B>> return
-        mA.zipWith(mB, PairTools.with);
+        mA.zipWith(mB, Pair.with);
 
     static function zipWith<A, B, C>(mA:Outcome<A>, mB:Outcome<B>, fn:A->B->C):Outcome<C> return switch [mA, mB] {
         case [Success(a), Success(b)]: fn(a, b).asOutcome();

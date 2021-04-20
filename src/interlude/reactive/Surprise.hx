@@ -28,7 +28,7 @@ class SurpriseTools {
         Task.mutate(s, o -> o.mutate_(whenSuccess));
 
     static function zip<A, B>(sA:Surprise<A>, sB:Surprise<B>):Surprise<Pair<A, B>> return
-        sA.zipWith(sB, PairTools.with);
+        sA.zipWith(sB, Pair.with);
 
     static function zipWith<A, B, C>(sA:Surprise<A>, sB:Surprise<B>, fn:A->B->C):Surprise<C> return
         Task.zipWith(sA, sB, (oA, oB) -> oA.zipWith(oB, fn));

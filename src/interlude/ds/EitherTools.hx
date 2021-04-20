@@ -65,7 +65,7 @@ class EitherTools {
     }
 
     static function zip<X, A, B>(eA:Either<X, A>, eB:Either<X, B>):Either<X, Pair<A, B>> return
-        eA.zipWith(eB, PairTools.with);
+        eA.zipWith(eB, Pair.with);
 
     static function zipWith<X, A, B, C>(eA:Either<X, A>, eB:Either<X, B>, fn:A->B->C):Either<X, C> return switch [eA, eB] {
         case [Right(a), Right(b)]       : fn(a, b).asRight();

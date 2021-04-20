@@ -773,7 +773,7 @@ class IterableTools {
         `[1, 2, 3].zip([])` == `[]`
     **/
     static function zip<A, B, C:NotVoid>(as:Iterable<A>, bs:Iterable<B>):Iterable<Pair<A, B>> return
-        as.zipWith(bs, PairTools.with);
+        as.zipWith(bs, Pair.with);
 
     /**
         Applies a `transform` function to corresponsing pairs of elements in

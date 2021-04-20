@@ -33,7 +33,7 @@ class StateTools {
         s.to(fn.fromNC);
 
     static function flatten<X, A>(s:State<X, State<X, A>>):State<X, A> return
-        s.to(PairTools.eval);
+        s.to(Pair.eval);
 
     static function local<X, A>(s:State<X, A>, fn:X->X):State<X, A> return
         s.of(fn);
@@ -45,7 +45,7 @@ class StateTools {
         s(x)._2;
 
     static function zip<X, A, B>(sa:State<X, A>, sb:State<X, B>):State<X, Pair<A, B>> return
-        sa.zipWith(sb, PairTools.with);
+        sa.zipWith(sb, Pair.with);
 
     static function zipWith<X, A, B, Z>(sa:State<X, A>, sb:State<X, B>, fn:A->B->Z):State<X, Z> return
         x -> fn(sa(x)._1, sb(x)._1).with(x);
