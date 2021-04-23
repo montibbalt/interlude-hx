@@ -781,6 +781,8 @@
 	<typedef path="Curry5" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.Curry5"/></typedef>
 	<typedef path="Curry6" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.Curry6"/></typedef>
 	<typedef path="FunctionTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.FunctionTools"/></typedef>
+	<typedef path="FloatTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.FloatTools"/></typedef>
+	<typedef path="IntTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.IntTools"/></typedef>
 	<typedef path="ValueTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.ValueTools"/></typedef>
 	<typedef path="Trampoline" params="X" file="src/Interlude.hx" module="Interlude"><e path="interlude.func.Trampoline"><c path="Trampoline.X"/></e></typedef>
 	<typedef path="TrampolineTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.TrampolineTools"/></typedef>
@@ -802,10 +804,10 @@
 	<c path="KeyValuePair.K"/>
 	<c path="KeyValuePair.V"/>
 </t></typedef>
-	<typedef path="Pair" params="X:Y" file="src/Interlude.hx" module="Interlude"><x path="interlude.ds.Pair">
+	<typedef path="Pair" params="X:Y" file="src/Interlude.hx" module="Interlude"><c path="interlude.ds.Pair">
 	<c path="Pair.X"/>
 	<c path="Pair.Y"/>
-</x></typedef>
+</c></typedef>
 	<typedef path="State" params="X:Y" file="src/Interlude.hx" module="Interlude"><x path="interlude.ds.State">
 	<c path="State.X"/>
 	<c path="State.Y"/>
@@ -814,11 +816,11 @@
 	<c path="AsyncState.X"/>
 	<c path="AsyncState.Y"/>
 </x></typedef>
-	<typedef path="Trio" params="X:Y:Z" file="src/Interlude.hx" module="Interlude"><x path="interlude.ds.Trio">
+	<typedef path="Trio" params="X:Y:Z" file="src/Interlude.hx" module="Interlude"><c path="interlude.ds.Trio">
 	<c path="Trio.X"/>
 	<c path="Trio.Y"/>
 	<c path="Trio.Z"/>
-</x></typedef>
+</c></typedef>
 	<typedef path="Unit" params="" file="src/Interlude.hx" module="Interlude"><e path="interlude.ds.Unit"/></typedef>
 	<typedef path="Weighted" params="X" file="src/Interlude.hx" module="Interlude"><x path="interlude.ds.Weighted"><c path="Weighted.X"/></x></typedef>
 	<typedef path="WeightedTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.ds.WeightedTools"/></typedef>
@@ -3555,10 +3557,10 @@
 	<c path="interlude.KeyValuePair.K"/>
 	<c path="interlude.KeyValuePair.V"/>
 </t></typedef>
-	<typedef path="interlude.Pair" params="X:Y" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.Pair">
+	<typedef path="interlude.Pair" params="X:Y" file="src/interlude/DS.hx" module="interlude.DS"><c path="interlude.ds.Pair">
 	<c path="interlude.Pair.X"/>
 	<c path="interlude.Pair.Y"/>
-</x></typedef>
+</c></typedef>
 	<typedef path="interlude.State" params="X:Y" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.State">
 	<c path="interlude.State.X"/>
 	<c path="interlude.State.Y"/>
@@ -3567,11 +3569,11 @@
 	<c path="interlude.AsyncState.X"/>
 	<c path="interlude.AsyncState.Y"/>
 </x></typedef>
-	<typedef path="interlude.Trio" params="X:Y:Z" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.Trio">
+	<typedef path="interlude.Trio" params="X:Y:Z" file="src/interlude/DS.hx" module="interlude.DS"><c path="interlude.ds.Trio">
 	<c path="interlude.Trio.X"/>
 	<c path="interlude.Trio.Y"/>
 	<c path="interlude.Trio.Z"/>
-</x></typedef>
+</c></typedef>
 	<typedef path="interlude.Unit" params="" file="src/interlude/DS.hx" module="interlude.DS"><e path="interlude.ds.Unit"/></typedef>
 	<typedef path="interlude.Weighted" params="X" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.Weighted"><c path="interlude.Weighted.X"/></x></typedef>
 	<typedef path="interlude.EitherTools" params="" file="src/interlude/DS.hx" module="interlude.DS">
@@ -3619,8 +3621,16 @@
 		<c path="interlude.func.Curry6"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
 	</typedef>
+	<typedef path="interlude.FloatTools" params="" file="src/interlude/Func.hx" module="interlude.Func">
+		<c path="interlude.func.FloatTools"/>
+		<meta><m n=":dox"><e>hide</e></m></meta>
+	</typedef>
 	<typedef path="interlude.FunctionTools" params="" file="src/interlude/Func.hx" module="interlude.Func">
 		<c path="interlude.func.FunctionTools"/>
+		<meta><m n=":dox"><e>hide</e></m></meta>
+	</typedef>
+	<typedef path="interlude.IntTools" params="" file="src/interlude/Func.hx" module="interlude.Func">
+		<c path="interlude.func.IntTools"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
 	</typedef>
 	<typedef path="interlude.ValueTools" params="" file="src/interlude/Func.hx" module="interlude.Func">
@@ -3720,7 +3730,7 @@
 		</f>
 		<meta><m n=":arrayAccess"/></meta>
 	</get>
-	<set set="method" line="29" static="1">
+	<set get="inline" set="null" line="29" static="1">
 		<f a="this:index:value">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3866,7 +3876,7 @@
 			</f>
 			<meta><m n=":arrayAccess"/></meta>
 		</get>
-		<set set="method" line="29" static="1">
+		<set get="inline" set="null" line="29" static="1">
 			<f a="this:index:value">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -5483,13 +5493,115 @@
 	<value><c path="interlude.ds.KeyValuePair.V"/></value>
 	<key><c path="interlude.ds.KeyValuePair.K"/></key>
 </a></typedef>
-	<class path="interlude.ds.TPair" params="X:Y" file="src/interlude/ds/Pair.hx" module="interlude.ds.Pair">
-		<_1 public="1"><c path="interlude.ds.TPair.X"/></_1>
-		<_2 public="1"><c path="interlude.ds.TPair.Y"/></_2>
+	<class path="interlude.ds.Pair" params="X:Y" file="src/interlude/ds/Pair.hx">
+		<apply public="1" params="A:B:Z" get="inline" set="null" line="12" static="1"><f a="t:fn">
+	<c path="interlude.ds.Pair">
+		<c path="apply.A"/>
+		<c path="apply.B"/>
+	</c>
+	<f a=":">
+		<c path="apply.A"/>
+		<c path="apply.B"/>
+		<c path="apply.Z"/>
+	</f>
+	<c path="apply.Z"/>
+</f></apply>
+		<toKeyValue public="1" params="A:B" get="inline" set="null" line="15" static="1"><f a="t">
+	<c path="interlude.ds.Pair">
+		<c path="toKeyValue.A"/>
+		<c path="toKeyValue.B"/>
+	</c>
+	<t path="interlude.ds.KeyValuePair">
+		<c path="toKeyValue.A"/>
+		<c path="toKeyValue.B"/>
+	</t>
+</f></toKeyValue>
+		<eval public="1" params="A:Z" get="inline" set="null" line="18" static="1"><f a="t">
+	<c path="interlude.ds.Pair">
+		<f a="">
+			<c path="eval.A"/>
+			<c path="eval.Z"/>
+		</f>
+		<c path="eval.A"/>
+	</c>
+	<c path="eval.Z"/>
+</f></eval>
+		<fromN public="1" params="A:B:Z" get="inline" set="null" line="21" static="1"><f a="fn:t">
+	<f a=":">
+		<c path="fromN.A"/>
+		<c path="fromN.B"/>
+		<c path="fromN.Z"/>
+	</f>
+	<c path="interlude.ds.Pair">
+		<c path="fromN.A"/>
+		<c path="fromN.B"/>
+	</c>
+	<c path="fromN.Z"/>
+</f></fromN>
+		<fromNC public="1" params="A:B:Z" get="inline" set="null" line="24" static="1"><f a="fn:t">
+	<f a="">
+		<c path="fromNC.A"/>
+		<f a="">
+			<c path="fromNC.B"/>
+			<c path="fromNC.Z"/>
+		</f>
+	</f>
+	<c path="interlude.ds.Pair">
+		<c path="fromNC.A"/>
+		<c path="fromNC.B"/>
+	</c>
+	<c path="fromNC.Z"/>
+</f></fromNC>
+		<map_1 public="1" params="A:B:Z" set="method" line="27" static="1"><f a="t:fn">
+	<c path="interlude.ds.Pair">
+		<c path="map_1.A"/>
+		<c path="map_1.B"/>
+	</c>
+	<f a="">
+		<c path="map_1.A"/>
+		<c path="map_1.Z"/>
+	</f>
+	<c path="interlude.ds.Pair">
+		<c path="map_1.Z"/>
+		<c path="map_1.B"/>
+	</c>
+</f></map_1>
+		<map_2 public="1" params="A:B:Z" set="method" line="32" static="1"><f a="t:fn">
+	<c path="interlude.ds.Pair">
+		<c path="map_2.A"/>
+		<c path="map_2.B"/>
+	</c>
+	<f a="">
+		<c path="map_2.B"/>
+		<c path="map_2.Z"/>
+	</f>
+	<c path="interlude.ds.Pair">
+		<c path="map_2.A"/>
+		<c path="map_2.Z"/>
+	</c>
+</f></map_2>
+		<fst public="1" params="A" get="inline" set="null" line="37" static="1"><f a="tup">
+	<a><_1 final="1" set="null"><c path="fst.A"/></_1></a>
+	<c path="fst.A"/>
+</f></fst>
+		<snd public="1" params="A" get="inline" set="null" line="40" static="1"><f a="tup">
+	<a><_2 final="1" set="null"><c path="snd.A"/></_2></a>
+	<c path="snd.A"/>
+</f></snd>
+		<with public="1" params="A:B" get="inline" set="null" line="43" static="1"><f a="a:b">
+	<c path="with.A"/>
+	<c path="with.B"/>
+	<c path="interlude.ds.Pair">
+		<c path="with.A"/>
+		<c path="with.B"/>
+	</c>
+</f></with>
+		<_1 final="1" public="1"><c path="interlude.ds.Pair.X"/></_1>
+		<_2 final="1" public="1"><c path="interlude.ds.Pair.Y"/></_2>
 		<new public="1" set="method" line="8">
 			<f a="_1:_2">
-				<c path="interlude.ds.TPair.X"/>
-				<c path="interlude.ds.TPair.Y"/>
+				<c path="interlude.ds.Pair.X"/>
+				<c path="interlude.ds.Pair.Y"/>
 				<x path="Void"/>
 			</f>
 			<meta>
@@ -5500,19 +5612,140 @@
 		</new>
 		<meta>
 			<m n=":directlyUsed"/>
+			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":publicFields"/>
 			<m n=":structInit"/>
 		</meta>
 	</class>
-	<class path="interlude.ds.TTrio" params="X:Y:Z" file="src/interlude/ds/Pair.hx" module="interlude.ds.Pair">
-		<_1 public="1"><c path="interlude.ds.TTrio.X"/></_1>
-		<_2 public="1"><c path="interlude.ds.TTrio.Y"/></_2>
-		<_3 public="1"><c path="interlude.ds.TTrio.Z"/></_3>
-		<new public="1" set="method" line="12">
+	<class path="interlude.ds.Trio" params="X:Y:Z" file="src/interlude/ds/Pair.hx" module="interlude.ds.Pair">
+		<apply public="1" params="A:B:C:Z" get="inline" set="null" line="55" static="1"><f a="t:fn">
+	<c path="interlude.ds.Trio">
+		<c path="apply.A"/>
+		<c path="apply.B"/>
+		<c path="apply.C"/>
+	</c>
+	<f a="::">
+		<c path="apply.A"/>
+		<c path="apply.B"/>
+		<c path="apply.C"/>
+		<c path="apply.Z"/>
+	</f>
+	<c path="apply.Z"/>
+</f></apply>
+		<eval public="1" params="A:B:Z" get="inline" set="null" line="58" static="1"><f a="t">
+	<c path="interlude.ds.Trio">
+		<f a=":">
+			<c path="eval.A"/>
+			<c path="eval.B"/>
+			<c path="eval.Z"/>
+		</f>
+		<c path="eval.A"/>
+		<c path="eval.B"/>
+	</c>
+	<c path="eval.Z"/>
+</f></eval>
+		<fromN public="1" params="A:B:C:Z" get="inline" set="null" line="61" static="1"><f a="fn:t">
+	<f a="::">
+		<c path="fromN.A"/>
+		<c path="fromN.B"/>
+		<c path="fromN.C"/>
+		<c path="fromN.Z"/>
+	</f>
+	<c path="interlude.ds.Trio">
+		<c path="fromN.A"/>
+		<c path="fromN.B"/>
+		<c path="fromN.C"/>
+	</c>
+	<c path="fromN.Z"/>
+</f></fromN>
+		<fromNC public="1" params="A:B:C:Z" get="inline" set="null" line="64" static="1"><f a="fn:t">
+	<f a="">
+		<c path="fromNC.A"/>
+		<f a="">
+			<c path="fromNC.B"/>
+			<f a="">
+				<c path="fromNC.C"/>
+				<c path="fromNC.Z"/>
+			</f>
+		</f>
+	</f>
+	<c path="interlude.ds.Trio">
+		<c path="fromNC.A"/>
+		<c path="fromNC.B"/>
+		<c path="fromNC.C"/>
+	</c>
+	<c path="fromNC.Z"/>
+</f></fromNC>
+		<map_1 public="1" params="A:B:C:Z" set="method" line="67" static="1"><f a="t:fn">
+	<c path="interlude.ds.Trio">
+		<c path="map_1.A"/>
+		<c path="map_1.B"/>
+		<c path="map_1.C"/>
+	</c>
+	<f a="">
+		<c path="map_1.A"/>
+		<c path="map_1.Z"/>
+	</f>
+	<c path="interlude.ds.Trio">
+		<c path="map_1.Z"/>
+		<c path="map_1.B"/>
+		<c path="map_1.C"/>
+	</c>
+</f></map_1>
+		<map_2 public="1" params="A:B:C:Z" set="method" line="73" static="1"><f a="t:fn">
+	<c path="interlude.ds.Trio">
+		<c path="map_2.A"/>
+		<c path="map_2.B"/>
+		<c path="map_2.C"/>
+	</c>
+	<f a="">
+		<c path="map_2.B"/>
+		<c path="map_2.Z"/>
+	</f>
+	<c path="interlude.ds.Trio">
+		<c path="map_2.A"/>
+		<c path="map_2.Z"/>
+		<c path="map_2.C"/>
+	</c>
+</f></map_2>
+		<map_3 public="1" params="A:B:C:Z" set="method" line="79" static="1"><f a="t:fn">
+	<c path="interlude.ds.Trio">
+		<c path="map_3.A"/>
+		<c path="map_3.B"/>
+		<c path="map_3.C"/>
+	</c>
+	<f a="">
+		<c path="map_3.C"/>
+		<c path="map_3.Z"/>
+	</f>
+	<c path="interlude.ds.Trio">
+		<c path="map_3.A"/>
+		<c path="map_3.B"/>
+		<c path="map_3.Z"/>
+	</c>
+</f></map_3>
+		<thd public="1" params="A" get="inline" set="null" line="85" static="1"><f a="tup">
+	<a><_3 final="1" set="null"><c path="thd.A"/></_3></a>
+	<c path="thd.A"/>
+</f></thd>
+		<with3 public="1" params="A:B:C" get="inline" set="null" line="91" static="1"><f a="a:b:c">
+	<c path="with3.A"/>
+	<c path="with3.B"/>
+	<c path="with3.C"/>
+	<c path="interlude.ds.Trio">
+		<c path="with3.A"/>
+		<c path="with3.B"/>
+		<c path="with3.C"/>
+	</c>
+</f></with3>
+		<_1 final="1" public="1"><c path="interlude.ds.Trio.X"/></_1>
+		<_2 final="1" public="1"><c path="interlude.ds.Trio.Y"/></_2>
+		<_3 final="1" public="1"><c path="interlude.ds.Trio.Z"/></_3>
+		<new public="1" set="method" line="50">
 			<f a="_1:_2:_3">
-				<c path="interlude.ds.TTrio.X"/>
-				<c path="interlude.ds.TTrio.Y"/>
-				<c path="interlude.ds.TTrio.Z"/>
+				<c path="interlude.ds.Trio.X"/>
+				<c path="interlude.ds.Trio.Y"/>
+				<c path="interlude.ds.Trio.Z"/>
 				<x path="Void"/>
 			</f>
 			<meta>
@@ -5522,559 +5755,10 @@
 			<haxe_doc></haxe_doc>
 		</new>
 		<meta>
-			<m n=":directlyUsed"/>
+			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":publicFields"/>
 			<m n=":structInit"/>
 		</meta>
-	</class>
-	<abstract path="interlude.ds.Pair" params="X:Y" file="src/interlude/ds/Pair.hx">
-		<from><icast><c path="interlude.ds.TPair">
-	<c path="interlude.ds.Pair.X"/>
-	<c path="interlude.ds.Pair.Y"/>
-</c></icast></from>
-		<this><c path="interlude.ds.TPair">
-	<c path="interlude.ds.Pair.X"/>
-	<c path="interlude.ds.Pair.Y"/>
-</c></this>
-		<to><icast><c path="interlude.ds.TPair">
-	<c path="interlude.ds.Pair.X"/>
-	<c path="interlude.ds.Pair.Y"/>
-</c></icast></to>
-		<meta>
-			<m n=":nullSafety"><e>Strict</e></m>
-			<m n=":forward"/>
-		</meta>
-		<impl><class path="interlude.ds._Pair.Pair_Impl_" params="" file="src/interlude/ds/Pair.hx" private="1" module="interlude.ds.Pair" final="1">
-	<_new public="1" get="inline" set="null" line="17" static="1">
-		<f a="pair">
-			<c path="interlude.ds.TPair">
-				<c path="interlude.ds.Pair.X"/>
-				<c path="interlude.ds.Pair.Y"/>
-			</c>
-			<x path="interlude.ds.Pair">
-				<c path="interlude.ds.Pair.X"/>
-				<c path="interlude.ds.Pair.Y"/>
-			</x>
-		</f>
-		<meta><m n=":noCompletion"/></meta>
-	</_new>
-	<apply public="1" params="A:B:Z" get="inline" set="null" line="19" static="1"><f a="t:fn">
-	<x path="interlude.ds.Pair">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-	</x>
-	<f a=":">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-		<c path="apply.Z"/>
-	</f>
-	<c path="apply.Z"/>
-</f></apply>
-	<toKeyValue public="1" params="A:B" get="inline" set="null" line="22" static="1"><f a="t">
-	<x path="interlude.ds.Pair">
-		<c path="toKeyValue.A"/>
-		<c path="toKeyValue.B"/>
-	</x>
-	<t path="interlude.ds.KeyValuePair">
-		<c path="toKeyValue.A"/>
-		<c path="toKeyValue.B"/>
-	</t>
-</f></toKeyValue>
-	<eval public="1" params="A:Z" get="inline" set="null" line="25" static="1"><f a="t">
-	<x path="interlude.ds.Pair">
-		<f a="">
-			<c path="eval.A"/>
-			<c path="eval.Z"/>
-		</f>
-		<c path="eval.A"/>
-	</x>
-	<c path="eval.Z"/>
-</f></eval>
-	<fromN public="1" params="A:B:Z" get="inline" set="null" line="28" static="1"><f a="fn:t">
-	<f a=":">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.Z"/>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-	</x>
-	<c path="fromN.Z"/>
-</f></fromN>
-	<fromNC public="1" params="A:B:Z" get="inline" set="null" line="31" static="1"><f a="fn:t">
-	<f a="">
-		<c path="fromNC.A"/>
-		<f a="">
-			<c path="fromNC.B"/>
-			<c path="fromNC.Z"/>
-		</f>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="fromNC.A"/>
-		<c path="fromNC.B"/>
-	</x>
-	<c path="fromNC.Z"/>
-</f></fromNC>
-	<map_1 public="1" params="A:B:Z" set="method" line="34" static="1"><f a="t:fn">
-	<x path="interlude.ds.Pair">
-		<c path="map_1.A"/>
-		<c path="map_1.B"/>
-	</x>
-	<f a="">
-		<c path="map_1.A"/>
-		<c path="map_1.Z"/>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="map_1.Z"/>
-		<c path="map_1.B"/>
-	</x>
-</f></map_1>
-	<map_2 public="1" params="A:B:Z" set="method" line="39" static="1"><f a="t:fn">
-	<x path="interlude.ds.Pair">
-		<c path="map_2.A"/>
-		<c path="map_2.B"/>
-	</x>
-	<f a="">
-		<c path="map_2.B"/>
-		<c path="map_2.Z"/>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="map_2.A"/>
-		<c path="map_2.Z"/>
-	</x>
-</f></map_2>
-	<fst public="1" params="A" get="inline" set="null" line="44" static="1"><f a="tup">
-	<a><_1><c path="fst.A"/></_1></a>
-	<c path="fst.A"/>
-</f></fst>
-	<snd public="1" params="A" get="inline" set="null" line="47" static="1"><f a="tup">
-	<a><_2><c path="snd.A"/></_2></a>
-	<c path="snd.A"/>
-</f></snd>
-	<with public="1" params="A:B" get="inline" set="null" line="50" static="1"><f a="a:b">
-	<c path="with.A"/>
-	<c path="with.B"/>
-	<x path="interlude.ds.Pair">
-		<c path="with.A"/>
-		<c path="with.B"/>
-	</x>
-</f></with>
-	<meta><m n=":directlyUsed"/></meta>
-</class></impl>
-	</abstract>
-	<class path="interlude.ds._Pair.Pair_Impl_" params="" file="src/interlude/ds/Pair.hx" private="1" module="interlude.ds.Pair" final="1">
-		<_new public="1" get="inline" set="null" line="17" static="1">
-			<f a="pair">
-				<c path="interlude.ds.TPair">
-					<c path="interlude.ds.Pair.X"/>
-					<c path="interlude.ds.Pair.Y"/>
-				</c>
-				<x path="interlude.ds.Pair">
-					<c path="interlude.ds.Pair.X"/>
-					<c path="interlude.ds.Pair.Y"/>
-				</x>
-			</f>
-			<meta><m n=":noCompletion"/></meta>
-		</_new>
-		<apply public="1" params="A:B:Z" get="inline" set="null" line="19" static="1"><f a="t:fn">
-	<x path="interlude.ds.Pair">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-	</x>
-	<f a=":">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-		<c path="apply.Z"/>
-	</f>
-	<c path="apply.Z"/>
-</f></apply>
-		<toKeyValue public="1" params="A:B" get="inline" set="null" line="22" static="1"><f a="t">
-	<x path="interlude.ds.Pair">
-		<c path="toKeyValue.A"/>
-		<c path="toKeyValue.B"/>
-	</x>
-	<t path="interlude.ds.KeyValuePair">
-		<c path="toKeyValue.A"/>
-		<c path="toKeyValue.B"/>
-	</t>
-</f></toKeyValue>
-		<eval public="1" params="A:Z" get="inline" set="null" line="25" static="1"><f a="t">
-	<x path="interlude.ds.Pair">
-		<f a="">
-			<c path="eval.A"/>
-			<c path="eval.Z"/>
-		</f>
-		<c path="eval.A"/>
-	</x>
-	<c path="eval.Z"/>
-</f></eval>
-		<fromN public="1" params="A:B:Z" get="inline" set="null" line="28" static="1"><f a="fn:t">
-	<f a=":">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.Z"/>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-	</x>
-	<c path="fromN.Z"/>
-</f></fromN>
-		<fromNC public="1" params="A:B:Z" get="inline" set="null" line="31" static="1"><f a="fn:t">
-	<f a="">
-		<c path="fromNC.A"/>
-		<f a="">
-			<c path="fromNC.B"/>
-			<c path="fromNC.Z"/>
-		</f>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="fromNC.A"/>
-		<c path="fromNC.B"/>
-	</x>
-	<c path="fromNC.Z"/>
-</f></fromNC>
-		<map_1 public="1" params="A:B:Z" set="method" line="34" static="1"><f a="t:fn">
-	<x path="interlude.ds.Pair">
-		<c path="map_1.A"/>
-		<c path="map_1.B"/>
-	</x>
-	<f a="">
-		<c path="map_1.A"/>
-		<c path="map_1.Z"/>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="map_1.Z"/>
-		<c path="map_1.B"/>
-	</x>
-</f></map_1>
-		<map_2 public="1" params="A:B:Z" set="method" line="39" static="1"><f a="t:fn">
-	<x path="interlude.ds.Pair">
-		<c path="map_2.A"/>
-		<c path="map_2.B"/>
-	</x>
-	<f a="">
-		<c path="map_2.B"/>
-		<c path="map_2.Z"/>
-	</f>
-	<x path="interlude.ds.Pair">
-		<c path="map_2.A"/>
-		<c path="map_2.Z"/>
-	</x>
-</f></map_2>
-		<fst public="1" params="A" get="inline" set="null" line="44" static="1"><f a="tup">
-	<a><_1><c path="fst.A"/></_1></a>
-	<c path="fst.A"/>
-</f></fst>
-		<snd public="1" params="A" get="inline" set="null" line="47" static="1"><f a="tup">
-	<a><_2><c path="snd.A"/></_2></a>
-	<c path="snd.A"/>
-</f></snd>
-		<with public="1" params="A:B" get="inline" set="null" line="50" static="1"><f a="a:b">
-	<c path="with.A"/>
-	<c path="with.B"/>
-	<x path="interlude.ds.Pair">
-		<c path="with.A"/>
-		<c path="with.B"/>
-	</x>
-</f></with>
-		<meta><m n=":directlyUsed"/></meta>
-	</class>
-	<abstract path="interlude.ds.Trio" params="X:Y:Z" file="src/interlude/ds/Pair.hx" module="interlude.ds.Pair">
-		<from><icast><c path="interlude.ds.TTrio">
-	<c path="interlude.ds.Trio.X"/>
-	<c path="interlude.ds.Trio.Y"/>
-	<c path="interlude.ds.Trio.Z"/>
-</c></icast></from>
-		<this><c path="interlude.ds.TTrio">
-	<c path="interlude.ds.Trio.X"/>
-	<c path="interlude.ds.Trio.Y"/>
-	<c path="interlude.ds.Trio.Z"/>
-</c></this>
-		<to><icast><c path="interlude.ds.TTrio">
-	<c path="interlude.ds.Trio.X"/>
-	<c path="interlude.ds.Trio.Y"/>
-	<c path="interlude.ds.Trio.Z"/>
-</c></icast></to>
-		<meta>
-			<m n=":nullSafety"><e>Strict</e></m>
-			<m n=":forward"/>
-		</meta>
-		<impl><class path="interlude.ds._Pair.Trio_Impl_" params="" file="src/interlude/ds/Pair.hx" private="1" module="interlude.ds.Pair" final="1">
-	<_new public="1" get="inline" set="null" line="58" static="1">
-		<f a="trio">
-			<c path="interlude.ds.TTrio">
-				<c path="interlude.ds.Trio.X"/>
-				<c path="interlude.ds.Trio.Y"/>
-				<c path="interlude.ds.Trio.Z"/>
-			</c>
-			<x path="interlude.ds.Trio">
-				<c path="interlude.ds.Trio.X"/>
-				<c path="interlude.ds.Trio.Y"/>
-				<c path="interlude.ds.Trio.Z"/>
-			</x>
-		</f>
-		<meta><m n=":noCompletion"/></meta>
-	</_new>
-	<apply public="1" params="A:B:C:Z" get="inline" set="null" line="60" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-		<c path="apply.C"/>
-	</x>
-	<f a="::">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-		<c path="apply.C"/>
-		<c path="apply.Z"/>
-	</f>
-	<c path="apply.Z"/>
-</f></apply>
-	<eval public="1" params="A:B:Z" get="inline" set="null" line="63" static="1"><f a="t">
-	<x path="interlude.ds.Trio">
-		<f a=":">
-			<c path="eval.A"/>
-			<c path="eval.B"/>
-			<c path="eval.Z"/>
-		</f>
-		<c path="eval.A"/>
-		<c path="eval.B"/>
-	</x>
-	<c path="eval.Z"/>
-</f></eval>
-	<fromN public="1" params="A:B:C:Z" get="inline" set="null" line="66" static="1"><f a="fn:t">
-	<f a="::">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.C"/>
-		<c path="fromN.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.C"/>
-	</x>
-	<c path="fromN.Z"/>
-</f></fromN>
-	<fromNC public="1" params="A:B:C:Z" get="inline" set="null" line="69" static="1"><f a="fn:t">
-	<f a="">
-		<c path="fromNC.A"/>
-		<f a="">
-			<c path="fromNC.B"/>
-			<f a="">
-				<c path="fromNC.C"/>
-				<c path="fromNC.Z"/>
-			</f>
-		</f>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="fromNC.A"/>
-		<c path="fromNC.B"/>
-		<c path="fromNC.C"/>
-	</x>
-	<c path="fromNC.Z"/>
-</f></fromNC>
-	<map_1 public="1" params="A:B:C:Z" set="method" line="72" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="map_1.A"/>
-		<c path="map_1.B"/>
-		<c path="map_1.C"/>
-	</x>
-	<f a="">
-		<c path="map_1.A"/>
-		<c path="map_1.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="map_1.Z"/>
-		<c path="map_1.B"/>
-		<c path="map_1.C"/>
-	</x>
-</f></map_1>
-	<map_2 public="1" params="A:B:C:Z" set="method" line="78" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="map_2.A"/>
-		<c path="map_2.B"/>
-		<c path="map_2.C"/>
-	</x>
-	<f a="">
-		<c path="map_2.B"/>
-		<c path="map_2.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="map_2.A"/>
-		<c path="map_2.Z"/>
-		<c path="map_2.C"/>
-	</x>
-</f></map_2>
-	<map_3 public="1" params="A:B:C:Z" set="method" line="84" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="map_3.A"/>
-		<c path="map_3.B"/>
-		<c path="map_3.C"/>
-	</x>
-	<f a="">
-		<c path="map_3.C"/>
-		<c path="map_3.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="map_3.A"/>
-		<c path="map_3.B"/>
-		<c path="map_3.Z"/>
-	</x>
-</f></map_3>
-	<thd public="1" params="A" get="inline" set="null" line="90" static="1"><f a="tup">
-	<a><_3><c path="thd.A"/></_3></a>
-	<c path="thd.A"/>
-</f></thd>
-	<with3 public="1" params="A:B:C" get="inline" set="null" line="96" static="1"><f a="a:b:c">
-	<c path="with3.A"/>
-	<c path="with3.B"/>
-	<c path="with3.C"/>
-	<x path="interlude.ds.Trio">
-		<c path="with3.A"/>
-		<c path="with3.B"/>
-		<c path="with3.C"/>
-	</x>
-</f></with3>
-</class></impl>
-	</abstract>
-	<class path="interlude.ds._Pair.Trio_Impl_" params="" file="src/interlude/ds/Pair.hx" private="1" module="interlude.ds.Pair" final="1">
-		<_new public="1" get="inline" set="null" line="58" static="1">
-			<f a="trio">
-				<c path="interlude.ds.TTrio">
-					<c path="interlude.ds.Trio.X"/>
-					<c path="interlude.ds.Trio.Y"/>
-					<c path="interlude.ds.Trio.Z"/>
-				</c>
-				<x path="interlude.ds.Trio">
-					<c path="interlude.ds.Trio.X"/>
-					<c path="interlude.ds.Trio.Y"/>
-					<c path="interlude.ds.Trio.Z"/>
-				</x>
-			</f>
-			<meta><m n=":noCompletion"/></meta>
-		</_new>
-		<apply public="1" params="A:B:C:Z" get="inline" set="null" line="60" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-		<c path="apply.C"/>
-	</x>
-	<f a="::">
-		<c path="apply.A"/>
-		<c path="apply.B"/>
-		<c path="apply.C"/>
-		<c path="apply.Z"/>
-	</f>
-	<c path="apply.Z"/>
-</f></apply>
-		<eval public="1" params="A:B:Z" get="inline" set="null" line="63" static="1"><f a="t">
-	<x path="interlude.ds.Trio">
-		<f a=":">
-			<c path="eval.A"/>
-			<c path="eval.B"/>
-			<c path="eval.Z"/>
-		</f>
-		<c path="eval.A"/>
-		<c path="eval.B"/>
-	</x>
-	<c path="eval.Z"/>
-</f></eval>
-		<fromN public="1" params="A:B:C:Z" get="inline" set="null" line="66" static="1"><f a="fn:t">
-	<f a="::">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.C"/>
-		<c path="fromN.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.C"/>
-	</x>
-	<c path="fromN.Z"/>
-</f></fromN>
-		<fromNC public="1" params="A:B:C:Z" get="inline" set="null" line="69" static="1"><f a="fn:t">
-	<f a="">
-		<c path="fromNC.A"/>
-		<f a="">
-			<c path="fromNC.B"/>
-			<f a="">
-				<c path="fromNC.C"/>
-				<c path="fromNC.Z"/>
-			</f>
-		</f>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="fromNC.A"/>
-		<c path="fromNC.B"/>
-		<c path="fromNC.C"/>
-	</x>
-	<c path="fromNC.Z"/>
-</f></fromNC>
-		<map_1 public="1" params="A:B:C:Z" set="method" line="72" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="map_1.A"/>
-		<c path="map_1.B"/>
-		<c path="map_1.C"/>
-	</x>
-	<f a="">
-		<c path="map_1.A"/>
-		<c path="map_1.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="map_1.Z"/>
-		<c path="map_1.B"/>
-		<c path="map_1.C"/>
-	</x>
-</f></map_1>
-		<map_2 public="1" params="A:B:C:Z" set="method" line="78" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="map_2.A"/>
-		<c path="map_2.B"/>
-		<c path="map_2.C"/>
-	</x>
-	<f a="">
-		<c path="map_2.B"/>
-		<c path="map_2.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="map_2.A"/>
-		<c path="map_2.Z"/>
-		<c path="map_2.C"/>
-	</x>
-</f></map_2>
-		<map_3 public="1" params="A:B:C:Z" set="method" line="84" static="1"><f a="t:fn">
-	<x path="interlude.ds.Trio">
-		<c path="map_3.A"/>
-		<c path="map_3.B"/>
-		<c path="map_3.C"/>
-	</x>
-	<f a="">
-		<c path="map_3.C"/>
-		<c path="map_3.Z"/>
-	</f>
-	<x path="interlude.ds.Trio">
-		<c path="map_3.A"/>
-		<c path="map_3.B"/>
-		<c path="map_3.Z"/>
-	</x>
-</f></map_3>
-		<thd public="1" params="A" get="inline" set="null" line="90" static="1"><f a="tup">
-	<a><_3><c path="thd.A"/></_3></a>
-	<c path="thd.A"/>
-</f></thd>
-		<with3 public="1" params="A:B:C" get="inline" set="null" line="96" static="1"><f a="a:b:c">
-	<c path="with3.A"/>
-	<c path="with3.B"/>
-	<c path="with3.C"/>
-	<x path="interlude.ds.Trio">
-		<c path="with3.A"/>
-		<c path="with3.B"/>
-		<c path="with3.C"/>
-	</x>
-</f></with3>
 	</class>
 	<abstract path="interlude.ds.State" params="X:A" file="src/interlude/ds/State.hx">
 		<from><icast><f a="">
@@ -7201,21 +6885,30 @@
 			<m n=":publicFields"/>
 		</meta>
 	</class>
-	<class path="interlude.func.ValueTools" params="" file="src/interlude/func/ValueTools.hx">
-		<add1 public="1" get="inline" set="null" line="7" static="1">
+	<class path="interlude.func.IntTools" params="" file="src/interlude/func/ValueTools.hx" module="interlude.func.ValueTools">
+		<add public="1" get="inline" set="null" line="6" static="1">
+			<f a="a:b">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<haxe_doc>Adds two Ints</haxe_doc>
+		</add>
+		<add1 public="1" get="inline" set="null" line="10" static="1">
 			<f a="n">
 				<x path="Int"/>
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Adds 1 to an Int</haxe_doc>
 		</add1>
-		<add1f public="1" get="inline" set="null" line="11" static="1">
-			<f a="n">
-				<x path="Float"/>
-				<x path="Float"/>
+		<sub public="1" get="inline" set="null" line="14" static="1">
+			<f a="a:b">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
 			</f>
-			<haxe_doc>Adds 1.0 to a Float</haxe_doc>
-		</add1f>
+			<haxe_doc>Subtracts `b` from `a`</haxe_doc>
+		</sub>
 		<sub1 public="1" get="inline" set="null" line="18" static="1">
 			<f a="n">
 				<x path="Int"/>
@@ -7223,21 +6916,57 @@
 			</f>
 			<haxe_doc>Subtracts 1 from an Int</haxe_doc>
 		</sub1>
-		<sub1f public="1" get="inline" set="null" line="22" static="1">
+		<meta>
+			<m n=":directlyUsed"/>
+			<m n=":nullSafety"><e>Strict</e></m>
+			<m n=":publicFields"/>
+		</meta>
+	</class>
+	<class path="interlude.func.FloatTools" params="" file="src/interlude/func/ValueTools.hx" module="interlude.func.ValueTools">
+		<add public="1" get="inline" set="null" line="26" static="1">
+			<f a="a:b">
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<haxe_doc>Adds two Floats</haxe_doc>
+		</add>
+		<add1 public="1" get="inline" set="null" line="30" static="1">
+			<f a="n">
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<haxe_doc>Adds 1.0 to a Float</haxe_doc>
+		</add1>
+		<sub public="1" get="inline" set="null" line="34" static="1">
+			<f a="a:b">
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<haxe_doc>Subtracts `b` from `a`</haxe_doc>
+		</sub>
+		<sub1 public="1" get="inline" set="null" line="38" static="1">
 			<f a="n">
 				<x path="Float"/>
 				<x path="Float"/>
 			</f>
 			<haxe_doc>Subtracts 1.0 from a Float</haxe_doc>
-		</sub1f>
-		<discard public="1" params="A" get="inline" set="null" line="26" static="1">
+		</sub1>
+		<meta>
+			<m n=":nullSafety"><e>Strict</e></m>
+			<m n=":publicFields"/>
+		</meta>
+	</class>
+	<class path="interlude.func.ValueTools" params="" file="src/interlude/func/ValueTools.hx">
+		<discard public="1" params="A" get="inline" set="null" line="49" static="1">
 			<f a="_">
 				<c path="discard.A"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>An extension that drops its value into a Void</haxe_doc>
 		</discard>
-		<discardWithPos public="1" params="A" get="inline" set="null" line="30" static="1">
+		<discardWithPos public="1" params="A" get="inline" set="null" line="53" static="1">
 			<f a="_:?pos">
 				<c path="discardWithPos.A"/>
 				<x path="Null"><t path="haxe.PosInfos"/></x>
@@ -7245,11 +6974,11 @@
 			</f>
 			<haxe_doc>An extension that drops its value and position info into a Void</haxe_doc>
 		</discardWithPos>
-		<doNothing public="1" get="inline" set="null" line="34" static="1">
+		<doNothing public="1" get="inline" set="null" line="57" static="1">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>A no-op function</haxe_doc>
 		</doNothing>
-		<equals public="1" params="A" get="inline" set="null" line="38" static="1">
+		<equals public="1" params="A" get="inline" set="null" line="61" static="1">
 			<f a="x:y">
 				<c path="equals.A"/>
 				<c path="equals.A"/>
@@ -7257,7 +6986,7 @@
 			</f>
 			<haxe_doc>Composable version of the `==` operator</haxe_doc>
 		</equals>
-		<identity public="1" params="A" get="inline" set="null" line="45" static="1">
+		<identity public="1" params="A" get="inline" set="null" line="68" static="1">
 			<f a="a">
 				<c path="identity.A"/>
 				<c path="identity.A"/>
@@ -7265,7 +6994,7 @@
 			<haxe_doc>A function that always returns its input unchanged  
         `Some(123).map(identity)` == `Some(123)`</haxe_doc>
 		</identity>
-		<keyedWith public="1" params="K:V" get="inline" set="null" line="52" static="1">
+		<keyedWith public="1" params="K:V" get="inline" set="null" line="75" static="1">
 			<f a="value:key">
 				<c path="keyedWith.V"/>
 				<c path="keyedWith.K"/>
@@ -7277,7 +7006,7 @@
 			<haxe_doc>Composable way to create a Key/Value pair  
         `"abc".keyedWith(123)` == `{ key: 123, value: "abc" }`</haxe_doc>
 		</keyedWith>
-		<keyFor public="1" params="K:V" get="inline" set="null" line="59" static="1">
+		<keyFor public="1" params="K:V" get="inline" set="null" line="82" static="1">
 			<f a="key:value">
 				<c path="keyFor.K"/>
 				<c path="keyFor.V"/>
@@ -7289,7 +7018,7 @@
 			<haxe_doc>Composable way to create a Key/Value pair  
         `123.keyFor("abc")` == `{ key: 123, value: "abc" }`</haxe_doc>
 		</keyFor>
-		<let public="1" params="T:K" get="inline" set="null" line="67" static="1">
+		<let public="1" params="T:K" get="inline" set="null" line="90" static="1">
 			<f a="v:transformer">
 				<c path="let.T"/>
 				<f a="">
@@ -7302,7 +7031,7 @@
         Similar to `map` but for any value  
         `123.let(Std.string)` == `"123"`</haxe_doc>
 		</let>
-		<mut public="1" params="T" get="inline" set="null" line="74" static="1">
+		<mut public="1" params="T" get="inline" set="null" line="97" static="1">
 			<f a="v:mutator">
 				<c path="mut.T"/>
 				<f a="">
@@ -7314,14 +7043,14 @@
 			<haxe_doc>Fluent method for mutating a value or whatever else  
         Similar to `mutate` but for any value</haxe_doc>
 		</mut>
-		<notb public="1" get="inline" set="null" line="80" static="1">
+		<notb public="1" get="inline" set="null" line="103" static="1">
 			<f a="b">
 				<x path="Bool"/>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Composable version of the `!` (not) operator</haxe_doc>
 		</notb>
-		<notEquals public="1" params="A" get="inline" set="null" line="84" static="1">
+		<notEquals public="1" params="A" get="inline" set="null" line="107" static="1">
 			<f a="x:y">
 				<c path="notEquals.A"/>
 				<c path="notEquals.A"/>
@@ -7329,7 +7058,7 @@
 			</f>
 			<haxe_doc>Composable version of the `!=` operator</haxe_doc>
 		</notEquals>
-		<v_ public="1" params="A:B" set="method" line="91" static="1">
+		<v_ public="1" params="A:B" set="method" line="114" static="1">
 			<f a="value:input">
 				<c path="v_.A"/>
 				<c path="v_.B"/>
@@ -7338,7 +7067,7 @@
 			<haxe_doc>An extension that always returns the original value and drops any input  
         `69.v_("nice")` == `69`</haxe_doc>
 		</v_>
-		<_n public="1" params="A:B" set="method" line="98" static="1">
+		<_n public="1" params="A:B" set="method" line="121" static="1">
 			<f a="value:input">
 				<c path="_n.A"/>
 				<c path="_n.B"/>
