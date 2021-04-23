@@ -1,26 +1,49 @@
 package interlude.func;
-
 @:nullSafety(Strict)
 @:publicFields
-class ValueTools {
+class IntTools {
+    /** Adds two Ints **/
+    inline static function add(a:Int, b:Int) return
+        a + b;
+
     /** Adds 1 to an Int **/
     inline static function add1(n:Int):Int return
         n + 1;
 
-    /** Adds 1.0 to a Float **/
-    inline static function add1f(n:Float):Float return
-        n + 1.0;
-
-    //inline static function branch<A, B>(value:A, predicate:A->Bool, whenTrue:A->B, whenFalse:A->B):B return
-    //    predicate(value) ? whenTrue(value) : whenFalse(value);
+    /** Subtracts `b` from `a` **/
+    inline static function sub(a:Int, b:Int) return
+        a - b;
 
     /** Subtracts 1 from an Int**/
     inline static function sub1(n:Int):Int return
         n - 1;
+}
+
+@:nullSafety(Strict)
+@:publicFields
+class FloatTools {
+    /** Adds two Floats **/
+    inline static function add(a:Float, b:Float) return
+        a + b;
+
+    /** Adds 1.0 to a Float **/
+    inline static function add1(n:Float):Float return
+        n + 1.0;
+
+    /** Subtracts `b` from `a` **/
+    inline static function sub(a:Float, b:Float) return
+        a - b;
 
     /** Subtracts 1.0 from a Float **/
-    inline static function sub1f(n:Float):Float return
+    inline static function sub1(n:Float):Float return
         n - 1.0;
+}
+
+@:nullSafety(Strict)
+@:publicFields
+class ValueTools {
+    //inline static function branch<A, B>(value:A, predicate:A->Bool, whenTrue:A->B, whenFalse:A->B):B return
+    //    predicate(value) ? whenTrue(value) : whenFalse(value);
 
     /** An extension that drops its value into a Void **/
     inline static function discard<A>(_:A):Void return

@@ -41,7 +41,7 @@ class TestIterableTools implements ITest {
                   ].ap([1, 2, 3]);
         Assert.same([1, 2, 3], foo.toArray());
 
-        var bar = [ a -> b -> a + b
+        var bar = [ add.curry()
                   ].ap([1, 2, 3])
                    .ap([4, 5, 6]);
         Assert.same( [ 1+4, 1+5, 1+6
@@ -49,8 +49,8 @@ class TestIterableTools implements ITest {
                      , 3+4, 3+5, 3+6 ]
                    , bar.toArray());
 
-        var baz = [ a -> b -> a + b
-                  , a -> b -> a - b
+        var baz = [ add.curry()
+                  , sub.curry()
                   ].ap([1, 2])
                    .ap([3, 4]);
         Assert.same( [ 1+3, 1+4, 2+3, 2+4
@@ -268,9 +268,6 @@ class TestIterableTools implements ITest {
     function testFolds() {
         var empty = [];
         var three = [1, 2, 3];
-
-        var add = (a, b) -> a + b;
-        var sub = (a, b) -> a - b;
 
         Assert.equals( 0, empty.foldl(0, add));
         Assert.equals( 0, empty.foldl(0, sub));

@@ -85,7 +85,7 @@ class TestState implements ITest {
         var stateA = 123.asState();
         var stateB = 456.asState();
 
-        var zipped = stateA.zipWith(stateB, (a, b) -> a + b);
+        var zipped = stateA.zipWith(stateB, add);
         Assert.same(579, zipped.eval(Unit)); // 123 + 456
     }
 
