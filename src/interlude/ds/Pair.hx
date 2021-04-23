@@ -3,9 +3,13 @@ package interlude.ds;
 typedef KeyValuePair<K:NotVoid, V:NotVoid>  = { key:K, value:V };
 
 // TODO: change var to final
-typedef TPair<X:NotVoid, Y:NotVoid> = { var _1:X; var _2:Y; }
+@:publicFields
+@:structInit
+class TPair<X:NotVoid, Y:NotVoid> { var _1:X; var _2:Y; }
 
-typedef TTrio<X:NotVoid, Y:NotVoid, Z:NotVoid> = { var _1:X; var _2:Y; var _3:Z; }
+@:publicFields
+@:structInit
+class TTrio<X:NotVoid, Y:NotVoid, Z:NotVoid> { var _1:X; var _2:Y; var _3:Z; }
 
 @:nullSafety(Strict)
 @:forward

@@ -93,6 +93,6 @@ class TestState implements ITest {
         var stateA = 123.asState();
         var stateB = 456.asState();
 
-        Assert.same({_1: 123, _2: 456}, stateA.zip(stateB).eval(Unit));
+        Assert.same(123.with(456), stateA.zip(stateB).eval(Unit));
     }
 }
