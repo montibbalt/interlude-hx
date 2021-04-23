@@ -698,7 +698,7 @@ class IterableTools {
         Returns all the `Some` values from a set of `Option`s
     **/
     static function somes<A>(as:Iterable<Option<A>>):Iterable<A> return
-        as.flatMap(OptionTools.toArray);
+        as.flatMap(OptionTools.toIterable);
 
     /**
         Returns a `Pair` containing the longest prefix of `as` that match some 

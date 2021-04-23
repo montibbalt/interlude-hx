@@ -50,9 +50,16 @@ abstract State<X, A>(X->Pair<A, X>) from X->Pair<A, X> to X->Pair<A, X> {
     public static function zip<X, A, B>(sa:State<X, A>, sb:State<X, B>):State<X, Pair<A, B>> return
         sa.zipWith(sb, Pair.with);
 
-    public static function zipWith<X, A, B, Z>(sa:State<X, A>, sb:State<X, B>, fn:A->B->Z):State<X, Z> return
-        x -> fn(sa(x)._1, sb(x)._1).with(x);
+    public static function zipWith<X, A, B, Z>(sa:State<X, A>, sb:State<X, B>, fn:A->B->Z):State<X, Z> return x -> {
+        var a = sa(x);
+        var b = sb(a._2);
+        fn(a._1, b._1).with(b._2);
+    }
 
-    public static function zipWith3<X, A, B, C, Z>(sa:State<X, A>, sb:State<X, B>, sc:State<X, C>, fn:A->B->C->Z):State<X, Z> return
-        x -> fn(sa(x)._1, sb(x)._1, sc(x)._1).with(x);
+    public static function zipWith3<X, A, B, C, Z>(sa:State<X, A>, sb:State<X, B>, sc:State<X, C>, fn:A->B->C->Z):State<X, Z> return x -> {
+        var a = sa(x);
+        var b = sb(a._2);
+        var c = sc(b._2);
+        fn(a._1, b._1, c._1).with(c._2);
+    }
 }
