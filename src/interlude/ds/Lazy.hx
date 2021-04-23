@@ -1,27 +1,27 @@
 package interlude.ds;
 
 @:nullSafety(Strict)
+@:publicFields
 class Lazy<A:NotVoid> {
-    @:allow(interlude.ds)
-    var result:Null<A> = null;
-    var genValue:() -> A;
-    public function new(genValue:() -> A) {
+    var result(default, null):Null<A> = null;
+    var genValue(default, null):() -> A;
+    function new(genValue:() -> A) {
         this.genValue = genValue;
     }
 
-    inline public function eval():A return result != null
+    inline function eval():A return result != null
         ? result
         : result = genValue();
 
 
-    public function toIterable():Iterable<A> return result != null
+    function toIterable():Iterable<A> return result != null
         ? [result]
         : { iterator: () -> { hasNext   : () -> result == null
                             , next      : () -> eval()
                             }
           }
 
-    public function toString():String return result != null
+    function toString():String return result != null
         ? '$result'
         : 'Lazy<>';
 

@@ -3,16 +3,14 @@ package interlude.ds;
 typedef KeyValuePair<K:NotVoid, V:NotVoid>  = { key:K, value:V };
 
 // TODO: change var to final
-@:dox(hide)
-typedef PairImpl<X:NotVoid, Y:NotVoid> = { var _1:X; var _2:Y; }
+typedef TPair<X:NotVoid, Y:NotVoid> = { var _1:X; var _2:Y; }
 
-@:dox(hide)
-typedef TrioImpl<X:NotVoid, Y:NotVoid, Z:NotVoid> = { var _1:X; var _2:Y; var _3:Z; }
+typedef TTrio<X:NotVoid, Y:NotVoid, Z:NotVoid> = { var _1:X; var _2:Y; var _3:Z; }
 
 @:nullSafety(Strict)
 @:forward
-abstract Pair<X, Y>(PairImpl<X, Y>) from PairImpl<X, Y> to PairImpl<X, Y> {
-    inline public function new(pair:PairImpl<X, Y>) this = pair;
+abstract Pair<X, Y>(TPair<X, Y>) from TPair<X, Y> to TPair<X, Y> {
+    inline public function new(pair:TPair<X, Y>) this = pair;
 
     inline public static function apply<A, B, Z>(t:Pair<A, B>, fn:(A, B)->Z):Z return
         fn(t._1, t._2);
@@ -52,8 +50,8 @@ abstract Pair<X, Y>(PairImpl<X, Y>) from PairImpl<X, Y> to PairImpl<X, Y> {
 
 @:nullSafety(Strict)
 @:forward
-abstract Trio<X, Y, Z>(TrioImpl<X, Y, Z>) from TrioImpl<X, Y, Z> to TrioImpl<X, Y, Z> {
-    inline public function new(trio:TrioImpl<X, Y, Z>) this = trio;
+abstract Trio<X, Y, Z>(TTrio<X, Y, Z>) from TTrio<X, Y, Z> to TTrio<X, Y, Z> {
+    inline public function new(trio:TTrio<X, Y, Z>) this = trio;
 
     inline public static function apply<A, B, C, Z>(t:Trio<A, B, C>, fn:(A, B, C)->Z):Z return
         fn(t._1, t._2, t._3);
