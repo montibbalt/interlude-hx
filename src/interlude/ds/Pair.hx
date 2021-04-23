@@ -2,14 +2,13 @@ package interlude.ds;
 
 typedef KeyValuePair<K:NotVoid, V:NotVoid>  = { key:K, value:V };
 
-// TODO: change var to final
 @:publicFields
 @:structInit
-class TPair<X:NotVoid, Y:NotVoid> { var _1:X; var _2:Y; }
+class TPair<X:NotVoid, Y:NotVoid> { final _1:X; final _2:Y; }
 
 @:publicFields
 @:structInit
-class TTrio<X:NotVoid, Y:NotVoid, Z:NotVoid> { var _1:X; var _2:Y; var _3:Z; }
+class TTrio<X:NotVoid, Y:NotVoid, Z:NotVoid> { final _1:X; final _2:Y; final _3:Z; }
 
 @:nullSafety(Strict)
 @:forward
@@ -41,10 +40,10 @@ abstract Pair<X, Y>(TPair<X, Y>) from TPair<X, Y> to TPair<X, Y> {
     ,   _2: fn(t._2)
     }
 
-    inline public static function fst<A>(tup:{_1:A}):A return
+    inline public static function fst<A>(tup:{final _1:A;}):A return
         tup._1;
 
-    inline public static function snd<A>(tup:{_2:A}):A return
+    inline public static function snd<A>(tup:{final _2:A;}):A return
         tup._2;
 
     inline public static function with<A, B>(a:A, b:B):Pair<A, B> return
@@ -87,7 +86,7 @@ abstract Trio<X, Y, Z>(TTrio<X, Y, Z>) from TTrio<X, Y, Z> to TTrio<X, Y, Z> {
     ,   _3: fn(t._3)
     }
 
-    inline public static function thd<A>(tup:{_3:A}):A return
+    inline public static function thd<A>(tup:{final _3:A;}):A return
         tup._3;
 
     //inline public static function with<A, B, C>(b:Pair<A, B>, a:C):Trio<A, B, C> return

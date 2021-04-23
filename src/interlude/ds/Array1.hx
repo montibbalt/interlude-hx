@@ -26,8 +26,8 @@ abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> {
         ? this._1
         : this._2[index - 1];
 
-    @:arrayAccess function set(index:Int, value:A):A return index == 0
-        ? this._1 = value
+    @:arrayAccess inline function set(index:Int, value:A):A return index == 0
+        ? (this = value.with(this._2))._1
         : this._2[index - 1] = value;
 
     public function iterator():Iterator<A> return {
