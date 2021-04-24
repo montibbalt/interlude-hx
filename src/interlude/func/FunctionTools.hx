@@ -1,5 +1,6 @@
 package interlude.func;
 
+/** Common functions that operate on other functions **/
 @:nullSafety(Strict)
 @:publicFields
 class FunctionTools {

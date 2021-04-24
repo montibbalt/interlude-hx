@@ -2,6 +2,7 @@ package interlude.ds;
 
 import haxe.Constraints.IMap;
 
+/** Extension methods for `Map`-like structures **/
 @:publicFields
 @:nullSafety(Strict)
 class MapTools {

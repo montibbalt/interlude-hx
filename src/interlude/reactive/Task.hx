@@ -1,5 +1,12 @@
 package interlude.reactive;
 
+/**
+    A type that represents an asynchronous value. This is often called `Future`
+
+    This implementation avoids stack problems some implementations have, but
+    allows/requires the user to control resolution. A simple way to do this is
+    to add `Task.runner.resolve();` to your main loop.
+**/
 @:nullSafety(Strict)
 @:publicFields
 class Task<A:NotVoid> {

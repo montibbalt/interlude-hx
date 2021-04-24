@@ -1,5 +1,10 @@
 package interlude.reactive;
 
+/**
+    Represents a value that can change over time. This is sometimes also called
+    a `Stream` of values. Has the same resolution requirements as
+    `interlude.reactive.Task`
+**/
 @:nullSafety(Strict)
 @:publicFields
 class Observable<A:NotVoid> {

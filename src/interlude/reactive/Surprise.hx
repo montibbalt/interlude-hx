@@ -1,5 +1,10 @@
 package interlude.reactive;
 
+/**
+    A type that represents an asyncronous operation that can fail. Analogous to
+    a `Promise`. Since this is based on `interlude.reactive.Task`, it has the
+    same resolution requirements.
+**/
 @:using(interlude.reactive.Surprise.SurpriseTools)
 typedef Surprise<A> = Task<Outcome<A>>;
 

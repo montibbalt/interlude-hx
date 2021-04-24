@@ -1,5 +1,12 @@
 package interlude.reactive;
 
+/**
+    A type of double buffer meant to handle resolution of
+    `interlude.reactive.Task`s, but can work on any `Void` functions.
+
+    Consumes the entire buffer, swapping the front and back buffers until both
+    are empty
+**/
 @:nullSafety(Strict)
 @:publicFields
 @:structInit
