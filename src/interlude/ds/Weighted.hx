@@ -39,14 +39,11 @@ abstract Weighted<A:NotVoid>(Iterable<Pair<A, Float>>) from Iterable<Pair<A, Flo
 
     public function toString():String return
         [for(pair in this.normalize()) '${pair._2} => ${pair._1}'].join('\n');
-}
 
-@:publicFields
-class WeightedTools {
     /**
       Lifts a single value into a weighted distribution
      **/
-    static function asWeighted<A>(t:A):Weighted<A> return
+    public static function asWeighted<A>(t:A):Weighted<A> return
         [t].uniform();
 
     /**
@@ -54,7 +51,7 @@ class WeightedTools {
       function that generates a random value between 0 and 1, e.g. `Math.random`  
       Clamps the output of `randomGen` between 0.0 and 1.0
      **/
-    static function draw<A>(dist:Weighted<A>, randomGen:()->Float):A return {
+    public static function draw<A>(dist:Weighted<A>, randomGen:()->Float):A return {
         var rand = randomGen().max(0.0).min(1.0);
 
         var index = dist
@@ -70,7 +67,7 @@ class WeightedTools {
       e.g. `Math.random`  
       Clamps the output of `randomGen` between 0.0 and 1.0
      **/
-    static function drawIndex<A>(dist:Weighted<A>, randomGen:()->Float):Int return {
+    public static function drawIndex<A>(dist:Weighted<A>, randomGen:()->Float):Int return {
         var rand = randomGen().max(0.0).min(1.0);
 
         dist.scan_(0.0, (acc, val) -> acc + val._2)
@@ -83,13 +80,13 @@ class WeightedTools {
       of type `B`, and flattens the results  
       Monadic bind/flatMap
      **/
-    static function flatMap<A, B>(dist:Weighted<A>, fn:A->Weighted<B>):Weighted<B> return
+    public static function flatMap<A, B>(dist:Weighted<A>, fn:A->Weighted<B>):Weighted<B> return
         dist.map(fn).flatten();
 
     /**
       Flattens one layer of a probability tree by multiplying weights together
      **/
-    static function flatten<A>(dists:Weighted<Weighted<A>>):Weighted<A> return [
+    public static function flatten<A>(dists:Weighted<Weighted<A>>):Weighted<A> return [
         for(dist in dists.normalize())
             for(d in dist._1.normalize())
                 d._1.with(dist._2 * d._2)
@@ -99,7 +96,7 @@ class WeightedTools {
       Maps the `A` elements of a weighted distribution to a type `B` using `fn`  
       `[123.with(1)].map(x -> '$x')` == `['123'.with(1)]`
      **/
-    static function map<A, B>(dist:Weighted<A>, fn:A->B):Weighted<B> return [
+    public static function map<A, B>(dist:Weighted<A>, fn:A->B):Weighted<B> return [
         for(t in dist)
             fn(t._1).with(t._2)
     ];
@@ -108,7 +105,7 @@ class WeightedTools {
       Normalizes large weights to numbers between 0 and 1  
       `['abc'.with(450), 'def'.with(50)].normalize()` == `['abc'.with(0.9), 'def'.with(0.1)]`
      **/
-    static function normalize<A>(dist:Weighted<A>):Weighted<A> return {
+    public static function normalize<A>(dist:Weighted<A>):Weighted<A> return {
         var total = 0.0;
         for(pair in dist)
             total += pair._2;
@@ -119,7 +116,7 @@ class WeightedTools {
     /**
       Pretty-prints the weights in a distribution
      **/
-    static function show<A>(dist:Weighted<A>):String return [
+    public static function show<A>(dist:Weighted<A>):String return [
         for(pair in dist)
             '${pair._1}: ${pair._2}'
     ].join(',\n');
@@ -127,6 +124,6 @@ class WeightedTools {
     /**
       Creates an even set of weights from a list of elements
      **/
-    static function uniform<A>(vals:Iterable<A>):Weighted<A> return
+    public static function uniform<A>(vals:Iterable<A>):Weighted<A> return
         vals.mapL(a -> a.with(1.0)).normalize().toArray();
 }

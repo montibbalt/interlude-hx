@@ -1,5 +1,8 @@
 package interlude.ds;
 
+/**
+    Extension methods for haxe's built-in `Option` type
+**/
 @:nullSafety(Strict)
 @:publicFields
 class OptionTools {

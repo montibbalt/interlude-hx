@@ -1,8 +1,11 @@
 package interlude.ds;
 
+/**
+    An `Iterable` that is guaranteed to have at least one element
+**/
 @:nullSafety(Strict)
 @:forward
-abstract Iterable1<A:NotVoid>(Pair<A, Iterable<A>>) from Pair<A, Iterable<A>> {
+abstract Iterable1<A:NotVoid>(Pair<A, Iterable<A>>) from Pair<A, Iterable<A>> to Pair<A, Iterable<A>> {
     public var head(get, never):A;
     public var tail(get, never):Iterable<A>;
 
@@ -39,6 +42,8 @@ abstract Iterable1<A:NotVoid>(Pair<A, Iterable<A>>) from Pair<A, Iterable<A>> {
 
     @:to inline public function toArray1():Array1<A> return
         new Array1<A>(this._1.with(this._2.toArray()));
+    @:from static function fromArray1<A>(as:Array1<A>):Iterable1<A> return
+        as;
 
     @:to inline public function toArray():Array<A> return [
         for(a in iterator())
@@ -61,7 +66,7 @@ abstract Iterable1<A:NotVoid>(Pair<A, Iterable<A>>) from Pair<A, Iterable<A>> {
                 .append(aas.tail.flatMap(as -> as.toIterable())));
 
     public static function from1<A>(fst:A, ...rest:A):Iterable1<A> return
-        new Iterable1(fst.with(cast rest.toArray()));
+        new Iterable1(fst.with((rest.toArray():Iterable<A>)));
 
     public static function iterable1With<A>(head:A, tail:Iterable<A>):Iterable1<A> return
         new Iterable1(head.with(tail));

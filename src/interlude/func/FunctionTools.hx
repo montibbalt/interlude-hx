@@ -41,6 +41,8 @@ class FunctionTools {
     inline static function to<A, B, C>(ab:A->B, bc:B->C):A->C return
         bc.of(ab);
 
+    static function toLazy<A>(generator:()->A):Lazy<A> return
+        new Lazy(generator);
     /**
         Builds a function that returns a transformed value if it matches some `predicate`, or `None` if it doesn't
     **/

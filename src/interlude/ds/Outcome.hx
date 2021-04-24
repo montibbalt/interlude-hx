@@ -1,5 +1,10 @@
 package interlude.ds;
 
+/**
+    The result of an operation that can succeed or fail.  
+    A `Success` holds the output of the operation, and a `Failure` holds the
+    reason the operation failed.
+**/
 @:using(interlude.ds.Outcome.OutcomeTools)
 enum Outcome<A> {
     Success(a:A);

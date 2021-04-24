@@ -1,5 +1,14 @@
 package interlude.ds;
 
+/**
+    Delays evaluation of a value until access to it is needed
+    ```haxe
+    var delayed = expensiveOperation.toLazy();
+    trace(delayed.toString()); // 'Lazy<>'
+    var expensiveResult = delayed.eval();
+    trace(delayed.toString()); // expensiveResult
+    ```
+**/
 @:nullSafety(Strict)
 @:publicFields
 class Lazy<A:NotVoid> {
@@ -13,13 +22,10 @@ class Lazy<A:NotVoid> {
         ? result
         : result = genValue();
 
-
-    function toIterable():Iterable<A> return result != null
-        ? [result]
-        : { iterator: () -> { hasNext   : () -> result == null
-                            , next      : () -> eval()
-                            }
-          }
+    function iterator():Iterator<A> return {
+        hasNext : () -> result == null
+    ,   next    : () -> eval()
+    }
 
     function toString():String return result != null
         ? '$result'
@@ -29,7 +35,7 @@ class Lazy<A:NotVoid> {
         l.result != null;
 
     static function ap<A, B>(fn:Lazy<A->B>, a:Lazy<A>):Lazy<B> return
-        fn.flatMap(a.map);
+        flatMap(fn, a.map);
 
     inline static function asLazy<A>(a:A):Lazy<A> return
         new Lazy<A>(a.identity);
@@ -58,7 +64,7 @@ class Lazy<A:NotVoid> {
         [l.eval()];
 
     inline static function zip<A, B>(la:Lazy<A>, lb:Lazy<B>):Lazy<Pair<A, B>> return
-        la.zipWith(lb, Pair.with);
+        zipWith(la, lb, Pair.with);
 
     static function zipWith<A, B, C>(la:Lazy<A>, lb:Lazy<B>, fn:A->B->C):Lazy<C> return
         new Lazy(() -> fn(la.eval(), lb.eval()));

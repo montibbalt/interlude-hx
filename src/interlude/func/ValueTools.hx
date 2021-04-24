@@ -1,4 +1,6 @@
 package interlude.func;
+
+/** Named functions for `Int` operators **/
 @:nullSafety(Strict)
 @:publicFields
 class IntTools {
@@ -14,11 +16,26 @@ class IntTools {
     inline static function sub(a:Int, b:Int) return
         a - b;
 
-    /** Subtracts 1 from an Int**/
+    /** Subtracts 1 from an Int **/
     inline static function sub1(n:Int):Int return
         n - 1;
+
+    /** Multiplies two Ints **/
+    inline static function mul(a:Int, b:Int):Int return
+        a * b;
+
+    /** Divides `a` by `b` **/
+    inline static function div(a:Int, b:Int):Float return
+        a / b;
+
+    inline static function isEven(n:Int):Bool return
+        n % 2 == 0;
+
+    inline static function isOdd(n:Int):Bool return
+        n % 2 != 0;
 }
 
+/** Named functions for `Float` operators **/
 @:nullSafety(Strict)
 @:publicFields
 class FloatTools {
@@ -37,8 +54,19 @@ class FloatTools {
     /** Subtracts 1.0 from a Float **/
     inline static function sub1(n:Float):Float return
         n - 1.0;
+
+    /** Multiplies two Floats **/
+    inline static function mul(a:Float, b:Float):Float return
+        a * b;
+
+    /** Divides `a` by `b` **/
+    inline static function div(a:Float, b:Float):Float return
+        a / b;
 }
 
+/**
+    Common functions that are useful for any type
+**/
 @:nullSafety(Strict)
 @:publicFields
 class ValueTools {

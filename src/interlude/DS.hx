@@ -19,4 +19,3 @@ typedef Weighted<X>                 = interlude.ds.Weighted<X>;
 @:dox(hide) typedef NullTools       = interlude.ds.NullTools;
 @:dox(hide) typedef OptionTools     = interlude.ds.OptionTools;
 @:dox(hide) typedef OutcomeTools    = interlude.ds.Outcome.OutcomeTools;
-@:dox(hide) typedef WeightedTools   = interlude.ds.Weighted.WeightedTools;

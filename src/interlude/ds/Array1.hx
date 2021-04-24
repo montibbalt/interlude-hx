@@ -1,16 +1,23 @@
 package interlude.ds;
 
+/**
+    An array that is guaranteed to have at least one element
+**/
 @:nullSafety(Strict)
 @:forward
-abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> {
+abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> to Pair<A, Array<A>> {
     public var head(get, never):A;
     public var tail(get, never):Array<A>;
+    public var length(get, never):Int;
 
     inline function get_head():A return
         this._1;
 
     inline function get_tail():Array<A> return
         this._2;
+
+    inline function get_length():Int return
+        this._2.length + 1;
 
     inline public function new(arr1:Pair<A, Array<A>>)
         this = arr1;
@@ -50,10 +57,12 @@ abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> {
 
     @:to public function toIterable1():Iterable1<A> return
         new Iterable1(this._1.with((this._2:Iterable<A>)));
+    @:from static function fromIterable1<A>(as:Iterable1<A>):Array1<A> return
+        as;
 
     public function flatMap1<B>(fn:A->Array1<B>):Array1<B> return
         head.let(fn).let(mapped -> tail
-            .flatMap(x -> fn(x).toIterable())
+            .flatMap(x -> fn(x))
             .let(mapped.tail.append)
             .toArray()
             .let(mapped.head.array1With));

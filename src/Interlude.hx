@@ -32,7 +32,6 @@ typedef AsyncState<X, Y>    = interlude.ds.AsyncState<X, Y>;
 typedef Trio<X, Y, Z>       = interlude.ds.Pair.Trio<X, Y, Z>;
 typedef Unit                = interlude.ds.Unit;
 typedef Weighted<X>         = interlude.ds.Weighted<X>;
-typedef WeightedTools       = interlude.ds.Weighted.WeightedTools;
 
 typedef IterableTools       = interlude.iter.IterableTools;
 typedef IteratorTools       = interlude.iter.IteratorTools;

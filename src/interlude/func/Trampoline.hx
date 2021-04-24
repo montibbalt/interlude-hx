@@ -3,7 +3,7 @@ package interlude.func;
 /**
     Represents a recursive computation that has been broken into chunks to
     avoid growing the stack  
-    https://en.wikipedia.org/wiki/Tail_call#Through_trampolining
+    @see https://en.wikipedia.org/wiki/Tail_call#Through_trampolining
 **/
 enum Trampoline<T> {
     Done(t:T);

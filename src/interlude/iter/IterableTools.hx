@@ -1,5 +1,15 @@
 package interlude.iter;
 
+/**
+    Common extension methods for all types of `Iterable`s. Supports a fluent
+    query-like syntax.
+    ```haxe
+    0.range(100) // [0...99]
+        .filterL(isEven) // [0, 2, 4, ... 98]
+        .map(Std.string) // ['0', '2', '4', ... '98']
+        .maybeLast(); // Some('98')
+    ```
+**/
 @:nullSafety(Strict)
 @:publicFields
 class IterableTools {
@@ -60,8 +70,8 @@ class IterableTools {
 
     /**
         Returns a new `Iterable` that appends `with` onto the end of `as`  
-        See [Lambda.concat](https://api.haxe.org/Lambda.html#concat)  
         `[1, 2, 3].append([4, 5, 6])` == `[1, 2, 3, 4, 5, 6]`
+        @see [Lambda.concat](https://api.haxe.org/Lambda.html#concat)  
     **/
     static function append<A>(as:Iterable<A>, with:Iterable<A>):Iterable<A> return {
         iterator: () -> {
@@ -133,7 +143,7 @@ class IterableTools {
         `[6, 9].cycle()` == `[6, 9, 6, 9, 6, ...]`
     **/
     static function cycle<A>(as:Iterable<A>):Iterable<A> return as.isEmpty()
-        ? []
+        ? as
         : { iterator: () -> {
                 var as_it = as.iterator();
                 {   hasNext : () -> true
@@ -287,8 +297,8 @@ class IterableTools {
         Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
         This version is lazy  
-        See [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
         `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
+        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
     **/
     static function flatMap<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Iterable<B> return {
         iterator: () -> {
@@ -315,8 +325,8 @@ class IterableTools {
         Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
         This version is strict  
-        See [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
         `[1, 2, 3].flatMapS(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
+        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
     **/
     static function flatMapS<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Array<B> return
         [for(a in as) for (b in fn(a)) b];
@@ -332,10 +342,10 @@ class IterableTools {
     /**
         Applies `fn` over elements of `as` using `seed` as an initial value,
         reducing an `Iterable` to a single value. This version is left-associative  
-        See [Lambda.fold](https://api.haxe.org/Lambda.html#fold)  
         `[1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y)` == `0+1+2+3+4+5` == `15`  
         `[].foldl(0, (x, y) -> x + y)` == `0`  
         *NOTE*: This may not terminate with an infinite `Iterable`
+        @see [Lambda.fold](https://api.haxe.org/Lambda.html#fold)  
     **/
     static function foldl<A, B>(as:Iterable<A>, seed:B, fn:(accumulator:B, current:A)->B):B return {
         var accum = seed;
@@ -445,10 +455,10 @@ class IterableTools {
         as.filterL(predicate).maybeLast();
 
     /**
-        Projects `as` into and `Iterable` of `B`s using `fn` as a transform  
-        See [Lambda.map](https://api.haxe.org/Lambda.html#map)  
+        Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is lazy  
         `[1, 2, 3].mapL(Std.string)` == `['1', '2', '3']`
+        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)  
     **/
     static function mapL<A, B>(as:Iterable<A>, fn:A->B):Iterable<B> return {
         iterator: () -> {
@@ -460,10 +470,10 @@ class IterableTools {
     }
 
     /**
-        Projects `as` into and `Iterable` of `B`s using `fn` as a transform  
-        See [Lambda.map](https://api.haxe.org/Lambda.html#map)  
+        Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is strict  
         `[1, 2, 3].mapS(Std.string)` == `['1', '2', '3']`
+        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)  
     **/
     static function mapS<A, B>(as:Iterable<A>, fn:A->B):Array<B> return
         [for(a in as) fn(a)];

@@ -5,6 +5,11 @@ import interlude.ds.Pair.snd;
 
 //typedef AsyncState<X, A> = X -> Task<Pair<A, X>>;
 
+/**
+    A type of function that takes an initial state `X`, and asynchronously
+    produces an output value `A` and a new state  
+    @see https://en.wikibooks.org/wiki/Haskell/Understanding_monads/State
+**/
 @:nullSafety(Strict)
 @:forward
 @:callable

@@ -2,12 +2,24 @@ package interlude.ds;
 
 typedef KeyValuePair<K:NotVoid, V:NotVoid>  = { key:K, value:V };
 
+/**
+    A type that holds two values; essentially a 2-Tuple. Can be used with 
+    structure syntax.
+    ```haxe
+    abc.with(123) == { _1: abc, _2: 123 } == new Pair(abc, 123)
+    ```
+**/
 @:nullSafety(Strict)
 @:publicFields
 @:structInit
 class Pair<X:NotVoid, Y:NotVoid> {
     final _1:X;
     final _2:Y;
+
+    public function new(_1:X, _2:Y) {
+        this._1 = _1;
+        this._2 = _2;
+    }
 
     inline static function apply<A, B, Z>(t:Pair<A, B>, fn:(A, B)->Z):Z return
         fn(t._1, t._2);
@@ -47,6 +59,13 @@ class Pair<X:NotVoid, Y:NotVoid> {
         { _1: a, _2: b };
 }
 
+/**
+    A type that holds three values; essentially a 3-Tuple. Can be used with 
+    structure syntax.
+    ```haxe
+    abc.with(123, Unit) == { _1: abc, _2: 123, _3: Unit } == new Pair(abc, 123, Unit)
+    ```
+**/
 @:nullSafety(Strict)
 @:publicFields
 @:structInit
@@ -54,6 +73,12 @@ class Trio<X:NotVoid, Y:NotVoid, Z:NotVoid> {
     final _1:X;
     final _2:Y;
     final _3:Z;
+
+    public function new(_1:X, _2:Y, _3:Z) {
+        this._1 = _1;
+        this._2 = _2;
+        this._3 = _3;
+    }
 
     inline static function apply<A, B, C, Z>(t:Trio<A, B, C>, fn:(A, B, C)->Z):Z return
         fn(t._1, t._2, t._3);

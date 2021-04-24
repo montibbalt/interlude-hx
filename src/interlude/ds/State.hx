@@ -2,6 +2,11 @@ package interlude.ds;
 
 //typedef State<X, A> = X -> Pair<A, X>;
 
+/**
+    A type of function that takes an initial state `X`, and produces an output
+    value `A` and a new state  
+    @see https://en.wikibooks.org/wiki/Haskell/Understanding_monads/State
+**/
 @:nullSafety(Strict)
 @:forward
 @:callable
