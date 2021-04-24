@@ -13,6 +13,7 @@ class TestMain {
         var runner = new Runner();
         runner.addCases('ds');
         runner.addCases('iter');
+        runner.addCases('reactive');
         Report.create(runner, SuccessResultsDisplayMode.NeverShowSuccessResults, HeaderDisplayMode.AlwaysShowHeader);
         runner.run();
     }
