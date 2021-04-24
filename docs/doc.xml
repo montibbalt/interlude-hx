@@ -1,6 +1,6 @@
 <!-- This file can be parsed by haxe.rtti.XmlParser -->
 <haxe>
-	<abstract path="Any" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Any.hx">
+	<abstract path="Any" params="" file="C:\HaxeToolkit\haxe\std/Any.hx">
 		<from><icast field="__cast"><c path="__cast.T"/></icast></from>
 		<this><d/></this>
 		<to><icast field="__promote"><c path="__promote.T"/></icast></to>
@@ -14,7 +14,7 @@
 	to work with the actual value, it needs to be explicitly promoted
 	to another type.</haxe_doc>
 		<meta><m n=":forward.variance"/></meta>
-		<impl><class path="_Any.Any_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Any.hx" private="1" module="Any" final="1">
+		<impl><class path="_Any.Any_Impl_" params="" file="C:\HaxeToolkit\haxe\std/Any.hx" private="1" module="Any" final="1">
 	<__promote params="T" get="inline" set="null" line="37" static="1">
 		<f a="this">
 			<d/>
@@ -45,7 +45,7 @@
 	<meta><m n=":keep"/></meta>
 </class></impl>
 	</abstract>
-	<class path="_Any.Any_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Any.hx" private="1" module="Any" final="1">
+	<class path="_Any.Any_Impl_" params="" file="C:\HaxeToolkit\haxe\std/Any.hx" private="1" module="Any" final="1">
 		<__promote params="T" get="inline" set="null" line="37" static="1">
 			<f a="this">
 				<d/>
@@ -75,7 +75,7 @@
 		</toString>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<class path="Array" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Array.hx" extern="1">
+	<class path="Array" params="T" file="C:\HaxeToolkit\haxe\std/Array.hx" extern="1">
 		<length public="1" set="null">
 			<x path="Int"/>
 			<haxe_doc>The length of `this` Array.</haxe_doc>
@@ -402,7 +402,7 @@
 			<haxe_doc>Creates a new Array.</haxe_doc>
 		</new>
 	</class>
-	<abstract path="Class" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Class.hx">
+	<abstract path="Class" params="T" file="C:\HaxeToolkit\haxe\std/Class.hx">
 		<this><x path="Class"><c path="Class.T"/></x></this>
 		<haxe_doc>An abstract type that represents a Class.
 
@@ -414,7 +414,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<class path="Date" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Date.hx" extern="1">
+	<class path="Date" params="" file="C:\HaxeToolkit\haxe\std/Date.hx" extern="1">
 		<now public="1" set="method" static="1">
 			<f a=""><c path="Date"/></f>
 			<haxe_doc>Returns a Date representing the current local time.</haxe_doc>
@@ -567,7 +567,7 @@
 	depending on the OS at runtime. The `Date.fromTime` method will not work with
 	timestamps outside the range on any target.</haxe_doc>
 	</class>
-	<class path="EReg" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/EReg.hx" extern="1">
+	<class path="EReg" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/EReg.hx" extern="1">
 		<escape public="1" set="method" static="1">
 			<f a="s">
 				<c path="String"/>
@@ -751,7 +751,7 @@
 	<https://haxe.org/manual/std-regex.html>]]></haxe_doc>
 		<meta><m n=":coreApi"/></meta>
 	</class>
-	<abstract path="Enum" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Enum.hx">
+	<abstract path="Enum" params="T" file="C:\HaxeToolkit\haxe\std/Enum.hx">
 		<this><x path="Enum"><c path="Enum.T"/></x></this>
 		<haxe_doc>An abstract type that represents an Enum type.
 
@@ -765,14 +765,14 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="EnumValue" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/EnumValue.hx">
+	<abstract path="EnumValue" params="" file="C:\HaxeToolkit\haxe\std/EnumValue.hx">
 		<this><x path="EnumValue"/></this>
 		<haxe_doc>An abstract type that represents any enum value.
 	See `Type` for the Haxe Reflection API.
 
 	@see https://haxe.org/manual/types-enum-instance.html</haxe_doc>
 		<meta><m n=":coreType"/></meta>
-		<impl><class path="_EnumValue.EnumValue_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/EnumValue.hx" private="1" module="EnumValue" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="_EnumValue.EnumValue_Impl_" params="" file="C:\HaxeToolkit\haxe\std/EnumValue.hx" private="1" module="EnumValue" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
 	<typedef path="Interlude" params="" file="src/Interlude.hx"><a/></typedef>
 	<typedef path="Curry2" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.func.Curry2"/></typedef>
@@ -821,9 +821,8 @@
 	<c path="Trio.Y"/>
 	<c path="Trio.Z"/>
 </c></typedef>
-	<typedef path="Unit" params="" file="src/Interlude.hx" module="Interlude"><e path="interlude.ds.Unit"/></typedef>
+	<typedef path="Unit" params="" file="src/Interlude.hx" module="Interlude"><x path="interlude.ds.Unit"/></typedef>
 	<typedef path="Weighted" params="X" file="src/Interlude.hx" module="Interlude"><x path="interlude.ds.Weighted"><c path="Weighted.X"/></x></typedef>
-	<typedef path="WeightedTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.ds.WeightedTools"/></typedef>
 	<typedef path="IterableTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.iter.IterableTools"/></typedef>
 	<typedef path="IteratorTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.iter.IteratorTools"/></typedef>
 	<typedef path="KVIterableTools" params="" file="src/Interlude.hx" module="Interlude"><c path="interlude.iter.KeyValueIterableTools"/></typedef>
@@ -834,11 +833,11 @@
 	<typedef path="DateTools_" params="" file="src/Interlude.hx" module="Interlude"><c path="DateTools"/></typedef>
 	<typedef path="Math_" params="" file="src/Interlude.hx" module="Interlude"><c path="Math"/></typedef>
 	<typedef path="StringTools_" params="" file="src/Interlude.hx" module="Interlude"><c path="StringTools"/></typedef>
-	<typedef path="Map" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Map.hx"><x path="haxe.ds.Map">
+	<typedef path="Map" params="K:V" file="C:\HaxeToolkit\haxe\std/Map.hx"><x path="haxe.ds.Map">
 	<c path="Map.K"/>
 	<c path="Map.V"/>
 </x></typedef>
-	<typedef path="IMap" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Map.hx" module="Map">
+	<typedef path="IMap" params="K:V" file="C:\HaxeToolkit\haxe\std/Map.hx" module="Map">
 		<c path="haxe.IMap">
 			<c path="IMap.K"/>
 			<c path="IMap.V"/>
@@ -848,7 +847,7 @@
 			<m n=":deprecated"/>
 		</meta>
 	</typedef>
-	<class path="Math" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Math.hx" extern="1">
+	<class path="Math" params="" file="C:\HaxeToolkit\haxe\std/Math.hx" extern="1">
 		<PI public="1" set="null" static="1">
 			<x path="Float"/>
 			<haxe_doc>Represents the ratio of the circumference of a circle to its diameter,
@@ -1137,7 +1136,7 @@
 	@see https://haxe.org/manual/std-math.html</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</class>
-	<class path="Reflect" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Reflect.hx" extern="1">
+	<class path="Reflect" params="" file="C:\HaxeToolkit\haxe\std/Reflect.hx" extern="1">
 		<hasField public="1" set="method" static="1">
 			<f a="o:field">
 				<d/>
@@ -1371,7 +1370,7 @@
 
 	@see https://haxe.org/manual/std-reflection.html</haxe_doc>
 	</class>
-	<class path="Std" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Std.hx" extern="1">
+	<class path="Std" params="" file="C:\HaxeToolkit\haxe\std/Std.hx" extern="1">
 		<is public="1" set="method" static="1">
 			<f a="v:t">
 				<d/>
@@ -1504,14 +1503,14 @@
 		<haxe_doc>The Std class provides standard methods for manipulating basic types.</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</class>
-	<abstract path="Void" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Void" params="" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<this><x path="Void"/></this>
 		<haxe_doc>The standard `Void` type. Only `null` values can be of the type `Void`.
 
 	@see https://haxe.org/manual/types-void.html</haxe_doc>
 		<meta><m n=":coreType"/></meta>
 	</abstract>
-	<abstract path="Float" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Float" params="" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<this><x path="Float"/></this>
 		<haxe_doc><![CDATA[The standard `Float` type, this is a double-precision IEEE 64bit float.
 
@@ -1529,7 +1528,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Int" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Int" params="" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<this><x path="Int"/></this>
 		<to><icast><x path="Float"/></icast></to>
 		<haxe_doc><![CDATA[The standard `Int` type. Its precision depends on the platform.
@@ -1549,7 +1548,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Null" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Null" params="T" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<from><icast><c path="Null.T"/></icast></from>
 		<this><x path="Null"><c path="Null.T"/></x></this>
 		<to><icast><c path="Null.T"/></icast></to>
@@ -1567,7 +1566,7 @@
 			<m n=":coreType"/>
 		</meta>
 	</abstract>
-	<abstract path="Bool" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Bool" params="" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<this><x path="Bool"/></this>
 		<haxe_doc><![CDATA[The standard Boolean type, which can either be `true` or `false`.
 
@@ -1582,7 +1581,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<abstract path="Dynamic" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<abstract path="Dynamic" params="T" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<this><x path="Dynamic"><c path="Dynamic.T"/></x></this>
 		<haxe_doc>`Dynamic` is a special type which is compatible with all other types.
 
@@ -1596,7 +1595,7 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
-	<typedef path="Iterator" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<typedef path="Iterator" params="T" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<a>
 			<next set="method">
 				<f a=""><c path="Iterator.T"/></f>
@@ -1626,21 +1625,21 @@
 
 	@see https://haxe.org/manual/lf-iterators.html</haxe_doc>
 	</typedef>
-	<typedef path="Iterable" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<typedef path="Iterable" params="T" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<a><iterator set="method"><f a=""><t path="Iterator"><c path="Iterable.T"/></t></f></iterator></a>
 		<haxe_doc>An `Iterable` is a data structure which has an `iterator()` method.
 	See `Lambda` for generic functions on iterable structures.
 
 	@see https://haxe.org/manual/lf-iterators.html</haxe_doc>
 	</typedef>
-	<typedef path="KeyValueIterator" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<typedef path="KeyValueIterator" params="K:V" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<t path="Iterator"><a>
 	<value><c path="KeyValueIterator.V"/></value>
 	<key><c path="KeyValueIterator.K"/></key>
 </a></t>
 		<haxe_doc>A `KeyValueIterator` is an `Iterator` that has a key and a value.</haxe_doc>
 	</typedef>
-	<typedef path="KeyValueIterable" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes">
+	<typedef path="KeyValueIterable" params="K:V" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes">
 		<a><keyValueIterator set="method"><f a=""><t path="KeyValueIterator">
 	<c path="KeyValueIterable.K"/>
 	<c path="KeyValueIterable.V"/>
@@ -1648,7 +1647,7 @@
 		<haxe_doc>A `KeyValueIterable` is a data structure which has a `keyValueIterator()`
 	method to iterate over key-value-pairs.</haxe_doc>
 	</typedef>
-	<class path="ArrayAccess" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/StdTypes.hx" module="StdTypes" extern="1" interface="1"><haxe_doc>`ArrayAccess` is used to indicate a class that can be accessed using brackets.
+	<class path="ArrayAccess" params="T" file="C:\HaxeToolkit\haxe\std/StdTypes.hx" module="StdTypes" extern="1" interface="1"><haxe_doc>`ArrayAccess` is used to indicate a class that can be accessed using brackets.
 	The type parameter represents the type of the elements stored.
 
 	This interface should be used for externs only. Haxe does not support custom
@@ -1656,7 +1655,7 @@
 	abstract types.
 
 	@see https://haxe.org/manual/types-abstract-array-access.html</haxe_doc></class>
-	<class path="String" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/String.hx" extern="1">
+	<class path="String" params="" file="C:\HaxeToolkit\haxe\std/String.hx" extern="1">
 		<fromCharCode public="1" set="method" static="1">
 			<f a="code">
 				<x path="Int"/>
@@ -1826,7 +1825,7 @@
 
 	@see https://haxe.org/manual/std-String.html</haxe_doc>
 	</class>
-	<class path="StringBuf" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/StringBuf.hx" extern="1">
+	<class path="StringBuf" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/StringBuf.hx" extern="1">
 		<length public="1" get="accessor" set="null">
 			<x path="Int"/>
 			<haxe_doc>The length of `this` StringBuf in characters.</haxe_doc>
@@ -1893,7 +1892,7 @@
 	values.</haxe_doc>
 		<meta><m n=":coreApi"/></meta>
 	</class>
-	<class path="Sys" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/Sys.hx">
+	<class path="Sys" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/Sys.hx">
 		<print public="1" set="method" static="1">
 			<f a="v">
 				<d/>
@@ -2040,7 +2039,7 @@
 			<m n=":coreApi"/>
 		</meta>
 	</class>
-	<class path="Type" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/Type.hx" extern="1">
+	<class path="Type" params="" file="C:\HaxeToolkit\haxe\std/Type.hx" extern="1">
 		<getClass public="1" params="T" set="method" static="1">
 			<f a="o">
 				<c path="getClass.T"/>
@@ -2343,7 +2342,7 @@
 	@see https://haxe.org/manual/types.html
 	@see https://haxe.org/manual/std-reflection.html</haxe_doc>
 	</class>
-	<enum path="haxe.StackItem" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/CallStack.hx" module="haxe.CallStack">
+	<enum path="haxe.StackItem" params="" file="C:\HaxeToolkit\haxe\std/haxe/CallStack.hx" module="haxe.CallStack">
 		<CFunction/>
 		<Module a="m"><c path="String"/></Module>
 		<FilePos a="s:file:line:?column">
@@ -2359,7 +2358,7 @@
 		<LocalFunction a="?v"><x path="Int"/></LocalFunction>
 		<haxe_doc>Elements return by `CallStack` methods.</haxe_doc>
 	</enum>
-	<abstract path="haxe.CallStack" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/CallStack.hx">
+	<abstract path="haxe.CallStack" params="" file="C:\HaxeToolkit\haxe\std/haxe/CallStack.hx">
 		<from><icast><c path="Array"><e path="haxe.StackItem"/></c></icast></from>
 		<this><c path="Array"><e path="haxe.StackItem"/></c></this>
 		<haxe_doc>Get information about the call stack.</haxe_doc>
@@ -2367,39 +2366,39 @@
 			<m n=":allow"><e>haxe.Exception</e></m>
 			<m n=":using"><e>haxe.CallStack</e></m>
 		</meta>
-		<impl><class path="haxe._CallStack.CallStack_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/CallStack.hx" private="1" module="haxe.CallStack" final="1"><meta>
+		<impl><class path="haxe._CallStack.CallStack_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/CallStack.hx" private="1" module="haxe.CallStack" final="1"><meta>
 	<m n=":keep"/>
 	<m n=":using"><e>haxe.CallStack</e></m>
 	<m n=":allow"><e>haxe.Exception</e></m>
 </meta></class></impl>
 	</abstract>
-	<abstract path="haxe.Function" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" module="haxe.Constraints">
+	<abstract path="haxe.Function" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" module="haxe.Constraints">
 		<this><d/></this>
 		<haxe_doc>This type unifies with any function type.
 
 	It is intended to be used as a type parameter constraint. If used as a real
 	type, the underlying type will be `Dynamic`.</haxe_doc>
 		<meta><m n=":callable"/></meta>
-		<impl><class path="haxe._Constraints.Function_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Constraints.Function_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<abstract path="haxe.FlatEnum" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" module="haxe.Constraints">
+	<abstract path="haxe.FlatEnum" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" module="haxe.Constraints">
 		<this><d/></this>
 		<haxe_doc>This type unifies with an enum instance if all constructors of the enum
 	require no arguments.
 
 	It is intended to be used as a type parameter constraint. If used as a real
 	type, the underlying type will be `Dynamic`.</haxe_doc>
-		<impl><class path="haxe._Constraints.FlatEnum_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Constraints.FlatEnum_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<abstract path="haxe.NotVoid" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" module="haxe.Constraints">
+	<abstract path="haxe.NotVoid" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" module="haxe.Constraints">
 		<this><d/></this>
 		<haxe_doc>This type unifies with anything but `Void`.
 
 	It is intended to be used as a type parameter constraint. If used as a real
 	type, the underlying type will be `Dynamic`.</haxe_doc>
-		<impl><class path="haxe._Constraints.NotVoid_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Constraints.NotVoid_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<abstract path="haxe.Constructible" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" module="haxe.Constraints">
+	<abstract path="haxe.Constructible" params="T" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" module="haxe.Constraints">
 		<this><d/></this>
 		<haxe_doc><![CDATA[This type unifies with any instance of classes that have a constructor
 	which
@@ -2413,9 +2412,9 @@
 
 	It is intended to be used as a type parameter constraint. If used as a real
 	type, the underlying type will be `Dynamic`.]]></haxe_doc>
-		<impl><class path="haxe._Constraints.Constructible_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Constraints.Constructible_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" private="1" module="haxe.Constraints" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<class path="haxe.IMap" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Constraints.hx" module="haxe.Constraints" interface="1">
+	<class path="haxe.IMap" params="K:V" file="C:\HaxeToolkit\haxe\std/haxe/Constraints.hx" module="haxe.Constraints" interface="1">
 		<get public="1" set="method"><f a="k">
 	<c path="haxe.IMap.K"/>
 	<x path="Null"><c path="haxe.IMap.V"/></x>
@@ -2428,7 +2427,7 @@
 		<keys public="1" set="method"><f a=""><t path="Iterator"><c path="haxe.IMap.K"/></t></f></keys>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<class path="haxe.EnumTools" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/EnumTools.hx" extern="1">
+	<class path="haxe.EnumTools" params="" file="C:\HaxeToolkit\haxe\std/haxe/EnumTools.hx" extern="1">
 		<getName public="1" params="T" get="inline" set="null" line="52" static="1">
 			<f a="e">
 				<x path="Enum"><c path="getName.T"/></x>
@@ -2520,7 +2519,7 @@
 	If the first argument to any of the methods is `null`, the result is
 	unspecified.</haxe_doc>
 	</class>
-	<class path="haxe.EnumValueTools" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/EnumTools.hx" module="haxe.EnumTools" extern="1">
+	<class path="haxe.EnumValueTools" params="" file="C:\HaxeToolkit\haxe\std/haxe/EnumTools.hx" module="haxe.EnumTools" extern="1">
 		<equals public="1" params="T" get="inline" set="null" line="133" static="1">
 			<f a="a:b">
 				<c path="equals.T"/>
@@ -2579,7 +2578,7 @@
 	If the first argument to any of the methods is `null`, the result is
 	unspecified.</haxe_doc>
 	</class>
-	<class path="haxe.Exception" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/Exception.hx">
+	<class path="haxe.Exception" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/Exception.hx">
 		<thrown set="method" line="25" static="1"><f a="value">
 	<x path="Any"/>
 	<x path="Any"/>
@@ -2683,7 +2682,7 @@
 			<m n=":coreApi"/>
 		</meta>
 	</class>
-	<abstract path="haxe.Int32" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Int32.hx">
+	<abstract path="haxe.Int32" params="" file="C:\HaxeToolkit\haxe\std/haxe/Int32.hx">
 		<from><icast><x path="Int"/></icast></from>
 		<this><x path="Int"/></this>
 		<to>
@@ -2693,9 +2692,9 @@
 		<haxe_doc>Int32 provides a 32-bit integer with consistent overflow behavior across
 	all platforms.</haxe_doc>
 		<meta><m n=":transitive"/></meta>
-		<impl><class path="haxe._Int32.Int32_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Int32.hx" private="1" module="haxe.Int32" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Int32.Int32_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Int32.hx" private="1" module="haxe.Int32" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<abstract path="haxe.Int64" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Int64.hx">
+	<abstract path="haxe.Int64" params="" file="C:\HaxeToolkit\haxe\std/haxe/Int64.hx">
 		<from>
 			<icast><t path="haxe._Int64.__Int64"/></icast>
 			<icast field="ofInt"><x path="Int"/></icast>
@@ -2705,15 +2704,15 @@
 		<haxe_doc>A cross-platform signed 64-bit integer.
 	Int64 instances can be created from two 32-bit words using `Int64.make()`.</haxe_doc>
 		<meta><m n=":transitive"/></meta>
-		<impl><class path="haxe._Int64.Int64_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Int64.hx" private="1" module="haxe.Int64" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe._Int64.Int64_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Int64.hx" private="1" module="haxe.Int64" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<typedef path="haxe._Int64.__Int64" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Int64.hx" private="1" module="haxe.Int64">
+	<typedef path="haxe._Int64.__Int64" params="" file="C:\HaxeToolkit\haxe\std/haxe/Int64.hx" private="1" module="haxe.Int64">
 		<c path="haxe._Int64.___Int64"/>
 		<haxe_doc>This typedef will fool `@:coreApi` into thinking that we are using
 	the same underlying type, even though it might be different on
 	specific platforms.</haxe_doc>
 	</typedef>
-	<class path="haxe.Log" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Log.hx">
+	<class path="haxe.Log" params="" file="C:\HaxeToolkit\haxe\std/haxe/Log.hx">
 		<formatOutput public="1" set="method" line="33" static="1">
 			<f a="v:infos">
 				<d/>
@@ -2752,7 +2751,7 @@
 			<m n=":directlyUsed"/>
 		</meta>
 	</class>
-	<class path="haxe.NativeStackTrace" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/NativeStackTrace.hx">
+	<class path="haxe.NativeStackTrace" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/NativeStackTrace.hx">
 		<saveStack public="1" get="inline" set="null" line="12" static="1">
 			<f a="exception">
 				<x path="Any"/>
@@ -2771,7 +2770,7 @@
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<typedef path="haxe.PosInfos" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/PosInfos.hx">
+	<typedef path="haxe.PosInfos" params="" file="C:\HaxeToolkit\haxe\std/haxe/PosInfos.hx">
 		<a>
 			<methodName><c path="String"/></methodName>
 			<lineNumber><x path="Int"/></lineNumber>
@@ -2792,8 +2791,8 @@
 	This can be used to track positions of calls in e.g. a unit testing
 	framework.</haxe_doc>
 	</typedef>
-	<typedef path="haxe._Rest.NativeRest" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Rest.hx" private="1" module="haxe.Rest"><c path="Array"><c path="haxe._Rest.NativeRest.T"/></c></typedef>
-	<abstract path="haxe.Rest" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Rest.hx">
+	<typedef path="haxe._Rest.NativeRest" params="T" file="C:\HaxeToolkit\haxe\std/haxe/Rest.hx" private="1" module="haxe.Rest"><c path="Array"><c path="haxe._Rest.NativeRest.T"/></c></typedef>
+	<abstract path="haxe.Rest" params="T" file="C:\HaxeToolkit\haxe\std/haxe/Rest.hx">
 		<from><icast field="of"><c path="Array"><c path="of.T"/></c></icast></from>
 		<this><t path="haxe._Rest.NativeRest"><c path="haxe.Rest.T"/></t></this>
 		<to><icast field="toArray"><c path="Array"><c path="haxe.Rest.T"/></c></icast></to>
@@ -2818,12 +2817,12 @@
 	Allows to use array access by index to get values of rest arguments.
 	If the index exceeds the amount of rest arguments passed, the result is unspecified.]]></haxe_doc>
 		<meta><m n=":coreApi"/></meta>
-		<impl><class path="haxe._Rest.Rest_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/Rest.hx" private="1" module="haxe.Rest" final="1"><meta>
+		<impl><class path="haxe._Rest.Rest_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/Rest.hx" private="1" module="haxe.Rest" final="1"><meta>
 	<m n=":keep"/>
 	<m n=":coreApi"/>
 </meta></class></impl>
 	</abstract>
-	<class path="haxe.ValueException" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ValueException.hx">
+	<class path="haxe.ValueException" params="" file="C:\HaxeToolkit\haxe\std/haxe/ValueException.hx">
 		<extends path="haxe.Exception"/>
 		<value public="1" set="null">
 			<x path="Any"/>
@@ -2852,7 +2851,7 @@
 			<m n=":directlyUsed"/>
 		</meta>
 	</class>
-	<class path="haxe.ds.TreeNode" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/BalancedTree.hx" module="haxe.ds.BalancedTree">
+	<class path="haxe.ds.TreeNode" params="K:V" file="C:\HaxeToolkit\haxe\std/haxe/ds/BalancedTree.hx" module="haxe.ds.BalancedTree">
 		<left public="1"><c path="haxe.ds.TreeNode">
 	<c path="haxe.ds.TreeNode.K"/>
 	<c path="haxe.ds.TreeNode.V"/>
@@ -2885,14 +2884,14 @@
 		<haxe_doc>A tree node of `haxe.ds.BalancedTree`.</haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<enum path="haxe.ds.Either" params="L:R" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/Either.hx">
+	<enum path="haxe.ds.Either" params="L:R" file="C:\HaxeToolkit\haxe\std/haxe/ds/Either.hx">
 		<Left a="v"><c path="haxe.ds.Either.L"/></Left>
 		<Right a="v"><c path="haxe.ds.Either.R"/></Right>
 		<haxe_doc>Either represents values which are either of type `L` (Left) or type `R`
 	(Right).</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</enum>
-	<abstract path="haxe.ds.HashMap" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/HashMap.hx">
+	<abstract path="haxe.ds.HashMap" params="K:V" file="C:\HaxeToolkit\haxe\std/haxe/ds/HashMap.hx">
 		<this><c path="haxe.ds._HashMap.HashMapData">
 	<c path="haxe.ds.HashMap.K"/>
 	<c path="haxe.ds.HashMap.V"/>
@@ -2902,9 +2901,9 @@
 	See `Map` for documentation details.
 
 	@see https://haxe.org/manual/std-Map.html</haxe_doc>
-		<impl><class path="haxe.ds._HashMap.HashMap_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/HashMap.hx" private="1" module="haxe.ds.HashMap" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe.ds._HashMap.HashMap_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/ds/HashMap.hx" private="1" module="haxe.ds.HashMap" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<class path="haxe.ds.IntMap" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/IntMap.hx" extern="1">
+	<class path="haxe.ds.IntMap" params="T" file="C:\HaxeToolkit\haxe\std/haxe/ds/IntMap.hx" extern="1">
 		<implements path="haxe.IMap">
 			<x path="Int"/>
 			<c path="haxe.ds.IntMap.T"/>
@@ -2982,7 +2981,7 @@
 
 	@see https://haxe.org/manual/std-Map.html</haxe_doc>
 	</class>
-	<abstract path="haxe.ds.Map" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/Map.hx">
+	<abstract path="haxe.ds.Map" params="K:V" file="C:\HaxeToolkit\haxe\std/haxe/ds/Map.hx">
 		<from>
 			<icast field="fromStringMap"><c path="haxe.ds.StringMap"><c path="fromStringMap.V"/></c></icast>
 			<icast field="fromIntMap"><c path="haxe.ds.IntMap"><c path="fromIntMap.V"/></c></icast>
@@ -3025,7 +3024,7 @@
 			<m n=":transitive"/>
 			<m n=":multiType"><e>@:followWithAbstracts K</e></m>
 		</meta>
-		<impl><class path="haxe.ds._Map.Map_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/Map.hx" private="1" module="haxe.ds.Map" final="1">
+		<impl><class path="haxe.ds._Map.Map_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/ds/Map.hx" private="1" module="haxe.ds.Map" final="1">
 	<_new public="1" set="method" static="1">
 		<f a=""><x path="haxe.ds.Map">
 	<c path="haxe.ds.Map.K"/>
@@ -3048,7 +3047,7 @@
 	<meta><m n=":keep"/></meta>
 </class></impl>
 	</abstract>
-	<class path="haxe.ds._Map.Map_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/Map.hx" private="1" module="haxe.ds.Map" final="1">
+	<class path="haxe.ds._Map.Map_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/ds/Map.hx" private="1" module="haxe.ds.Map" final="1">
 		<_new public="1" set="method" static="1">
 			<f a=""><x path="haxe.ds.Map">
 	<c path="haxe.ds.Map.K"/>
@@ -3070,7 +3069,7 @@
 		</_new>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<class path="haxe.ds.ObjectMap" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/ObjectMap.hx" extern="1">
+	<class path="haxe.ds.ObjectMap" params="K:V" file="C:\HaxeToolkit\haxe\std/haxe/ds/ObjectMap.hx" extern="1">
 		<implements path="haxe.IMap">
 			<c path="haxe.ds.ObjectMap.K"/>
 			<c path="haxe.ds.ObjectMap.V"/>
@@ -3154,7 +3153,7 @@
 
 	@see https://haxe.org/manual/std-Map.html</haxe_doc>
 	</class>
-	<enum path="haxe.ds.Option" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/Option.hx">
+	<enum path="haxe.ds.Option" params="T" file="C:\HaxeToolkit\haxe\std/haxe/ds/Option.hx">
 		<Some a="v"><c path="haxe.ds.Option.T"/></Some>
 		<None/>
 		<haxe_doc>An Option is a wrapper type which can either have a value (Some) or not a
@@ -3163,7 +3162,7 @@
 	@see https://haxe.org/manual/std-Option.html</haxe_doc>
 		<meta><m n=":directlyUsed"/></meta>
 	</enum>
-	<abstract path="haxe.ds.ReadOnlyArray" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/ReadOnlyArray.hx">
+	<abstract path="haxe.ds.ReadOnlyArray" params="T" file="C:\HaxeToolkit\haxe\std/haxe/ds/ReadOnlyArray.hx">
 		<from><icast><c path="Array"><c path="haxe.ds.ReadOnlyArray.T"/></c></icast></from>
 		<this><c path="Array"><c path="haxe.ds.ReadOnlyArray.T"/></c></this>
 		<to><icast><t path="Iterable"><c path="haxe.ds.ReadOnlyArray.T"/></t></icast></to>
@@ -3186,9 +3185,9 @@
 	<e>contains</e>
 	<e>toString</e>
 </m></meta>
-		<impl><class path="haxe.ds._ReadOnlyArray.ReadOnlyArray_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/ReadOnlyArray.hx" private="1" module="haxe.ds.ReadOnlyArray" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe.ds._ReadOnlyArray.ReadOnlyArray_Impl_" params="" file="C:\HaxeToolkit\haxe\std/haxe/ds/ReadOnlyArray.hx" private="1" module="haxe.ds.ReadOnlyArray" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<class path="haxe.ds.StringMap" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/ds/StringMap.hx" extern="1">
+	<class path="haxe.ds.StringMap" params="T" file="C:\HaxeToolkit\haxe\std/haxe/ds/StringMap.hx" extern="1">
 		<implements path="haxe.IMap">
 			<c path="String"/>
 			<c path="haxe.ds.StringMap.T"/>
@@ -3266,18 +3265,7 @@
 
 	@see https://haxe.org/manual/std-Map.html</haxe_doc>
 	</class>
-	<enum path="haxe.io.Error" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/io/Error.hx">
-		<Blocked><haxe_doc>The IO is set into nonblocking mode and some data cannot be read or written</haxe_doc></Blocked>
-		<Overflow><haxe_doc>An integer value is outside its allowed range</haxe_doc></Overflow>
-		<OutsideBounds><haxe_doc>An operation on Bytes is outside of its valid range</haxe_doc></OutsideBounds>
-		<Custom a="e">
-			<d/>
-			<haxe_doc>Other errors</haxe_doc>
-		</Custom>
-		<haxe_doc>The possible IO errors that can occur</haxe_doc>
-		<meta><m n=":keep"/></meta>
-	</enum>
-	<class path="haxe.io.Bytes" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/io/Bytes.hx" extern="1">
+	<class path="haxe.io.Bytes" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/Bytes.hx" extern="1">
 		<alloc public="1" set="method" static="1"><f a="length">
 	<x path="Int"/>
 	<c path="haxe.io.Bytes"/>
@@ -3392,7 +3380,7 @@
 	<x path="Void"/>
 </f></new>
 	</class>
-	<class path="haxe.io.BytesBuffer" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/io/BytesBuffer.hx" extern="1">
+	<class path="haxe.io.BytesBuffer" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/BytesBuffer.hx" extern="1">
 		<length public="1" get="accessor" set="null">
 			<x path="Int"/>
 			<haxe_doc>The length of the buffer in bytes.</haxe_doc>
@@ -3441,15 +3429,26 @@
 		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
 		<meta><m n=":coreApi"/></meta>
 	</class>
-	<abstract path="haxe.io._BytesData.NativeBytesDataAbstract" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/io/BytesData.hx" private="1" module="haxe.io.BytesData">
+	<abstract path="haxe.io._BytesData.NativeBytesDataAbstract" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/BytesData.hx" private="1" module="haxe.io.BytesData">
 		<from><icast><c path="haxe.io.Bytes"/></icast></from>
 		<this><c path="haxe.io.Bytes"/></this>
 		<to><icast><c path="haxe.io.Bytes"/></icast></to>
 		<meta><m n=":forward"/></meta>
-		<impl><class path="haxe.io._BytesData.NativeBytesDataAbstract_Impl_" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/io/BytesData.hx" private="1" module="haxe.io.BytesData" final="1"><meta><m n=":keep"/></meta></class></impl>
+		<impl><class path="haxe.io._BytesData.NativeBytesDataAbstract_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/BytesData.hx" private="1" module="haxe.io.BytesData" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<typedef path="haxe.io.BytesData" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/haxe/io/BytesData.hx"><x path="haxe.io._BytesData.NativeBytesDataAbstract"/></typedef>
-	<class path="haxe.io.Input" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/io/Input.hx">
+	<typedef path="haxe.io.BytesData" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/BytesData.hx"><x path="haxe.io._BytesData.NativeBytesDataAbstract"/></typedef>
+	<enum path="haxe.io.Error" params="" file="C:\HaxeToolkit\haxe\std/haxe/io/Error.hx">
+		<Blocked><haxe_doc>The IO is set into nonblocking mode and some data cannot be read or written</haxe_doc></Blocked>
+		<Overflow><haxe_doc>An integer value is outside its allowed range</haxe_doc></Overflow>
+		<OutsideBounds><haxe_doc>An operation on Bytes is outside of its valid range</haxe_doc></OutsideBounds>
+		<Custom a="e">
+			<d/>
+			<haxe_doc>Other errors</haxe_doc>
+		</Custom>
+		<haxe_doc>The possible IO errors that can occur</haxe_doc>
+		<meta><m n=":keep"/></meta>
+	</enum>
+	<class path="haxe.io.Input" params="" file="C:\HaxeToolkit\haxe\std/haxe/io/Input.hx">
 		<haxe_doc>An Input is an abstract reader. See other classes in the `haxe.io` package
 	for several possible implementations.
 
@@ -3457,14 +3456,14 @@
 	is reached.</haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<class path="haxe.io.Output" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/io/Output.hx">
+	<class path="haxe.io.Output" params="" file="C:\HaxeToolkit\haxe\std/haxe/io/Output.hx">
 		<haxe_doc>An Output is an abstract write. A specific output implementation will only
 	have to override the `writeByte` and maybe the `write`, `flush` and `close`
 	methods. See `File.write` and `String.write` for two ways of creating an
 	Output.</haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<class path="haxe.iterators.ArrayIterator" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/iterators/ArrayIterator.hx">
+	<class path="haxe.iterators.ArrayIterator" params="T" file="C:\HaxeToolkit\haxe\std/haxe/iterators/ArrayIterator.hx">
 		<array final="1"><c path="Array"><c path="haxe.iterators.ArrayIterator.T"/></c></array>
 		<current expr="0">
 			<x path="Int"/>
@@ -3488,7 +3487,7 @@
 		<haxe_doc><![CDATA[This iterator is used only when `Array<T>` is passed to `Iterable<T>`]]></haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
-	<class path="haxe.iterators.ArrayKeyValueIterator" params="T" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/iterators/ArrayKeyValueIterator.hx">
+	<class path="haxe.iterators.ArrayKeyValueIterator" params="T" file="C:\HaxeToolkit\haxe\std/haxe/iterators/ArrayKeyValueIterator.hx">
 		<current expr="0">
 			<x path="Int"/>
 			<meta><m n=":value"><e>0</e></m></meta>
@@ -3511,7 +3510,7 @@
 			</m>
 		</meta>
 	</class>
-	<class path="haxe.iterators.MapKeyValueIterator" params="K:V" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/haxe/iterators/MapKeyValueIterator.hx">
+	<class path="haxe.iterators.MapKeyValueIterator" params="K:V" file="C:\HaxeToolkit\haxe\std/haxe/iterators/MapKeyValueIterator.hx">
 		<map><c path="haxe.IMap">
 	<c path="haxe.iterators.MapKeyValueIterator.K"/>
 	<c path="haxe.iterators.MapKeyValueIterator.V"/>
@@ -3574,7 +3573,7 @@
 	<c path="interlude.Trio.Y"/>
 	<c path="interlude.Trio.Z"/>
 </c></typedef>
-	<typedef path="interlude.Unit" params="" file="src/interlude/DS.hx" module="interlude.DS"><e path="interlude.ds.Unit"/></typedef>
+	<typedef path="interlude.Unit" params="" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.Unit"/></typedef>
 	<typedef path="interlude.Weighted" params="X" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.Weighted"><c path="interlude.Weighted.X"/></x></typedef>
 	<typedef path="interlude.EitherTools" params="" file="src/interlude/DS.hx" module="interlude.DS">
 		<c path="interlude.ds.EitherTools"/>
@@ -3594,10 +3593,6 @@
 	</typedef>
 	<typedef path="interlude.OutcomeTools" params="" file="src/interlude/DS.hx" module="interlude.DS">
 		<c path="interlude.ds.OutcomeTools"/>
-		<meta><m n=":dox"><e>hide</e></m></meta>
-	</typedef>
-	<typedef path="interlude.WeightedTools" params="" file="src/interlude/DS.hx" module="interlude.DS">
-		<c path="interlude.ds.WeightedTools"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
 	</typedef>
 	<typedef path="interlude.Trampoline" params="X" file="src/interlude/Func.hx" module="interlude.Func"><e path="interlude.func.Trampoline"><c path="interlude.Trampoline.X"/></e></typedef>
@@ -3661,19 +3656,27 @@
 	<typedef path="interlude.Surprise" params="X" file="src/interlude/Reactive.hx" module="interlude.Reactive"><t path="interlude.reactive.Surprise"><c path="interlude.Surprise.X"/></t></typedef>
 	<typedef path="interlude.Observable" params="X" file="src/interlude/Reactive.hx" module="interlude.Reactive"><c path="interlude.reactive.Observable"><c path="interlude.Observable.X"/></c></typedef>
 	<abstract path="interlude.ds.Array1" params="A" file="src/interlude/ds/Array1.hx">
-		<from><icast><t path="Pair">
+		<from>
+			<icast><t path="Pair">
 	<c path="interlude.ds.Array1.A"/>
 	<c path="Array"><c path="interlude.ds.Array1.A"/></c>
-</t></icast></from>
+</t></icast>
+			<icast field="fromIterable1"><t path="Iterable1"><c path="fromIterable1.A"/></t></icast>
+		</from>
 		<this><t path="Pair">
 	<c path="interlude.ds.Array1.A"/>
 	<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 </t></this>
 		<to>
+			<icast><t path="Pair">
+	<c path="interlude.ds.Array1.A"/>
+	<c path="Array"><c path="interlude.ds.Array1.A"/></c>
+</t></icast>
 			<icast field="toArray"><c path="Array"><c path="interlude.ds.Array1.A"/></c></icast>
 			<icast field="toIterable"><a><iterator set="method"><f a=""><t path="Iterator"><c path="interlude.ds.Array1.A"/></t></f></iterator></a></icast>
 			<icast field="toIterable1"><x path="interlude.ds.Iterable1"><c path="interlude.ds.Array1.A"/></x></icast>
 		</to>
+		<haxe_doc>An array that is guaranteed to have at least one element</haxe_doc>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":forward"/>
@@ -3681,21 +3684,29 @@
 		<impl><class path="interlude.ds._Array1.Array1_Impl_" params="" file="src/interlude/ds/Array1.hx" private="1" module="interlude.ds.Array1" final="1">
 	<head public="1" get="accessor" set="null" static="1"><c path="interlude.ds.Array1.A"/></head>
 	<tail public="1" get="accessor" set="null" static="1"><c path="Array"><c path="interlude.ds.Array1.A"/></c></tail>
-	<get_head get="inline" set="null" line="9" static="1"><f a="this">
+	<length public="1" get="accessor" set="null" static="1"><x path="Int"/></length>
+	<get_head get="inline" set="null" line="13" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="interlude.ds.Array1.A"/>
 </f></get_head>
-	<get_tail get="inline" set="null" line="12" static="1"><f a="this">
+	<get_tail get="inline" set="null" line="16" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 </f></get_tail>
-	<_new public="1" get="inline" set="null" line="15" static="1">
+	<get_length get="inline" set="null" line="19" static="1"><f a="this">
+	<t path="Pair">
+		<c path="interlude.ds.Array1.A"/>
+		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
+	</t>
+	<x path="Int"/>
+</f></get_length>
+	<_new public="1" get="inline" set="null" line="22" static="1">
 		<f a="arr1">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3705,21 +3716,21 @@
 		</f>
 		<meta><m n=":noCompletion"/></meta>
 	</_new>
-	<first public="1" get="inline" set="null" line="18" static="1"><f a="this">
+	<first public="1" get="inline" set="null" line="25" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="interlude.ds.Array1.A"/>
 </f></first>
-	<last public="1" set="method" line="21" static="1"><f a="this">
+	<last public="1" set="method" line="28" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="interlude.ds.Array1.A"/>
 </f></last>
-	<get set="method" line="25" static="1">
+	<get set="method" line="32" static="1">
 		<f a="this:index">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3730,7 +3741,7 @@
 		</f>
 		<meta><m n=":arrayAccess"/></meta>
 	</get>
-	<set get="inline" set="null" line="29" static="1">
+	<set get="inline" set="null" line="36" static="1">
 		<f a="this:index:value">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3742,14 +3753,14 @@
 		</f>
 		<meta><m n=":arrayAccess"/></meta>
 	</set>
-	<iterator public="1" set="method" line="33" static="1"><f a="this">
+	<iterator public="1" set="method" line="40" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<t path="Iterator"><c path="interlude.ds.Array1.A"/></t>
 </f></iterator>
-	<toArray public="1" get="inline" set="null" line="42" static="1">
+	<toArray public="1" get="inline" set="null" line="49" static="1">
 		<f a="this">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3759,7 +3770,7 @@
 		</f>
 		<meta><m n=":to"/></meta>
 	</toArray>
-	<toIterable public="1" set="method" line="47" static="1">
+	<toIterable public="1" set="method" line="54" static="1">
 		<f a="this">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3769,7 +3780,7 @@
 		</f>
 		<meta><m n=":to"/></meta>
 	</toIterable>
-	<toIterable1 public="1" set="method" line="51" static="1">
+	<toIterable1 public="1" set="method" line="58" static="1">
 		<f a="this">
 			<t path="Pair">
 				<c path="interlude.ds.Array1.A"/>
@@ -3779,7 +3790,14 @@
 		</f>
 		<meta><m n=":to"/></meta>
 	</toIterable1>
-	<flatMap1 public="1" params="B" set="method" line="54" static="1"><f a="this:fn">
+	<fromIterable1 params="A" set="method" line="60" static="1">
+		<f a="as">
+			<t path="Iterable1"><c path="fromIterable1.A"/></t>
+			<x path="interlude.ds.Array1"><c path="fromIterable1.A"/></x>
+		</f>
+		<meta><m n=":from"/></meta>
+	</fromIterable1>
+	<flatMap1 public="1" params="B" set="method" line="63" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
@@ -3790,7 +3808,7 @@
 	</f>
 	<x path="interlude.ds.Array1"><c path="flatMap1.B"/></x>
 </f></flatMap1>
-	<map1 public="1" params="B" set="method" line="61" static="1"><f a="this:fn">
+	<map1 public="1" params="B" set="method" line="70" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
@@ -3801,47 +3819,56 @@
 	</f>
 	<x path="interlude.ds.Array1"><c path="map1.B"/></x>
 </f></map1>
-	<flatten public="1" params="A" set="method" line="65" static="1"><f a="aas">
+	<flatten public="1" params="A" set="method" line="74" static="1"><f a="aas">
 	<x path="interlude.ds.Array1"><x path="interlude.ds.Array1"><c path="flatten.A"/></x></x>
 	<x path="interlude.ds.Array1"><c path="flatten.A"/></x>
 </f></flatten>
-	<from1 public="1" params="A" set="method" line="71" static="1"><f a="fst:rest">
+	<from1 public="1" params="A" set="method" line="80" static="1"><f a="fst:rest">
 	<c path="from1.A"/>
 	<x path="haxe.Rest"><c path="from1.A"/></x>
 	<x path="interlude.ds.Array1"><c path="from1.A"/></x>
 </f></from1>
-	<array1With public="1" params="A" set="method" line="74" static="1"><f a="head:tail">
+	<array1With public="1" params="A" set="method" line="83" static="1"><f a="head:tail">
 	<c path="array1With.A"/>
 	<c path="Array"><c path="array1With.A"/></c>
 	<x path="interlude.ds.Array1"><c path="array1With.A"/></x>
 </f></array1With>
-	<asArray1 public="1" params="A" set="method" line="77" static="1"><f a="as">
+	<asArray1 public="1" params="A" set="method" line="86" static="1"><f a="as">
 	<t path="Pair">
 		<c path="asArray1.A"/>
 		<c path="Array"><c path="asArray1.A"/></c>
 	</t>
 	<x path="interlude.ds.Array1"><c path="asArray1.A"/></x>
 </f></asArray1>
+	<meta><m n=":directlyUsed"/></meta>
 </class></impl>
 	</abstract>
 	<class path="interlude.ds._Array1.Array1_Impl_" params="" file="src/interlude/ds/Array1.hx" private="1" module="interlude.ds.Array1" final="1">
 		<head public="1" get="accessor" set="null" static="1"><c path="interlude.ds.Array1.A"/></head>
 		<tail public="1" get="accessor" set="null" static="1"><c path="Array"><c path="interlude.ds.Array1.A"/></c></tail>
-		<get_head get="inline" set="null" line="9" static="1"><f a="this">
+		<length public="1" get="accessor" set="null" static="1"><x path="Int"/></length>
+		<get_head get="inline" set="null" line="13" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="interlude.ds.Array1.A"/>
 </f></get_head>
-		<get_tail get="inline" set="null" line="12" static="1"><f a="this">
+		<get_tail get="inline" set="null" line="16" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 </f></get_tail>
-		<_new public="1" get="inline" set="null" line="15" static="1">
+		<get_length get="inline" set="null" line="19" static="1"><f a="this">
+	<t path="Pair">
+		<c path="interlude.ds.Array1.A"/>
+		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
+	</t>
+	<x path="Int"/>
+</f></get_length>
+		<_new public="1" get="inline" set="null" line="22" static="1">
 			<f a="arr1">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -3851,21 +3878,21 @@
 			</f>
 			<meta><m n=":noCompletion"/></meta>
 		</_new>
-		<first public="1" get="inline" set="null" line="18" static="1"><f a="this">
+		<first public="1" get="inline" set="null" line="25" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="interlude.ds.Array1.A"/>
 </f></first>
-		<last public="1" set="method" line="21" static="1"><f a="this">
+		<last public="1" set="method" line="28" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<c path="interlude.ds.Array1.A"/>
 </f></last>
-		<get set="method" line="25" static="1">
+		<get set="method" line="32" static="1">
 			<f a="this:index">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -3876,7 +3903,7 @@
 			</f>
 			<meta><m n=":arrayAccess"/></meta>
 		</get>
-		<set get="inline" set="null" line="29" static="1">
+		<set get="inline" set="null" line="36" static="1">
 			<f a="this:index:value">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -3888,14 +3915,14 @@
 			</f>
 			<meta><m n=":arrayAccess"/></meta>
 		</set>
-		<iterator public="1" set="method" line="33" static="1"><f a="this">
+		<iterator public="1" set="method" line="40" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
 	</t>
 	<t path="Iterator"><c path="interlude.ds.Array1.A"/></t>
 </f></iterator>
-		<toArray public="1" get="inline" set="null" line="42" static="1">
+		<toArray public="1" get="inline" set="null" line="49" static="1">
 			<f a="this">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -3905,7 +3932,7 @@
 			</f>
 			<meta><m n=":to"/></meta>
 		</toArray>
-		<toIterable public="1" set="method" line="47" static="1">
+		<toIterable public="1" set="method" line="54" static="1">
 			<f a="this">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -3915,7 +3942,7 @@
 			</f>
 			<meta><m n=":to"/></meta>
 		</toIterable>
-		<toIterable1 public="1" set="method" line="51" static="1">
+		<toIterable1 public="1" set="method" line="58" static="1">
 			<f a="this">
 				<t path="Pair">
 					<c path="interlude.ds.Array1.A"/>
@@ -3925,7 +3952,14 @@
 			</f>
 			<meta><m n=":to"/></meta>
 		</toIterable1>
-		<flatMap1 public="1" params="B" set="method" line="54" static="1"><f a="this:fn">
+		<fromIterable1 params="A" set="method" line="60" static="1">
+			<f a="as">
+				<t path="Iterable1"><c path="fromIterable1.A"/></t>
+				<x path="interlude.ds.Array1"><c path="fromIterable1.A"/></x>
+			</f>
+			<meta><m n=":from"/></meta>
+		</fromIterable1>
+		<flatMap1 public="1" params="B" set="method" line="63" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
@@ -3936,7 +3970,7 @@
 	</f>
 	<x path="interlude.ds.Array1"><c path="flatMap1.B"/></x>
 </f></flatMap1>
-		<map1 public="1" params="B" set="method" line="61" static="1"><f a="this:fn">
+		<map1 public="1" params="B" set="method" line="70" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Array1.A"/>
 		<c path="Array"><c path="interlude.ds.Array1.A"/></c>
@@ -3947,27 +3981,28 @@
 	</f>
 	<x path="interlude.ds.Array1"><c path="map1.B"/></x>
 </f></map1>
-		<flatten public="1" params="A" set="method" line="65" static="1"><f a="aas">
+		<flatten public="1" params="A" set="method" line="74" static="1"><f a="aas">
 	<x path="interlude.ds.Array1"><x path="interlude.ds.Array1"><c path="flatten.A"/></x></x>
 	<x path="interlude.ds.Array1"><c path="flatten.A"/></x>
 </f></flatten>
-		<from1 public="1" params="A" set="method" line="71" static="1"><f a="fst:rest">
+		<from1 public="1" params="A" set="method" line="80" static="1"><f a="fst:rest">
 	<c path="from1.A"/>
 	<x path="haxe.Rest"><c path="from1.A"/></x>
 	<x path="interlude.ds.Array1"><c path="from1.A"/></x>
 </f></from1>
-		<array1With public="1" params="A" set="method" line="74" static="1"><f a="head:tail">
+		<array1With public="1" params="A" set="method" line="83" static="1"><f a="head:tail">
 	<c path="array1With.A"/>
 	<c path="Array"><c path="array1With.A"/></c>
 	<x path="interlude.ds.Array1"><c path="array1With.A"/></x>
 </f></array1With>
-		<asArray1 public="1" params="A" set="method" line="77" static="1"><f a="as">
+		<asArray1 public="1" params="A" set="method" line="86" static="1"><f a="as">
 	<t path="Pair">
 		<c path="asArray1.A"/>
 		<c path="Array"><c path="asArray1.A"/></c>
 	</t>
 	<x path="interlude.ds.Array1"><c path="asArray1.A"/></x>
 </f></asArray1>
+		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<abstract path="interlude.ds.AsyncState" params="X:A" file="src/interlude/ds/AsyncState.hx">
 		<from><icast><f a="">
@@ -3991,13 +4026,16 @@
 	<c path="interlude.ds.AsyncState.X"/>
 </t></t>
 </f></icast></to>
+		<haxe_doc>A type of function that takes an initial state `X`, and asynchronously
+    produces an output value `A` and a new state  
+    @see https://en.wikibooks.org/wiki/Haskell/Understanding_monads/State</haxe_doc>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":forward"/>
 			<m n=":callable"/>
 		</meta>
 		<impl><class path="interlude.ds._AsyncState.AsyncState_Impl_" params="" file="src/interlude/ds/AsyncState.hx" private="1" module="interlude.ds.AsyncState" final="1">
-	<_new public="1" get="inline" set="null" line="12" static="1">
+	<_new public="1" get="inline" set="null" line="17" static="1">
 		<f a="as">
 			<f a="">
 				<c path="interlude.ds.AsyncState.X"/>
@@ -4013,7 +4051,7 @@
 		</f>
 		<meta><m n=":noCompletion"/></meta>
 	</_new>
-	<ap public="1" params="X:A:B" set="method" line="14" static="1"><f a="fn:s">
+	<ap public="1" params="X:A:B" set="method" line="19" static="1"><f a="fn:s">
 	<x path="interlude.ds.AsyncState">
 		<c path="ap.X"/>
 		<f a="">
@@ -4030,14 +4068,14 @@
 		<c path="ap.B"/>
 	</x>
 </f></ap>
-	<asAsyncState public="1" params="X:A" set="method" line="17" static="1"><f a="a">
+	<asAsyncState public="1" params="X:A" set="method" line="22" static="1"><f a="a">
 	<c path="asAsyncState.A"/>
 	<x path="interlude.ds.AsyncState">
 		<c path="asAsyncState.X"/>
 		<c path="asAsyncState.A"/>
 	</x>
 </f></asAsyncState>
-	<eval public="1" params="X:A" set="method" line="20" static="1"><f a="s:x">
+	<eval public="1" params="X:A" set="method" line="25" static="1"><f a="s:x">
 	<x path="interlude.ds.AsyncState">
 		<c path="eval.X"/>
 		<c path="eval.A"/>
@@ -4045,7 +4083,7 @@
 	<c path="eval.X"/>
 	<t path="Task"><c path="eval.A"/></t>
 </f></eval>
-	<filter public="1" params="X:A" set="method" line="23" static="1"><f a="s:predicate">
+	<filter public="1" params="X:A" set="method" line="28" static="1"><f a="s:predicate">
 	<x path="interlude.ds.AsyncState">
 		<c path="filter.X"/>
 		<c path="filter.A"/>
@@ -4059,7 +4097,7 @@
 		<t path="Option"><c path="filter.A"/></t>
 	</x>
 </f></filter>
-	<filterMap public="1" params="X:A:B" set="method" line="28" static="1"><f a="s:predicate:fn">
+	<filterMap public="1" params="X:A:B" set="method" line="33" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="filterMap.X"/>
 		<c path="filterMap.A"/>
@@ -4077,7 +4115,7 @@
 		<t path="Option"><c path="filterMap.B"/></t>
 	</x>
 </f></filterMap>
-	<filterFMap public="1" params="X:A:B" set="method" line="33" static="1"><f a="s:predicate:fn">
+	<filterFMap public="1" params="X:A:B" set="method" line="38" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="filterFMap.X"/>
 		<c path="filterFMap.A"/>
@@ -4098,7 +4136,7 @@
 		<t path="Option"><c path="filterFMap.B"/></t>
 	</x>
 </f></filterFMap>
-	<flatMap public="1" params="X:A:B" set="method" line="38" static="1"><f a="s:fn">
+	<flatMap public="1" params="X:A:B" set="method" line="43" static="1"><f a="s:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="flatMap.X"/>
 		<c path="flatMap.A"/>
@@ -4115,7 +4153,7 @@
 		<c path="flatMap.B"/>
 	</x>
 </f></flatMap>
-	<flatten public="1" params="X:A" set="method" line="41" static="1"><f a="s">
+	<flatten public="1" params="X:A" set="method" line="46" static="1"><f a="s">
 	<x path="interlude.ds.AsyncState">
 		<c path="flatten.X"/>
 		<x path="interlude.ds.AsyncState">
@@ -4128,7 +4166,7 @@
 		<c path="flatten.A"/>
 	</x>
 </f></flatten>
-	<local public="1" params="X:A" set="method" line="44" static="1"><f a="s:fn">
+	<local public="1" params="X:A" set="method" line="49" static="1"><f a="s:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="local.X"/>
 		<c path="local.A"/>
@@ -4142,7 +4180,7 @@
 		<c path="local.A"/>
 	</x>
 </f></local>
-	<map public="1" params="X:A:B" set="method" line="47" static="1"><f a="s:fn">
+	<map public="1" params="X:A:B" set="method" line="52" static="1"><f a="s:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="map.X"/>
 		<c path="map.A"/>
@@ -4156,7 +4194,7 @@
 		<c path="map.B"/>
 	</x>
 </f></map>
-	<run public="1" params="X:A" set="method" line="50" static="1"><f a="s:x">
+	<run public="1" params="X:A" set="method" line="55" static="1"><f a="s:x">
 	<x path="interlude.ds.AsyncState">
 		<c path="run.X"/>
 		<c path="run.A"/>
@@ -4164,7 +4202,7 @@
 	<c path="run.X"/>
 	<t path="Task"><c path="run.X"/></t>
 </f></run>
-	<zip public="1" params="X:A:B" set="method" line="53" static="1"><f a="sa:sb">
+	<zip public="1" params="X:A:B" set="method" line="58" static="1"><f a="sa:sb">
 	<x path="interlude.ds.AsyncState">
 		<c path="zip.X"/>
 		<c path="zip.A"/>
@@ -4181,7 +4219,7 @@
 		</t>
 	</x>
 </f></zip>
-	<zipWith public="1" params="X:A:B:Z" set="method" line="56" static="1"><f a="sa:sb:fn">
+	<zipWith public="1" params="X:A:B:Z" set="method" line="61" static="1"><f a="sa:sb:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="zipWith.X"/>
 		<c path="zipWith.A"/>
@@ -4200,7 +4238,7 @@
 		<c path="zipWith.Z"/>
 	</x>
 </f></zipWith>
-	<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="59" static="1"><f a="sa:sb:sc:fn">
+	<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="64" static="1"><f a="sa:sb:sc:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="zipWith3.X"/>
 		<c path="zipWith3.A"/>
@@ -4227,7 +4265,7 @@
 </class></impl>
 	</abstract>
 	<class path="interlude.ds._AsyncState.AsyncState_Impl_" params="" file="src/interlude/ds/AsyncState.hx" private="1" module="interlude.ds.AsyncState" final="1">
-		<_new public="1" get="inline" set="null" line="12" static="1">
+		<_new public="1" get="inline" set="null" line="17" static="1">
 			<f a="as">
 				<f a="">
 					<c path="interlude.ds.AsyncState.X"/>
@@ -4243,7 +4281,7 @@
 			</f>
 			<meta><m n=":noCompletion"/></meta>
 		</_new>
-		<ap public="1" params="X:A:B" set="method" line="14" static="1"><f a="fn:s">
+		<ap public="1" params="X:A:B" set="method" line="19" static="1"><f a="fn:s">
 	<x path="interlude.ds.AsyncState">
 		<c path="ap.X"/>
 		<f a="">
@@ -4260,14 +4298,14 @@
 		<c path="ap.B"/>
 	</x>
 </f></ap>
-		<asAsyncState public="1" params="X:A" set="method" line="17" static="1"><f a="a">
+		<asAsyncState public="1" params="X:A" set="method" line="22" static="1"><f a="a">
 	<c path="asAsyncState.A"/>
 	<x path="interlude.ds.AsyncState">
 		<c path="asAsyncState.X"/>
 		<c path="asAsyncState.A"/>
 	</x>
 </f></asAsyncState>
-		<eval public="1" params="X:A" set="method" line="20" static="1"><f a="s:x">
+		<eval public="1" params="X:A" set="method" line="25" static="1"><f a="s:x">
 	<x path="interlude.ds.AsyncState">
 		<c path="eval.X"/>
 		<c path="eval.A"/>
@@ -4275,7 +4313,7 @@
 	<c path="eval.X"/>
 	<t path="Task"><c path="eval.A"/></t>
 </f></eval>
-		<filter public="1" params="X:A" set="method" line="23" static="1"><f a="s:predicate">
+		<filter public="1" params="X:A" set="method" line="28" static="1"><f a="s:predicate">
 	<x path="interlude.ds.AsyncState">
 		<c path="filter.X"/>
 		<c path="filter.A"/>
@@ -4289,7 +4327,7 @@
 		<t path="Option"><c path="filter.A"/></t>
 	</x>
 </f></filter>
-		<filterMap public="1" params="X:A:B" set="method" line="28" static="1"><f a="s:predicate:fn">
+		<filterMap public="1" params="X:A:B" set="method" line="33" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="filterMap.X"/>
 		<c path="filterMap.A"/>
@@ -4307,7 +4345,7 @@
 		<t path="Option"><c path="filterMap.B"/></t>
 	</x>
 </f></filterMap>
-		<filterFMap public="1" params="X:A:B" set="method" line="33" static="1"><f a="s:predicate:fn">
+		<filterFMap public="1" params="X:A:B" set="method" line="38" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="filterFMap.X"/>
 		<c path="filterFMap.A"/>
@@ -4328,7 +4366,7 @@
 		<t path="Option"><c path="filterFMap.B"/></t>
 	</x>
 </f></filterFMap>
-		<flatMap public="1" params="X:A:B" set="method" line="38" static="1"><f a="s:fn">
+		<flatMap public="1" params="X:A:B" set="method" line="43" static="1"><f a="s:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="flatMap.X"/>
 		<c path="flatMap.A"/>
@@ -4345,7 +4383,7 @@
 		<c path="flatMap.B"/>
 	</x>
 </f></flatMap>
-		<flatten public="1" params="X:A" set="method" line="41" static="1"><f a="s">
+		<flatten public="1" params="X:A" set="method" line="46" static="1"><f a="s">
 	<x path="interlude.ds.AsyncState">
 		<c path="flatten.X"/>
 		<x path="interlude.ds.AsyncState">
@@ -4358,7 +4396,7 @@
 		<c path="flatten.A"/>
 	</x>
 </f></flatten>
-		<local public="1" params="X:A" set="method" line="44" static="1"><f a="s:fn">
+		<local public="1" params="X:A" set="method" line="49" static="1"><f a="s:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="local.X"/>
 		<c path="local.A"/>
@@ -4372,7 +4410,7 @@
 		<c path="local.A"/>
 	</x>
 </f></local>
-		<map public="1" params="X:A:B" set="method" line="47" static="1"><f a="s:fn">
+		<map public="1" params="X:A:B" set="method" line="52" static="1"><f a="s:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="map.X"/>
 		<c path="map.A"/>
@@ -4386,7 +4424,7 @@
 		<c path="map.B"/>
 	</x>
 </f></map>
-		<run public="1" params="X:A" set="method" line="50" static="1"><f a="s:x">
+		<run public="1" params="X:A" set="method" line="55" static="1"><f a="s:x">
 	<x path="interlude.ds.AsyncState">
 		<c path="run.X"/>
 		<c path="run.A"/>
@@ -4394,7 +4432,7 @@
 	<c path="run.X"/>
 	<t path="Task"><c path="run.X"/></t>
 </f></run>
-		<zip public="1" params="X:A:B" set="method" line="53" static="1"><f a="sa:sb">
+		<zip public="1" params="X:A:B" set="method" line="58" static="1"><f a="sa:sb">
 	<x path="interlude.ds.AsyncState">
 		<c path="zip.X"/>
 		<c path="zip.A"/>
@@ -4411,7 +4449,7 @@
 		</t>
 	</x>
 </f></zip>
-		<zipWith public="1" params="X:A:B:Z" set="method" line="56" static="1"><f a="sa:sb:fn">
+		<zipWith public="1" params="X:A:B:Z" set="method" line="61" static="1"><f a="sa:sb:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="zipWith.X"/>
 		<c path="zipWith.A"/>
@@ -4430,7 +4468,7 @@
 		<c path="zipWith.Z"/>
 	</x>
 </f></zipWith>
-		<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="59" static="1"><f a="sa:sb:sc:fn">
+		<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="64" static="1"><f a="sa:sb:sc:fn">
 	<x path="interlude.ds.AsyncState">
 		<c path="zipWith3.X"/>
 		<c path="zipWith3.A"/>
@@ -4456,7 +4494,7 @@
 </f></zipWith3>
 	</class>
 	<class path="interlude.ds.EitherTools" params="" file="src/interlude/ds/EitherTools.hx">
-		<ap public="1" params="A:B:C" set="method" line="6" static="1"><f a="fn:e">
+		<ap public="1" params="A:B:C" set="method" line="9" static="1"><f a="fn:e">
 	<t path="Either">
 		<c path="ap.A"/>
 		<f a="">
@@ -4473,21 +4511,21 @@
 		<c path="ap.C"/>
 	</t>
 </f></ap>
-		<asLeft public="1" params="A:B" get="inline" set="null" line="9" static="1"><f a="a">
+		<asLeft public="1" params="A:B" get="inline" set="null" line="12" static="1"><f a="a">
 	<c path="asLeft.A"/>
 	<t path="Either">
 		<c path="asLeft.A"/>
 		<c path="asLeft.B"/>
 	</t>
 </f></asLeft>
-		<asRight public="1" params="A:B" get="inline" set="null" line="12" static="1"><f a="b">
+		<asRight public="1" params="A:B" get="inline" set="null" line="15" static="1"><f a="b">
 	<c path="asRight.B"/>
 	<t path="Either">
 		<c path="asRight.A"/>
 		<c path="asRight.B"/>
 	</t>
 </f></asRight>
-		<flatMap public="1" params="A:B:C" set="method" line="15" static="1"><f a="e:fn">
+		<flatMap public="1" params="A:B:C" set="method" line="18" static="1"><f a="e:fn">
 	<t path="Either">
 		<c path="flatMap.A"/>
 		<c path="flatMap.B"/>
@@ -4504,14 +4542,14 @@
 		<c path="flatMap.C"/>
 	</t>
 </f></flatMap>
-		<lefts public="1" params="A:B" set="method" line="20" static="1"><f a="es">
+		<lefts public="1" params="A:B" set="method" line="23" static="1"><f a="es">
 	<t path="Iterable"><t path="Either">
 	<c path="lefts.A"/>
 	<c path="lefts.B"/>
 </t></t>
 	<t path="Iterable"><c path="lefts.A"/></t>
 </f></lefts>
-		<map public="1" params="A:B:C" set="method" line="23" static="1"><f a="e:f">
+		<map public="1" params="A:B:C" set="method" line="26" static="1"><f a="e:f">
 	<t path="Either">
 		<c path="map.A"/>
 		<c path="map.B"/>
@@ -4525,7 +4563,7 @@
 		<c path="map.C"/>
 	</t>
 </f></map>
-		<match public="1" params="A:B:C" set="method" line="28" static="1"><f a="e:whenLeft:whenRight">
+		<match public="1" params="A:B:C" set="method" line="31" static="1"><f a="e:whenLeft:whenRight">
 	<t path="Either">
 		<c path="match.A"/>
 		<c path="match.B"/>
@@ -4540,7 +4578,7 @@
 	</f>
 	<c path="match.C"/>
 </f></match>
-		<mutate public="1" params="A:B" set="method" line="33" static="1"><f a="e:whenLeft:whenRight">
+		<mutate public="1" params="A:B" set="method" line="36" static="1"><f a="e:whenLeft:whenRight">
 	<t path="Either">
 		<c path="mutate.A"/>
 		<c path="mutate.B"/>
@@ -4558,7 +4596,7 @@
 		<c path="mutate.B"/>
 	</t>
 </f></mutate>
-		<mutate_ public="1" params="A:B" set="method" line="41" static="1"><f a="e:whenRight">
+		<mutate_ public="1" params="A:B" set="method" line="44" static="1"><f a="e:whenRight">
 	<t path="Either">
 		<c path="mutate_.A"/>
 		<c path="mutate_.B"/>
@@ -4572,36 +4610,36 @@
 		<c path="mutate_.B"/>
 	</t>
 </f></mutate_>
-		<rights public="1" params="A:B" set="method" line="49" static="1"><f a="es">
+		<rights public="1" params="A:B" set="method" line="52" static="1"><f a="es">
 	<t path="Iterable"><t path="Either">
 	<c path="rights.A"/>
 	<c path="rights.B"/>
 </t></t>
 	<t path="Iterable"><c path="rights.B"/></t>
 </f></rights>
-		<toNullable public="1" params="A:B" set="method" line="52" static="1"><f a="e">
+		<toNullable public="1" params="A:B" set="method" line="55" static="1"><f a="e">
 	<t path="Either">
 		<c path="toNullable.A"/>
 		<c path="toNullable.B"/>
 	</t>
 	<x path="Null"><c path="toNullable.B"/></x>
 </f></toNullable>
-		<toOption public="1" params="A:B" set="method" line="57" static="1"><f a="e">
+		<toOption public="1" params="A:B" set="method" line="60" static="1"><f a="e">
 	<t path="Either">
 		<c path="toOption.A"/>
 		<c path="toOption.B"/>
 	</t>
 	<t path="Option"><c path="toOption.B"/></t>
 </f></toOption>
-		<toOutcome public="1" params="A:B" set="method" line="62" static="1"><f a="e:?pos">
+		<toOutcome public="1" params="A:B" set="method" line="65" static="1"><f a="e:?pos">
 	<t path="Either">
 		<c path="toOutcome.A"/>
 		<c path="toOutcome.B"/>
 	</t>
-	<x path="Null"><t path="haxe.PosInfos"/></x>
+	<t path="haxe.PosInfos"/>
 	<t path="Outcome"><c path="toOutcome.B"/></t>
 </f></toOutcome>
-		<zip public="1" params="X:A:B" set="method" line="67" static="1"><f a="eA:eB">
+		<zip public="1" params="X:A:B" set="method" line="70" static="1"><f a="eA:eB">
 	<t path="Either">
 		<c path="zip.X"/>
 		<c path="zip.A"/>
@@ -4618,7 +4656,7 @@
 		</t>
 	</t>
 </f></zip>
-		<zipWith public="1" params="X:A:B:C" set="method" line="70" static="1"><f a="eA:eB:fn">
+		<zipWith public="1" params="X:A:B:C" set="method" line="73" static="1"><f a="eA:eB:fn">
 	<t path="Either">
 		<c path="zipWith.X"/>
 		<c path="zipWith.A"/>
@@ -4637,25 +4675,34 @@
 		<c path="zipWith.C"/>
 	</t>
 </f></zipWith>
+		<haxe_doc>Extension methods for haxe's built-in `Either` type</haxe_doc>
 		<meta>
 			<m n=":publicFields"/>
 			<m n=":nullSafety"><e>Strict</e></m>
 		</meta>
 	</class>
 	<abstract path="interlude.ds.Iterable1" params="A" file="src/interlude/ds/Iterable1.hx">
-		<from><icast><t path="Pair">
+		<from>
+			<icast><t path="Pair">
 	<c path="interlude.ds.Iterable1.A"/>
 	<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
-</t></icast></from>
+</t></icast>
+			<icast field="fromArray1"><t path="Array1"><c path="fromArray1.A"/></t></icast>
+		</from>
 		<this><t path="Pair">
 	<c path="interlude.ds.Iterable1.A"/>
 	<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 </t></this>
 		<to>
+			<icast><t path="Pair">
+	<c path="interlude.ds.Iterable1.A"/>
+	<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
+</t></icast>
 			<icast field="toIterable"><a><iterator set="method"><f a=""><t path="Iterator"><c path="interlude.ds.Iterable1.A"/></t></f></iterator></a></icast>
 			<icast field="toArray1"><x path="interlude.ds.Array1"><c path="interlude.ds.Iterable1.A"/></x></icast>
 			<icast field="toArray"><c path="Array"><c path="interlude.ds.Iterable1.A"/></c></icast>
 		</to>
+		<haxe_doc>An `Iterable` that is guaranteed to have at least one element</haxe_doc>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":forward"/>
@@ -4663,21 +4710,21 @@
 		<impl><class path="interlude.ds._Iterable1.Iterable1_Impl_" params="" file="src/interlude/ds/Iterable1.hx" private="1" module="interlude.ds.Iterable1" final="1">
 	<head public="1" get="accessor" set="null" static="1"><c path="interlude.ds.Iterable1.A"/></head>
 	<tail public="1" get="accessor" set="null" static="1"><t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t></tail>
-	<get_head get="inline" set="null" line="9" static="1"><f a="this">
+	<get_head get="inline" set="null" line="12" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<c path="interlude.ds.Iterable1.A"/>
 </f></get_head>
-	<get_tail get="inline" set="null" line="12" static="1"><f a="this">
+	<get_tail get="inline" set="null" line="15" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 </f></get_tail>
-	<_new public="1" get="inline" set="null" line="15" static="1">
+	<_new public="1" get="inline" set="null" line="18" static="1">
 		<f a="it">
 			<t path="Pair">
 				<c path="interlude.ds.Iterable1.A"/>
@@ -4687,28 +4734,28 @@
 		</f>
 		<meta><m n=":noCompletion"/></meta>
 	</_new>
-	<first public="1" get="inline" set="null" line="18" static="1"><f a="this">
+	<first public="1" get="inline" set="null" line="21" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<c path="interlude.ds.Iterable1.A"/>
 </f></first>
-	<last public="1" set="method" line="21" static="1"><f a="this">
+	<last public="1" set="method" line="24" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<c path="interlude.ds.Iterable1.A"/>
 </f></last>
-	<iterator public="1" set="method" line="28" static="1"><f a="this">
+	<iterator public="1" set="method" line="31" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<t path="Iterator"><c path="interlude.ds.Iterable1.A"/></t>
 </f></iterator>
-	<toIterable public="1" get="inline" set="null" line="36" static="1">
+	<toIterable public="1" get="inline" set="null" line="39" static="1">
 		<f a="this">
 			<t path="Pair">
 				<c path="interlude.ds.Iterable1.A"/>
@@ -4718,7 +4765,7 @@
 		</f>
 		<meta><m n=":to"/></meta>
 	</toIterable>
-	<toArray1 public="1" get="inline" set="null" line="40" static="1">
+	<toArray1 public="1" get="inline" set="null" line="43" static="1">
 		<f a="this">
 			<t path="Pair">
 				<c path="interlude.ds.Iterable1.A"/>
@@ -4728,7 +4775,14 @@
 		</f>
 		<meta><m n=":to"/></meta>
 	</toArray1>
-	<toArray public="1" get="inline" set="null" line="43" static="1">
+	<fromArray1 params="A" set="method" line="45" static="1">
+		<f a="as">
+			<t path="Array1"><c path="fromArray1.A"/></t>
+			<x path="interlude.ds.Iterable1"><c path="fromArray1.A"/></x>
+		</f>
+		<meta><m n=":from"/></meta>
+	</fromArray1>
+	<toArray public="1" get="inline" set="null" line="48" static="1">
 		<f a="this">
 			<t path="Pair">
 				<c path="interlude.ds.Iterable1.A"/>
@@ -4738,7 +4792,7 @@
 		</f>
 		<meta><m n=":to"/></meta>
 	</toArray>
-	<flatMap1 public="1" params="B" set="method" line="48" static="1"><f a="this:fn">
+	<flatMap1 public="1" params="B" set="method" line="53" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
@@ -4749,7 +4803,7 @@
 	</f>
 	<x path="interlude.ds.Iterable1"><c path="flatMap1.B"/></x>
 </f></flatMap1>
-	<map1 public="1" params="B" set="method" line="54" static="1"><f a="this:fn">
+	<map1 public="1" params="B" set="method" line="59" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
@@ -4760,21 +4814,21 @@
 	</f>
 	<x path="interlude.ds.Iterable1"><c path="map1.B"/></x>
 </f></map1>
-	<flatten public="1" params="A" set="method" line="58" static="1"><f a="aas">
+	<flatten public="1" params="A" set="method" line="63" static="1"><f a="aas">
 	<x path="interlude.ds.Iterable1"><x path="interlude.ds.Iterable1"><c path="flatten.A"/></x></x>
 	<x path="interlude.ds.Iterable1"><c path="flatten.A"/></x>
 </f></flatten>
-	<from1 public="1" params="A" set="method" line="63" static="1"><f a="fst:rest">
+	<from1 public="1" params="A" set="method" line="68" static="1"><f a="fst:rest">
 	<c path="from1.A"/>
 	<x path="haxe.Rest"><c path="from1.A"/></x>
 	<x path="interlude.ds.Iterable1"><c path="from1.A"/></x>
 </f></from1>
-	<iterable1With public="1" params="A" set="method" line="66" static="1"><f a="head:tail">
+	<iterable1With public="1" params="A" set="method" line="71" static="1"><f a="head:tail">
 	<c path="iterable1With.A"/>
 	<t path="Iterable"><c path="iterable1With.A"/></t>
 	<x path="interlude.ds.Iterable1"><c path="iterable1With.A"/></x>
 </f></iterable1With>
-	<asIterable1 public="1" params="A" set="method" line="69" static="1"><f a="as">
+	<asIterable1 public="1" params="A" set="method" line="74" static="1"><f a="as">
 	<t path="Pair">
 		<c path="asIterable1.A"/>
 		<t path="Iterable"><c path="asIterable1.A"/></t>
@@ -4787,21 +4841,21 @@
 	<class path="interlude.ds._Iterable1.Iterable1_Impl_" params="" file="src/interlude/ds/Iterable1.hx" private="1" module="interlude.ds.Iterable1" final="1">
 		<head public="1" get="accessor" set="null" static="1"><c path="interlude.ds.Iterable1.A"/></head>
 		<tail public="1" get="accessor" set="null" static="1"><t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t></tail>
-		<get_head get="inline" set="null" line="9" static="1"><f a="this">
+		<get_head get="inline" set="null" line="12" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<c path="interlude.ds.Iterable1.A"/>
 </f></get_head>
-		<get_tail get="inline" set="null" line="12" static="1"><f a="this">
+		<get_tail get="inline" set="null" line="15" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 </f></get_tail>
-		<_new public="1" get="inline" set="null" line="15" static="1">
+		<_new public="1" get="inline" set="null" line="18" static="1">
 			<f a="it">
 				<t path="Pair">
 					<c path="interlude.ds.Iterable1.A"/>
@@ -4811,28 +4865,28 @@
 			</f>
 			<meta><m n=":noCompletion"/></meta>
 		</_new>
-		<first public="1" get="inline" set="null" line="18" static="1"><f a="this">
+		<first public="1" get="inline" set="null" line="21" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<c path="interlude.ds.Iterable1.A"/>
 </f></first>
-		<last public="1" set="method" line="21" static="1"><f a="this">
+		<last public="1" set="method" line="24" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<c path="interlude.ds.Iterable1.A"/>
 </f></last>
-		<iterator public="1" set="method" line="28" static="1"><f a="this">
+		<iterator public="1" set="method" line="31" static="1"><f a="this">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
 	</t>
 	<t path="Iterator"><c path="interlude.ds.Iterable1.A"/></t>
 </f></iterator>
-		<toIterable public="1" get="inline" set="null" line="36" static="1">
+		<toIterable public="1" get="inline" set="null" line="39" static="1">
 			<f a="this">
 				<t path="Pair">
 					<c path="interlude.ds.Iterable1.A"/>
@@ -4842,7 +4896,7 @@
 			</f>
 			<meta><m n=":to"/></meta>
 		</toIterable>
-		<toArray1 public="1" get="inline" set="null" line="40" static="1">
+		<toArray1 public="1" get="inline" set="null" line="43" static="1">
 			<f a="this">
 				<t path="Pair">
 					<c path="interlude.ds.Iterable1.A"/>
@@ -4852,7 +4906,14 @@
 			</f>
 			<meta><m n=":to"/></meta>
 		</toArray1>
-		<toArray public="1" get="inline" set="null" line="43" static="1">
+		<fromArray1 params="A" set="method" line="45" static="1">
+			<f a="as">
+				<t path="Array1"><c path="fromArray1.A"/></t>
+				<x path="interlude.ds.Iterable1"><c path="fromArray1.A"/></x>
+			</f>
+			<meta><m n=":from"/></meta>
+		</fromArray1>
+		<toArray public="1" get="inline" set="null" line="48" static="1">
 			<f a="this">
 				<t path="Pair">
 					<c path="interlude.ds.Iterable1.A"/>
@@ -4862,7 +4923,7 @@
 			</f>
 			<meta><m n=":to"/></meta>
 		</toArray>
-		<flatMap1 public="1" params="B" set="method" line="48" static="1"><f a="this:fn">
+		<flatMap1 public="1" params="B" set="method" line="53" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
@@ -4873,7 +4934,7 @@
 	</f>
 	<x path="interlude.ds.Iterable1"><c path="flatMap1.B"/></x>
 </f></flatMap1>
-		<map1 public="1" params="B" set="method" line="54" static="1"><f a="this:fn">
+		<map1 public="1" params="B" set="method" line="59" static="1"><f a="this:fn">
 	<t path="Pair">
 		<c path="interlude.ds.Iterable1.A"/>
 		<t path="Iterable"><c path="interlude.ds.Iterable1.A"/></t>
@@ -4884,21 +4945,21 @@
 	</f>
 	<x path="interlude.ds.Iterable1"><c path="map1.B"/></x>
 </f></map1>
-		<flatten public="1" params="A" set="method" line="58" static="1"><f a="aas">
+		<flatten public="1" params="A" set="method" line="63" static="1"><f a="aas">
 	<x path="interlude.ds.Iterable1"><x path="interlude.ds.Iterable1"><c path="flatten.A"/></x></x>
 	<x path="interlude.ds.Iterable1"><c path="flatten.A"/></x>
 </f></flatten>
-		<from1 public="1" params="A" set="method" line="63" static="1"><f a="fst:rest">
+		<from1 public="1" params="A" set="method" line="68" static="1"><f a="fst:rest">
 	<c path="from1.A"/>
 	<x path="haxe.Rest"><c path="from1.A"/></x>
 	<x path="interlude.ds.Iterable1"><c path="from1.A"/></x>
 </f></from1>
-		<iterable1With public="1" params="A" set="method" line="66" static="1"><f a="head:tail">
+		<iterable1With public="1" params="A" set="method" line="71" static="1"><f a="head:tail">
 	<c path="iterable1With.A"/>
 	<t path="Iterable"><c path="iterable1With.A"/></t>
 	<x path="interlude.ds.Iterable1"><c path="iterable1With.A"/></x>
 </f></iterable1With>
-		<asIterable1 public="1" params="A" set="method" line="69" static="1"><f a="as">
+		<asIterable1 public="1" params="A" set="method" line="74" static="1"><f a="as">
 	<t path="Pair">
 		<c path="asIterable1.A"/>
 		<t path="Iterable"><c path="asIterable1.A"/></t>
@@ -4908,11 +4969,11 @@
 		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<class path="interlude.ds.Lazy" params="A" file="src/interlude/ds/Lazy.hx">
-		<any public="1" params="A" get="inline" set="null" line="28" static="1"><f a="l">
+		<any public="1" params="A" get="inline" set="null" line="34" static="1"><f a="l">
 	<c path="interlude.ds.Lazy"><c path="any.A"/></c>
 	<x path="Bool"/>
 </f></any>
-		<ap public="1" params="A:B" set="method" line="31" static="1"><f a="fn:a">
+		<ap public="1" params="A:B" set="method" line="37" static="1"><f a="fn:a">
 	<c path="interlude.ds.Lazy"><f a="">
 	<c path="ap.A"/>
 	<c path="ap.B"/>
@@ -4920,11 +4981,11 @@
 	<c path="interlude.ds.Lazy"><c path="ap.A"/></c>
 	<c path="interlude.ds.Lazy"><c path="ap.B"/></c>
 </f></ap>
-		<asLazy public="1" params="A" get="inline" set="null" line="34" static="1"><f a="a">
+		<asLazy public="1" params="A" get="inline" set="null" line="40" static="1"><f a="a">
 	<c path="asLazy.A"/>
 	<c path="interlude.ds.Lazy"><c path="asLazy.A"/></c>
 </f></asLazy>
-		<flatMap public="1" params="A:B" set="method" line="37" static="1"><f a="l:fn">
+		<flatMap public="1" params="A:B" set="method" line="43" static="1"><f a="l:fn">
 	<c path="interlude.ds.Lazy"><c path="flatMap.A"/></c>
 	<f a="">
 		<c path="flatMap.A"/>
@@ -4932,11 +4993,11 @@
 	</f>
 	<c path="interlude.ds.Lazy"><c path="flatMap.B"/></c>
 </f></flatMap>
-		<flatten public="1" params="A" set="method" line="40" static="1"><f a="l">
+		<flatten public="1" params="A" set="method" line="46" static="1"><f a="l">
 	<c path="interlude.ds.Lazy"><c path="interlude.ds.Lazy"><c path="flatten.A"/></c></c>
 	<c path="interlude.ds.Lazy"><c path="flatten.A"/></c>
 </f></flatten>
-		<map public="1" params="A:B" set="method" line="43" static="1"><f a="l:fn">
+		<map public="1" params="A:B" set="method" line="49" static="1"><f a="l:fn">
 	<c path="interlude.ds.Lazy"><c path="map.A"/></c>
 	<f a="">
 		<c path="map.A"/>
@@ -4944,7 +5005,7 @@
 	</f>
 	<c path="interlude.ds.Lazy"><c path="map.B"/></c>
 </f></map>
-		<mutate public="1" params="A" get="inline" set="null" line="46" static="1"><f a="l:mutator">
+		<mutate public="1" params="A" get="inline" set="null" line="52" static="1"><f a="l:mutator">
 	<c path="interlude.ds.Lazy"><c path="mutate.A"/></c>
 	<f a="">
 		<c path="mutate.A"/>
@@ -4952,7 +5013,7 @@
 	</f>
 	<c path="interlude.ds.Lazy"><c path="mutate.A"/></c>
 </f></mutate>
-		<mutate_ public="1" params="A" get="inline" set="null" line="51" static="1"><f a="l:whenEval">
+		<mutate_ public="1" params="A" get="inline" set="null" line="57" static="1"><f a="l:whenEval">
 	<c path="interlude.ds.Lazy"><c path="mutate_.A"/></c>
 	<f a="">
 		<c path="mutate_.A"/>
@@ -4960,11 +5021,11 @@
 	</f>
 	<c path="interlude.ds.Lazy"><c path="mutate_.A"/></c>
 </f></mutate_>
-		<toArray public="1" params="A" set="method" line="57" static="1"><f a="l">
+		<toArray public="1" params="A" set="method" line="63" static="1"><f a="l">
 	<c path="interlude.ds.Lazy"><c path="toArray.A"/></c>
 	<c path="Array"><c path="toArray.A"/></c>
 </f></toArray>
-		<zip public="1" params="A:B" get="inline" set="null" line="60" static="1"><f a="la:lb">
+		<zip public="1" params="A:B" get="inline" set="null" line="66" static="1"><f a="la:lb">
 	<c path="interlude.ds.Lazy"><c path="zip.A"/></c>
 	<c path="interlude.ds.Lazy"><c path="zip.B"/></c>
 	<c path="interlude.ds.Lazy"><t path="Pair">
@@ -4972,7 +5033,7 @@
 	<c path="zip.B"/>
 </t></c>
 </f></zip>
-		<zipWith public="1" params="A:B:C" set="method" line="63" static="1"><f a="la:lb:fn">
+		<zipWith public="1" params="A:B:C" set="method" line="69" static="1"><f a="la:lb:fn">
 	<c path="interlude.ds.Lazy"><c path="zipWith.A"/></c>
 	<c path="interlude.ds.Lazy"><c path="zipWith.B"/></c>
 	<f a=":">
@@ -4987,14 +5048,22 @@
 			<meta><m n=":value"><e>null</e></m></meta>
 		</result>
 		<genValue public="1" set="null"><f a=""><c path="interlude.ds.Lazy.A"/></f></genValue>
-		<eval public="1" get="inline" set="null" line="12"><f a=""><c path="interlude.ds.Lazy.A"/></f></eval>
-		<toIterable public="1" set="method" line="17"><f a=""><t path="Iterable"><c path="interlude.ds.Lazy.A"/></t></f></toIterable>
-		<toString public="1" set="method" line="24"><f a=""><c path="String"/></f></toString>
-		<new public="1" set="method" line="8"><f a="genValue">
+		<eval public="1" get="inline" set="null" line="21"><f a=""><c path="interlude.ds.Lazy.A"/></f></eval>
+		<iterator public="1" set="method" line="25"><f a=""><t path="Iterator"><c path="interlude.ds.Lazy.A"/></t></f></iterator>
+		<toString public="1" set="method" line="30"><f a=""><c path="String"/></f></toString>
+		<new public="1" set="method" line="17"><f a="genValue">
 	<f a=""><c path="interlude.ds.Lazy.A"/></f>
 	<x path="Void"/>
 </f></new>
+		<haxe_doc><![CDATA[Delays evaluation of a value until access to it is needed
+    ```haxe
+    var delayed = expensiveOperation.toLazy();
+    trace(delayed.toString()); // 'Lazy<>'
+    var expensiveResult = delayed.eval();
+    trace(delayed.toString()); // expensiveResult
+    ```]]></haxe_doc>
 		<meta>
+			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":publicFields"/>
 		</meta>
@@ -5043,7 +5112,7 @@
 		</meta>
 	</class>
 	<class path="interlude.ds.OptionTools" params="" file="src/interlude/ds/OptionTools.hx">
-		<all public="1" params="A" get="inline" set="null" line="6" static="1"><f a="maybe:predicate">
+		<all public="1" params="A" get="inline" set="null" line="9" static="1"><f a="maybe:predicate">
 	<t path="Option"><c path="all.A"/></t>
 	<f a="">
 		<c path="all.A"/>
@@ -5051,11 +5120,11 @@
 	</f>
 	<x path="Bool"/>
 </f></all>
-		<any public="1" params="A" set="method" line="9" static="1"><f a="maybe">
+		<any public="1" params="A" set="method" line="12" static="1"><f a="maybe">
 	<t path="Option"><c path="any.A"/></t>
 	<x path="Bool"/>
 </f></any>
-		<anyMatch public="1" params="A" set="method" line="14" static="1"><f a="maybe:predicate">
+		<anyMatch public="1" params="A" set="method" line="17" static="1"><f a="maybe:predicate">
 	<t path="Option"><c path="anyMatch.A"/></t>
 	<f a="">
 		<c path="anyMatch.A"/>
@@ -5063,7 +5132,7 @@
 	</f>
 	<x path="Bool"/>
 </f></anyMatch>
-		<ap public="1" params="A:B" set="method" line="19" static="1"><f a="fn:maybe">
+		<ap public="1" params="A:B" set="method" line="22" static="1"><f a="fn:maybe">
 	<t path="Option"><f a="">
 	<c path="ap.A"/>
 	<c path="ap.B"/>
@@ -5071,16 +5140,16 @@
 	<t path="Option"><c path="ap.A"/></t>
 	<t path="Option"><c path="ap.B"/></t>
 </f></ap>
-		<asOption public="1" params="A" set="method" line="24" static="1"><f a="a">
+		<asOption public="1" params="A" set="method" line="27" static="1"><f a="a">
 	<c path="asOption.A"/>
 	<t path="Option"><c path="asOption.A"/></t>
 </f></asOption>
-		<contains public="1" params="A" set="method" line="28" static="1"><f a="maybe:value">
+		<contains public="1" params="A" set="method" line="31" static="1"><f a="maybe:value">
 	<t path="Option"><c path="contains.A"/></t>
 	<c path="contains.A"/>
 	<x path="Bool"/>
 </f></contains>
-		<filter public="1" params="A" set="method" line="33" static="1"><f a="maybe:predicate">
+		<filter public="1" params="A" set="method" line="36" static="1"><f a="maybe:predicate">
 	<t path="Option"><c path="filter.A"/></t>
 	<f a="">
 		<c path="filter.A"/>
@@ -5088,7 +5157,7 @@
 	</f>
 	<t path="Option"><c path="filter.A"/></t>
 </f></filter>
-		<filterFmap public="1" params="A:B" set="method" line="39" static="1"><f a="maybe:predicate:fn">
+		<filterFmap public="1" params="A:B" set="method" line="42" static="1"><f a="maybe:predicate:fn">
 	<t path="Option"><c path="filterFmap.A"/></t>
 	<f a="">
 		<c path="filterFmap.A"/>
@@ -5100,7 +5169,7 @@
 	</f>
 	<t path="Option"><c path="filterFmap.B"/></t>
 </f></filterFmap>
-		<filterMap public="1" params="A:B" set="method" line="45" static="1"><f a="maybe:predicate:fn">
+		<filterMap public="1" params="A:B" set="method" line="48" static="1"><f a="maybe:predicate:fn">
 	<t path="Option"><c path="filterMap.A"/></t>
 	<f a="">
 		<c path="filterMap.A"/>
@@ -5112,7 +5181,7 @@
 	</f>
 	<t path="Option"><c path="filterMap.B"/></t>
 </f></filterMap>
-		<flatMap public="1" params="A:B" set="method" line="51" static="1"><f a="maybe:fn">
+		<flatMap public="1" params="A:B" set="method" line="54" static="1"><f a="maybe:fn">
 	<t path="Option"><c path="flatMap.A"/></t>
 	<f a="">
 		<c path="flatMap.A"/>
@@ -5120,11 +5189,11 @@
 	</f>
 	<t path="Option"><c path="flatMap.B"/></t>
 </f></flatMap>
-		<flatten public="1" params="A" set="method" line="56" static="1"><f a="mmaybe">
+		<flatten public="1" params="A" set="method" line="59" static="1"><f a="mmaybe">
 	<t path="Option"><t path="Option"><c path="flatten.A"/></t></t>
 	<t path="Option"><c path="flatten.A"/></t>
 </f></flatten>
-		<fold public="1" params="A:B" set="method" line="61" static="1"><f a="maybe:seed:fn">
+		<fold public="1" params="A:B" set="method" line="64" static="1"><f a="maybe:seed:fn">
 	<t path="Option"><c path="fold.A"/></t>
 	<c path="fold.B"/>
 	<f a="accumulator:current">
@@ -5134,11 +5203,11 @@
 	</f>
 	<c path="fold.B"/>
 </f></fold>
-		<iterator public="1" params="A" set="method" line="66" static="1"><f a="maybe">
+		<iterator public="1" params="A" set="method" line="69" static="1"><f a="maybe">
 	<t path="Option"><c path="iterator.A"/></t>
 	<t path="Iterator"><c path="iterator.A"/></t>
 </f></iterator>
-		<map public="1" params="A:B" set="method" line="72" static="1"><f a="maybe:fn">
+		<map public="1" params="A:B" set="method" line="75" static="1"><f a="maybe:fn">
 	<t path="Option"><c path="map.A"/></t>
 	<f a="">
 		<c path="map.A"/>
@@ -5146,7 +5215,7 @@
 	</f>
 	<t path="Option"><c path="map.B"/></t>
 </f></map>
-		<match public="1" params="A:B" set="method" line="77" static="1"><f a="maybe:whenSome:whenNone">
+		<match public="1" params="A:B" set="method" line="80" static="1"><f a="maybe:whenSome:whenNone">
 	<t path="Option"><c path="match.A"/></t>
 	<f a="">
 		<c path="match.A"/>
@@ -5155,7 +5224,7 @@
 	<f a=""><c path="match.B"/></f>
 	<c path="match.B"/>
 </f></match>
-		<mutate public="1" params="A" set="method" line="82" static="1"><f a="maybe:whenSome:whenNone">
+		<mutate public="1" params="A" set="method" line="85" static="1"><f a="maybe:whenSome:whenNone">
 	<t path="Option"><c path="mutate.A"/></t>
 	<f a="">
 		<c path="mutate.A"/>
@@ -5164,7 +5233,7 @@
 	<f a=""><x path="Void"/></f>
 	<t path="Option"><c path="mutate.A"/></t>
 </f></mutate>
-		<mutate_ public="1" params="A" set="method" line="90" static="1"><f a="maybe:whenSome">
+		<mutate_ public="1" params="A" set="method" line="93" static="1"><f a="maybe:whenSome">
 	<t path="Option"><c path="mutate_.A"/></t>
 	<f a="">
 		<c path="mutate_.A"/>
@@ -5172,49 +5241,49 @@
 	</f>
 	<t path="Option"><c path="mutate_.A"/></t>
 </f></mutate_>
-		<orDefault public="1" params="A" set="method" line="98" static="1"><f a="maybe:whenNone">
+		<orDefault public="1" params="A" set="method" line="101" static="1"><f a="maybe:whenNone">
 	<t path="Option"><c path="orDefault.A"/></t>
 	<f a=""><c path="orDefault.A"/></f>
 	<c path="orDefault.A"/>
 </f></orDefault>
-		<orElse public="1" params="A" set="method" line="101" static="1"><f a="maybe:genOther">
+		<orElse public="1" params="A" set="method" line="104" static="1"><f a="maybe:genOther">
 	<t path="Option"><c path="orElse.A"/></t>
 	<f a=""><t path="Option"><c path="orElse.A"/></t></f>
 	<t path="Option"><c path="orElse.A"/></t>
 </f></orElse>
-		<toArray public="1" params="A" set="method" line="106" static="1"><f a="maybe">
+		<toArray public="1" params="A" set="method" line="109" static="1"><f a="maybe">
 	<t path="Option"><c path="toArray.A"/></t>
 	<t path="Iterable"><c path="toArray.A"/></t>
 </f></toArray>
-		<toEither public="1" params="A" set="method" line="111" static="1"><f a="maybe">
+		<toEither public="1" params="A" set="method" line="114" static="1"><f a="maybe">
 	<t path="Option"><c path="toEither.A"/></t>
 	<t path="Either">
 		<c path="String"/>
 		<c path="toEither.A"/>
 	</t>
 </f></toEither>
-		<toIterable public="1" params="A" set="method" line="116" static="1"><f a="maybe">
+		<toIterable public="1" params="A" set="method" line="119" static="1"><f a="maybe">
 	<t path="Option"><c path="toIterable.A"/></t>
 	<t path="Iterable"><c path="toIterable.A"/></t>
 </f></toIterable>
-		<toNullable public="1" params="A" set="method" line="120" static="1"><f a="maybe">
+		<toNullable public="1" params="A" set="method" line="123" static="1"><f a="maybe">
 	<t path="Option"><c path="toNullable.A"/></t>
 	<x path="Null"><c path="toNullable.A"/></x>
 </f></toNullable>
-		<toOutcome public="1" params="A" set="method" line="125" static="1"><f a="maybe">
+		<toOutcome public="1" params="A" set="method" line="128" static="1"><f a="maybe">
 	<t path="Option"><c path="toOutcome.A"/></t>
 	<t path="Outcome"><c path="toOutcome.A"/></t>
 </f></toOutcome>
-		<traceMessage public="1" params="A" set="method" line="130" static="1"><f a="maybe:messageWhenNone">
+		<traceMessage public="1" params="A" set="method" line="133" static="1"><f a="maybe:messageWhenNone">
 	<t path="Option"><c path="traceMessage.A"/></t>
 	<f a=""><c path="String"/></f>
 	<t path="Option"><c path="traceMessage.A"/></t>
 </f></traceMessage>
-		<traceValue public="1" params="A" set="method" line="136" static="1"><f a="maybe">
+		<traceValue public="1" params="A" set="method" line="139" static="1"><f a="maybe">
 	<t path="Option"><c path="traceValue.A"/></t>
 	<t path="Option"><c path="traceValue.A"/></t>
 </f></traceValue>
-		<zip public="1" params="A:B" set="method" line="142" static="1"><f a="mA:mB">
+		<zip public="1" params="A:B" set="method" line="145" static="1"><f a="mA:mB">
 	<t path="Option"><c path="zip.A"/></t>
 	<t path="Option"><c path="zip.B"/></t>
 	<t path="Option"><t path="Pair">
@@ -5222,7 +5291,7 @@
 	<c path="zip.B"/>
 </t></t>
 </f></zip>
-		<zipWith public="1" params="A:B:C" set="method" line="145" static="1"><f a="mA:mB:fn">
+		<zipWith public="1" params="A:B:C" set="method" line="148" static="1"><f a="mA:mB:fn">
 	<t path="Option"><c path="zipWith.A"/></t>
 	<t path="Option"><c path="zipWith.B"/></t>
 	<f a=":">
@@ -5232,7 +5301,7 @@
 	</f>
 	<t path="Option"><c path="zipWith.C"/></t>
 </f></zipWith>
-		<zipWith3 public="1" params="A:B:C:D" set="method" line="150" static="1"><f a="mA:mB:mC:fn">
+		<zipWith3 public="1" params="A:B:C:D" set="method" line="153" static="1"><f a="mA:mB:mC:fn">
 	<t path="Option"><c path="zipWith3.A"/></t>
 	<t path="Option"><c path="zipWith3.B"/></t>
 	<t path="Option"><c path="zipWith3.C"/></t>
@@ -5244,6 +5313,7 @@
 	</f>
 	<t path="Option"><c path="zipWith3.D"/></t>
 </f></zipWith3>
+		<haxe_doc>Extension methods for haxe's built-in `Option` type</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -5254,15 +5324,18 @@
 		<Success a="a"><c path="interlude.ds.Outcome.A"/></Success>
 		<Failure a="message:?pos">
 			<c path="String"/>
-			<x path="Null"><t path="haxe.PosInfos"/></x>
+			<t path="haxe.PosInfos"/>
 		</Failure>
+		<haxe_doc>The result of an operation that can succeed or fail.  
+    A `Success` holds the output of the operation, and a `Failure` holds the
+    reason the operation failed.</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":using"><e>interlude.ds.Outcome.OutcomeTools</e></m>
 		</meta>
 	</enum>
 	<class path="interlude.ds.OutcomeTools" params="" file="src/interlude/ds/Outcome.hx" module="interlude.ds.Outcome">
-		<all public="1" params="A" get="inline" set="null" line="12" static="1"><f a="o:predicate">
+		<all public="1" params="A" get="inline" set="null" line="17" static="1"><f a="o:predicate">
 	<e path="interlude.ds.Outcome"><c path="all.A"/></e>
 	<f a="">
 		<c path="all.A"/>
@@ -5270,11 +5343,11 @@
 	</f>
 	<x path="Bool"/>
 </f></all>
-		<any public="1" params="A" set="method" line="15" static="1"><f a="o">
+		<any public="1" params="A" set="method" line="20" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="any.A"/></e>
 	<x path="Bool"/>
 </f></any>
-		<anyMatch public="1" params="A" set="method" line="20" static="1"><f a="o:predicate">
+		<anyMatch public="1" params="A" set="method" line="25" static="1"><f a="o:predicate">
 	<e path="interlude.ds.Outcome"><c path="anyMatch.A"/></e>
 	<f a="">
 		<c path="anyMatch.A"/>
@@ -5282,7 +5355,7 @@
 	</f>
 	<x path="Bool"/>
 </f></anyMatch>
-		<ap public="1" params="A:B" set="method" line="25" static="1"><f a="fn:o">
+		<ap public="1" params="A:B" set="method" line="30" static="1"><f a="fn:o">
 	<e path="interlude.ds.Outcome"><f a="">
 	<c path="ap.A"/>
 	<c path="ap.B"/>
@@ -5290,25 +5363,25 @@
 	<e path="interlude.ds.Outcome"><c path="ap.A"/></e>
 	<e path="interlude.ds.Outcome"><c path="ap.B"/></e>
 </f></ap>
-		<asFailure public="1" params="A" get="inline" set="null" line="28" static="1"><f a="message:?pos">
+		<asFailure public="1" params="A" get="inline" set="null" line="33" static="1"><f a="message:?pos">
 	<c path="String"/>
-	<x path="Null"><t path="haxe.PosInfos"/></x>
+	<t path="haxe.PosInfos"/>
 	<e path="interlude.ds.Outcome"><c path="asFailure.A"/></e>
 </f></asFailure>
-		<asOutcome public="1" params="A" get="inline" set="null" line="31" static="1"><f a="value">
+		<asOutcome public="1" params="A" get="inline" set="null" line="36" static="1"><f a="value">
 	<c path="asOutcome.A"/>
 	<e path="interlude.ds.Outcome"><c path="asOutcome.A"/></e>
 </f></asOutcome>
-		<asSuccess public="1" params="A" get="inline" set="null" line="34" static="1"><f a="value">
+		<asSuccess public="1" params="A" get="inline" set="null" line="39" static="1"><f a="value">
 	<c path="asSuccess.A"/>
 	<e path="interlude.ds.Outcome"><c path="asSuccess.A"/></e>
 </f></asSuccess>
-		<contains public="1" params="A" set="method" line="37" static="1"><f a="o:value">
+		<contains public="1" params="A" set="method" line="42" static="1"><f a="o:value">
 	<e path="interlude.ds.Outcome"><c path="contains.A"/></e>
 	<c path="contains.A"/>
 	<x path="Bool"/>
 </f></contains>
-		<filter public="1" params="A" set="method" line="42" static="1"><f a="o:predicate">
+		<filter public="1" params="A" set="method" line="47" static="1"><f a="o:predicate">
 	<e path="interlude.ds.Outcome"><c path="filter.A"/></e>
 	<f a="">
 		<c path="filter.A"/>
@@ -5316,7 +5389,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="filter.A"/></e>
 </f></filter>
-		<filterFmap public="1" params="A:B" set="method" line="47" static="1"><f a="o:predicate:fn">
+		<filterFmap public="1" params="A:B" set="method" line="52" static="1"><f a="o:predicate:fn">
 	<e path="interlude.ds.Outcome"><c path="filterFmap.A"/></e>
 	<f a="">
 		<c path="filterFmap.A"/>
@@ -5328,7 +5401,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="filterFmap.B"/></e>
 </f></filterFmap>
-		<filterMap public="1" params="A:B" set="method" line="52" static="1"><f a="o:predicate:fn">
+		<filterMap public="1" params="A:B" set="method" line="57" static="1"><f a="o:predicate:fn">
 	<e path="interlude.ds.Outcome"><c path="filterMap.A"/></e>
 	<f a="">
 		<c path="filterMap.A"/>
@@ -5340,7 +5413,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="filterMap.B"/></e>
 </f></filterMap>
-		<flatMap public="1" params="A:B" set="method" line="57" static="1"><f a="o:fn">
+		<flatMap public="1" params="A:B" set="method" line="62" static="1"><f a="o:fn">
 	<e path="interlude.ds.Outcome"><c path="flatMap.A"/></e>
 	<f a="">
 		<c path="flatMap.A"/>
@@ -5348,11 +5421,11 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="flatMap.B"/></e>
 </f></flatMap>
-		<flatten public="1" params="A" set="method" line="62" static="1"><f a="oo">
+		<flatten public="1" params="A" set="method" line="67" static="1"><f a="oo">
 	<e path="interlude.ds.Outcome"><e path="interlude.ds.Outcome"><c path="flatten.A"/></e></e>
 	<e path="interlude.ds.Outcome"><c path="flatten.A"/></e>
 </f></flatten>
-		<fold public="1" params="A:B" set="method" line="67" static="1"><f a="o:seed:fn">
+		<fold public="1" params="A:B" set="method" line="72" static="1"><f a="o:seed:fn">
 	<e path="interlude.ds.Outcome"><c path="fold.A"/></e>
 	<c path="fold.B"/>
 	<f a="accumulator:current">
@@ -5362,11 +5435,11 @@
 	</f>
 	<c path="fold.B"/>
 </f></fold>
-		<iterator public="1" params="A" set="method" line="72" static="1"><f a="o">
+		<iterator public="1" params="A" set="method" line="77" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="iterator.A"/></e>
 	<t path="Iterator"><c path="iterator.A"/></t>
 </f></iterator>
-		<map public="1" params="A:B" set="method" line="77" static="1"><f a="o:fn">
+		<map public="1" params="A:B" set="method" line="82" static="1"><f a="o:fn">
 	<e path="interlude.ds.Outcome"><c path="map.A"/></e>
 	<f a="">
 		<c path="map.A"/>
@@ -5374,7 +5447,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="map.B"/></e>
 </f></map>
-		<match public="1" params="A:B" set="method" line="82" static="1"><f a="o:whenSuccess:whenFailure">
+		<match public="1" params="A:B" set="method" line="87" static="1"><f a="o:whenSuccess:whenFailure">
 	<e path="interlude.ds.Outcome"><c path="match.A"/></e>
 	<f a="">
 		<c path="match.A"/>
@@ -5387,7 +5460,7 @@
 	</f>
 	<c path="match.B"/>
 </f></match>
-		<mutate public="1" params="A" set="method" line="87" static="1"><f a="o:whenSuccess:whenFailure">
+		<mutate public="1" params="A" set="method" line="92" static="1"><f a="o:whenSuccess:whenFailure">
 	<e path="interlude.ds.Outcome"><c path="mutate.A"/></e>
 	<f a="">
 		<c path="mutate.A"/>
@@ -5400,7 +5473,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="mutate.A"/></e>
 </f></mutate>
-		<mutate_ public="1" params="A" set="method" line="95" static="1"><f a="o:whenSuccess">
+		<mutate_ public="1" params="A" set="method" line="100" static="1"><f a="o:whenSuccess">
 	<e path="interlude.ds.Outcome"><c path="mutate_.A"/></e>
 	<f a="">
 		<c path="mutate_.A"/>
@@ -5408,7 +5481,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="mutate_.A"/></e>
 </f></mutate_>
-		<orDefault public="1" params="A" set="method" line="103" static="1"><f a="o:whenFailure">
+		<orDefault public="1" params="A" set="method" line="108" static="1"><f a="o:whenFailure">
 	<e path="interlude.ds.Outcome"><c path="orDefault.A"/></e>
 	<f a="message:?pos">
 		<c path="String"/>
@@ -5417,43 +5490,43 @@
 	</f>
 	<c path="orDefault.A"/>
 </f></orDefault>
-		<orElse public="1" params="A" set="method" line="106" static="1"><f a="o:genOther">
+		<orElse public="1" params="A" set="method" line="111" static="1"><f a="o:genOther">
 	<e path="interlude.ds.Outcome"><c path="orElse.A"/></e>
 	<f a=""><e path="interlude.ds.Outcome"><c path="orElse.A"/></e></f>
 	<e path="interlude.ds.Outcome"><c path="orElse.A"/></e>
 </f></orElse>
-		<toArray public="1" params="A" set="method" line="111" static="1"><f a="o">
+		<toArray public="1" params="A" set="method" line="116" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="toArray.A"/></e>
 	<t path="Iterable"><c path="toArray.A"/></t>
 </f></toArray>
-		<toIterable public="1" params="A" set="method" line="116" static="1"><f a="o">
+		<toIterable public="1" params="A" set="method" line="121" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="toIterable.A"/></e>
 	<t path="Iterable"><c path="toIterable.A"/></t>
 </f></toIterable>
-		<toEither public="1" params="A" set="method" line="120" static="1"><f a="o">
+		<toEither public="1" params="A" set="method" line="125" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="toEither.A"/></e>
 	<t path="Either">
 		<c path="String"/>
 		<c path="toEither.A"/>
 	</t>
 </f></toEither>
-		<toNullable public="1" params="A" set="method" line="125" static="1"><f a="o">
+		<toNullable public="1" params="A" set="method" line="130" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="toNullable.A"/></e>
 	<x path="Null"><c path="toNullable.A"/></x>
 </f></toNullable>
-		<toOption public="1" params="A" set="method" line="130" static="1"><f a="o">
+		<toOption public="1" params="A" set="method" line="135" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="toOption.A"/></e>
 	<t path="Option"><c path="toOption.A"/></t>
 </f></toOption>
-		<traceMessage public="1" params="A" set="method" line="135" static="1"><f a="o">
+		<traceMessage public="1" params="A" set="method" line="140" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="traceMessage.A"/></e>
 	<e path="interlude.ds.Outcome"><c path="traceMessage.A"/></e>
 </f></traceMessage>
-		<traceValue public="1" params="A" set="method" line="140" static="1"><f a="o">
+		<traceValue public="1" params="A" set="method" line="145" static="1"><f a="o">
 	<e path="interlude.ds.Outcome"><c path="traceValue.A"/></e>
 	<e path="interlude.ds.Outcome"><c path="traceValue.A"/></e>
 </f></traceValue>
-		<zip public="1" params="A:B" set="method" line="145" static="1"><f a="mA:mB">
+		<zip public="1" params="A:B" set="method" line="150" static="1"><f a="mA:mB">
 	<e path="interlude.ds.Outcome"><c path="zip.A"/></e>
 	<e path="interlude.ds.Outcome"><c path="zip.B"/></e>
 	<e path="interlude.ds.Outcome"><t path="Pair">
@@ -5461,7 +5534,7 @@
 	<c path="zip.B"/>
 </t></e>
 </f></zip>
-		<zipWith public="1" params="A:B:C" set="method" line="148" static="1"><f a="mA:mB:fn">
+		<zipWith public="1" params="A:B:C" set="method" line="153" static="1"><f a="mA:mB:fn">
 	<e path="interlude.ds.Outcome"><c path="zipWith.A"/></e>
 	<e path="interlude.ds.Outcome"><c path="zipWith.B"/></e>
 	<f a=":">
@@ -5471,7 +5544,7 @@
 	</f>
 	<e path="interlude.ds.Outcome"><c path="zipWith.C"/></e>
 </f></zipWith>
-		<zipWith3 public="1" params="A:B:C:D" set="method" line="153" static="1"><f a="mA:mB:mC:fn">
+		<zipWith3 public="1" params="A:B:C:D" set="method" line="158" static="1"><f a="mA:mB:mC:fn">
 	<e path="interlude.ds.Outcome"><c path="zipWith3.A"/></e>
 	<e path="interlude.ds.Outcome"><c path="zipWith3.B"/></e>
 	<e path="interlude.ds.Outcome"><c path="zipWith3.C"/></e>
@@ -5494,7 +5567,7 @@
 	<key><c path="interlude.ds.KeyValuePair.K"/></key>
 </a></typedef>
 	<class path="interlude.ds.Pair" params="X:Y" file="src/interlude/ds/Pair.hx">
-		<apply public="1" params="A:B:Z" get="inline" set="null" line="12" static="1"><f a="t:fn">
+		<apply public="1" params="A:B:Z" get="inline" set="null" line="24" static="1"><f a="t:fn">
 	<c path="interlude.ds.Pair">
 		<c path="apply.A"/>
 		<c path="apply.B"/>
@@ -5506,7 +5579,7 @@
 	</f>
 	<c path="apply.Z"/>
 </f></apply>
-		<toKeyValue public="1" params="A:B" get="inline" set="null" line="15" static="1"><f a="t">
+		<toKeyValue public="1" params="A:B" get="inline" set="null" line="27" static="1"><f a="t">
 	<c path="interlude.ds.Pair">
 		<c path="toKeyValue.A"/>
 		<c path="toKeyValue.B"/>
@@ -5516,7 +5589,7 @@
 		<c path="toKeyValue.B"/>
 	</t>
 </f></toKeyValue>
-		<eval public="1" params="A:Z" get="inline" set="null" line="18" static="1"><f a="t">
+		<eval public="1" params="A:Z" get="inline" set="null" line="30" static="1"><f a="t">
 	<c path="interlude.ds.Pair">
 		<f a="">
 			<c path="eval.A"/>
@@ -5526,33 +5599,43 @@
 	</c>
 	<c path="eval.Z"/>
 </f></eval>
-		<fromN public="1" params="A:B:Z" get="inline" set="null" line="21" static="1"><f a="fn:t">
+		<flip public="1" params="A:B" set="method" line="33" static="1"><f a="t">
+	<c path="interlude.ds.Pair">
+		<c path="flip.A"/>
+		<c path="flip.B"/>
+	</c>
+	<c path="interlude.ds.Pair">
+		<c path="flip.B"/>
+		<c path="flip.A"/>
+	</c>
+</f></flip>
+		<apply2 public="1" params="A:B:Z" get="inline" set="null" line="36" static="1"><f a="fn:t">
 	<f a=":">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.Z"/>
+		<c path="apply2.A"/>
+		<c path="apply2.B"/>
+		<c path="apply2.Z"/>
 	</f>
 	<c path="interlude.ds.Pair">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
+		<c path="apply2.A"/>
+		<c path="apply2.B"/>
 	</c>
-	<c path="fromN.Z"/>
-</f></fromN>
-		<fromNC public="1" params="A:B:Z" get="inline" set="null" line="24" static="1"><f a="fn:t">
+	<c path="apply2.Z"/>
+</f></apply2>
+		<apply2c public="1" params="A:B:Z" get="inline" set="null" line="39" static="1"><f a="fn:t">
 	<f a="">
-		<c path="fromNC.A"/>
+		<c path="apply2c.A"/>
 		<f a="">
-			<c path="fromNC.B"/>
-			<c path="fromNC.Z"/>
+			<c path="apply2c.B"/>
+			<c path="apply2c.Z"/>
 		</f>
 	</f>
 	<c path="interlude.ds.Pair">
-		<c path="fromNC.A"/>
-		<c path="fromNC.B"/>
+		<c path="apply2c.A"/>
+		<c path="apply2c.B"/>
 	</c>
-	<c path="fromNC.Z"/>
-</f></fromNC>
-		<map_1 public="1" params="A:B:Z" set="method" line="27" static="1"><f a="t:fn">
+	<c path="apply2c.Z"/>
+</f></apply2c>
+		<map_1 public="1" params="A:B:Z" set="method" line="42" static="1"><f a="t:fn">
 	<c path="interlude.ds.Pair">
 		<c path="map_1.A"/>
 		<c path="map_1.B"/>
@@ -5566,7 +5649,7 @@
 		<c path="map_1.B"/>
 	</c>
 </f></map_1>
-		<map_2 public="1" params="A:B:Z" set="method" line="32" static="1"><f a="t:fn">
+		<map_2 public="1" params="A:B:Z" set="method" line="47" static="1"><f a="t:fn">
 	<c path="interlude.ds.Pair">
 		<c path="map_2.A"/>
 		<c path="map_2.B"/>
@@ -5580,15 +5663,15 @@
 		<c path="map_2.Z"/>
 	</c>
 </f></map_2>
-		<fst public="1" params="A" get="inline" set="null" line="37" static="1"><f a="tup">
+		<fst public="1" params="A" get="inline" set="null" line="52" static="1"><f a="tup">
 	<a><_1 final="1" set="null"><c path="fst.A"/></_1></a>
 	<c path="fst.A"/>
 </f></fst>
-		<snd public="1" params="A" get="inline" set="null" line="40" static="1"><f a="tup">
+		<snd public="1" params="A" get="inline" set="null" line="55" static="1"><f a="tup">
 	<a><_2 final="1" set="null"><c path="snd.A"/></_2></a>
 	<c path="snd.A"/>
 </f></snd>
-		<with public="1" params="A:B" get="inline" set="null" line="43" static="1"><f a="a:b">
+		<with public="1" params="A:B" get="inline" set="null" line="58" static="1"><f a="a:b">
 	<c path="with.A"/>
 	<c path="with.B"/>
 	<c path="interlude.ds.Pair">
@@ -5598,18 +5681,16 @@
 </f></with>
 		<_1 final="1" public="1"><c path="interlude.ds.Pair.X"/></_1>
 		<_2 final="1" public="1"><c path="interlude.ds.Pair.Y"/></_2>
-		<new public="1" set="method" line="8">
-			<f a="_1:_2">
-				<c path="interlude.ds.Pair.X"/>
-				<c path="interlude.ds.Pair.Y"/>
-				<x path="Void"/>
-			</f>
-			<meta>
-				<m n=":compilerGenerated"/>
-				<m n=":inheritDoc"/>
-			</meta>
-			<haxe_doc></haxe_doc>
-		</new>
+		<new public="1" set="method" line="19"><f a="_1:_2">
+	<c path="interlude.ds.Pair.X"/>
+	<c path="interlude.ds.Pair.Y"/>
+	<x path="Void"/>
+</f></new>
+		<haxe_doc>A type that holds two values; essentially a 2-Tuple. Can be used with 
+    structure syntax.
+    ```haxe
+    abc.with(123) == { _1: abc, _2: 123 } == new Pair(abc, 123)
+    ```</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -5618,7 +5699,7 @@
 		</meta>
 	</class>
 	<class path="interlude.ds.Trio" params="X:Y:Z" file="src/interlude/ds/Pair.hx" module="interlude.ds.Pair">
-		<apply public="1" params="A:B:C:Z" get="inline" set="null" line="55" static="1"><f a="t:fn">
+		<apply public="1" params="A:B:C:Z" get="inline" set="null" line="83" static="1"><f a="t:fn">
 	<c path="interlude.ds.Trio">
 		<c path="apply.A"/>
 		<c path="apply.B"/>
@@ -5632,7 +5713,7 @@
 	</f>
 	<c path="apply.Z"/>
 </f></apply>
-		<eval public="1" params="A:B:Z" get="inline" set="null" line="58" static="1"><f a="t">
+		<eval public="1" params="A:B:Z" get="inline" set="null" line="86" static="1"><f a="t">
 	<c path="interlude.ds.Trio">
 		<f a=":">
 			<c path="eval.A"/>
@@ -5644,39 +5725,39 @@
 	</c>
 	<c path="eval.Z"/>
 </f></eval>
-		<fromN public="1" params="A:B:C:Z" get="inline" set="null" line="61" static="1"><f a="fn:t">
+		<apply3 public="1" params="A:B:C:Z" get="inline" set="null" line="89" static="1"><f a="fn:t">
 	<f a="::">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.C"/>
-		<c path="fromN.Z"/>
+		<c path="apply3.A"/>
+		<c path="apply3.B"/>
+		<c path="apply3.C"/>
+		<c path="apply3.Z"/>
 	</f>
 	<c path="interlude.ds.Trio">
-		<c path="fromN.A"/>
-		<c path="fromN.B"/>
-		<c path="fromN.C"/>
+		<c path="apply3.A"/>
+		<c path="apply3.B"/>
+		<c path="apply3.C"/>
 	</c>
-	<c path="fromN.Z"/>
-</f></fromN>
-		<fromNC public="1" params="A:B:C:Z" get="inline" set="null" line="64" static="1"><f a="fn:t">
+	<c path="apply3.Z"/>
+</f></apply3>
+		<apply3c public="1" params="A:B:C:Z" get="inline" set="null" line="92" static="1"><f a="fn:t">
 	<f a="">
-		<c path="fromNC.A"/>
+		<c path="apply3c.A"/>
 		<f a="">
-			<c path="fromNC.B"/>
+			<c path="apply3c.B"/>
 			<f a="">
-				<c path="fromNC.C"/>
-				<c path="fromNC.Z"/>
+				<c path="apply3c.C"/>
+				<c path="apply3c.Z"/>
 			</f>
 		</f>
 	</f>
 	<c path="interlude.ds.Trio">
-		<c path="fromNC.A"/>
-		<c path="fromNC.B"/>
-		<c path="fromNC.C"/>
+		<c path="apply3c.A"/>
+		<c path="apply3c.B"/>
+		<c path="apply3c.C"/>
 	</c>
-	<c path="fromNC.Z"/>
-</f></fromNC>
-		<map_1 public="1" params="A:B:C:Z" set="method" line="67" static="1"><f a="t:fn">
+	<c path="apply3c.Z"/>
+</f></apply3c>
+		<map_1 public="1" params="A:B:C:Z" set="method" line="95" static="1"><f a="t:fn">
 	<c path="interlude.ds.Trio">
 		<c path="map_1.A"/>
 		<c path="map_1.B"/>
@@ -5692,7 +5773,7 @@
 		<c path="map_1.C"/>
 	</c>
 </f></map_1>
-		<map_2 public="1" params="A:B:C:Z" set="method" line="73" static="1"><f a="t:fn">
+		<map_2 public="1" params="A:B:C:Z" set="method" line="101" static="1"><f a="t:fn">
 	<c path="interlude.ds.Trio">
 		<c path="map_2.A"/>
 		<c path="map_2.B"/>
@@ -5708,7 +5789,7 @@
 		<c path="map_2.C"/>
 	</c>
 </f></map_2>
-		<map_3 public="1" params="A:B:C:Z" set="method" line="79" static="1"><f a="t:fn">
+		<map_3 public="1" params="A:B:C:Z" set="method" line="107" static="1"><f a="t:fn">
 	<c path="interlude.ds.Trio">
 		<c path="map_3.A"/>
 		<c path="map_3.B"/>
@@ -5724,11 +5805,23 @@
 		<c path="map_3.Z"/>
 	</c>
 </f></map_3>
-		<thd public="1" params="A" get="inline" set="null" line="85" static="1"><f a="tup">
+		<rotate public="1" params="A:B:C" set="method" line="113" static="1"><f a="t">
+	<c path="interlude.ds.Trio">
+		<c path="rotate.A"/>
+		<c path="rotate.B"/>
+		<c path="rotate.C"/>
+	</c>
+	<c path="interlude.ds.Trio">
+		<c path="rotate.C"/>
+		<c path="rotate.A"/>
+		<c path="rotate.B"/>
+	</c>
+</f></rotate>
+		<thd public="1" params="A" get="inline" set="null" line="116" static="1"><f a="tup">
 	<a><_3 final="1" set="null"><c path="thd.A"/></_3></a>
 	<c path="thd.A"/>
 </f></thd>
-		<with3 public="1" params="A:B:C" get="inline" set="null" line="91" static="1"><f a="a:b:c">
+		<with3 public="1" params="A:B:C" get="inline" set="null" line="122" static="1"><f a="a:b:c">
 	<c path="with3.A"/>
 	<c path="with3.B"/>
 	<c path="with3.C"/>
@@ -5741,19 +5834,17 @@
 		<_1 final="1" public="1"><c path="interlude.ds.Trio.X"/></_1>
 		<_2 final="1" public="1"><c path="interlude.ds.Trio.Y"/></_2>
 		<_3 final="1" public="1"><c path="interlude.ds.Trio.Z"/></_3>
-		<new public="1" set="method" line="50">
-			<f a="_1:_2:_3">
-				<c path="interlude.ds.Trio.X"/>
-				<c path="interlude.ds.Trio.Y"/>
-				<c path="interlude.ds.Trio.Z"/>
-				<x path="Void"/>
-			</f>
-			<meta>
-				<m n=":compilerGenerated"/>
-				<m n=":inheritDoc"/>
-			</meta>
-			<haxe_doc></haxe_doc>
-		</new>
+		<new public="1" set="method" line="77"><f a="_1:_2:_3">
+	<c path="interlude.ds.Trio.X"/>
+	<c path="interlude.ds.Trio.Y"/>
+	<c path="interlude.ds.Trio.Z"/>
+	<x path="Void"/>
+</f></new>
+		<haxe_doc>A type that holds three values; essentially a 3-Tuple. Can be used with 
+    structure syntax.
+    ```haxe
+    abc.with(123, Unit) == { _1: abc, _2: 123, _3: Unit } == new Pair(abc, 123, Unit)
+    ```</haxe_doc>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":publicFields"/>
@@ -5782,13 +5873,16 @@
 		<c path="interlude.ds.State.X"/>
 	</t>
 </f></icast></to>
+		<haxe_doc>A type of function that takes an initial state `X`, and produces an output
+    value `A` and a new state  
+    @see https://en.wikibooks.org/wiki/Haskell/Understanding_monads/State</haxe_doc>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":forward"/>
 			<m n=":callable"/>
 		</meta>
 		<impl><class path="interlude.ds._State.State_Impl_" params="" file="src/interlude/ds/State.hx" private="1" module="interlude.ds.State" final="1">
-	<_new public="1" get="inline" set="null" line="9" static="1">
+	<_new public="1" get="inline" set="null" line="14" static="1">
 		<f a="s">
 			<f a="">
 				<c path="interlude.ds.State.X"/>
@@ -5804,7 +5898,7 @@
 		</f>
 		<meta><m n=":noCompletion"/></meta>
 	</_new>
-	<ap public="1" params="X:A:B" set="method" line="11" static="1"><f a="fn:s">
+	<ap public="1" params="X:A:B" set="method" line="16" static="1"><f a="fn:s">
 	<x path="interlude.ds.State">
 		<c path="ap.X"/>
 		<f a="">
@@ -5821,14 +5915,14 @@
 		<c path="ap.B"/>
 	</x>
 </f></ap>
-	<asState public="1" params="X:A" get="inline" set="null" line="14" static="1"><f a="a">
+	<asState public="1" params="X:A" get="inline" set="null" line="19" static="1"><f a="a">
 	<c path="asState.A"/>
 	<x path="interlude.ds.State">
 		<c path="asState.X"/>
 		<c path="asState.A"/>
 	</x>
 </f></asState>
-	<eval public="1" params="X:A" set="method" line="17" static="1"><f a="s:x">
+	<eval public="1" params="X:A" set="method" line="22" static="1"><f a="s:x">
 	<x path="interlude.ds.State">
 		<c path="eval.X"/>
 		<c path="eval.A"/>
@@ -5836,7 +5930,7 @@
 	<c path="eval.X"/>
 	<c path="eval.A"/>
 </f></eval>
-	<filter public="1" params="X:A" set="method" line="20" static="1"><f a="s:predicate">
+	<filter public="1" params="X:A" set="method" line="25" static="1"><f a="s:predicate">
 	<x path="interlude.ds.State">
 		<c path="filter.X"/>
 		<c path="filter.A"/>
@@ -5850,7 +5944,7 @@
 		<t path="Option"><c path="filter.A"/></t>
 	</x>
 </f></filter>
-	<filterMap public="1" params="X:A:B" set="method" line="25" static="1"><f a="s:predicate:fn">
+	<filterMap public="1" params="X:A:B" set="method" line="30" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.State">
 		<c path="filterMap.X"/>
 		<c path="filterMap.A"/>
@@ -5868,7 +5962,7 @@
 		<t path="Option"><c path="filterMap.B"/></t>
 	</x>
 </f></filterMap>
-	<filterFMap public="1" params="X:A:B" set="method" line="30" static="1"><f a="s:predicate:fn">
+	<filterFMap public="1" params="X:A:B" set="method" line="35" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.State">
 		<c path="filterFMap.X"/>
 		<c path="filterFMap.A"/>
@@ -5889,7 +5983,7 @@
 		<t path="Option"><c path="filterFMap.B"/></t>
 	</x>
 </f></filterFMap>
-	<flatMap public="1" params="X:A:B" set="method" line="35" static="1"><f a="s:fn">
+	<flatMap public="1" params="X:A:B" set="method" line="40" static="1"><f a="s:fn">
 	<x path="interlude.ds.State">
 		<c path="flatMap.X"/>
 		<c path="flatMap.A"/>
@@ -5906,7 +6000,7 @@
 		<c path="flatMap.B"/>
 	</x>
 </f></flatMap>
-	<flatten public="1" params="X:A" set="method" line="38" static="1"><f a="s">
+	<flatten public="1" params="X:A" set="method" line="43" static="1"><f a="s">
 	<x path="interlude.ds.State">
 		<c path="flatten.X"/>
 		<x path="interlude.ds.State">
@@ -5919,7 +6013,7 @@
 		<c path="flatten.A"/>
 	</x>
 </f></flatten>
-	<local public="1" params="X:A" set="method" line="41" static="1"><f a="s:fn">
+	<local public="1" params="X:A" set="method" line="46" static="1"><f a="s:fn">
 	<x path="interlude.ds.State">
 		<c path="local.X"/>
 		<c path="local.A"/>
@@ -5933,7 +6027,7 @@
 		<c path="local.A"/>
 	</x>
 </f></local>
-	<map public="1" params="X:A:B" set="method" line="44" static="1"><f a="s:fn">
+	<map public="1" params="X:A:B" set="method" line="49" static="1"><f a="s:fn">
 	<x path="interlude.ds.State">
 		<c path="map.X"/>
 		<c path="map.A"/>
@@ -5947,7 +6041,7 @@
 		<c path="map.B"/>
 	</x>
 </f></map>
-	<run public="1" params="X:A" set="method" line="47" static="1"><f a="s:x">
+	<run public="1" params="X:A" set="method" line="52" static="1"><f a="s:x">
 	<x path="interlude.ds.State">
 		<c path="run.X"/>
 		<c path="run.A"/>
@@ -5955,7 +6049,7 @@
 	<c path="run.X"/>
 	<c path="run.X"/>
 </f></run>
-	<zip public="1" params="X:A:B" set="method" line="50" static="1"><f a="sa:sb">
+	<zip public="1" params="X:A:B" set="method" line="55" static="1"><f a="sa:sb">
 	<x path="interlude.ds.State">
 		<c path="zip.X"/>
 		<c path="zip.A"/>
@@ -5972,7 +6066,7 @@
 		</t>
 	</x>
 </f></zip>
-	<zipWith public="1" params="X:A:B:Z" set="method" line="53" static="1"><f a="sa:sb:fn">
+	<zipWith public="1" params="X:A:B:Z" set="method" line="58" static="1"><f a="sa:sb:fn">
 	<x path="interlude.ds.State">
 		<c path="zipWith.X"/>
 		<c path="zipWith.A"/>
@@ -5991,7 +6085,7 @@
 		<c path="zipWith.Z"/>
 	</x>
 </f></zipWith>
-	<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="59" static="1"><f a="sa:sb:sc:fn">
+	<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="64" static="1"><f a="sa:sb:sc:fn">
 	<x path="interlude.ds.State">
 		<c path="zipWith3.X"/>
 		<c path="zipWith3.A"/>
@@ -6018,7 +6112,7 @@
 </class></impl>
 	</abstract>
 	<class path="interlude.ds._State.State_Impl_" params="" file="src/interlude/ds/State.hx" private="1" module="interlude.ds.State" final="1">
-		<_new public="1" get="inline" set="null" line="9" static="1">
+		<_new public="1" get="inline" set="null" line="14" static="1">
 			<f a="s">
 				<f a="">
 					<c path="interlude.ds.State.X"/>
@@ -6034,7 +6128,7 @@
 			</f>
 			<meta><m n=":noCompletion"/></meta>
 		</_new>
-		<ap public="1" params="X:A:B" set="method" line="11" static="1"><f a="fn:s">
+		<ap public="1" params="X:A:B" set="method" line="16" static="1"><f a="fn:s">
 	<x path="interlude.ds.State">
 		<c path="ap.X"/>
 		<f a="">
@@ -6051,14 +6145,14 @@
 		<c path="ap.B"/>
 	</x>
 </f></ap>
-		<asState public="1" params="X:A" get="inline" set="null" line="14" static="1"><f a="a">
+		<asState public="1" params="X:A" get="inline" set="null" line="19" static="1"><f a="a">
 	<c path="asState.A"/>
 	<x path="interlude.ds.State">
 		<c path="asState.X"/>
 		<c path="asState.A"/>
 	</x>
 </f></asState>
-		<eval public="1" params="X:A" set="method" line="17" static="1"><f a="s:x">
+		<eval public="1" params="X:A" set="method" line="22" static="1"><f a="s:x">
 	<x path="interlude.ds.State">
 		<c path="eval.X"/>
 		<c path="eval.A"/>
@@ -6066,7 +6160,7 @@
 	<c path="eval.X"/>
 	<c path="eval.A"/>
 </f></eval>
-		<filter public="1" params="X:A" set="method" line="20" static="1"><f a="s:predicate">
+		<filter public="1" params="X:A" set="method" line="25" static="1"><f a="s:predicate">
 	<x path="interlude.ds.State">
 		<c path="filter.X"/>
 		<c path="filter.A"/>
@@ -6080,7 +6174,7 @@
 		<t path="Option"><c path="filter.A"/></t>
 	</x>
 </f></filter>
-		<filterMap public="1" params="X:A:B" set="method" line="25" static="1"><f a="s:predicate:fn">
+		<filterMap public="1" params="X:A:B" set="method" line="30" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.State">
 		<c path="filterMap.X"/>
 		<c path="filterMap.A"/>
@@ -6098,7 +6192,7 @@
 		<t path="Option"><c path="filterMap.B"/></t>
 	</x>
 </f></filterMap>
-		<filterFMap public="1" params="X:A:B" set="method" line="30" static="1"><f a="s:predicate:fn">
+		<filterFMap public="1" params="X:A:B" set="method" line="35" static="1"><f a="s:predicate:fn">
 	<x path="interlude.ds.State">
 		<c path="filterFMap.X"/>
 		<c path="filterFMap.A"/>
@@ -6119,7 +6213,7 @@
 		<t path="Option"><c path="filterFMap.B"/></t>
 	</x>
 </f></filterFMap>
-		<flatMap public="1" params="X:A:B" set="method" line="35" static="1"><f a="s:fn">
+		<flatMap public="1" params="X:A:B" set="method" line="40" static="1"><f a="s:fn">
 	<x path="interlude.ds.State">
 		<c path="flatMap.X"/>
 		<c path="flatMap.A"/>
@@ -6136,7 +6230,7 @@
 		<c path="flatMap.B"/>
 	</x>
 </f></flatMap>
-		<flatten public="1" params="X:A" set="method" line="38" static="1"><f a="s">
+		<flatten public="1" params="X:A" set="method" line="43" static="1"><f a="s">
 	<x path="interlude.ds.State">
 		<c path="flatten.X"/>
 		<x path="interlude.ds.State">
@@ -6149,7 +6243,7 @@
 		<c path="flatten.A"/>
 	</x>
 </f></flatten>
-		<local public="1" params="X:A" set="method" line="41" static="1"><f a="s:fn">
+		<local public="1" params="X:A" set="method" line="46" static="1"><f a="s:fn">
 	<x path="interlude.ds.State">
 		<c path="local.X"/>
 		<c path="local.A"/>
@@ -6163,7 +6257,7 @@
 		<c path="local.A"/>
 	</x>
 </f></local>
-		<map public="1" params="X:A:B" set="method" line="44" static="1"><f a="s:fn">
+		<map public="1" params="X:A:B" set="method" line="49" static="1"><f a="s:fn">
 	<x path="interlude.ds.State">
 		<c path="map.X"/>
 		<c path="map.A"/>
@@ -6177,7 +6271,7 @@
 		<c path="map.B"/>
 	</x>
 </f></map>
-		<run public="1" params="X:A" set="method" line="47" static="1"><f a="s:x">
+		<run public="1" params="X:A" set="method" line="52" static="1"><f a="s:x">
 	<x path="interlude.ds.State">
 		<c path="run.X"/>
 		<c path="run.A"/>
@@ -6185,7 +6279,7 @@
 	<c path="run.X"/>
 	<c path="run.X"/>
 </f></run>
-		<zip public="1" params="X:A:B" set="method" line="50" static="1"><f a="sa:sb">
+		<zip public="1" params="X:A:B" set="method" line="55" static="1"><f a="sa:sb">
 	<x path="interlude.ds.State">
 		<c path="zip.X"/>
 		<c path="zip.A"/>
@@ -6202,7 +6296,7 @@
 		</t>
 	</x>
 </f></zip>
-		<zipWith public="1" params="X:A:B:Z" set="method" line="53" static="1"><f a="sa:sb:fn">
+		<zipWith public="1" params="X:A:B:Z" set="method" line="58" static="1"><f a="sa:sb:fn">
 	<x path="interlude.ds.State">
 		<c path="zipWith.X"/>
 		<c path="zipWith.A"/>
@@ -6221,7 +6315,7 @@
 		<c path="zipWith.Z"/>
 	</x>
 </f></zipWith>
-		<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="59" static="1"><f a="sa:sb:sc:fn">
+		<zipWith3 public="1" params="X:A:B:C:Z" set="method" line="64" static="1"><f a="sa:sb:sc:fn">
 	<x path="interlude.ds.State">
 		<c path="zipWith3.X"/>
 		<c path="zipWith3.A"/>
@@ -6246,13 +6340,33 @@
 	</x>
 </f></zipWith3>
 	</class>
-	<enum path="interlude.ds.Unit" params="" file="src/interlude/ds/Unit.hx">
-		<Unit/>
+	<abstract path="interlude.ds.Unit" params="" file="src/interlude/ds/Unit.hx">
+		<this><x path="Int"/></this>
+		<haxe_doc>A type with only one possible value</haxe_doc>
+		<meta><m n=":enum"/></meta>
+		<impl><class path="interlude.ds._Unit.Unit_Impl_" params="" file="src/interlude/ds/Unit.hx" private="1" module="interlude.ds.Unit" extern="1" final="1">
+	<Unit public="1" get="inline" set="null" expr="cast 1" line="10" static="1">
+		<x path="interlude.ds.Unit"/>
 		<meta>
-			<m n=":directlyUsed"/>
-			<m n=":flatEnum"/>
+			<m n=":value"><e>cast 1</e></m>
+			<m n=":impl"/>
+			<m n=":enum"/>
 		</meta>
-	</enum>
+	</Unit>
+	<meta><m n=":enum"/></meta>
+</class></impl>
+	</abstract>
+	<class path="interlude.ds._Unit.Unit_Impl_" params="" file="src/interlude/ds/Unit.hx" private="1" module="interlude.ds.Unit" extern="1" final="1">
+		<Unit public="1" get="inline" set="null" expr="cast 1" line="10" static="1">
+			<x path="interlude.ds.Unit"/>
+			<meta>
+				<m n=":value"><e>cast 1</e></m>
+				<m n=":impl"/>
+				<m n=":enum"/>
+			</meta>
+		</Unit>
+		<meta><m n=":enum"/></meta>
+	</class>
 	<abstract path="interlude.ds.Weighted" params="A" file="src/interlude/ds/Weighted.hx">
 		<from>
 			<icast><t path="Iterable"><t path="Pair">
@@ -6337,6 +6451,89 @@
 </t></t>
 	<c path="String"/>
 </f></toString>
+	<asWeighted public="1" params="A" set="method" line="46" static="1">
+		<f a="t">
+			<c path="asWeighted.A"/>
+			<x path="interlude.ds.Weighted"><c path="asWeighted.A"/></x>
+		</f>
+		<haxe_doc>Lifts a single value into a weighted distribution</haxe_doc>
+	</asWeighted>
+	<draw public="1" params="A" set="method" line="54" static="1">
+		<f a="dist:randomGen">
+			<x path="interlude.ds.Weighted"><c path="draw.A"/></x>
+			<f a=""><x path="Float"/></f>
+			<c path="draw.A"/>
+		</f>
+		<haxe_doc>Draws a single result from a weighted set. `randomGen` should be a
+      function that generates a random value between 0 and 1, e.g. `Math.random`  
+      Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
+	</draw>
+	<drawIndex public="1" params="A" set="method" line="70" static="1">
+		<f a="dist:randomGen">
+			<x path="interlude.ds.Weighted"><c path="drawIndex.A"/></x>
+			<f a=""><x path="Float"/></f>
+			<x path="Int"/>
+		</f>
+		<haxe_doc>Draws a result from a weighted set and returns its index. `randomGen`
+      should be a function that generates a random value between 0 and 1, 
+      e.g. `Math.random`  
+      Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
+	</drawIndex>
+	<flatMap public="1" params="A:B" set="method" line="83" static="1">
+		<f a="dist:fn">
+			<x path="interlude.ds.Weighted"><c path="flatMap.A"/></x>
+			<f a="">
+				<c path="flatMap.A"/>
+				<x path="interlude.ds.Weighted"><c path="flatMap.B"/></x>
+			</f>
+			<x path="interlude.ds.Weighted"><c path="flatMap.B"/></x>
+		</f>
+		<haxe_doc>Projects each element of a weighted distribution of `A` to a distribution
+      of type `B`, and flattens the results  
+      Monadic bind/flatMap</haxe_doc>
+	</flatMap>
+	<flatten public="1" params="A" set="method" line="89" static="1">
+		<f a="dists">
+			<x path="interlude.ds.Weighted"><x path="interlude.ds.Weighted"><c path="flatten.A"/></x></x>
+			<x path="interlude.ds.Weighted"><c path="flatten.A"/></x>
+		</f>
+		<haxe_doc>Flattens one layer of a probability tree by multiplying weights together</haxe_doc>
+	</flatten>
+	<map public="1" params="A:B" set="method" line="99" static="1">
+		<f a="dist:fn">
+			<x path="interlude.ds.Weighted"><c path="map.A"/></x>
+			<f a="">
+				<c path="map.A"/>
+				<c path="map.B"/>
+			</f>
+			<x path="interlude.ds.Weighted"><c path="map.B"/></x>
+		</f>
+		<haxe_doc><![CDATA[Maps the `A` elements of a weighted distribution to a type `B` using `fn`  
+      `[123.with(1)].map(x -> '$x')` == `['123'.with(1)]`]]></haxe_doc>
+	</map>
+	<normalize public="1" params="A" set="method" line="108" static="1">
+		<f a="dist">
+			<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
+			<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
+		</f>
+		<haxe_doc>Normalizes large weights to numbers between 0 and 1  
+      `['abc'.with(450), 'def'.with(50)].normalize()` == `['abc'.with(0.9), 'def'.with(0.1)]`</haxe_doc>
+	</normalize>
+	<show public="1" params="A" set="method" line="119" static="1">
+		<f a="dist">
+			<x path="interlude.ds.Weighted"><c path="show.A"/></x>
+			<c path="String"/>
+		</f>
+		<haxe_doc>Pretty-prints the weights in a distribution</haxe_doc>
+	</show>
+	<uniform public="1" params="A" set="method" line="127" static="1">
+		<f a="vals">
+			<t path="Iterable"><c path="uniform.A"/></t>
+			<x path="interlude.ds.Weighted"><c path="uniform.A"/></x>
+		</f>
+		<haxe_doc>Creates an even set of weights from a list of elements</haxe_doc>
+	</uniform>
+	<meta><m n=":directlyUsed"/></meta>
 </class></impl>
 	</abstract>
 	<class path="interlude.ds._Weighted.Weighted_Impl_" params="" file="src/interlude/ds/Weighted.hx" private="1" module="interlude.ds.Weighted" final="1">
@@ -6380,16 +6577,14 @@
 </t></t>
 	<c path="String"/>
 </f></toString>
-	</class>
-	<class path="interlude.ds.WeightedTools" params="" file="src/interlude/ds/Weighted.hx" module="interlude.ds.Weighted">
-		<asWeighted public="1" params="A" set="method" line="49" static="1">
+		<asWeighted public="1" params="A" set="method" line="46" static="1">
 			<f a="t">
 				<c path="asWeighted.A"/>
 				<x path="interlude.ds.Weighted"><c path="asWeighted.A"/></x>
 			</f>
 			<haxe_doc>Lifts a single value into a weighted distribution</haxe_doc>
 		</asWeighted>
-		<draw public="1" params="A" set="method" line="57" static="1">
+		<draw public="1" params="A" set="method" line="54" static="1">
 			<f a="dist:randomGen">
 				<x path="interlude.ds.Weighted"><c path="draw.A"/></x>
 				<f a=""><x path="Float"/></f>
@@ -6399,7 +6594,7 @@
       function that generates a random value between 0 and 1, e.g. `Math.random`  
       Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
 		</draw>
-		<drawIndex public="1" params="A" set="method" line="73" static="1">
+		<drawIndex public="1" params="A" set="method" line="70" static="1">
 			<f a="dist:randomGen">
 				<x path="interlude.ds.Weighted"><c path="drawIndex.A"/></x>
 				<f a=""><x path="Float"/></f>
@@ -6410,7 +6605,7 @@
       e.g. `Math.random`  
       Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
 		</drawIndex>
-		<flatMap public="1" params="A:B" set="method" line="86" static="1">
+		<flatMap public="1" params="A:B" set="method" line="83" static="1">
 			<f a="dist:fn">
 				<x path="interlude.ds.Weighted"><c path="flatMap.A"/></x>
 				<f a="">
@@ -6423,14 +6618,14 @@
       of type `B`, and flattens the results  
       Monadic bind/flatMap</haxe_doc>
 		</flatMap>
-		<flatten public="1" params="A" set="method" line="92" static="1">
+		<flatten public="1" params="A" set="method" line="89" static="1">
 			<f a="dists">
 				<x path="interlude.ds.Weighted"><x path="interlude.ds.Weighted"><c path="flatten.A"/></x></x>
 				<x path="interlude.ds.Weighted"><c path="flatten.A"/></x>
 			</f>
 			<haxe_doc>Flattens one layer of a probability tree by multiplying weights together</haxe_doc>
 		</flatten>
-		<map public="1" params="A:B" set="method" line="102" static="1">
+		<map public="1" params="A:B" set="method" line="99" static="1">
 			<f a="dist:fn">
 				<x path="interlude.ds.Weighted"><c path="map.A"/></x>
 				<f a="">
@@ -6442,7 +6637,7 @@
 			<haxe_doc><![CDATA[Maps the `A` elements of a weighted distribution to a type `B` using `fn`  
       `[123.with(1)].map(x -> '$x')` == `['123'.with(1)]`]]></haxe_doc>
 		</map>
-		<normalize public="1" params="A" set="method" line="111" static="1">
+		<normalize public="1" params="A" set="method" line="108" static="1">
 			<f a="dist">
 				<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
 				<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
@@ -6450,24 +6645,21 @@
 			<haxe_doc>Normalizes large weights to numbers between 0 and 1  
       `['abc'.with(450), 'def'.with(50)].normalize()` == `['abc'.with(0.9), 'def'.with(0.1)]`</haxe_doc>
 		</normalize>
-		<show public="1" params="A" set="method" line="122" static="1">
+		<show public="1" params="A" set="method" line="119" static="1">
 			<f a="dist">
 				<x path="interlude.ds.Weighted"><c path="show.A"/></x>
 				<c path="String"/>
 			</f>
 			<haxe_doc>Pretty-prints the weights in a distribution</haxe_doc>
 		</show>
-		<uniform public="1" params="A" set="method" line="130" static="1">
+		<uniform public="1" params="A" set="method" line="127" static="1">
 			<f a="vals">
 				<t path="Iterable"><c path="uniform.A"/></t>
 				<x path="interlude.ds.Weighted"><c path="uniform.A"/></x>
 			</f>
 			<haxe_doc>Creates an even set of weights from a list of elements</haxe_doc>
 		</uniform>
-		<meta>
-			<m n=":directlyUsed"/>
-			<m n=":publicFields"/>
-		</meta>
+		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<class path="interlude.func.Curry2" params="" file="src/interlude/func/Curry.hx" module="interlude.func.Curry">
 		<curry public="1" params="A:B:Z" get="inline" set="null" line="10" static="1">
@@ -6841,7 +7033,11 @@
 			</f>
 			<haxe_doc>Composes two functions in reverse order, like a pipeline operator</haxe_doc>
 		</to>
-		<when public="1" params="A:B" get="inline" set="null" line="47" static="1">
+		<toLazy public="1" params="A" set="method" line="44" static="1"><f a="generator">
+	<f a=""><c path="toLazy.A"/></f>
+	<t path="Lazy"><c path="toLazy.A"/></t>
+</f></toLazy>
+		<when public="1" params="A:B" get="inline" set="null" line="49" static="1">
 			<f a="transform:predicate">
 				<f a="">
 					<c path="when.A"/>
@@ -6869,7 +7065,7 @@
 		<Continue a="f"><f a=""><e path="interlude.func.Trampoline"><c path="interlude.func.Trampoline.T"/></e></f></Continue>
 		<haxe_doc>Represents a recursive computation that has been broken into chunks to
     avoid growing the stack  
-    https://en.wikipedia.org/wiki/Tail_call#Through_trampolining</haxe_doc>
+    @see https://en.wikipedia.org/wiki/Tail_call#Through_trampolining</haxe_doc>
 	</enum>
 	<class path="interlude.func.TrampolineTools" params="" file="src/interlude/func/Trampoline.hx" module="interlude.func.Trampoline">
 		<trampoline public="1" params="T" set="method" line="20" static="1">
@@ -6886,7 +7082,7 @@
 		</meta>
 	</class>
 	<class path="interlude.func.IntTools" params="" file="src/interlude/func/ValueTools.hx" module="interlude.func.ValueTools">
-		<add public="1" get="inline" set="null" line="6" static="1">
+		<add public="1" get="inline" set="null" line="8" static="1">
 			<f a="a:b">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -6894,14 +7090,14 @@
 			</f>
 			<haxe_doc>Adds two Ints</haxe_doc>
 		</add>
-		<add1 public="1" get="inline" set="null" line="10" static="1">
+		<add1 public="1" get="inline" set="null" line="12" static="1">
 			<f a="n">
 				<x path="Int"/>
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Adds 1 to an Int</haxe_doc>
 		</add1>
-		<sub public="1" get="inline" set="null" line="14" static="1">
+		<sub public="1" get="inline" set="null" line="16" static="1">
 			<f a="a:b">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -6909,13 +7105,38 @@
 			</f>
 			<haxe_doc>Subtracts `b` from `a`</haxe_doc>
 		</sub>
-		<sub1 public="1" get="inline" set="null" line="18" static="1">
+		<sub1 public="1" get="inline" set="null" line="20" static="1">
 			<f a="n">
 				<x path="Int"/>
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Subtracts 1 from an Int</haxe_doc>
 		</sub1>
+		<mul public="1" get="inline" set="null" line="24" static="1">
+			<f a="a:b">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<haxe_doc>Multiplies two Ints</haxe_doc>
+		</mul>
+		<div public="1" get="inline" set="null" line="28" static="1">
+			<f a="a:b">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+			</f>
+			<haxe_doc>Divides `a` by `b`</haxe_doc>
+		</div>
+		<isEven public="1" get="inline" set="null" line="31" static="1"><f a="n">
+	<x path="Int"/>
+	<x path="Bool"/>
+</f></isEven>
+		<isOdd public="1" get="inline" set="null" line="34" static="1"><f a="n">
+	<x path="Int"/>
+	<x path="Bool"/>
+</f></isOdd>
+		<haxe_doc>Named functions for `Int` operators</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -6923,7 +7144,7 @@
 		</meta>
 	</class>
 	<class path="interlude.func.FloatTools" params="" file="src/interlude/func/ValueTools.hx" module="interlude.func.ValueTools">
-		<add public="1" get="inline" set="null" line="26" static="1">
+		<add public="1" get="inline" set="null" line="43" static="1">
 			<f a="a:b">
 				<x path="Float"/>
 				<x path="Float"/>
@@ -6931,14 +7152,14 @@
 			</f>
 			<haxe_doc>Adds two Floats</haxe_doc>
 		</add>
-		<add1 public="1" get="inline" set="null" line="30" static="1">
+		<add1 public="1" get="inline" set="null" line="47" static="1">
 			<f a="n">
 				<x path="Float"/>
 				<x path="Float"/>
 			</f>
 			<haxe_doc>Adds 1.0 to a Float</haxe_doc>
 		</add1>
-		<sub public="1" get="inline" set="null" line="34" static="1">
+		<sub public="1" get="inline" set="null" line="51" static="1">
 			<f a="a:b">
 				<x path="Float"/>
 				<x path="Float"/>
@@ -6946,39 +7167,56 @@
 			</f>
 			<haxe_doc>Subtracts `b` from `a`</haxe_doc>
 		</sub>
-		<sub1 public="1" get="inline" set="null" line="38" static="1">
+		<sub1 public="1" get="inline" set="null" line="55" static="1">
 			<f a="n">
 				<x path="Float"/>
 				<x path="Float"/>
 			</f>
 			<haxe_doc>Subtracts 1.0 from a Float</haxe_doc>
 		</sub1>
+		<mul public="1" get="inline" set="null" line="59" static="1">
+			<f a="a:b">
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<haxe_doc>Multiplies two Floats</haxe_doc>
+		</mul>
+		<div public="1" get="inline" set="null" line="63" static="1">
+			<f a="a:b">
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<haxe_doc>Divides `a` by `b`</haxe_doc>
+		</div>
+		<haxe_doc>Named functions for `Float` operators</haxe_doc>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
 			<m n=":publicFields"/>
 		</meta>
 	</class>
 	<class path="interlude.func.ValueTools" params="" file="src/interlude/func/ValueTools.hx">
-		<discard public="1" params="A" get="inline" set="null" line="49" static="1">
+		<discard public="1" params="A" get="inline" set="null" line="77" static="1">
 			<f a="_">
 				<c path="discard.A"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>An extension that drops its value into a Void</haxe_doc>
 		</discard>
-		<discardWithPos public="1" params="A" get="inline" set="null" line="53" static="1">
+		<discardWithPos public="1" params="A" get="inline" set="null" line="81" static="1">
 			<f a="_:?pos">
 				<c path="discardWithPos.A"/>
-				<x path="Null"><t path="haxe.PosInfos"/></x>
+				<t path="haxe.PosInfos"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>An extension that drops its value and position info into a Void</haxe_doc>
 		</discardWithPos>
-		<doNothing public="1" get="inline" set="null" line="57" static="1">
+		<doNothing public="1" get="inline" set="null" line="85" static="1">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>A no-op function</haxe_doc>
 		</doNothing>
-		<equals public="1" params="A" get="inline" set="null" line="61" static="1">
+		<equals public="1" params="A" get="inline" set="null" line="89" static="1">
 			<f a="x:y">
 				<c path="equals.A"/>
 				<c path="equals.A"/>
@@ -6986,7 +7224,7 @@
 			</f>
 			<haxe_doc>Composable version of the `==` operator</haxe_doc>
 		</equals>
-		<identity public="1" params="A" get="inline" set="null" line="68" static="1">
+		<identity public="1" params="A" get="inline" set="null" line="96" static="1">
 			<f a="a">
 				<c path="identity.A"/>
 				<c path="identity.A"/>
@@ -6994,7 +7232,7 @@
 			<haxe_doc>A function that always returns its input unchanged  
         `Some(123).map(identity)` == `Some(123)`</haxe_doc>
 		</identity>
-		<keyedWith public="1" params="K:V" get="inline" set="null" line="75" static="1">
+		<keyedWith public="1" params="K:V" get="inline" set="null" line="103" static="1">
 			<f a="value:key">
 				<c path="keyedWith.V"/>
 				<c path="keyedWith.K"/>
@@ -7006,7 +7244,7 @@
 			<haxe_doc>Composable way to create a Key/Value pair  
         `"abc".keyedWith(123)` == `{ key: 123, value: "abc" }`</haxe_doc>
 		</keyedWith>
-		<keyFor public="1" params="K:V" get="inline" set="null" line="82" static="1">
+		<keyFor public="1" params="K:V" get="inline" set="null" line="110" static="1">
 			<f a="key:value">
 				<c path="keyFor.K"/>
 				<c path="keyFor.V"/>
@@ -7018,7 +7256,7 @@
 			<haxe_doc>Composable way to create a Key/Value pair  
         `123.keyFor("abc")` == `{ key: 123, value: "abc" }`</haxe_doc>
 		</keyFor>
-		<let public="1" params="T:K" get="inline" set="null" line="90" static="1">
+		<let public="1" params="T:K" get="inline" set="null" line="118" static="1">
 			<f a="v:transformer">
 				<c path="let.T"/>
 				<f a="">
@@ -7031,7 +7269,7 @@
         Similar to `map` but for any value  
         `123.let(Std.string)` == `"123"`</haxe_doc>
 		</let>
-		<mut public="1" params="T" get="inline" set="null" line="97" static="1">
+		<mut public="1" params="T" get="inline" set="null" line="125" static="1">
 			<f a="v:mutator">
 				<c path="mut.T"/>
 				<f a="">
@@ -7043,14 +7281,14 @@
 			<haxe_doc>Fluent method for mutating a value or whatever else  
         Similar to `mutate` but for any value</haxe_doc>
 		</mut>
-		<notb public="1" get="inline" set="null" line="103" static="1">
+		<notb public="1" get="inline" set="null" line="131" static="1">
 			<f a="b">
 				<x path="Bool"/>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Composable version of the `!` (not) operator</haxe_doc>
 		</notb>
-		<notEquals public="1" params="A" get="inline" set="null" line="107" static="1">
+		<notEquals public="1" params="A" get="inline" set="null" line="135" static="1">
 			<f a="x:y">
 				<c path="notEquals.A"/>
 				<c path="notEquals.A"/>
@@ -7058,7 +7296,7 @@
 			</f>
 			<haxe_doc>Composable version of the `!=` operator</haxe_doc>
 		</notEquals>
-		<v_ public="1" params="A:B" set="method" line="114" static="1">
+		<v_ public="1" params="A:B" set="method" line="142" static="1">
 			<f a="value:input">
 				<c path="v_.A"/>
 				<c path="v_.B"/>
@@ -7067,7 +7305,7 @@
 			<haxe_doc>An extension that always returns the original value and drops any input  
         `69.v_("nice")` == `69`</haxe_doc>
 		</v_>
-		<_n public="1" params="A:B" set="method" line="121" static="1">
+		<_n public="1" params="A:B" set="method" line="149" static="1">
 			<f a="value:input">
 				<c path="_n.A"/>
 				<c path="_n.B"/>
@@ -7076,6 +7314,7 @@
 			<haxe_doc>An extension that always returns some input and drops the original value  
         `69._n("nice")` == `"nice"`</haxe_doc>
 		</_n>
+		<haxe_doc>Common functions that are useful for any type</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -7083,7 +7322,7 @@
 		</meta>
 	</class>
 	<class path="interlude.iter.IterableTools" params="" file="src/interlude/iter/IterableTools.hx">
-		<all public="1" params="A" set="method" line="11" static="1">
+		<all public="1" params="A" set="method" line="21" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="all.A"/></t>
 				<f a="">
@@ -7096,7 +7335,7 @@
         `[true, true, true].all(isTrue)` == `true`  
         `[true, false, true].all(isTrue)` == `false`</haxe_doc>
 		</all>
-		<all2 public="1" params="A:B" set="method" line="19" static="1">
+		<all2 public="1" params="A:B" set="method" line="29" static="1">
 			<f a="as:bs:predicate">
 				<t path="Iterable"><c path="all2.A"/></t>
 				<t path="Iterable"><c path="all2.B"/></t>
@@ -7111,21 +7350,21 @@
         `[1, 2, 3].all2([1, 2, 3], equals)` == `true`  
         `[1, 2, 3].all2([4, 2, 0], equals)` == `false`</haxe_doc>
 		</all2>
-		<and public="1" set="method" line="25" static="1">
+		<and public="1" set="method" line="35" static="1">
 			<f a="bs">
 				<t path="Iterable"><x path="Bool"/></t>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` if every element is `true` or if `bs` is empty</haxe_doc>
 		</and>
-		<any public="1" params="A" set="method" line="31" static="1">
+		<any public="1" params="A" set="method" line="41" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="any.A"/></t>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` if `as` is not empty</haxe_doc>
 		</any>
-		<anyMatch public="1" params="A" set="method" line="39" static="1">
+		<anyMatch public="1" params="A" set="method" line="49" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="anyMatch.A"/></t>
 				<f a="">
@@ -7138,7 +7377,7 @@
         *NOTE*: This will evaluate `as` until a match is found or `as` is exhausted, 
         so be careful with infinite `Iterable`s</haxe_doc>
 		</anyMatch>
-		<ap public="1" params="A:B" set="method" line="58" static="1">
+		<ap public="1" params="A:B" set="method" line="68" static="1">
 			<f a="fns:as">
 				<t path="Iterable"><f a="">
 	<c path="ap.A"/>
@@ -7162,17 +7401,17 @@
         == [  4,     5,     5,     6,    -2,    -3,    -1,    -2]
         ```]]></haxe_doc>
 		</ap>
-		<append public="1" params="A" set="method" line="66" static="1">
+		<append public="1" params="A" set="method" line="76" static="1">
 			<f a="as:with">
 				<t path="Iterable"><c path="append.A"/></t>
 				<t path="Iterable"><c path="append.A"/></t>
 				<t path="Iterable"><c path="append.A"/></t>
 			</f>
 			<haxe_doc>Returns a new `Iterable` that appends `with` onto the end of `as`  
-        See [Lambda.concat](https://api.haxe.org/Lambda.html#concat)  
-        `[1, 2, 3].append([4, 5, 6])` == `[1, 2, 3, 4, 5, 6]`</haxe_doc>
+        `[1, 2, 3].append([4, 5, 6])` == `[1, 2, 3, 4, 5, 6]`
+        @see [Lambda.concat](https://api.haxe.org/Lambda.html#concat)</haxe_doc>
 		</append>
-		<asIterable public="1" params="A" get="inline" set="null" line="80" static="1">
+		<asIterable public="1" params="A" get="inline" set="null" line="90" static="1">
 			<f a="a:rest">
 				<c path="asIterable.A"/>
 				<x path="haxe.Rest"><c path="asIterable.A"/></x>
@@ -7181,7 +7420,7 @@
 			<haxe_doc>Converts a single element to an `Iterable` containing that element  
         TODO: should this return `Iterable1`?</haxe_doc>
 		</asIterable>
-		<atWrappedIndex public="1" params="A" set="method" line="91" static="1">
+		<atWrappedIndex public="1" params="A" set="method" line="101" static="1">
 			<f a="as:index">
 				<t path="Iterable"><c path="atWrappedIndex.A"/></t>
 				<x path="Int"/>
@@ -7194,7 +7433,7 @@
         `[1].atWrappedIndex(100)` == `Some(1)`  
         `[].atWrappedIndex(1000)` == `None`</haxe_doc>
 		</atWrappedIndex>
-		<choice public="1" params="A" set="method" line="97" static="1">
+		<choice public="1" params="A" set="method" line="107" static="1">
 			<f a="as:genRandom">
 				<t path="Iterable"><c path="choice.A"/></t>
 				<f a=""><x path="Float"/></f>
@@ -7202,14 +7441,14 @@
 			</f>
 			<haxe_doc>If possible, draws a random element from `as`, using `genRandom` as a source of randomness</haxe_doc>
 		</choice>
-		<choiceStd public="1" params="A" get="inline" set="null" line="104" static="1">
+		<choiceStd public="1" params="A" get="inline" set="null" line="114" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="choiceStd.A"/></t>
 				<t path="Option"><c path="choiceStd.A"/></t>
 			</f>
 			<haxe_doc>If possible, draws a random element from `as`, using `Math.random` as a source of randomness</haxe_doc>
 		</choiceStd>
-		<cons public="1" params="A" get="inline" set="null" line="110" static="1">
+		<cons public="1" params="A" get="inline" set="null" line="120" static="1">
 			<f a="a:as">
 				<c path="cons.A"/>
 				<t path="Iterable"><c path="cons.A"/></t>
@@ -7217,7 +7456,7 @@
 			</f>
 			<haxe_doc>Adds a value to the front of an `Iterable`</haxe_doc>
 		</cons>
-		<contains public="1" params="A" set="method" line="118" static="1">
+		<contains public="1" params="A" set="method" line="128" static="1">
 			<f a="as:a">
 				<t path="Iterable"><c path="contains.A"/></t>
 				<c path="contains.A"/>
@@ -7227,7 +7466,7 @@
         *NOTE*: This will evaluate `as` until if finds `a` or `as` is exhausted,  
         so be careful with infinite `Iterable`s</haxe_doc>
 		</contains>
-		<count public="1" params="A" set="method" line="125" static="1">
+		<count public="1" params="A" set="method" line="135" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="count.A"/></t>
 				<x path="Int"/>
@@ -7235,7 +7474,7 @@
 			<haxe_doc>Counts the number of elements in `as`  
         *NOTE*: This will fully evaluate `as`, so be careful with infinite `Iterable`s</haxe_doc>
 		</count>
-		<cycle public="1" params="A" set="method" line="135" static="1">
+		<cycle public="1" params="A" set="method" line="145" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="cycle.A"/></t>
 				<t path="Iterable"><c path="cycle.A"/></t>
@@ -7243,7 +7482,7 @@
 			<haxe_doc>Infinitely repeats an `Iterable`  
         `[6, 9].cycle()` == `[6, 9, 6, 9, 6, ...]`</haxe_doc>
 		</cycle>
-		<distribute public="1" params="A:B" set="method" line="161" static="1">
+		<distribute public="1" params="A:B" set="method" line="171" static="1">
 			<f a="fn:seed">
 				<f a="">
 					<c path="distribute.A"/>
@@ -7267,7 +7506,7 @@
         == [5, 4, 3, 2, 1]
         ```]]></haxe_doc>
 		</distribute>
-		<elementAt public="1" params="A" set="method" line="181" static="1">
+		<elementAt public="1" params="A" set="method" line="191" static="1">
 			<f a="as:index">
 				<t path="Iterable"><c path="elementAt.A"/></t>
 				<x path="Int"/>
@@ -7278,11 +7517,11 @@
         `[1, 2, 3].elementAt(10)` == `None`  
         `[].elementAt(100)` == `None`</haxe_doc>
 		</elementAt>
-		<empty public="1" params="A" set="method" line="188" static="1">
+		<empty public="1" params="A" set="method" line="198" static="1">
 			<f a=""><t path="Iterable"><c path="empty.A"/></t></f>
 			<haxe_doc>Returns an empty `Iterable`</haxe_doc>
 		</empty>
-		<enumerate public="1" params="A" get="inline" set="null" line="195" static="1">
+		<enumerate public="1" params="A" get="inline" set="null" line="205" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="enumerate.A"/></t>
 				<t path="Iterable"><t path="Pair">
@@ -7292,7 +7531,7 @@
 			</f>
 			<haxe_doc>An alternative to `indexed`. Pairs every element of `as` with its index</haxe_doc>
 		</enumerate>
-		<every public="1" params="A" set="method" line="202" static="1">
+		<every public="1" params="A" set="method" line="212" static="1">
 			<f a="as:n">
 				<t path="Iterable"><c path="every.A"/></t>
 				<x path="Int"/>
@@ -7301,7 +7540,7 @@
 			<haxe_doc><![CDATA[Splits `as` into chunks of size `n`  
         If `n <= 0`, returns an empty `Iterable`]]></haxe_doc>
 		</every>
-		<except public="1" params="A" set="method" line="215" static="1">
+		<except public="1" params="A" set="method" line="225" static="1">
 			<f a="as:except">
 				<t path="Iterable"><c path="except.A"/></t>
 				<c path="except.A"/>
@@ -7309,7 +7548,7 @@
 			</f>
 			<haxe_doc>Returns elements of `as` that are not equal to `except`</haxe_doc>
 		</except>
-		<excepts public="1" params="A" set="method" line="221" static="1">
+		<excepts public="1" params="A" set="method" line="231" static="1">
 			<f a="as:except">
 				<t path="Iterable"><c path="excepts.A"/></t>
 				<t path="Iterable"><c path="excepts.A"/></t>
@@ -7317,7 +7556,7 @@
 			</f>
 			<haxe_doc>Returns elements of `as` that do not appear in `except`</haxe_doc>
 		</excepts>
-		<filterL public="1" params="A" set="method" line="227" static="1">
+		<filterL public="1" params="A" set="method" line="237" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="filterL.A"/></t>
 				<f a="">
@@ -7328,7 +7567,7 @@
 			</f>
 			<haxe_doc>Returns elements of `as` that satisfy some `predicate`</haxe_doc>
 		</filterL>
-		<filterMap public="1" params="A:B" set="method" line="239" static="1">
+		<filterMap public="1" params="A:B" set="method" line="249" static="1">
 			<f a="as:predicate:fn">
 				<t path="Iterable"><c path="filterMap.A"/></t>
 				<f a="">
@@ -7343,7 +7582,7 @@
 			</f>
 			<haxe_doc>A fused combination of `filter` and `map`</haxe_doc>
 		</filterMap>
-		<filterFMap public="1" params="A:B" set="method" line="251" static="1">
+		<filterFMap public="1" params="A:B" set="method" line="261" static="1">
 			<f a="as:predicate:fn">
 				<t path="Iterable"><c path="filterFMap.A"/></t>
 				<f a="">
@@ -7358,7 +7597,7 @@
 			</f>
 			<haxe_doc>A fused combination of `filter` and `flatMap`</haxe_doc>
 		</filterFMap>
-		<firstOrDefault public="1" params="A" set="method" line="275" static="1">
+		<firstOrDefault public="1" params="A" set="method" line="285" static="1">
 			<f a="as:genDefault">
 				<t path="Iterable"><c path="firstOrDefault.A"/></t>
 				<f a=""><c path="firstOrDefault.A"/></f>
@@ -7366,7 +7605,7 @@
 			</f>
 			<haxe_doc>Returns the first element of `as` or a default value if `as` is empty</haxe_doc>
 		</firstOrDefault>
-		<firstMatch public="1" params="A" set="method" line="283" static="1">
+		<firstMatch public="1" params="A" set="method" line="293" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="firstMatch.A"/></t>
 				<f a="">
@@ -7379,7 +7618,7 @@
         *NOTE*: This will evaluate `as` until it finds a match or `as` is exhausted, 
         so be careful with infinite `Iterable`s</haxe_doc>
 		</firstMatch>
-		<flatMap public="1" params="A:B" set="method" line="293" static="1">
+		<flatMap public="1" params="A:B" set="method" line="303" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="flatMap.A"/></t>
 				<f a="">
@@ -7391,10 +7630,10 @@
 			<haxe_doc><![CDATA[Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
         This version is lazy  
-        See [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
-        `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`]]></haxe_doc>
+        `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
+        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)]]></haxe_doc>
 		</flatMap>
-		<flatMapS public="1" params="A:B" set="method" line="321" static="1">
+		<flatMapS public="1" params="A:B" set="method" line="331" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="flatMapS.A"/></t>
 				<f a="">
@@ -7406,10 +7645,10 @@
 			<haxe_doc><![CDATA[Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
         This version is strict  
-        See [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
-        `[1, 2, 3].flatMapS(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`]]></haxe_doc>
+        `[1, 2, 3].flatMapS(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
+        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)]]></haxe_doc>
 		</flatMapS>
-		<flatten public="1" params="A" set="method" line="329" static="1">
+		<flatten public="1" params="A" set="method" line="339" static="1">
 			<f a="ass">
 				<t path="Iterable"><t path="Iterable"><c path="flatten.A"/></t></t>
 				<t path="Iterable"><c path="flatten.A"/></t>
@@ -7418,7 +7657,7 @@
         `[[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatten()` == `[1, 2, 3, 4, 5, 6, 7, 8, 9]`  
         `[].flatten()` == `[]`</haxe_doc>
 		</flatten>
-		<foldl public="1" params="A:B" set="method" line="340" static="1">
+		<foldl public="1" params="A:B" set="method" line="350" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="foldl.A"/></t>
 				<c path="foldl.B"/>
@@ -7431,12 +7670,12 @@
 			</f>
 			<haxe_doc><![CDATA[Applies `fn` over elements of `as` using `seed` as an initial value,
         reducing an `Iterable` to a single value. This version is left-associative  
-        See [Lambda.fold](https://api.haxe.org/Lambda.html#fold)  
         `[1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y)` == `0+1+2+3+4+5` == `15`  
         `[].foldl(0, (x, y) -> x + y)` == `0`  
-        *NOTE*: This may not terminate with an infinite `Iterable`]]></haxe_doc>
+        *NOTE*: This may not terminate with an infinite `Iterable`
+        @see [Lambda.fold](https://api.haxe.org/Lambda.html#fold)]]></haxe_doc>
 		</foldl>
-		<foldr public="1" params="A:B" set="method" line="354" static="1">
+		<foldr public="1" params="A:B" set="method" line="364" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="foldr.A"/></t>
 				<c path="foldr.B"/>
@@ -7453,7 +7692,7 @@
         `[].foldr(0, (x, y) -> x + y)` == `0`  
         *NOTE*: This may not terminate with an infinite `Iterable`]]></haxe_doc>
 		</foldr>
-		<indexed public="1" params="A" set="method" line="367" static="1">
+		<indexed public="1" params="A" set="method" line="377" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="indexed.A"/></t>
 				<t path="KeyValueIterable">
@@ -7464,12 +7703,12 @@
 			<haxe_doc>An alternative to `enumerate`. Converts a plain `Iterable` to one that
         maintains an index for each element.</haxe_doc>
 		</indexed>
-		<indices public="1" get="inline" set="null" line="375" static="1">
+		<indices public="1" get="inline" set="null" line="385" static="1">
 			<f a=""><t path="Iterable"><x path="Int"/></t></f>
 			<haxe_doc><![CDATA[Returns an `Iterable` containing every `Int` >= 0  
         In theory this is infinite; in practice it will overflow MAX_INT]]></haxe_doc>
 		</indices>
-		<init public="1" params="A" set="method" line="382" static="1">
+		<init public="1" params="A" set="method" line="392" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="init.A"/></t>
 				<t path="Iterable"><c path="init.A"/></t>
@@ -7477,7 +7716,7 @@
 			<meta><m n=":nullSafety"><e>Off</e></m></meta>
 			<haxe_doc>Returns all elements of `as` except the last one</haxe_doc>
 		</init>
-		<intercalate public="1" params="A" set="method" line="396" static="1">
+		<intercalate public="1" params="A" set="method" line="406" static="1">
 			<f a="ass:separator">
 				<t path="Iterable"><t path="Iterable"><c path="intercalate.A"/></t></t>
 				<t path="Iterable"><c path="intercalate.A"/></t>
@@ -7486,7 +7725,7 @@
 			<haxe_doc>Inserts `separator` in between `Iterable`s and flattens the result  
         `[[1, 2], [3, 4], [5, 6]].intercalate([0, 0])` == `[1, 2, 0, 0, 3, 4, 0, 0, 5, 6]`</haxe_doc>
 		</intercalate>
-		<intersperse public="1" params="A" set="method" line="404" static="1">
+		<intersperse public="1" params="A" set="method" line="414" static="1">
 			<f a="as:separator">
 				<t path="Iterable"><c path="intersperse.A"/></t>
 				<c path="intersperse.A"/>
@@ -7496,14 +7735,14 @@
         element of `as`  
         `[1, 2, 3, 4].intersperse(0)` == `[1, 0, 2, 0, 3, 0, 4]`</haxe_doc>
 		</intersperse>
-		<isEmpty public="1" params="A" get="inline" set="null" line="419" static="1">
+		<isEmpty public="1" params="A" get="inline" set="null" line="429" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="isEmpty.A"/></t>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` iff `as` does not have any elements</haxe_doc>
 		</isEmpty>
-		<iterate public="1" params="A" set="method" line="427" static="1">
+		<iterate public="1" params="A" set="method" line="437" static="1">
 			<f a="a:fn">
 				<c path="iterate.A"/>
 				<f a="">
@@ -7516,7 +7755,7 @@
       value, then to the result of that, then...  
       `iterate(0, add1)` == `[x, f(x), f(f(x)), f(f(f(x))), ...]` == `[0, 1, 2, 3, 4, 5, ...]`</haxe_doc>
 		</iterate>
-		<lastMatch public="1" params="A" set="method" line="444" static="1">
+		<lastMatch public="1" params="A" set="method" line="454" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="lastMatch.A"/></t>
 				<f a="">
@@ -7530,7 +7769,7 @@
         *NOTE*: This will evaluate `as` until it finds a match or `as` is
         exhausted, so be careful with infinite `Iterable`s</haxe_doc>
 		</lastMatch>
-		<mapL public="1" params="A:B" set="method" line="453" static="1">
+		<mapL public="1" params="A:B" set="method" line="463" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="mapL.A"/></t>
 				<f a="">
@@ -7539,12 +7778,12 @@
 				</f>
 				<t path="Iterable"><c path="mapL.B"/></t>
 			</f>
-			<haxe_doc>Projects `as` into and `Iterable` of `B`s using `fn` as a transform  
-        See [Lambda.map](https://api.haxe.org/Lambda.html#map)  
+			<haxe_doc>Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is lazy  
-        `[1, 2, 3].mapL(Std.string)` == `['1', '2', '3']`</haxe_doc>
+        `[1, 2, 3].mapL(Std.string)` == `['1', '2', '3']`
+        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)</haxe_doc>
 		</mapL>
-		<mapS public="1" params="A:B" set="method" line="468" static="1">
+		<mapS public="1" params="A:B" set="method" line="478" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="mapS.A"/></t>
 				<f a="">
@@ -7553,12 +7792,12 @@
 				</f>
 				<c path="Array"><c path="mapS.B"/></c>
 			</f>
-			<haxe_doc>Projects `as` into and `Iterable` of `B`s using `fn` as a transform  
-        See [Lambda.map](https://api.haxe.org/Lambda.html#map)  
+			<haxe_doc>Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is strict  
-        `[1, 2, 3].mapS(Std.string)` == `['1', '2', '3']`</haxe_doc>
+        `[1, 2, 3].mapS(Std.string)` == `['1', '2', '3']`
+        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)</haxe_doc>
 		</mapS>
-		<mapMaybes public="1" params="A:B" set="method" line="475" static="1">
+		<mapMaybes public="1" params="A:B" set="method" line="485" static="1">
 			<f a="as:transform">
 				<t path="Iterable"><t path="Option"><c path="mapMaybes.A"/></t></t>
 				<f a="">
@@ -7570,7 +7809,7 @@
 			<haxe_doc>A version of `mapL` that can discard elements.  Only `Some` values are
         `transform`ed and returned in the output.</haxe_doc>
 		</mapMaybes>
-		<mapOutcomes public="1" params="A:B" set="method" line="482" static="1">
+		<mapOutcomes public="1" params="A:B" set="method" line="492" static="1">
 			<f a="as:transform">
 				<t path="Iterable"><t path="Outcome"><c path="mapOutcomes.A"/></t></t>
 				<f a="">
@@ -7582,7 +7821,7 @@
 			<haxe_doc>A version of `mapL` that can discard elements.  Only `Success` values
         are `transform`ed and returned in the output.</haxe_doc>
 		</mapOutcomes>
-		<maybeFirst public="1" params="A" set="method" line="490" static="1">
+		<maybeFirst public="1" params="A" set="method" line="500" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="maybeFirst.A"/></t>
 				<t path="Option"><c path="maybeFirst.A"/></t>
@@ -7591,7 +7830,7 @@
         `[a, b, c].maybeFirst()` == `Some(a)`  
         `[].maybeFirst()` == `None`</haxe_doc>
 		</maybeFirst>
-		<maybeLast public="1" params="A" set="method" line="503" static="1">
+		<maybeLast public="1" params="A" set="method" line="513" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="maybeLast.A"/></t>
 				<t path="Option"><c path="maybeLast.A"/></t>
@@ -7601,7 +7840,7 @@
         `[].maybeLast()` == `None`  
         *NOTE*: this will not terminate if `as` is infinite</haxe_doc>
 		</maybeLast>
-		<mutate public="1" params="A" get="inline" set="null" line="514" static="1">
+		<mutate public="1" params="A" get="inline" set="null" line="524" static="1">
 			<f a="as:mutator">
 				<t path="Iterable"><c path="mutate.A"/></t>
 				<f a="">
@@ -7613,7 +7852,7 @@
 			<haxe_doc>Calls `mutator` on every element of `as`. Essentially a `for` loop
         specifically for mutating values</haxe_doc>
 		</mutate>
-		<mutatei public="1" params="A" set="method" line="524" static="1">
+		<mutatei public="1" params="A" set="method" line="534" static="1">
 			<f a="as:mutator">
 				<t path="Iterable"><c path="mutatei.A"/></t>
 				<f a=":">
@@ -7626,16 +7865,16 @@
 			<haxe_doc>Calls `mutator` on every element of `as` and their indices. Essentially
         a `for` loop specifically for mutating values</haxe_doc>
 		</mutatei>
-		<natural public="1" get="inline" set="null" line="535" static="1">
+		<natural public="1" get="inline" set="null" line="545" static="1">
 			<f a=""><t path="Iterable"><x path="Int"/></t></f>
 			<haxe_doc>Returns an infinite `Iterable` of natural numbers  
       `natural()` == `[1, 2, 3, 4, 5, 6, ...]`</haxe_doc>
 		</natural>
-		<opposite public="1" params="A" set="method" line="538" static="1"><f a="as">
+		<opposite public="1" params="A" set="method" line="548" static="1"><f a="as">
 	<t path="Iterable"><c path="opposite.A"/></t>
 	<c path="Array"><c path="opposite.A"/></c>
 </f></opposite>
-		<orDefault public="1" params="A" set="method" line="548" static="1">
+		<orDefault public="1" params="A" set="method" line="558" static="1">
 			<f a="as:whenEmpty">
 				<t path="Iterable"><c path="orDefault.A"/></t>
 				<f a=""><t path="Iterable"><c path="orDefault.A"/></t></f>
@@ -7644,7 +7883,7 @@
 			<haxe_doc>Returns the input Iterable if it has any elements, or some default if
       empty</haxe_doc>
 		</orDefault>
-		<orDefault1 public="1" params="A" set="method" line="556" static="1">
+		<orDefault1 public="1" params="A" set="method" line="566" static="1">
 			<f a="as:whenEmpty">
 				<t path="Iterable"><c path="orDefault1.A"/></t>
 				<f a=""><t path="Iterable1"><c path="orDefault1.A"/></t></f>
@@ -7653,7 +7892,7 @@
 			<haxe_doc>Returns the input Iterable if it has any elements, or some default if empty
       The default is required to have at least one element</haxe_doc>
 		</orDefault1>
-		<orderByAsc public="1" params="A" set="method" line="560" static="1"><f a="as:selector">
+		<orderByAsc public="1" params="A" set="method" line="570" static="1"><f a="as:selector">
 	<t path="Iterable"><c path="orderByAsc.A"/></t>
 	<f a="">
 		<c path="orderByAsc.A"/>
@@ -7661,7 +7900,7 @@
 	</f>
 	<c path="Array"><c path="orderByAsc.A"/></c>
 </f></orderByAsc>
-		<orderByDesc public="1" params="A" set="method" line="563" static="1"><f a="as:selector">
+		<orderByDesc public="1" params="A" set="method" line="573" static="1"><f a="as:selector">
 	<t path="Iterable"><c path="orderByDesc.A"/></t>
 	<f a="">
 		<c path="orderByDesc.A"/>
@@ -7669,12 +7908,12 @@
 	</f>
 	<c path="Array"><c path="orderByDesc.A"/></c>
 </f></orderByDesc>
-		<orElse public="1" params="A" set="method" line="566" static="1"><f a="as:genOther">
+		<orElse public="1" params="A" set="method" line="576" static="1"><f a="as:genOther">
 	<t path="Iterable"><c path="orElse.A"/></t>
 	<f a=""><t path="Iterable"><c path="orElse.A"/></t></f>
 	<t path="Iterable"><c path="orElse.A"/></t>
 </f></orElse>
-		<pairs public="1" params="A" set="method" line="574" static="1">
+		<pairs public="1" params="A" set="method" line="584" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="pairs.A"/></t>
 				<t path="Iterable"><t path="Pair">
@@ -7685,7 +7924,7 @@
 			<haxe_doc>Common use of `zip`, useful for comparing an element with the next one  
         `[1, 2, 3, 4].pairs()` == `[(1, 2), (2, 3), (3, 4)]`</haxe_doc>
 		</pairs>
-		<partition public="1" params="A" set="method" line="582" static="1">
+		<partition public="1" params="A" set="method" line="592" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="partition.A"/></t>
 				<f a="">
@@ -7701,7 +7940,7 @@
       `0.iterate(add1).partition(isEven)` == ([0, 2, 4, ...], [1, 3, 5, ...])
       TODO: add a lazy version that doesn't evaluate the source list twice</haxe_doc>
 		</partition>
-		<product public="1" params="A:B:C" set="method" line="597" static="1">
+		<product public="1" params="A:B:C" set="method" line="607" static="1">
 			<f a="as:bs:fn">
 				<t path="Iterable"><c path="product.A"/></t>
 				<t path="Iterable"><c path="product.B"/></t>
@@ -7716,7 +7955,7 @@
         A deck of playing cards could be represented as
         `suits.product(ranks, Card.new)`</haxe_doc>
 		</product>
-		<range public="1" get="inline" set="null" line="605" static="1">
+		<range public="1" get="inline" set="null" line="615" static="1">
 			<f a="start:count">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -7726,14 +7965,14 @@
         `start+count`  
         `0.range(5)` == `[0, 1, 2, 3, 4]`</haxe_doc>
 		</range>
-		<repeat public="1" params="A" set="method" line="611" static="1">
+		<repeat public="1" params="A" set="method" line="621" static="1">
 			<f a="a">
 				<c path="repeat.A"/>
 				<t path="Iterable"><c path="repeat.A"/></t>
 			</f>
 			<haxe_doc>Returns an `Iterable` where `a` is infinitely repeated</haxe_doc>
 		</repeat>
-		<replicate public="1" params="A" set="method" line="617" static="1">
+		<replicate public="1" params="A" set="method" line="627" static="1">
 			<f a="a:count">
 				<c path="replicate.A"/>
 				<x path="Int"/>
@@ -7741,7 +7980,7 @@
 			</f>
 			<haxe_doc>Returns an `Iterable` where `a` is repeated `count` times</haxe_doc>
 		</replicate>
-		<scan public="1" params="A:B" set="method" line="626" static="1">
+		<scan public="1" params="A:B" set="method" line="636" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="scan.A"/></t>
 				<c path="scan.B"/>
@@ -7757,7 +7996,7 @@
       This version includes the seed as the first element of the output  
       `[0, 1, 2, 3].scan(1, (x, y) -> x + y)` == `[1, 1, 2, 4, 7]`]]></haxe_doc>
 		</scan>
-		<scan_ public="1" params="A:B" set="method" line="635" static="1">
+		<scan_ public="1" params="A:B" set="method" line="645" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="scan_.A"/></t>
 				<c path="scan_.B"/>
@@ -7773,7 +8012,7 @@
       This version does not include the seed in the output  
       `[0, 1, 2, 3].scan_(1, (x, y) -> x + y)` == `[1, 2, 4, 7]`]]></haxe_doc>
 		</scan_>
-		<shuffled public="1" params="A" set="method" line="649" static="1">
+		<shuffled public="1" params="A" set="method" line="659" static="1">
 			<f a="as:genRandom">
 				<t path="Iterable"><c path="shuffled.A"/></t>
 				<f a="">
@@ -7785,7 +8024,7 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `genRandom` as a
         source of randomness</haxe_doc>
 		</shuffled>
-		<shuffledStd public="1" params="A" get="inline" set="null" line="658" static="1">
+		<shuffledStd public="1" params="A" get="inline" set="null" line="668" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="shuffledStd.A"/></t>
 				<c path="Array"><c path="shuffledStd.A"/></c>
@@ -7793,7 +8032,7 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `Std.random` as a
         source of randomness</haxe_doc>
 		</shuffledStd>
-		<skip public="1" params="A" set="method" line="667" static="1">
+		<skip public="1" params="A" set="method" line="677" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="skip.A"/></t>
 				<x path="Int"/>
@@ -7804,7 +8043,7 @@
       `[a, b, c].skip(2)` == `[c]`  
       `[a, b, c].skip(200)` == `[]`]]></haxe_doc>
 		</skip>
-		<skipWhile public="1" params="A" set="method" line="685" static="1">
+		<skipWhile public="1" params="A" set="method" line="695" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="skipWhile.A"/></t>
 				<f a="">
@@ -7820,14 +8059,14 @@
       *NOTE*: This may not terminate if every element of an infinite `Iterable`
       matches the `predicate`]]></haxe_doc>
 		</skipWhile>
-		<somes public="1" params="A" set="method" line="700" static="1">
+		<somes public="1" params="A" set="method" line="710" static="1">
 			<f a="as">
 				<t path="Iterable"><t path="Option"><c path="somes.A"/></t></t>
 				<t path="Iterable"><c path="somes.A"/></t>
 			</f>
 			<haxe_doc>Returns all the `Some` values from a set of `Option`s</haxe_doc>
 		</somes>
-		<span public="1" params="A" set="method" line="708" static="1">
+		<span public="1" params="A" set="method" line="718" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="span.A"/></t>
 				<f a="">
@@ -7843,14 +8082,14 @@
         `predicate` and the rest of the `Iterable`  
         `[1, 2, 3, 4, 1, 2, 3].span(x -> x < 3)` == `([1, 2], [3, 4, 1, 2, 3])`]]></haxe_doc>
 		</span>
-		<successes public="1" params="A" set="method" line="715" static="1">
+		<successes public="1" params="A" set="method" line="725" static="1">
 			<f a="as">
 				<t path="Iterable"><t path="Outcome"><c path="successes.A"/></t></t>
 				<t path="Iterable"><c path="successes.A"/></t>
 			</f>
 			<haxe_doc>Returns all the `Success` values from a set of `Outcome`s</haxe_doc>
 		</successes>
-		<tail public="1" params="A" get="inline" set="null" line="725" static="1">
+		<tail public="1" params="A" get="inline" set="null" line="735" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="tail.A"/></t>
 				<t path="Iterable"><c path="tail.A"/></t>
@@ -7861,7 +8100,7 @@
         `[1].tail()` == `[]`
         `[].tail()` == `[]`</haxe_doc>
 		</tail>
-		<take public="1" params="A" set="method" line="734" static="1">
+		<take public="1" params="A" set="method" line="744" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="take.A"/></t>
 				<x path="Int"/>
@@ -7872,7 +8111,7 @@
       `[a, b, c, d].take(2)` == `[a, b]`  
       `[].take(2)` == `[]`]]></haxe_doc>
 		</take>
-		<takeWhile public="1" params="A" set="method" line="750" static="1">
+		<takeWhile public="1" params="A" set="method" line="760" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="takeWhile.A"/></t>
 				<f a="">
@@ -7886,7 +8125,7 @@
       `predicate`  
       `[1, 2, 3, 4, 5, 6].takeWhile(x -> x < 4)` == `[1, 2, 3]`]]></haxe_doc>
 		</takeWhile>
-		<toArray public="1" params="A" get="inline" set="null" line="766" static="1">
+		<toArray public="1" params="A" get="inline" set="null" line="776" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="toArray.A"/></t>
 				<c path="Array"><c path="toArray.A"/></c>
@@ -7895,7 +8134,7 @@
         *NOTE*: Since this fully evaluates the `Iterable`, it may not terminate 
         if `as` is infinite.</haxe_doc>
 		</toArray>
-		<zip public="1" params="A:B:C" set="method" line="775" static="1">
+		<zip public="1" params="A:B:C" set="method" line="785" static="1">
 			<f a="as:bs">
 				<t path="Iterable"><c path="zip.A"/></t>
 				<t path="Iterable"><c path="zip.B"/></t>
@@ -7909,7 +8148,7 @@
         `[1, 2, 3].zip(['a', 'b', 'c])` == `[(1, 'a'), (2, 'b'), (3, 'c')]`  
         `[1, 2, 3].zip([])` == `[]`</haxe_doc>
 		</zip>
-		<zipWith public="1" params="A:B:C" set="method" line="785" static="1">
+		<zipWith public="1" params="A:B:C" set="method" line="795" static="1">
 			<f a="as:bs:transform">
 				<t path="Iterable"><c path="zipWith.A"/></t>
 				<t path="Iterable"><c path="zipWith.B"/></t>
@@ -7926,6 +8165,14 @@
         will only apply until it reaches the end of the shorter one  
         `[1, 2, 3].zipWith([4, 5, 6], (x, y) -> x + y)` == `[1+4, 2+5, 3+6]` == `[5, 7, 9]`]]></haxe_doc>
 		</zipWith>
+		<haxe_doc>Common extension methods for all types of `Iterable`s. Supports a fluent
+    query-like syntax.
+    ```haxe
+    0.range(100) // [0...99]
+        .filterL(isEven) // [0, 2, 4, ... 98]
+        .map(Std.string) // ['0', '2', '4', ... '98']
+        .maybeLast(); // Some('98')
+    ```</haxe_doc>
 		<meta>
 			<m n=":directlyUsed"/>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -8462,7 +8709,7 @@
 		<t path="haxe.PosInfos"/>
 		<c path="String"/>
 	</f>
-	<x path="Null"><t path="haxe.PosInfos"/></x>
+	<t path="haxe.PosInfos"/>
 	<c path="interlude.reactive.Task"><c path="logMessage.A"/></c>
 </f></logMessage>
 		<unit public="1" params="A" set="method" line="92" static="1"><f a="t">
@@ -8501,7 +8748,7 @@
 			<m n=":publicFields"/>
 		</meta>
 	</class>
-	<class path="sys.io.FileInput" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/sys/io/FileInput.hx">
+	<class path="sys.io.FileInput" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/io/FileInput.hx">
 		<extends path="haxe.io.Input"/>
 		<close public="1" set="method"><f a=""><x path="Void"/></f></close>
 		<eof public="1" set="method"><f a=""><x path="Bool"/></f></eof>
@@ -8524,7 +8771,7 @@
 			<m n=":coreApi"/>
 		</meta>
 	</class>
-	<class path="sys.io.FileOutput" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/eval/_std/sys/io/FileOutput.hx">
+	<class path="sys.io.FileOutput" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/io/FileOutput.hx">
 		<extends path="haxe.io.Output"/>
 		<close public="1" set="method"><f a=""><x path="Void"/></f></close>
 		<flush public="1" set="method"><f a=""><x path="Void"/></f></flush>
@@ -8550,7 +8797,7 @@
 			<m n=":coreApi"/>
 		</meta>
 	</class>
-	<enum path="sys.io.FileSeek" params="" file="/opt/hostedtoolcache/haxe/4.2.1/x64/std/sys/io/FileSeek.hx">
+	<enum path="sys.io.FileSeek" params="" file="C:\HaxeToolkit\haxe\std/sys/io/FileSeek.hx">
 		<SeekBegin/>
 		<SeekCur/>
 		<SeekEnd/>
