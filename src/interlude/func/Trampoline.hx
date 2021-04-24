@@ -5,6 +5,7 @@ package interlude.func;
     avoid growing the stack  
     @see https://en.wikipedia.org/wiki/Tail_call#Through_trampolining
 **/
+@:using(interlude.func.Trampoline.TrampolineTools)
 enum Trampoline<T> {
     Done(t:T);
     Continue(f:Void->Trampoline<T>);

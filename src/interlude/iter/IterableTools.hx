@@ -15,16 +15,20 @@ package interlude.iter;
 class IterableTools {
     /**
         Returns `true` if all elements of `as` satisfy a `predicate`  
-        `[true, true, true].all(isTrue)` == `true`  
-        `[true, false, true].all(isTrue)` == `false`
+        ```haxe
+        [true, true, true].all(isTrue) == true;
+        [true, false, true].all(isTrue) == false;
+        ```
     **/
     static function all<A>(as:Iterable<A>, predicate:A->Bool):Bool return
         !as.anyMatch(predicate.not());
 
     /**
         Returns `true` if corresponding pairs of `as` and `bs` satisfy a predicate  
-        `[1, 2, 3].all2([1, 2, 3], equals)` == `true`  
-        `[1, 2, 3].all2([4, 2, 0], equals)` == `false`
+        ```haxe
+        [1, 2, 3].all2([1, 2, 3], equals) == true;
+        [1, 2, 3].all2([4, 2, 0], equals) == false;
+        ```
     **/
     static function all2<A, B>(as:Iterable<A>, bs:Iterable<B>, predicate:A->B->Bool):Bool return
         as.zipWith(bs, predicate).all(identity);
@@ -70,8 +74,10 @@ class IterableTools {
 
     /**
         Returns a new `Iterable` that appends `with` onto the end of `as`  
-        `[1, 2, 3].append([4, 5, 6])` == `[1, 2, 3, 4, 5, 6]`
-        @see [Lambda.concat](https://api.haxe.org/Lambda.html#concat)  
+        ```haxe
+        [1, 2, 3].append([4, 5, 6]) == [1, 2, 3, 4, 5, 6];
+        ```
+        @see [`Lambda.concat`](https://api.haxe.org/Lambda.html#concat)  
     **/
     static function append<A>(as:Iterable<A>, with:Iterable<A>):Iterable<A> return {
         iterator: () -> {
@@ -92,11 +98,13 @@ class IterableTools {
 
     /**
         If `as` has any elements, returns the element at a positive `index`  
-        Wraps around to the beginning if `index` is out of bounds  
-        `[1, 2, 3].atWrappedIndex(1)` == `Some(2)`  
-        `[1, 2, 3].atWrappedUndex(10)` == `Some(2)`  
-        `[1].atWrappedIndex(100)` == `Some(1)`  
-        `[].atWrappedIndex(1000)` == `None`
+        Wraps around to the beginning if `index` is out of bounds
+        ```haxe
+        [1, 2, 3].atWrappedIndex(1)     == Some(2);
+        [1, 2, 3].atWrappedUndex(10)    == Some(2);
+        [1].atWrappedIndex(100)         == Some(1);
+        [].atWrappedIndex(1000)         == None;
+        ```
     **/
     static function atWrappedIndex<A>(as:Iterable<A>, index:Int):Option<A> return
         as.cycle().elementAt(index);
@@ -139,8 +147,10 @@ class IterableTools {
     };
 
     /**
-        Infinitely repeats an `Iterable`  
-        `[6, 9].cycle()` == `[6, 9, 6, 9, 6, ...]`
+        Infinitely repeats an `Iterable`
+        ```haxe
+        [6, 9].cycle() == [6, 9, 6, 9, 6, ...];
+        ```
     **/
     static function cycle<A>(as:Iterable<A>):Iterable<A> return as.isEmpty()
         ? as
@@ -183,10 +193,12 @@ class IterableTools {
     }
 
     /**
-        If possible, returns an element from `as` at a specified `index`  
-        `[1, 2, 3].elementAt(1)` == `Some(2)`  
-        `[1, 2, 3].elementAt(10)` == `None`  
-        `[].elementAt(100)` == `None`
+        If possible, returns an element from `as` at a specified `index`
+        ```haxe
+        [1, 2, 3].elementAt(1)  == Some(2);
+        [1, 2, 3].elementAt(10) == None;
+        [].elementAt(100)       == None;
+        ```
     **/
     static function elementAt<A>(as:Iterable<A>, index:Int):Option<A> return as.isEmpty() || index < 0
         ? None
@@ -297,9 +309,11 @@ class IterableTools {
     /**
         Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
-        This version is lazy  
-        `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
-        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
+        This version is lazy
+        ```haxe
+        [1, 2, 3].flatMap(x -> x.replicate(3)) == [1, 1, 1, 2, 2, 2, 3, 3, 3];
+        ```
+        @see [`Lambda.flatMap`](https://api.haxe.org/Lambda.html#flatMap)  
     **/
     static function flatMap<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Iterable<B> return {
         iterator: () -> {
@@ -325,28 +339,34 @@ class IterableTools {
     /**
         Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
-        This version is strict  
-        `[1, 2, 3].flatMapS(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
-        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)  
+        This version is strict
+        ```haxe
+        [1, 2, 3].flatMapS(x -> x.replicate(3)) == [1, 1, 1, 2, 2, 2, 3, 3, 3];
+        ```
+        @see [`Lambda.flatMap`](https://api.haxe.org/Lambda.html#flatMap)  
     **/
     static function flatMapS<A, B>(as:Iterable<A>, fn:A->Iterable<B>):Array<B> return
         [for(a in as) for (b in fn(a)) b];
 
     /**
-        Appends one level of nested `Iterable`s together  
-        `[[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatten()` == `[1, 2, 3, 4, 5, 6, 7, 8, 9]`  
-        `[].flatten()` == `[]`
+        Appends one level of nested `Iterable`s together
+        ```haxe
+        [[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatten() == [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        [].flatten() == [];
+        ```
     **/
     static function flatten<A>(ass:Iterable<Iterable<A>>):Iterable<A> return
         ass.flatMap(identity);
 
     /**
         Applies `fn` over elements of `as` using `seed` as an initial value,
-        reducing an `Iterable` to a single value. This version is left-associative  
-        `[1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y)` == `0+1+2+3+4+5` == `15`  
-        `[].foldl(0, (x, y) -> x + y)` == `0`  
+        reducing an `Iterable` to a single value. This version is left-associative
+        ```haxe
+        [1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y) == 0+1+2+3+4+5 == 15;
+        [].foldl(0, (x, y) -> x + y) == 0;
+        ```
         *NOTE*: This may not terminate with an infinite `Iterable`
-        @see [Lambda.fold](https://api.haxe.org/Lambda.html#fold)  
+        @see [`Lambda.fold`](https://api.haxe.org/Lambda.html#fold)  
     **/
     static function foldl<A, B>(as:Iterable<A>, seed:B, fn:(accumulator:B, current:A)->B):B return {
         var accum = seed;
@@ -358,8 +378,10 @@ class IterableTools {
     /**
         Applies `fn` over elements of `as` using `seed` as an initial value,
         reducing an `Iterable` to a single value. This version is right-associative  
-        `[1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y)` == `0+5+4+3+2+1` == `15`  
-        `[].foldr(0, (x, y) -> x + y)` == `0`  
+        ```haxe
+        [1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y) == 0+5+4+3+2+1 == 15;
+        [].foldr(0, (x, y) -> x + y) == 0;
+        ```
         *NOTE*: This may not terminate with an infinite `Iterable`
     **/
     static function foldr<A, B>(as:Iterable<A>, seed:B, fn:(current:A, accumulator:B)->B):B return as.isEmpty()
@@ -402,7 +424,9 @@ class IterableTools {
 
     /**
         Inserts `separator` in between `Iterable`s and flattens the result  
-        `[[1, 2], [3, 4], [5, 6]].intercalate([0, 0])` == `[1, 2, 0, 0, 3, 4, 0, 0, 5, 6]`
+        ```haxe
+        [[1, 2], [3, 4], [5, 6]].intercalate([0, 0]) == [1, 2, 0, 0, 3, 4, 0, 0, 5, 6];
+        ```
     **/
     static function intercalate<A>(aas:Iterable<Iterable<A>>, separator:Iterable<A>):Iterable<A> return
         aas.intersperse(separator).flatten();
@@ -410,7 +434,9 @@ class IterableTools {
     /**
         Returns an `Iterable` with `separator` interspersed between every
         element of `as`  
-        `[1, 2, 3, 4].intersperse(0)` == `[1, 0, 2, 0, 3, 0, 4]`
+        ```haxe
+        [1, 2, 3, 4].intersperse(0) == [1, 0, 2, 0, 3, 0, 4];
+        ```
     **/
     static function intersperse<A>(as:Iterable<A>, separator:A):Iterable<A> return {
         iterator: () -> {
@@ -433,7 +459,9 @@ class IterableTools {
     /**
       Creates an infinite sequence of `T` values by applying `fn` to the first
       value, then to the result of that, then...  
-      `iterate(0, add1)` == `[x, f(x), f(f(x)), f(f(f(x))), ...]` == `[0, 1, 2, 3, 4, 5, ...]`
+      ```haxe
+      iterate(0, add1) == [x, f(x), f(f(x)), f(f(f(x))), ...] == [0, 1, 2, 3, 4, 5, ...];
+      ```
     **/
     static function iterate<A>(a:A, fn:A->A):Iterable<A> return {
         var cached = a;
@@ -458,8 +486,10 @@ class IterableTools {
     /**
         Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is lazy  
-        `[1, 2, 3].mapL(Std.string)` == `['1', '2', '3']`
-        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)  
+        ```haxe
+        [1, 2, 3].mapL(Std.string) == ['1', '2', '3'];
+        ```
+        @see [`Lambda.map`](https://api.haxe.org/Lambda.html#map)  
     **/
     static function mapL<A, B>(as:Iterable<A>, fn:A->B):Iterable<B> return {
         iterator: () -> {
@@ -473,8 +503,10 @@ class IterableTools {
     /**
         Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is strict  
-        `[1, 2, 3].mapS(Std.string)` == `['1', '2', '3']`
-        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)  
+        ```haxe
+        [1, 2, 3].mapS(Std.string) == ['1', '2', '3']
+        ```
+        @see [`Lambda.map`](https://api.haxe.org/Lambda.html#map)  
     **/
     static function mapS<A, B>(as:Iterable<A>, fn:A->B):Array<B> return
         [for(a in as) fn(a)];
@@ -495,8 +527,10 @@ class IterableTools {
 
     /**
         Attempts to get the first element of `as`, if there is one  
-        `[a, b, c].maybeFirst()` == `Some(a)`  
-        `[].maybeFirst()` == `None`
+        ```haxe
+        [a, b, c].maybeFirst() == Some(a);
+        [].maybeFirst() == None;
+        ```
     **/
     static function maybeFirst<A>(as:Iterable<A>):Option<A> return {
         var as_iter = as.iterator();
@@ -507,8 +541,10 @@ class IterableTools {
 
     /**
         Attempts to get the last element of `as`, if there is one  
-        `[a, b, c].maybeLast()` == `Some(c)`  
-        `[].maybeLast()` == `None`  
+        ```haxe
+        [a, b, c].maybeLast() == Some(c);
+        [].maybeLast() == None;
+        ```
         *NOTE*: this will not terminate if `as` is infinite
     **/
     static function maybeLast<A>(as:Iterable<A>):Option<A> return {
@@ -541,7 +577,9 @@ class IterableTools {
 
     /**
       Returns an infinite `Iterable` of natural numbers  
-      `natural()` == `[1, 2, 3, 4, 5, 6, ...]`
+      ```haxe
+      natural() == [1, 2, 3, 4, 5, 6, ...];
+      ```
      **/
     inline static function natural():Iterable<Int> return
         1.iterate(add1);
@@ -580,14 +618,18 @@ class IterableTools {
 
     /**
         Common use of `zip`, useful for comparing an element with the next one  
-        `[1, 2, 3, 4].pairs()` == `[(1, 2), (2, 3), (3, 4)]`
+        ```haxe
+        [1, 2, 3, 4].pairs() == [(1, 2), (2, 3), (3, 4)];
+        ```
     **/
     static function pairs<A>(as:Iterable<A>):Iterable<Pair<A, A>> return
         as.zip(as.tail());
 
     /**
       Splits an `Iterable` into two subarrays based on a `predicate`  
-      `0.iterate(add1).partition(isEven)` == ([0, 2, 4, ...], [1, 3, 5, ...])
+      ```haxe
+      0.iterate(add1).partition(isEven) == ([0, 2, 4, ...], [1, 3, 5, ...]);
+      ```
       TODO: add a lazy version that doesn't evaluate the source list twice
      **/
     static function partition<A>(as:Iterable<A>, predicate:A->Bool):Pair<Array<A>, Array<A>> return {
@@ -611,7 +653,9 @@ class IterableTools {
     /**
         Returns an `Iterable` containing a range of numbers between `start` and
         `start+count`  
-        `0.range(5)` == `[0, 1, 2, 3, 4]`
+        ```haxe
+        0.range(5) == [0, 1, 2, 3, 4];
+        ```
     **/
     inline static function range(start:Int, count:Int):Iterable<Int> return
         start.iterate(add1).take(count);
@@ -634,7 +678,9 @@ class IterableTools {
       Applies `fn` to each element of `as`, passing an accumulator value through
       the computation  
       This version includes the seed as the first element of the output  
-      `[0, 1, 2, 3].scan(1, (x, y) -> x + y)` == `[1, 1, 2, 4, 7]`
+      ```haxe
+      [0, 1, 2, 3].scan(1, (x, y) -> x + y) == [1, 1, 2, 4, 7];
+      ```
      **/
     static function scan<A, B>(as:Iterable<A>, seed:B, fn:B->A->B):Iterable<B> return
         seed.cons(as.scan_(seed, fn));
@@ -643,7 +689,9 @@ class IterableTools {
       Applies `fn` to each element of `as`, passing an accumulator value through
       the computation  
       This version does not include the seed in the output  
-      `[0, 1, 2, 3].scan_(1, (x, y) -> x + y)` == `[1, 2, 4, 7]`
+      ```haxe
+      [0, 1, 2, 3].scan_(1, (x, y) -> x + y) == [1, 2, 4, 7];
+      ```
      **/
     static function scan_<A, B>(as:Iterable<A>, seed:B, fn:B->A->B):Iterable<B> return {
         iterator: () -> {
@@ -674,8 +722,10 @@ class IterableTools {
     /**
       Returns all of the elements of `as` after the first `count` items  
       If `as` has <= `count` items, return empty list  
-      `[a, b, c].skip(2)` == `[c]`  
-      `[a, b, c].skip(200)` == `[]`
+      ```haxe
+      [a, b, c].skip(2) == [c];
+      [a, b, c].skip(200) == [];
+      ```
      **/
     static function skip<A>(as:Iterable<A>, count:Int):Iterable<A> return {
         iterator: () -> {
@@ -690,8 +740,10 @@ class IterableTools {
     /**
       Skips elements of `as` until they no longer match `predicate`  
       If all elements match, returns an empty `Iterable`  
-      `[1, 2, 3, 4].skipWhile(x -> x < 3)` == `[3, 4]`
-      `[1, 2, 3, 4].skipWhile(x -> x > 0)` == `[]`  
+      ```haxe
+      [1, 2, 3, 4].skipWhile(x -> x < 3) == [3, 4];
+      [1, 2, 3, 4].skipWhile(x -> x > 0) == [];
+      ```
       *NOTE*: This may not terminate if every element of an infinite `Iterable`
       matches the `predicate`
      **/
@@ -716,7 +768,9 @@ class IterableTools {
     /**
         Returns a `Pair` containing the longest prefix of `as` that match some 
         `predicate` and the rest of the `Iterable`  
-        `[1, 2, 3, 4, 1, 2, 3].span(x -> x < 3)` == `([1, 2], [3, 4, 1, 2, 3])`
+        ```haxe
+        [1, 2, 3, 4, 1, 2, 3].span(x -> x < 3) == ([1, 2], [3, 4, 1, 2, 3]);
+        ```
     **/
     static function span<A>(as:Iterable<A>, predicate:A->Bool):Pair<Iterable<A>, Iterable<A>> return
         as.takeWhile(predicate).with(as.skipWhile(predicate));
@@ -731,9 +785,11 @@ class IterableTools {
     /**
         Return all elements of an `Iterable` except the first one.  
         Returns [] if `as` is empty or only has one element  
-        `[1, 2, 3].tail()` == `[2, 3]`  
-        `[1].tail()` == `[]`
-        `[].tail()` == `[]`
+        ```haxe
+        [1, 2, 3].tail() == [2, 3];
+        [1].tail() == [];
+        [].tail() == [];
+        ```
     **/
     inline static function tail<A>(as:Iterable<A>):Iterable<A> return
         as.skip(1);
@@ -741,8 +797,10 @@ class IterableTools {
     /**
       Returns up to the first `count` elements of `as`  
       If `as` does not have >= `count` elements, it returns as many as it can  
-      `[a, b, c, d].take(2)` == `[a, b]`  
-      `[].take(2)` == `[]`
+      ```haxe
+      [a, b, c, d].take(2) == [a, b];
+      [].take(2) == [];
+      ```
      **/
     static function take<A>(as:Iterable<A>, count:Int):Iterable<A> return {
         iterator: () -> {
@@ -757,7 +815,9 @@ class IterableTools {
     /**
       Returns elements from `as` until one is found that doesn't match
       `predicate`  
-      `[1, 2, 3, 4, 5, 6].takeWhile(x -> x < 4)` == `[1, 2, 3]`
+      ```haxe
+      [1, 2, 3, 4, 5, 6].takeWhile(x -> x < 4) == [1, 2, 3];
+      ```
      **/
     @:nullSafety(Off)
     static function takeWhile<A>(as:Iterable<A>, predicate:A->Bool):Iterable<A> return {
@@ -782,8 +842,10 @@ class IterableTools {
     /**
         Returns `Pair`s of values from `as` and `bs`. If the two `Iterable`s are
         not the same length, `zip` stops at the end of the shorter one  
-        `[1, 2, 3].zip(['a', 'b', 'c])` == `[(1, 'a'), (2, 'b'), (3, 'c')]`  
-        `[1, 2, 3].zip([])` == `[]`
+        ```haxe
+        [1, 2, 3].zip(['a', 'b', 'c']) == [(1, 'a'), (2, 'b'), (3, 'c')]  ;
+        [1, 2, 3].zip([]) == [];
+        ```
     **/
     static function zip<A, B, C:NotVoid>(as:Iterable<A>, bs:Iterable<B>):Iterable<Pair<A, B>> return
         as.zipWith(bs, Pair.with);
@@ -793,7 +855,9 @@ class IterableTools {
         `as` and `bs`  
         If the `Iterable`s don't have the same number of elements, `zipWith`
         will only apply until it reaches the end of the shorter one  
-        `[1, 2, 3].zipWith([4, 5, 6], (x, y) -> x + y)` == `[1+4, 2+5, 3+6]` == `[5, 7, 9]`
+        ```haxe
+        [1, 2, 3].zipWith([4, 5, 6], (x, y) -> x + y) == [1+4, 2+5, 3+6] == [5, 7, 9];
+        ```
     **/
     static function zipWith<A, B, C:NotVoid>(as:Iterable<A>, bs:Iterable<B>, transform:A->B->C):Iterable<C> return {
         iterator: () -> {

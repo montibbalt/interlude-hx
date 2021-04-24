@@ -6467,24 +6467,24 @@
 	<x path="Float"/>
 </t></t></icast></to>
 		<haxe_doc><![CDATA[Represents a weighted probability distribution. Supports a tree-structure for
-  weights with `Weighted<Weighted<A>>`  
-  ```haxe
-    enum Coin { H; T; }
+    weights with `Weighted<Weighted<A>>`  
+    ```haxe
+      enum Coin { H; T; }
 
-    // Heads and Tails equally likely
-    var fairCoin = [H, T].uniform();
-    var fairFlips = [
-        for(i in 0...10)
-            fairCoin.draw(Math.random)
-    ]; // ex: [T,H,H,T,T,H,T,T,H,T]
+      // Heads and Tails equally likely
+      var fairCoin = [H, T].uniform();
+      var fairFlips = [
+          for(i in 0...10)
+              fairCoin.draw(Math.random)
+      ]; // ex: [T,H,H,T,T,H,T,T,H,T]
 
-    // Tails much more likely than Heads
-    var unfairCoin = [H.with(0.25), T.with(0.75)];
-    var unfairFlips = [
-        for(i in 0...10)
-            unfairCoin.draw(Math.random)
-    ]; // ex: [T,T,T,T,H,T,H,T,T,H]
-  ```]]></haxe_doc>
+      // Tails much more likely than Heads
+      var unfairCoin = [H.with(0.25), T.with(0.75)];
+      var unfairFlips = [
+          for(i in 0...10)
+              unfairCoin.draw(Math.random)
+      ]; // ex: [T,T,T,T,H,T,H,T,T,H]
+    ```]]></haxe_doc>
 		<meta>
 			<m n=":forward"><e>iterator</e></m>
 			<m n=":arrayAccess"/>
@@ -6545,8 +6545,8 @@
 			<c path="draw.A"/>
 		</f>
 		<haxe_doc>Draws a single result from a weighted set. `randomGen` should be a
-      function that generates a random value between 0 and 1, e.g. `Math.random`  
-      Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
+        function that generates a random value between 0 and 1, e.g. `Math.random`  
+        Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
 	</draw>
 	<drawIndex public="1" params="A" set="method" line="70" static="1">
 		<f a="dist:randomGen">
@@ -6555,9 +6555,9 @@
 			<x path="Int"/>
 		</f>
 		<haxe_doc>Draws a result from a weighted set and returns its index. `randomGen`
-      should be a function that generates a random value between 0 and 1, 
-      e.g. `Math.random`  
-      Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
+        should be a function that generates a random value between 0 and 1, 
+        e.g. `Math.random`  
+        Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
 	</drawIndex>
 	<flatMap public="1" params="A:B" set="method" line="83" static="1">
 		<f a="dist:fn">
@@ -6569,8 +6569,8 @@
 			<x path="interlude.ds.Weighted"><c path="flatMap.B"/></x>
 		</f>
 		<haxe_doc>Projects each element of a weighted distribution of `A` to a distribution
-      of type `B`, and flattens the results  
-      Monadic bind/flatMap</haxe_doc>
+        of type `B`, and flattens the results  
+        Monadic bind/flatMap</haxe_doc>
 	</flatMap>
 	<flatten public="1" params="A" set="method" line="89" static="1">
 		<f a="dists">
@@ -6579,7 +6579,7 @@
 		</f>
 		<haxe_doc>Flattens one layer of a probability tree by multiplying weights together</haxe_doc>
 	</flatten>
-	<map public="1" params="A:B" set="method" line="99" static="1">
+	<map public="1" params="A:B" set="method" line="101" static="1">
 		<f a="dist:fn">
 			<x path="interlude.ds.Weighted"><c path="map.A"/></x>
 			<f a="">
@@ -6589,24 +6589,28 @@
 			<x path="interlude.ds.Weighted"><c path="map.B"/></x>
 		</f>
 		<haxe_doc><![CDATA[Maps the `A` elements of a weighted distribution to a type `B` using `fn`  
-      `[123.with(1)].map(x -> '$x')` == `['123'.with(1)]`]]></haxe_doc>
+        ```haxe
+        [123.with(1)].map(x -> '$x') == ['123'.with(1)];
+        ```]]></haxe_doc>
 	</map>
-	<normalize public="1" params="A" set="method" line="108" static="1">
+	<normalize public="1" params="A" set="method" line="112" static="1">
 		<f a="dist">
 			<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
 			<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
 		</f>
 		<haxe_doc>Normalizes large weights to numbers between 0 and 1  
-      `['abc'.with(450), 'def'.with(50)].normalize()` == `['abc'.with(0.9), 'def'.with(0.1)]`</haxe_doc>
+        ```haxe
+        ['abc'.with(450), 'def'.with(50)].normalize() == ['abc'.with(0.9), 'def'.with(0.1)];
+        ```</haxe_doc>
 	</normalize>
-	<show public="1" params="A" set="method" line="119" static="1">
+	<show public="1" params="A" set="method" line="123" static="1">
 		<f a="dist">
 			<x path="interlude.ds.Weighted"><c path="show.A"/></x>
 			<c path="String"/>
 		</f>
 		<haxe_doc>Pretty-prints the weights in a distribution</haxe_doc>
 	</show>
-	<uniform public="1" params="A" set="method" line="127" static="1">
+	<uniform public="1" params="A" set="method" line="131" static="1">
 		<f a="vals">
 			<t path="Iterable"><c path="uniform.A"/></t>
 			<x path="interlude.ds.Weighted"><c path="uniform.A"/></x>
@@ -6671,8 +6675,8 @@
 				<c path="draw.A"/>
 			</f>
 			<haxe_doc>Draws a single result from a weighted set. `randomGen` should be a
-      function that generates a random value between 0 and 1, e.g. `Math.random`  
-      Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
+        function that generates a random value between 0 and 1, e.g. `Math.random`  
+        Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
 		</draw>
 		<drawIndex public="1" params="A" set="method" line="70" static="1">
 			<f a="dist:randomGen">
@@ -6681,9 +6685,9 @@
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Draws a result from a weighted set and returns its index. `randomGen`
-      should be a function that generates a random value between 0 and 1, 
-      e.g. `Math.random`  
-      Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
+        should be a function that generates a random value between 0 and 1, 
+        e.g. `Math.random`  
+        Clamps the output of `randomGen` between 0.0 and 1.0</haxe_doc>
 		</drawIndex>
 		<flatMap public="1" params="A:B" set="method" line="83" static="1">
 			<f a="dist:fn">
@@ -6695,8 +6699,8 @@
 				<x path="interlude.ds.Weighted"><c path="flatMap.B"/></x>
 			</f>
 			<haxe_doc>Projects each element of a weighted distribution of `A` to a distribution
-      of type `B`, and flattens the results  
-      Monadic bind/flatMap</haxe_doc>
+        of type `B`, and flattens the results  
+        Monadic bind/flatMap</haxe_doc>
 		</flatMap>
 		<flatten public="1" params="A" set="method" line="89" static="1">
 			<f a="dists">
@@ -6705,7 +6709,7 @@
 			</f>
 			<haxe_doc>Flattens one layer of a probability tree by multiplying weights together</haxe_doc>
 		</flatten>
-		<map public="1" params="A:B" set="method" line="99" static="1">
+		<map public="1" params="A:B" set="method" line="101" static="1">
 			<f a="dist:fn">
 				<x path="interlude.ds.Weighted"><c path="map.A"/></x>
 				<f a="">
@@ -6715,24 +6719,28 @@
 				<x path="interlude.ds.Weighted"><c path="map.B"/></x>
 			</f>
 			<haxe_doc><![CDATA[Maps the `A` elements of a weighted distribution to a type `B` using `fn`  
-      `[123.with(1)].map(x -> '$x')` == `['123'.with(1)]`]]></haxe_doc>
+        ```haxe
+        [123.with(1)].map(x -> '$x') == ['123'.with(1)];
+        ```]]></haxe_doc>
 		</map>
-		<normalize public="1" params="A" set="method" line="108" static="1">
+		<normalize public="1" params="A" set="method" line="112" static="1">
 			<f a="dist">
 				<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
 				<x path="interlude.ds.Weighted"><c path="normalize.A"/></x>
 			</f>
 			<haxe_doc>Normalizes large weights to numbers between 0 and 1  
-      `['abc'.with(450), 'def'.with(50)].normalize()` == `['abc'.with(0.9), 'def'.with(0.1)]`</haxe_doc>
+        ```haxe
+        ['abc'.with(450), 'def'.with(50)].normalize() == ['abc'.with(0.9), 'def'.with(0.1)];
+        ```</haxe_doc>
 		</normalize>
-		<show public="1" params="A" set="method" line="119" static="1">
+		<show public="1" params="A" set="method" line="123" static="1">
 			<f a="dist">
 				<x path="interlude.ds.Weighted"><c path="show.A"/></x>
 				<c path="String"/>
 			</f>
 			<haxe_doc>Pretty-prints the weights in a distribution</haxe_doc>
 		</show>
-		<uniform public="1" params="A" set="method" line="127" static="1">
+		<uniform public="1" params="A" set="method" line="131" static="1">
 			<f a="vals">
 				<t path="Iterable"><c path="uniform.A"/></t>
 				<x path="interlude.ds.Weighted"><c path="uniform.A"/></x>
@@ -7019,7 +7027,7 @@
 		</update>
 	</class>
 	<class path="interlude.func.Curry2" params="" file="src/interlude/func/Curry.hx" module="interlude.func.Curry">
-		<curry public="1" params="A:B:Z" get="inline" set="null" line="10" static="1">
+		<curry public="1" params="A:B:Z" get="inline" set="null" line="12" static="1">
 			<f a="fn">
 				<f a=":">
 					<c path="curry.A"/>
@@ -7034,10 +7042,12 @@
 					</f>
 				</f>
 			</f>
-			<haxe_doc><![CDATA[Convert 1 function of 2 arguments into 2 functions of 1 argument  
-        `((a, b) -> a + b).curry()` == `a -> b -> a + b`]]></haxe_doc>
+			<haxe_doc><![CDATA[Convert 1 function of 2 arguments into 2 functions of 1 argument
+        ```haxe
+        ((a, b) -> a + b).curry() == a -> b -> a + b;
+        ```]]></haxe_doc>
 		</curry>
-		<uncurry public="1" params="A:B:Z" get="inline" set="null" line="17" static="1">
+		<uncurry public="1" params="A:B:Z" get="inline" set="null" line="21" static="1">
 			<f a="fn">
 				<f a="">
 					<c path="uncurry.A"/>
@@ -7053,7 +7063,9 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 2 functions of 1 argument into 1 function of 2 arguments  
-        `(a -> b -> a + b).uncurry()` == `(a, b) -> a + b`]]></haxe_doc>
+        ```haxe
+        (a -> b -> a + b).uncurry() == (a, b) -> a + b;
+        ```]]></haxe_doc>
 		</uncurry>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -7061,7 +7073,7 @@
 		</meta>
 	</class>
 	<class path="interlude.func.Curry3" params="" file="src/interlude/func/Curry.hx" module="interlude.func.Curry">
-		<curry public="1" params="A:B:C:Z" set="method" line="28" static="1">
+		<curry public="1" params="A:B:C:Z" set="method" line="34" static="1">
 			<f a="f">
 				<f a="::">
 					<c path="curry.A"/>
@@ -7081,9 +7093,11 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 1 function of 3 arguments into 3 functions of 1 argument  
-        `((a, b, c) -> a + b + c).curry()` == `a -> b -> c -> a + b + c`]]></haxe_doc>
+        ```haxe
+        ((a, b, c) -> a + b + c).curry() == a -> b -> c -> a + b + c;
+        ```]]></haxe_doc>
 		</curry>
-		<uncurry public="1" params="A:B:C:Z" set="method" line="35" static="1">
+		<uncurry public="1" params="A:B:C:Z" set="method" line="43" static="1">
 			<f a="f">
 				<f a="">
 					<c path="uncurry.A"/>
@@ -7103,7 +7117,9 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 3 functions of 1 argument into 1 function of 3 arguments  
-        `(a -> b -> c -> a + b + c).uncurry()` == `(a, b, c) -> a + b + c`]]></haxe_doc>
+        ```haxe
+        (a -> b -> c -> a + b + c).uncurry() == (a, b, c) -> a + b + c;
+        ```]]></haxe_doc>
 		</uncurry>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -7111,7 +7127,7 @@
 		</meta>
 	</class>
 	<class path="interlude.func.Curry4" params="" file="src/interlude/func/Curry.hx" module="interlude.func.Curry">
-		<curry public="1" params="A:B:C:D:Z" set="method" line="46" static="1">
+		<curry public="1" params="A:B:C:D:Z" set="method" line="56" static="1">
 			<f a="f">
 				<f a=":::">
 					<c path="curry.A"/>
@@ -7135,9 +7151,11 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 1 function of 4 arguments into 4 functions of 1 argument  
-        `((a, b, c, d) -> a + b + c + d).curry()` == `a -> b -> c -> d -> a + b + c + d`]]></haxe_doc>
+        ```haxe
+        ((a, b, c, d) -> a + b + c + d).curry() == a -> b -> c -> d -> a + b + c + d;
+        ```]]></haxe_doc>
 		</curry>
-		<uncurry public="1" params="A:B:C:D:Z" set="method" line="53" static="1">
+		<uncurry public="1" params="A:B:C:D:Z" set="method" line="65" static="1">
 			<f a="f">
 				<f a="">
 					<c path="uncurry.A"/>
@@ -7161,7 +7179,9 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 4 functions of 1 argument into 1 function of 4 arguments  
-        `(a -> b -> c -> d -> a + b + c + d).uncurry()` == `(a, b, c, d) -> a + b + c + d`]]></haxe_doc>
+        ```haxe
+        (a -> b -> c -> d -> a + b + c + d).uncurry() == (a, b, c, d) -> a + b + c + d;
+        ```]]></haxe_doc>
 		</uncurry>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -7169,7 +7189,7 @@
 		</meta>
 	</class>
 	<class path="interlude.func.Curry5" params="" file="src/interlude/func/Curry.hx" module="interlude.func.Curry">
-		<curry public="1" params="A:B:C:D:E:Z" set="method" line="64" static="1">
+		<curry public="1" params="A:B:C:D:E:Z" set="method" line="78" static="1">
 			<f a="f">
 				<f a="::::">
 					<c path="curry.A"/>
@@ -7197,9 +7217,11 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 1 function of 5 arguments into 5 functions of 1 argument  
-        `((a, b, c, d, e) -> a + b + c + d + e).curry()` == `a -> b -> c -> d -> e -> a + b + c + d + e`]]></haxe_doc>
+        ```haxe
+        ((a, b, c, d, e) -> a + b + c + d + e).curry() == a -> b -> c -> d -> e -> a + b + c + d + e;
+        ```]]></haxe_doc>
 		</curry>
-		<uncurry public="1" params="A:B:C:D:E:Z" set="method" line="71" static="1">
+		<uncurry public="1" params="A:B:C:D:E:Z" set="method" line="87" static="1">
 			<f a="f">
 				<f a="">
 					<c path="uncurry.A"/>
@@ -7227,7 +7249,9 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 5 functions of 1 argument into 1 function of 5 arguments  
-        `(a -> b -> c -> d -> e -> a + b + c + d + e).uncurry()` == `(a, b, c, d, e) -> a + b + c + d + e`]]></haxe_doc>
+        ```haxe
+        (a -> b -> c -> d -> e -> a + b + c + d + e).uncurry() == (a, b, c, d, e) -> a + b + c + d + e;
+        ```]]></haxe_doc>
 		</uncurry>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -7235,7 +7259,7 @@
 		</meta>
 	</class>
 	<class path="interlude.func.Curry6" params="" file="src/interlude/func/Curry.hx" module="interlude.func.Curry">
-		<curry public="1" params="A:B:C:D:E:F:Z" set="method" line="82" static="1">
+		<curry public="1" params="A:B:C:D:E:F:Z" set="method" line="100" static="1">
 			<f a="f">
 				<f a=":::::">
 					<c path="curry.A"/>
@@ -7267,9 +7291,11 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 1 function of 6 arguments into 6 functions of 1 argument  
-        `((a, b, c, d, e, f) -> a + b + c + d + e + f).curry()` == `a -> b -> c -> d -> e -> f-> a + b + c + d + e + f`]]></haxe_doc>
+        ```haxe
+        ((a, b, c, d, e, f) -> a + b + c + d + e + f).curry() == a -> b -> c -> d -> e -> f-> a + b + c + d + e + f;
+        ```]]></haxe_doc>
 		</curry>
-		<uncurry public="1" params="A:B:C:D:E:F:Z" set="method" line="89" static="1">
+		<uncurry public="1" params="A:B:C:D:E:F:Z" set="method" line="109" static="1">
 			<f a="fn">
 				<f a="">
 					<c path="uncurry.A"/>
@@ -7301,7 +7327,9 @@
 				</f>
 			</f>
 			<haxe_doc><![CDATA[Convert 6 functions of 1 argument into 1 function of 6 arguments  
-        `(a -> b -> c -> d -> e -> f -> a + b + c + d + e + f).uncurry()` == `(a, b, c, d, e, f) -> a + b + c + d + e + f`]]></haxe_doc>
+        ```haxe
+        (a -> b -> c -> d -> e -> f -> a + b + c + d + e + f).uncurry() == (a, b, c, d, e, f) -> a + b + c + d + e + f;
+        ```]]></haxe_doc>
 		</uncurry>
 		<meta>
 			<m n=":nullSafety"><e>Strict</e></m>
@@ -7424,9 +7452,10 @@
 		<haxe_doc>Represents a recursive computation that has been broken into chunks to
     avoid growing the stack  
     @see https://en.wikipedia.org/wiki/Tail_call#Through_trampolining</haxe_doc>
+		<meta><m n=":using"><e>interlude.func.Trampoline.TrampolineTools</e></m></meta>
 	</enum>
 	<class path="interlude.func.TrampolineTools" params="" file="src/interlude/func/Trampoline.hx" module="interlude.func.Trampoline">
-		<trampoline public="1" params="T" set="method" line="20" static="1">
+		<trampoline public="1" params="T" set="method" line="21" static="1">
 			<f a="t">
 				<e path="interlude.func.Trampoline"><c path="trampoline.T"/></e>
 				<c path="trampoline.T"/>
@@ -7582,15 +7611,17 @@
 			</f>
 			<haxe_doc>Composable version of the `==` operator</haxe_doc>
 		</equals>
-		<identity public="1" params="A" get="inline" set="null" line="96" static="1">
+		<identity public="1" params="A" get="inline" set="null" line="98" static="1">
 			<f a="a">
 				<c path="identity.A"/>
 				<c path="identity.A"/>
 			</f>
 			<haxe_doc>A function that always returns its input unchanged  
-        `Some(123).map(identity)` == `Some(123)`</haxe_doc>
+        ```haxe
+        Some(123).map(identity) == Some(123);
+        ```</haxe_doc>
 		</identity>
-		<keyedWith public="1" params="K:V" get="inline" set="null" line="103" static="1">
+		<keyedWith public="1" params="K:V" get="inline" set="null" line="107" static="1">
 			<f a="value:key">
 				<c path="keyedWith.V"/>
 				<c path="keyedWith.K"/>
@@ -7600,9 +7631,11 @@
 				</t>
 			</f>
 			<haxe_doc>Composable way to create a Key/Value pair  
-        `"abc".keyedWith(123)` == `{ key: 123, value: "abc" }`</haxe_doc>
+        ```haxe
+        "abc".keyedWith(123) == { key: 123, value: "abc" };
+        ```</haxe_doc>
 		</keyedWith>
-		<keyFor public="1" params="K:V" get="inline" set="null" line="110" static="1">
+		<keyFor public="1" params="K:V" get="inline" set="null" line="116" static="1">
 			<f a="key:value">
 				<c path="keyFor.K"/>
 				<c path="keyFor.V"/>
@@ -7612,9 +7645,11 @@
 				</t>
 			</f>
 			<haxe_doc>Composable way to create a Key/Value pair  
-        `123.keyFor("abc")` == `{ key: 123, value: "abc" }`</haxe_doc>
+        ```haxe
+        123.keyFor("abc") == { key: 123, value: "abc" };
+        ```</haxe_doc>
 		</keyFor>
-		<let public="1" params="T:K" get="inline" set="null" line="118" static="1">
+		<let public="1" params="T:K" get="inline" set="null" line="126" static="1">
 			<f a="v:transformer">
 				<c path="let.T"/>
 				<f a="">
@@ -7625,9 +7660,11 @@
 			</f>
 			<haxe_doc>Fluent method for transforming a value  
         Similar to `map` but for any value  
-        `123.let(Std.string)` == `"123"`</haxe_doc>
+        ```haxe
+        123.let(Std.string) == "123";
+        ```</haxe_doc>
 		</let>
-		<mut public="1" params="T" get="inline" set="null" line="125" static="1">
+		<mut public="1" params="T" get="inline" set="null" line="133" static="1">
 			<f a="v:mutator">
 				<c path="mut.T"/>
 				<f a="">
@@ -7639,14 +7676,14 @@
 			<haxe_doc>Fluent method for mutating a value or whatever else  
         Similar to `mutate` but for any value</haxe_doc>
 		</mut>
-		<notb public="1" get="inline" set="null" line="131" static="1">
+		<notb public="1" get="inline" set="null" line="139" static="1">
 			<f a="b">
 				<x path="Bool"/>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Composable version of the `!` (not) operator</haxe_doc>
 		</notb>
-		<notEquals public="1" params="A" get="inline" set="null" line="135" static="1">
+		<notEquals public="1" params="A" get="inline" set="null" line="143" static="1">
 			<f a="x:y">
 				<c path="notEquals.A"/>
 				<c path="notEquals.A"/>
@@ -7654,23 +7691,27 @@
 			</f>
 			<haxe_doc>Composable version of the `!=` operator</haxe_doc>
 		</notEquals>
-		<v_ public="1" params="A:B" set="method" line="142" static="1">
+		<v_ public="1" params="A:B" set="method" line="152" static="1">
 			<f a="value:input">
 				<c path="v_.A"/>
 				<c path="v_.B"/>
 				<c path="v_.A"/>
 			</f>
 			<haxe_doc>An extension that always returns the original value and drops any input  
-        `69.v_("nice")` == `69`</haxe_doc>
+        ```haxe
+        69.v_("nice") == 69;
+        ```</haxe_doc>
 		</v_>
-		<_n public="1" params="A:B" set="method" line="149" static="1">
+		<_n public="1" params="A:B" set="method" line="161" static="1">
 			<f a="value:input">
 				<c path="_n.A"/>
 				<c path="_n.B"/>
 				<c path="_n.B"/>
 			</f>
 			<haxe_doc>An extension that always returns some input and drops the original value  
-        `69._n("nice")` == `"nice"`</haxe_doc>
+        ```haxe
+        69._n("nice") == "nice";
+        ```</haxe_doc>
 		</_n>
 		<haxe_doc>Common functions that are useful for any type</haxe_doc>
 		<meta>
@@ -7680,7 +7721,7 @@
 		</meta>
 	</class>
 	<class path="interlude.iter.IterableTools" params="" file="src/interlude/iter/IterableTools.hx">
-		<all public="1" params="A" set="method" line="21" static="1">
+		<all public="1" params="A" set="method" line="23" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="all.A"/></t>
 				<f a="">
@@ -7690,10 +7731,12 @@
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` if all elements of `as` satisfy a `predicate`  
-        `[true, true, true].all(isTrue)` == `true`  
-        `[true, false, true].all(isTrue)` == `false`</haxe_doc>
+        ```haxe
+        [true, true, true].all(isTrue) == true;
+        [true, false, true].all(isTrue) == false;
+        ```</haxe_doc>
 		</all>
-		<all2 public="1" params="A:B" set="method" line="29" static="1">
+		<all2 public="1" params="A:B" set="method" line="33" static="1">
 			<f a="as:bs:predicate">
 				<t path="Iterable"><c path="all2.A"/></t>
 				<t path="Iterable"><c path="all2.B"/></t>
@@ -7705,24 +7748,26 @@
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` if corresponding pairs of `as` and `bs` satisfy a predicate  
-        `[1, 2, 3].all2([1, 2, 3], equals)` == `true`  
-        `[1, 2, 3].all2([4, 2, 0], equals)` == `false`</haxe_doc>
+        ```haxe
+        [1, 2, 3].all2([1, 2, 3], equals) == true;
+        [1, 2, 3].all2([4, 2, 0], equals) == false;
+        ```</haxe_doc>
 		</all2>
-		<and public="1" set="method" line="35" static="1">
+		<and public="1" set="method" line="39" static="1">
 			<f a="bs">
 				<t path="Iterable"><x path="Bool"/></t>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` if every element is `true` or if `bs` is empty</haxe_doc>
 		</and>
-		<any public="1" params="A" set="method" line="41" static="1">
+		<any public="1" params="A" set="method" line="45" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="any.A"/></t>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` if `as` is not empty</haxe_doc>
 		</any>
-		<anyMatch public="1" params="A" set="method" line="49" static="1">
+		<anyMatch public="1" params="A" set="method" line="53" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="anyMatch.A"/></t>
 				<f a="">
@@ -7735,7 +7780,7 @@
         *NOTE*: This will evaluate `as` until a match is found or `as` is exhausted, 
         so be careful with infinite `Iterable`s</haxe_doc>
 		</anyMatch>
-		<ap public="1" params="A:B" set="method" line="68" static="1">
+		<ap public="1" params="A:B" set="method" line="72" static="1">
 			<f a="fns:as">
 				<t path="Iterable"><f a="">
 	<c path="ap.A"/>
@@ -7759,17 +7804,19 @@
         == [  4,     5,     5,     6,    -2,    -3,    -1,    -2]
         ```]]></haxe_doc>
 		</ap>
-		<append public="1" params="A" set="method" line="76" static="1">
+		<append public="1" params="A" set="method" line="82" static="1">
 			<f a="as:with">
 				<t path="Iterable"><c path="append.A"/></t>
 				<t path="Iterable"><c path="append.A"/></t>
 				<t path="Iterable"><c path="append.A"/></t>
 			</f>
 			<haxe_doc>Returns a new `Iterable` that appends `with` onto the end of `as`  
-        `[1, 2, 3].append([4, 5, 6])` == `[1, 2, 3, 4, 5, 6]`
-        @see [Lambda.concat](https://api.haxe.org/Lambda.html#concat)</haxe_doc>
+        ```haxe
+        [1, 2, 3].append([4, 5, 6]) == [1, 2, 3, 4, 5, 6];
+        ```
+        @see [`Lambda.concat`](https://api.haxe.org/Lambda.html#concat)</haxe_doc>
 		</append>
-		<asIterable public="1" params="A" get="inline" set="null" line="90" static="1">
+		<asIterable public="1" params="A" get="inline" set="null" line="96" static="1">
 			<f a="a:rest">
 				<c path="asIterable.A"/>
 				<x path="haxe.Rest"><c path="asIterable.A"/></x>
@@ -7778,20 +7825,22 @@
 			<haxe_doc>Converts a single element to an `Iterable` containing that element  
         TODO: should this return `Iterable1`?</haxe_doc>
 		</asIterable>
-		<atWrappedIndex public="1" params="A" set="method" line="101" static="1">
+		<atWrappedIndex public="1" params="A" set="method" line="109" static="1">
 			<f a="as:index">
 				<t path="Iterable"><c path="atWrappedIndex.A"/></t>
 				<x path="Int"/>
 				<t path="Option"><c path="atWrappedIndex.A"/></t>
 			</f>
 			<haxe_doc>If `as` has any elements, returns the element at a positive `index`  
-        Wraps around to the beginning if `index` is out of bounds  
-        `[1, 2, 3].atWrappedIndex(1)` == `Some(2)`  
-        `[1, 2, 3].atWrappedUndex(10)` == `Some(2)`  
-        `[1].atWrappedIndex(100)` == `Some(1)`  
-        `[].atWrappedIndex(1000)` == `None`</haxe_doc>
+        Wraps around to the beginning if `index` is out of bounds
+        ```haxe
+        [1, 2, 3].atWrappedIndex(1)     == Some(2);
+        [1, 2, 3].atWrappedUndex(10)    == Some(2);
+        [1].atWrappedIndex(100)         == Some(1);
+        [].atWrappedIndex(1000)         == None;
+        ```</haxe_doc>
 		</atWrappedIndex>
-		<choice public="1" params="A" set="method" line="107" static="1">
+		<choice public="1" params="A" set="method" line="115" static="1">
 			<f a="as:genRandom">
 				<t path="Iterable"><c path="choice.A"/></t>
 				<f a=""><x path="Float"/></f>
@@ -7799,14 +7848,14 @@
 			</f>
 			<haxe_doc>If possible, draws a random element from `as`, using `genRandom` as a source of randomness</haxe_doc>
 		</choice>
-		<choiceStd public="1" params="A" get="inline" set="null" line="114" static="1">
+		<choiceStd public="1" params="A" get="inline" set="null" line="122" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="choiceStd.A"/></t>
 				<t path="Option"><c path="choiceStd.A"/></t>
 			</f>
 			<haxe_doc>If possible, draws a random element from `as`, using `Math.random` as a source of randomness</haxe_doc>
 		</choiceStd>
-		<cons public="1" params="A" get="inline" set="null" line="120" static="1">
+		<cons public="1" params="A" get="inline" set="null" line="128" static="1">
 			<f a="a:as">
 				<c path="cons.A"/>
 				<t path="Iterable"><c path="cons.A"/></t>
@@ -7814,7 +7863,7 @@
 			</f>
 			<haxe_doc>Adds a value to the front of an `Iterable`</haxe_doc>
 		</cons>
-		<contains public="1" params="A" set="method" line="128" static="1">
+		<contains public="1" params="A" set="method" line="136" static="1">
 			<f a="as:a">
 				<t path="Iterable"><c path="contains.A"/></t>
 				<c path="contains.A"/>
@@ -7824,7 +7873,7 @@
         *NOTE*: This will evaluate `as` until if finds `a` or `as` is exhausted,  
         so be careful with infinite `Iterable`s</haxe_doc>
 		</contains>
-		<count public="1" params="A" set="method" line="135" static="1">
+		<count public="1" params="A" set="method" line="143" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="count.A"/></t>
 				<x path="Int"/>
@@ -7832,15 +7881,17 @@
 			<haxe_doc>Counts the number of elements in `as`  
         *NOTE*: This will fully evaluate `as`, so be careful with infinite `Iterable`s</haxe_doc>
 		</count>
-		<cycle public="1" params="A" set="method" line="145" static="1">
+		<cycle public="1" params="A" set="method" line="155" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="cycle.A"/></t>
 				<t path="Iterable"><c path="cycle.A"/></t>
 			</f>
-			<haxe_doc>Infinitely repeats an `Iterable`  
-        `[6, 9].cycle()` == `[6, 9, 6, 9, 6, ...]`</haxe_doc>
+			<haxe_doc>Infinitely repeats an `Iterable`
+        ```haxe
+        [6, 9].cycle() == [6, 9, 6, 9, 6, ...];
+        ```</haxe_doc>
 		</cycle>
-		<distribute public="1" params="A:B" set="method" line="171" static="1">
+		<distribute public="1" params="A:B" set="method" line="181" static="1">
 			<f a="fn:seed">
 				<f a="">
 					<c path="distribute.A"/>
@@ -7864,22 +7915,24 @@
         == [5, 4, 3, 2, 1]
         ```]]></haxe_doc>
 		</distribute>
-		<elementAt public="1" params="A" set="method" line="191" static="1">
+		<elementAt public="1" params="A" set="method" line="203" static="1">
 			<f a="as:index">
 				<t path="Iterable"><c path="elementAt.A"/></t>
 				<x path="Int"/>
 				<t path="Option"><c path="elementAt.A"/></t>
 			</f>
-			<haxe_doc>If possible, returns an element from `as` at a specified `index`  
-        `[1, 2, 3].elementAt(1)` == `Some(2)`  
-        `[1, 2, 3].elementAt(10)` == `None`  
-        `[].elementAt(100)` == `None`</haxe_doc>
+			<haxe_doc>If possible, returns an element from `as` at a specified `index`
+        ```haxe
+        [1, 2, 3].elementAt(1)  == Some(2);
+        [1, 2, 3].elementAt(10) == None;
+        [].elementAt(100)       == None;
+        ```</haxe_doc>
 		</elementAt>
-		<empty public="1" params="A" set="method" line="198" static="1">
+		<empty public="1" params="A" set="method" line="210" static="1">
 			<f a=""><t path="interlude.constraints.SizedIterable"><c path="empty.A"/></t></f>
 			<haxe_doc>Returns an empty `Iterable`</haxe_doc>
 		</empty>
-		<enumerate public="1" params="A" get="inline" set="null" line="206" static="1">
+		<enumerate public="1" params="A" get="inline" set="null" line="218" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="enumerate.A"/></t>
 				<t path="Iterable"><t path="Pair">
@@ -7889,7 +7942,7 @@
 			</f>
 			<haxe_doc>An alternative to `indexed`. Pairs every element of `as` with its index</haxe_doc>
 		</enumerate>
-		<every public="1" params="A" set="method" line="213" static="1">
+		<every public="1" params="A" set="method" line="225" static="1">
 			<f a="as:n">
 				<t path="Iterable"><c path="every.A"/></t>
 				<x path="Int"/>
@@ -7898,7 +7951,7 @@
 			<haxe_doc><![CDATA[Splits `as` into chunks of size `n`  
         If `n <= 0`, returns an empty `Iterable`]]></haxe_doc>
 		</every>
-		<except public="1" params="A" set="method" line="226" static="1">
+		<except public="1" params="A" set="method" line="238" static="1">
 			<f a="as:except">
 				<t path="Iterable"><c path="except.A"/></t>
 				<c path="except.A"/>
@@ -7906,7 +7959,7 @@
 			</f>
 			<haxe_doc>Returns elements of `as` that are not equal to `except`</haxe_doc>
 		</except>
-		<excepts public="1" params="A" set="method" line="232" static="1">
+		<excepts public="1" params="A" set="method" line="244" static="1">
 			<f a="as:except">
 				<t path="Iterable"><c path="excepts.A"/></t>
 				<t path="Iterable"><c path="excepts.A"/></t>
@@ -7914,7 +7967,7 @@
 			</f>
 			<haxe_doc>Returns elements of `as` that do not appear in `except`</haxe_doc>
 		</excepts>
-		<filterL public="1" params="A" set="method" line="238" static="1">
+		<filterL public="1" params="A" set="method" line="250" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="filterL.A"/></t>
 				<f a="">
@@ -7925,7 +7978,7 @@
 			</f>
 			<haxe_doc>Returns elements of `as` that satisfy some `predicate`</haxe_doc>
 		</filterL>
-		<filterMap public="1" params="A:B" set="method" line="250" static="1">
+		<filterMap public="1" params="A:B" set="method" line="262" static="1">
 			<f a="as:predicate:fn">
 				<t path="Iterable"><c path="filterMap.A"/></t>
 				<f a="">
@@ -7940,7 +7993,7 @@
 			</f>
 			<haxe_doc>A fused combination of `filter` and `map`</haxe_doc>
 		</filterMap>
-		<filterFMap public="1" params="A:B" set="method" line="262" static="1">
+		<filterFMap public="1" params="A:B" set="method" line="274" static="1">
 			<f a="as:predicate:fn">
 				<t path="Iterable"><c path="filterFMap.A"/></t>
 				<f a="">
@@ -7955,7 +8008,7 @@
 			</f>
 			<haxe_doc>A fused combination of `filter` and `flatMap`</haxe_doc>
 		</filterFMap>
-		<firstOrDefault public="1" params="A" set="method" line="286" static="1">
+		<firstOrDefault public="1" params="A" set="method" line="298" static="1">
 			<f a="as:genDefault">
 				<t path="Iterable"><c path="firstOrDefault.A"/></t>
 				<f a=""><c path="firstOrDefault.A"/></f>
@@ -7963,7 +8016,7 @@
 			</f>
 			<haxe_doc>Returns the first element of `as` or a default value if `as` is empty</haxe_doc>
 		</firstOrDefault>
-		<firstMatch public="1" params="A" set="method" line="294" static="1">
+		<firstMatch public="1" params="A" set="method" line="306" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="firstMatch.A"/></t>
 				<f a="">
@@ -7976,7 +8029,7 @@
         *NOTE*: This will evaluate `as` until it finds a match or `as` is exhausted, 
         so be careful with infinite `Iterable`s</haxe_doc>
 		</firstMatch>
-		<flatMap public="1" params="A:B" set="method" line="304" static="1">
+		<flatMap public="1" params="A:B" set="method" line="318" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="flatMap.A"/></t>
 				<f a="">
@@ -7987,11 +8040,13 @@
 			</f>
 			<haxe_doc><![CDATA[Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
-        This version is lazy  
-        `[1, 2, 3].flatMap(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
-        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)]]></haxe_doc>
+        This version is lazy
+        ```haxe
+        [1, 2, 3].flatMap(x -> x.replicate(3)) == [1, 1, 1, 2, 2, 2, 3, 3, 3];
+        ```
+        @see [`Lambda.flatMap`](https://api.haxe.org/Lambda.html#flatMap)]]></haxe_doc>
 		</flatMap>
-		<flatMapS public="1" params="A:B" set="method" line="332" static="1">
+		<flatMapS public="1" params="A:B" set="method" line="348" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="flatMapS.A"/></t>
 				<f a="">
@@ -8002,20 +8057,24 @@
 			</f>
 			<haxe_doc><![CDATA[Projects each element of `as` into an `Iterable` of `B`s using `fn` as 
         a transform, and flattens the results into a single `Iterable`  
-        This version is strict  
-        `[1, 2, 3].flatMapS(x -> x.replicate(3))` == `[1, 1, 1, 2, 2, 2, 3, 3, 3]`
-        @see [Lambda.flatMap](https://api.haxe.org/Lambda.html#flatMap)]]></haxe_doc>
+        This version is strict
+        ```haxe
+        [1, 2, 3].flatMapS(x -> x.replicate(3)) == [1, 1, 1, 2, 2, 2, 3, 3, 3];
+        ```
+        @see [`Lambda.flatMap`](https://api.haxe.org/Lambda.html#flatMap)]]></haxe_doc>
 		</flatMapS>
-		<flatten public="1" params="A" set="method" line="340" static="1">
+		<flatten public="1" params="A" set="method" line="358" static="1">
 			<f a="ass">
 				<t path="Iterable"><t path="Iterable"><c path="flatten.A"/></t></t>
 				<t path="Iterable"><c path="flatten.A"/></t>
 			</f>
-			<haxe_doc>Appends one level of nested `Iterable`s together  
-        `[[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatten()` == `[1, 2, 3, 4, 5, 6, 7, 8, 9]`  
-        `[].flatten()` == `[]`</haxe_doc>
+			<haxe_doc>Appends one level of nested `Iterable`s together
+        ```haxe
+        [[1, 2, 3], [4, 5, 6], [7, 8, 9]].flatten() == [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        [].flatten() == [];
+        ```</haxe_doc>
 		</flatten>
-		<foldl public="1" params="A:B" set="method" line="351" static="1">
+		<foldl public="1" params="A:B" set="method" line="371" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="foldl.A"/></t>
 				<c path="foldl.B"/>
@@ -8027,13 +8086,15 @@
 				<c path="foldl.B"/>
 			</f>
 			<haxe_doc><![CDATA[Applies `fn` over elements of `as` using `seed` as an initial value,
-        reducing an `Iterable` to a single value. This version is left-associative  
-        `[1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y)` == `0+1+2+3+4+5` == `15`  
-        `[].foldl(0, (x, y) -> x + y)` == `0`  
+        reducing an `Iterable` to a single value. This version is left-associative
+        ```haxe
+        [1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y) == 0+1+2+3+4+5 == 15;
+        [].foldl(0, (x, y) -> x + y) == 0;
+        ```
         *NOTE*: This may not terminate with an infinite `Iterable`
-        @see [Lambda.fold](https://api.haxe.org/Lambda.html#fold)]]></haxe_doc>
+        @see [`Lambda.fold`](https://api.haxe.org/Lambda.html#fold)]]></haxe_doc>
 		</foldl>
-		<foldr public="1" params="A:B" set="method" line="365" static="1">
+		<foldr public="1" params="A:B" set="method" line="387" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="foldr.A"/></t>
 				<c path="foldr.B"/>
@@ -8046,11 +8107,13 @@
 			</f>
 			<haxe_doc><![CDATA[Applies `fn` over elements of `as` using `seed` as an initial value,
         reducing an `Iterable` to a single value. This version is right-associative  
-        `[1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y)` == `0+5+4+3+2+1` == `15`  
-        `[].foldr(0, (x, y) -> x + y)` == `0`  
+        ```haxe
+        [1, 2, 3, 4, 5].foldl(0, (x, y) -> x + y) == 0+5+4+3+2+1 == 15;
+        [].foldr(0, (x, y) -> x + y) == 0;
+        ```
         *NOTE*: This may not terminate with an infinite `Iterable`]]></haxe_doc>
 		</foldr>
-		<indexed public="1" params="A" set="method" line="378" static="1">
+		<indexed public="1" params="A" set="method" line="400" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="indexed.A"/></t>
 				<t path="KeyValueIterable">
@@ -8061,12 +8124,12 @@
 			<haxe_doc>An alternative to `enumerate`. Converts a plain `Iterable` to one that
         maintains an index for each element.</haxe_doc>
 		</indexed>
-		<indices public="1" get="inline" set="null" line="386" static="1">
+		<indices public="1" get="inline" set="null" line="408" static="1">
 			<f a=""><t path="Iterable"><x path="Int"/></t></f>
 			<haxe_doc><![CDATA[Returns an `Iterable` containing every `Int` >= 0  
         In theory this is infinite; in practice it will overflow MAX_INT]]></haxe_doc>
 		</indices>
-		<init public="1" params="A" set="method" line="393" static="1">
+		<init public="1" params="A" set="method" line="415" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="init.A"/></t>
 				<t path="Iterable"><c path="init.A"/></t>
@@ -8074,16 +8137,18 @@
 			<meta><m n=":nullSafety"><e>Off</e></m></meta>
 			<haxe_doc>Returns all elements of `as` except the last one</haxe_doc>
 		</init>
-		<intercalate public="1" params="A" set="method" line="407" static="1">
+		<intercalate public="1" params="A" set="method" line="431" static="1">
 			<f a="aas:separator">
 				<t path="Iterable"><t path="Iterable"><c path="intercalate.A"/></t></t>
 				<t path="Iterable"><c path="intercalate.A"/></t>
 				<t path="Iterable"><c path="intercalate.A"/></t>
 			</f>
 			<haxe_doc>Inserts `separator` in between `Iterable`s and flattens the result  
-        `[[1, 2], [3, 4], [5, 6]].intercalate([0, 0])` == `[1, 2, 0, 0, 3, 4, 0, 0, 5, 6]`</haxe_doc>
+        ```haxe
+        [[1, 2], [3, 4], [5, 6]].intercalate([0, 0]) == [1, 2, 0, 0, 3, 4, 0, 0, 5, 6];
+        ```</haxe_doc>
 		</intercalate>
-		<intersperse public="1" params="A" set="method" line="415" static="1">
+		<intersperse public="1" params="A" set="method" line="441" static="1">
 			<f a="as:separator">
 				<t path="Iterable"><c path="intersperse.A"/></t>
 				<c path="intersperse.A"/>
@@ -8091,16 +8156,18 @@
 			</f>
 			<haxe_doc>Returns an `Iterable` with `separator` interspersed between every
         element of `as`  
-        `[1, 2, 3, 4].intersperse(0)` == `[1, 0, 2, 0, 3, 0, 4]`</haxe_doc>
+        ```haxe
+        [1, 2, 3, 4].intersperse(0) == [1, 0, 2, 0, 3, 0, 4];
+        ```</haxe_doc>
 		</intersperse>
-		<isEmpty public="1" params="A" get="inline" set="null" line="430" static="1">
+		<isEmpty public="1" params="A" get="inline" set="null" line="456" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="isEmpty.A"/></t>
 				<x path="Bool"/>
 			</f>
 			<haxe_doc>Returns `true` iff `as` does not have any elements</haxe_doc>
 		</isEmpty>
-		<iterate public="1" params="A" set="method" line="438" static="1">
+		<iterate public="1" params="A" set="method" line="466" static="1">
 			<f a="a:fn">
 				<c path="iterate.A"/>
 				<f a="">
@@ -8111,9 +8178,11 @@
 			</f>
 			<haxe_doc>Creates an infinite sequence of `T` values by applying `fn` to the first
       value, then to the result of that, then...  
-      `iterate(0, add1)` == `[x, f(x), f(f(x)), f(f(f(x))), ...]` == `[0, 1, 2, 3, 4, 5, ...]`</haxe_doc>
+      ```haxe
+      iterate(0, add1) == [x, f(x), f(f(x)), f(f(f(x))), ...] == [0, 1, 2, 3, 4, 5, ...];
+      ```</haxe_doc>
 		</iterate>
-		<lastMatch public="1" params="A" set="method" line="455" static="1">
+		<lastMatch public="1" params="A" set="method" line="483" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="lastMatch.A"/></t>
 				<f a="">
@@ -8127,7 +8196,7 @@
         *NOTE*: This will evaluate `as` until it finds a match or `as` is
         exhausted, so be careful with infinite `Iterable`s</haxe_doc>
 		</lastMatch>
-		<mapL public="1" params="A:B" set="method" line="464" static="1">
+		<mapL public="1" params="A:B" set="method" line="494" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="mapL.A"/></t>
 				<f a="">
@@ -8138,10 +8207,12 @@
 			</f>
 			<haxe_doc>Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is lazy  
-        `[1, 2, 3].mapL(Std.string)` == `['1', '2', '3']`
-        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)</haxe_doc>
+        ```haxe
+        [1, 2, 3].mapL(Std.string) == ['1', '2', '3'];
+        ```
+        @see [`Lambda.map`](https://api.haxe.org/Lambda.html#map)</haxe_doc>
 		</mapL>
-		<mapS public="1" params="A:B" set="method" line="479" static="1">
+		<mapS public="1" params="A:B" set="method" line="511" static="1">
 			<f a="as:fn">
 				<t path="Iterable"><c path="mapS.A"/></t>
 				<f a="">
@@ -8152,10 +8223,12 @@
 			</f>
 			<haxe_doc>Projects `as` into an `Iterable` of `B`s using `fn` as a transform  
         This version is strict  
-        `[1, 2, 3].mapS(Std.string)` == `['1', '2', '3']`
-        @see [Lambda.map](https://api.haxe.org/Lambda.html#map)</haxe_doc>
+        ```haxe
+        [1, 2, 3].mapS(Std.string) == ['1', '2', '3']
+        ```
+        @see [`Lambda.map`](https://api.haxe.org/Lambda.html#map)</haxe_doc>
 		</mapS>
-		<mapMaybes public="1" params="A:B" set="method" line="486" static="1">
+		<mapMaybes public="1" params="A:B" set="method" line="518" static="1">
 			<f a="as:transform">
 				<t path="Iterable"><t path="Option"><c path="mapMaybes.A"/></t></t>
 				<f a="">
@@ -8167,7 +8240,7 @@
 			<haxe_doc>A version of `mapL` that can discard elements.  Only `Some` values are
         `transform`ed and returned in the output.</haxe_doc>
 		</mapMaybes>
-		<mapOutcomes public="1" params="A:B" set="method" line="493" static="1">
+		<mapOutcomes public="1" params="A:B" set="method" line="525" static="1">
 			<f a="as:transform">
 				<t path="Iterable"><t path="Outcome"><c path="mapOutcomes.A"/></t></t>
 				<f a="">
@@ -8179,26 +8252,30 @@
 			<haxe_doc>A version of `mapL` that can discard elements.  Only `Success` values
         are `transform`ed and returned in the output.</haxe_doc>
 		</mapOutcomes>
-		<maybeFirst public="1" params="A" set="method" line="501" static="1">
+		<maybeFirst public="1" params="A" set="method" line="535" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="maybeFirst.A"/></t>
 				<t path="Option"><c path="maybeFirst.A"/></t>
 			</f>
 			<haxe_doc>Attempts to get the first element of `as`, if there is one  
-        `[a, b, c].maybeFirst()` == `Some(a)`  
-        `[].maybeFirst()` == `None`</haxe_doc>
+        ```haxe
+        [a, b, c].maybeFirst() == Some(a);
+        [].maybeFirst() == None;
+        ```</haxe_doc>
 		</maybeFirst>
-		<maybeLast public="1" params="A" set="method" line="514" static="1">
+		<maybeLast public="1" params="A" set="method" line="550" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="maybeLast.A"/></t>
 				<t path="Option"><c path="maybeLast.A"/></t>
 			</f>
 			<haxe_doc>Attempts to get the last element of `as`, if there is one  
-        `[a, b, c].maybeLast()` == `Some(c)`  
-        `[].maybeLast()` == `None`  
+        ```haxe
+        [a, b, c].maybeLast() == Some(c);
+        [].maybeLast() == None;
+        ```
         *NOTE*: this will not terminate if `as` is infinite</haxe_doc>
 		</maybeLast>
-		<mutate public="1" params="A" get="inline" set="null" line="525" static="1">
+		<mutate public="1" params="A" get="inline" set="null" line="561" static="1">
 			<f a="as:mutator">
 				<t path="Iterable"><c path="mutate.A"/></t>
 				<f a="">
@@ -8210,7 +8287,7 @@
 			<haxe_doc>Calls `mutator` on every element of `as`. Essentially a `for` loop
         specifically for mutating values</haxe_doc>
 		</mutate>
-		<mutatei public="1" params="A" set="method" line="535" static="1">
+		<mutatei public="1" params="A" set="method" line="571" static="1">
 			<f a="as:mutator">
 				<t path="Iterable"><c path="mutatei.A"/></t>
 				<f a=":">
@@ -8223,16 +8300,18 @@
 			<haxe_doc>Calls `mutator` on every element of `as` and their indices. Essentially
         a `for` loop specifically for mutating values</haxe_doc>
 		</mutatei>
-		<natural public="1" get="inline" set="null" line="546" static="1">
+		<natural public="1" get="inline" set="null" line="584" static="1">
 			<f a=""><t path="Iterable"><x path="Int"/></t></f>
 			<haxe_doc>Returns an infinite `Iterable` of natural numbers  
-      `natural()` == `[1, 2, 3, 4, 5, 6, ...]`</haxe_doc>
+      ```haxe
+      natural() == [1, 2, 3, 4, 5, 6, ...];
+      ```</haxe_doc>
 		</natural>
-		<opposite public="1" params="A" set="method" line="549" static="1"><f a="as">
+		<opposite public="1" params="A" set="method" line="587" static="1"><f a="as">
 	<t path="Iterable"><c path="opposite.A"/></t>
 	<c path="Array"><c path="opposite.A"/></c>
 </f></opposite>
-		<orDefault public="1" params="A" set="method" line="559" static="1">
+		<orDefault public="1" params="A" set="method" line="597" static="1">
 			<f a="as:whenEmpty">
 				<t path="Iterable"><c path="orDefault.A"/></t>
 				<f a=""><t path="Iterable"><c path="orDefault.A"/></t></f>
@@ -8241,7 +8320,7 @@
 			<haxe_doc>Returns the input Iterable if it has any elements, or some default if
       empty</haxe_doc>
 		</orDefault>
-		<orDefault1 public="1" params="A" set="method" line="567" static="1">
+		<orDefault1 public="1" params="A" set="method" line="605" static="1">
 			<f a="as:whenEmpty">
 				<t path="Iterable"><c path="orDefault1.A"/></t>
 				<f a=""><t path="Iterable1"><c path="orDefault1.A"/></t></f>
@@ -8250,7 +8329,7 @@
 			<haxe_doc>Returns the input Iterable if it has any elements, or some default if empty
       The default is required to have at least one element</haxe_doc>
 		</orDefault1>
-		<orderByAsc public="1" params="A" set="method" line="571" static="1"><f a="as:selector">
+		<orderByAsc public="1" params="A" set="method" line="609" static="1"><f a="as:selector">
 	<t path="Iterable"><c path="orderByAsc.A"/></t>
 	<f a="">
 		<c path="orderByAsc.A"/>
@@ -8258,7 +8337,7 @@
 	</f>
 	<c path="Array"><c path="orderByAsc.A"/></c>
 </f></orderByAsc>
-		<orderByDesc public="1" params="A" set="method" line="574" static="1"><f a="as:selector">
+		<orderByDesc public="1" params="A" set="method" line="612" static="1"><f a="as:selector">
 	<t path="Iterable"><c path="orderByDesc.A"/></t>
 	<f a="">
 		<c path="orderByDesc.A"/>
@@ -8266,12 +8345,12 @@
 	</f>
 	<c path="Array"><c path="orderByDesc.A"/></c>
 </f></orderByDesc>
-		<orElse public="1" params="A" set="method" line="577" static="1"><f a="as:genOther">
+		<orElse public="1" params="A" set="method" line="615" static="1"><f a="as:genOther">
 	<t path="Iterable"><c path="orElse.A"/></t>
 	<f a=""><t path="Iterable"><c path="orElse.A"/></t></f>
 	<t path="Iterable"><c path="orElse.A"/></t>
 </f></orElse>
-		<pairs public="1" params="A" set="method" line="585" static="1">
+		<pairs public="1" params="A" set="method" line="625" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="pairs.A"/></t>
 				<t path="Iterable"><t path="Pair">
@@ -8280,9 +8359,11 @@
 </t></t>
 			</f>
 			<haxe_doc>Common use of `zip`, useful for comparing an element with the next one  
-        `[1, 2, 3, 4].pairs()` == `[(1, 2), (2, 3), (3, 4)]`</haxe_doc>
+        ```haxe
+        [1, 2, 3, 4].pairs() == [(1, 2), (2, 3), (3, 4)];
+        ```</haxe_doc>
 		</pairs>
-		<partition public="1" params="A" set="method" line="593" static="1">
+		<partition public="1" params="A" set="method" line="635" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="partition.A"/></t>
 				<f a="">
@@ -8295,10 +8376,12 @@
 				</t>
 			</f>
 			<haxe_doc>Splits an `Iterable` into two subarrays based on a `predicate`  
-      `0.iterate(add1).partition(isEven)` == ([0, 2, 4, ...], [1, 3, 5, ...])
+      ```haxe
+      0.iterate(add1).partition(isEven) == ([0, 2, 4, ...], [1, 3, 5, ...]);
+      ```
       TODO: add a lazy version that doesn't evaluate the source list twice</haxe_doc>
 		</partition>
-		<product public="1" params="A:B:C" set="method" line="608" static="1">
+		<product public="1" params="A:B:C" set="method" line="650" static="1">
 			<f a="as:bs:fn">
 				<t path="Iterable"><c path="product.A"/></t>
 				<t path="Iterable"><c path="product.B"/></t>
@@ -8313,7 +8396,7 @@
         A deck of playing cards could be represented as
         `suits.product(ranks, Card.new)`</haxe_doc>
 		</product>
-		<range public="1" get="inline" set="null" line="616" static="1">
+		<range public="1" get="inline" set="null" line="660" static="1">
 			<f a="start:count">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -8321,16 +8404,18 @@
 			</f>
 			<haxe_doc>Returns an `Iterable` containing a range of numbers between `start` and
         `start+count`  
-        `0.range(5)` == `[0, 1, 2, 3, 4]`</haxe_doc>
+        ```haxe
+        0.range(5) == [0, 1, 2, 3, 4];
+        ```</haxe_doc>
 		</range>
-		<repeat public="1" params="A" set="method" line="622" static="1">
+		<repeat public="1" params="A" set="method" line="666" static="1">
 			<f a="a">
 				<c path="repeat.A"/>
 				<t path="Iterable"><c path="repeat.A"/></t>
 			</f>
 			<haxe_doc>Returns an `Iterable` where `a` is infinitely repeated</haxe_doc>
 		</repeat>
-		<replicate public="1" params="A" set="method" line="628" static="1">
+		<replicate public="1" params="A" set="method" line="672" static="1">
 			<f a="a:count">
 				<c path="replicate.A"/>
 				<x path="Int"/>
@@ -8338,7 +8423,7 @@
 			</f>
 			<haxe_doc>Returns an `Iterable` where `a` is repeated `count` times</haxe_doc>
 		</replicate>
-		<scan public="1" params="A:B" set="method" line="639" static="1">
+		<scan public="1" params="A:B" set="method" line="685" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="scan.A"/></t>
 				<c path="scan.B"/>
@@ -8352,9 +8437,11 @@
 			<haxe_doc><![CDATA[Applies `fn` to each element of `as`, passing an accumulator value through
       the computation  
       This version includes the seed as the first element of the output  
-      `[0, 1, 2, 3].scan(1, (x, y) -> x + y)` == `[1, 1, 2, 4, 7]`]]></haxe_doc>
+      ```haxe
+      [0, 1, 2, 3].scan(1, (x, y) -> x + y) == [1, 1, 2, 4, 7];
+      ```]]></haxe_doc>
 		</scan>
-		<scan_ public="1" params="A:B" set="method" line="648" static="1">
+		<scan_ public="1" params="A:B" set="method" line="696" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="scan_.A"/></t>
 				<c path="scan_.B"/>
@@ -8368,9 +8455,11 @@
 			<haxe_doc><![CDATA[Applies `fn` to each element of `as`, passing an accumulator value through
       the computation  
       This version does not include the seed in the output  
-      `[0, 1, 2, 3].scan_(1, (x, y) -> x + y)` == `[1, 2, 4, 7]`]]></haxe_doc>
+      ```haxe
+      [0, 1, 2, 3].scan_(1, (x, y) -> x + y) == [1, 2, 4, 7];
+      ```]]></haxe_doc>
 		</scan_>
-		<shuffled public="1" params="A" set="method" line="662" static="1">
+		<shuffled public="1" params="A" set="method" line="710" static="1">
 			<f a="as:genRandom">
 				<t path="Iterable"><c path="shuffled.A"/></t>
 				<f a="">
@@ -8382,7 +8471,7 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `genRandom` as a
         source of randomness</haxe_doc>
 		</shuffled>
-		<shuffledStd public="1" params="A" get="inline" set="null" line="671" static="1">
+		<shuffledStd public="1" params="A" get="inline" set="null" line="719" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="shuffledStd.A"/></t>
 				<c path="Array"><c path="shuffledStd.A"/></c>
@@ -8390,7 +8479,7 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `Std.random` as a
         source of randomness</haxe_doc>
 		</shuffledStd>
-		<skip public="1" params="A" set="method" line="680" static="1">
+		<skip public="1" params="A" set="method" line="730" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="skip.A"/></t>
 				<x path="Int"/>
@@ -8398,10 +8487,12 @@
 			</f>
 			<haxe_doc><![CDATA[Returns all of the elements of `as` after the first `count` items  
       If `as` has <= `count` items, return empty list  
-      `[a, b, c].skip(2)` == `[c]`  
-      `[a, b, c].skip(200)` == `[]`]]></haxe_doc>
+      ```haxe
+      [a, b, c].skip(2) == [c];
+      [a, b, c].skip(200) == [];
+      ```]]></haxe_doc>
 		</skip>
-		<skipWhile public="1" params="A" set="method" line="698" static="1">
+		<skipWhile public="1" params="A" set="method" line="750" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="skipWhile.A"/></t>
 				<f a="">
@@ -8412,19 +8503,21 @@
 			</f>
 			<haxe_doc><![CDATA[Skips elements of `as` until they no longer match `predicate`  
       If all elements match, returns an empty `Iterable`  
-      `[1, 2, 3, 4].skipWhile(x -> x < 3)` == `[3, 4]`
-      `[1, 2, 3, 4].skipWhile(x -> x > 0)` == `[]`  
+      ```haxe
+      [1, 2, 3, 4].skipWhile(x -> x < 3) == [3, 4];
+      [1, 2, 3, 4].skipWhile(x -> x > 0) == [];
+      ```
       *NOTE*: This may not terminate if every element of an infinite `Iterable`
       matches the `predicate`]]></haxe_doc>
 		</skipWhile>
-		<somes public="1" params="A" set="method" line="713" static="1">
+		<somes public="1" params="A" set="method" line="765" static="1">
 			<f a="as">
 				<t path="Iterable"><t path="Option"><c path="somes.A"/></t></t>
 				<t path="Iterable"><c path="somes.A"/></t>
 			</f>
 			<haxe_doc>Returns all the `Some` values from a set of `Option`s</haxe_doc>
 		</somes>
-		<span public="1" params="A" set="method" line="721" static="1">
+		<span public="1" params="A" set="method" line="775" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="span.A"/></t>
 				<f a="">
@@ -8438,27 +8531,31 @@
 			</f>
 			<haxe_doc><![CDATA[Returns a `Pair` containing the longest prefix of `as` that match some 
         `predicate` and the rest of the `Iterable`  
-        `[1, 2, 3, 4, 1, 2, 3].span(x -> x < 3)` == `([1, 2], [3, 4, 1, 2, 3])`]]></haxe_doc>
+        ```haxe
+        [1, 2, 3, 4, 1, 2, 3].span(x -> x < 3) == ([1, 2], [3, 4, 1, 2, 3]);
+        ```]]></haxe_doc>
 		</span>
-		<successes public="1" params="A" set="method" line="728" static="1">
+		<successes public="1" params="A" set="method" line="782" static="1">
 			<f a="as">
 				<t path="Iterable"><t path="Outcome"><c path="successes.A"/></t></t>
 				<t path="Iterable"><c path="successes.A"/></t>
 			</f>
 			<haxe_doc>Returns all the `Success` values from a set of `Outcome`s</haxe_doc>
 		</successes>
-		<tail public="1" params="A" get="inline" set="null" line="738" static="1">
+		<tail public="1" params="A" get="inline" set="null" line="794" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="tail.A"/></t>
 				<t path="Iterable"><c path="tail.A"/></t>
 			</f>
 			<haxe_doc>Return all elements of an `Iterable` except the first one.  
         Returns [] if `as` is empty or only has one element  
-        `[1, 2, 3].tail()` == `[2, 3]`  
-        `[1].tail()` == `[]`
-        `[].tail()` == `[]`</haxe_doc>
+        ```haxe
+        [1, 2, 3].tail() == [2, 3];
+        [1].tail() == [];
+        [].tail() == [];
+        ```</haxe_doc>
 		</tail>
-		<take public="1" params="A" set="method" line="747" static="1">
+		<take public="1" params="A" set="method" line="805" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="take.A"/></t>
 				<x path="Int"/>
@@ -8466,10 +8563,12 @@
 			</f>
 			<haxe_doc><![CDATA[Returns up to the first `count` elements of `as`  
       If `as` does not have >= `count` elements, it returns as many as it can  
-      `[a, b, c, d].take(2)` == `[a, b]`  
-      `[].take(2)` == `[]`]]></haxe_doc>
+      ```haxe
+      [a, b, c, d].take(2) == [a, b];
+      [].take(2) == [];
+      ```]]></haxe_doc>
 		</take>
-		<takeWhile public="1" params="A" set="method" line="763" static="1">
+		<takeWhile public="1" params="A" set="method" line="823" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="takeWhile.A"/></t>
 				<f a="">
@@ -8481,9 +8580,11 @@
 			<meta><m n=":nullSafety"><e>Off</e></m></meta>
 			<haxe_doc><![CDATA[Returns elements from `as` until one is found that doesn't match
       `predicate`  
-      `[1, 2, 3, 4, 5, 6].takeWhile(x -> x < 4)` == `[1, 2, 3]`]]></haxe_doc>
+      ```haxe
+      [1, 2, 3, 4, 5, 6].takeWhile(x -> x < 4) == [1, 2, 3];
+      ```]]></haxe_doc>
 		</takeWhile>
-		<toArray public="1" params="A" get="inline" set="null" line="779" static="1">
+		<toArray public="1" params="A" get="inline" set="null" line="839" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="toArray.A"/></t>
 				<c path="Array"><c path="toArray.A"/></c>
@@ -8492,7 +8593,7 @@
         *NOTE*: Since this fully evaluates the `Iterable`, it may not terminate 
         if `as` is infinite.</haxe_doc>
 		</toArray>
-		<zip public="1" params="A:B:C" set="method" line="788" static="1">
+		<zip public="1" params="A:B:C" set="method" line="850" static="1">
 			<f a="as:bs">
 				<t path="Iterable"><c path="zip.A"/></t>
 				<t path="Iterable"><c path="zip.B"/></t>
@@ -8503,10 +8604,12 @@
 			</f>
 			<haxe_doc>Returns `Pair`s of values from `as` and `bs`. If the two `Iterable`s are
         not the same length, `zip` stops at the end of the shorter one  
-        `[1, 2, 3].zip(['a', 'b', 'c])` == `[(1, 'a'), (2, 'b'), (3, 'c')]`  
-        `[1, 2, 3].zip([])` == `[]`</haxe_doc>
+        ```haxe
+        [1, 2, 3].zip(['a', 'b', 'c']) == [(1, 'a'), (2, 'b'), (3, 'c')]  ;
+        [1, 2, 3].zip([]) == [];
+        ```</haxe_doc>
 		</zip>
-		<zipWith public="1" params="A:B:C" set="method" line="798" static="1">
+		<zipWith public="1" params="A:B:C" set="method" line="862" static="1">
 			<f a="as:bs:transform">
 				<t path="Iterable"><c path="zipWith.A"/></t>
 				<t path="Iterable"><c path="zipWith.B"/></t>
@@ -8521,7 +8624,9 @@
         `as` and `bs`  
         If the `Iterable`s don't have the same number of elements, `zipWith`
         will only apply until it reaches the end of the shorter one  
-        `[1, 2, 3].zipWith([4, 5, 6], (x, y) -> x + y)` == `[1+4, 2+5, 3+6]` == `[5, 7, 9]`]]></haxe_doc>
+        ```haxe
+        [1, 2, 3].zipWith([4, 5, 6], (x, y) -> x + y) == [1+4, 2+5, 3+6] == [5, 7, 9];
+        ```]]></haxe_doc>
 		</zipWith>
 		<haxe_doc>Common extension methods for all types of `Iterable`s. Supports a fluent
     query-like syntax.

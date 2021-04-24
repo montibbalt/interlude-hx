@@ -91,21 +91,27 @@ class ValueTools {
 
     /**
         A function that always returns its input unchanged  
-        `Some(123).map(identity)` == `Some(123)`
+        ```haxe
+        Some(123).map(identity) == Some(123);
+        ```
     **/
     inline static function identity<A>(a:A):A return
         a;
 
     /**
         Composable way to create a Key/Value pair  
-        `"abc".keyedWith(123)` == `{ key: 123, value: "abc" }`
+        ```haxe
+        "abc".keyedWith(123) == { key: 123, value: "abc" };
+        ```
     **/
     inline static function keyedWith<K, V>(value:V, key:K):KeyValuePair<K, V> return
         { key: key, value: value };
 
     /**
         Composable way to create a Key/Value pair  
-        `123.keyFor("abc")` == `{ key: 123, value: "abc" }`
+        ```haxe
+        123.keyFor("abc") == { key: 123, value: "abc" };
+        ```
     **/
     inline static function keyFor<K, V>(key:K, value:V):KeyValuePair<K, V> return
         value.keyedWith(key);
@@ -113,7 +119,9 @@ class ValueTools {
     /**
         Fluent method for transforming a value  
         Similar to `map` but for any value  
-        `123.let(Std.string)` == `"123"`
+        ```haxe
+        123.let(Std.string) == "123";
+        ```
     **/
     inline static function let<T, K>(v:T, transformer:T->K):K return
         transformer(v);
@@ -137,14 +145,18 @@ class ValueTools {
 
     /**
         An extension that always returns the original value and drops any input  
-        `69.v_("nice")` == `69`
+        ```haxe
+        69.v_("nice") == 69;
+        ```
     **/
     static function v_<A, B>(value:A, input:B):A return
         value;
 
     /**
         An extension that always returns some input and drops the original value  
-        `69._n("nice")` == `"nice"`
+        ```haxe
+        69._n("nice") == "nice";
+        ```
     **/
     static function _n<A, B>(value:A, input:B):B return
         input;
