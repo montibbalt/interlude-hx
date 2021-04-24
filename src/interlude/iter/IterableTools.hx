@@ -195,8 +195,9 @@ class IterableTools {
     /**
         Returns an empty `Iterable`
     **/
-    static function empty<A>():Iterable<A> return {
-        iterator: IteratorTools.empty
+    static function empty<A>():SizedIterable<A> return {
+        length: 0
+    ,   iterator: IteratorTools.empty
     }
 
     /**
@@ -403,8 +404,8 @@ class IterableTools {
         Inserts `separator` in between `Iterable`s and flattens the result  
         `[[1, 2], [3, 4], [5, 6]].intercalate([0, 0])` == `[1, 2, 0, 0, 3, 4, 0, 0, 5, 6]`
     **/
-    static function intercalate<A>(ass:Iterable<Iterable<A>>, separator:Iterable<A>):Iterable<A> return
-        ass.intersperse(separator).flatten();
+    static function intercalate<A>(aas:Iterable<Iterable<A>>, separator:Iterable<A>):Iterable<A> return
+        aas.intersperse(separator).flatten();
 
     /**
         Returns an `Iterable` with `separator` interspersed between every
@@ -565,7 +566,7 @@ class IterableTools {
     **/
     static function orDefault1<A>(as:Iterable<A>, whenEmpty:()->Iterable1<A>):Iterable<A> return as.any()
         ? as
-        : whenEmpty();
+        : whenEmpty().toIterable();
 
     static function orderByAsc<A>(as:Iterable<A>, selector:A->Int):Array<A> return
         as.toArray().mut(arr -> arr.sort((a1, a2) -> selector(a1) - selector(a2)));
@@ -624,8 +625,10 @@ class IterableTools {
     /**
         Returns an `Iterable` where `a` is repeated `count` times
     **/
-    static function replicate<A>(a:A, count:Int):Iterable<A> return
-        a.repeat().take(count);
+    static function replicate<A>(a:A, count:Int):SizedIterable<A> return {
+        length: count
+    ,   iterator: a.repeat().take(count).iterator
+    }
 
     /**
       Applies `fn` to each element of `as`, passing an accumulator value through

@@ -45,14 +45,14 @@ abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> to Pair<A, 
         };
     }
 
-
     @:to inline public function toArray():Array<A> return [
         for(a in iterator())
             a
     ];
 
-    @:to public function toIterable():Iterable<A> return {
-        iterator: iterator
+    @:to public function toIterable():SizedIterable<A> return {
+        length  : length
+    ,   iterator: iterator
     }
 
     @:to public function toIterable1():Iterable1<A> return
@@ -74,7 +74,7 @@ abstract Array1<A:NotVoid>(Pair<A, Array<A>>) from Pair<A, Array<A>> to Pair<A, 
     public static function flatten<A>(aas:Array1<Array1<A>>):Array1<A> return
         aas.head.head
             .array1With(aas.head.tail
-                .append(aas.tail.flatMap(as -> (as:Iterable<A>)))
+                .append(aas.tail.flatMap(as -> as.toIterable1()))
                 .toArray());
 
     public static function from1<A>(fst:A, ...rest:A):Array1<A> return
