@@ -36,7 +36,7 @@ abstract AsyncState<X, A>(X->Task<Pair<A, X>>) from X->Task<Pair<A, X>> to X->Ta
             : None.with(sx).asTask();
 
     public static function flatMap<X, A, B>(s:AsyncState<X, A>, fn:A->AsyncState<X, B>):AsyncState<X, B> return
-        sx -> s(sx).flatMap(fn.fromNC);
+        sx -> s(sx).flatMap(fn.apply2c);
 
     public static function flatten<X, A>(s:AsyncState<X, AsyncState<X, A>>):AsyncState<X, A> return
         x -> s(x).flatMap(Pair.eval);

@@ -33,7 +33,7 @@ abstract State<X, A>(X->Pair<A, X>) from X->Pair<A, X> to X->Pair<A, X> {
             : None.with(sx);
 
     public static function flatMap<X, A, B>(s:State<X, A>, fn:A->State<X, B>):State<X, B> return
-        s.to(fn.fromNC);
+        s.to(fn.apply2c);
 
     public static function flatten<X, A>(s:State<X, State<X, A>>):State<X, A> return
         s.to(Pair.eval);

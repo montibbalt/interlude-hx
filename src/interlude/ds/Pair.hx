@@ -18,10 +18,13 @@ class Pair<X:NotVoid, Y:NotVoid> {
     inline static function eval<A, Z>(t:Pair<A->Z, A>):Z return
         t._1(t._2);
 
-    inline static function fromN<A, B, Z>(fn:(A, B)->Z, t:Pair<A, B>):Z return
+    static function flip<A, B>(t:Pair<A, B>):Pair<B, A> return
+        t._2.with(t._1);
+
+    inline static function apply2<A, B, Z>(fn:(A, B)->Z, t:Pair<A, B>):Z return
         fn(t._1, t._2);
 
-    inline static function fromNC<A, B, Z>(fn:A->(B->Z), t:Pair<A, B>):Z return
+    inline static function apply2c<A, B, Z>(fn:A->(B->Z), t:Pair<A, B>):Z return
         fn(t._1)(t._2);
 
     static function map_1<A, B, Z>(t:Pair<A, B>, fn:A->Z):Pair<Z, B> return {
@@ -58,10 +61,10 @@ class Trio<X:NotVoid, Y:NotVoid, Z:NotVoid> {
     inline static function eval<A, B, Z>(t:Trio<A->B->Z, A, B>):Z return
         t._1(t._2, t._3);
 
-    inline static function fromN<A, B, C, Z>(fn:(A, B, C)->Z, t:Trio<A, B, C>):Z return
+    inline static function apply3<A, B, C, Z>(fn:(A, B, C)->Z, t:Trio<A, B, C>):Z return
         fn(t._1, t._2, t._3);
 
-    inline static function fromNC<A, B, C, Z>(fn:A->(B->(C->Z)), t:Trio<A, B, C>):Z return
+    inline static function apply3c<A, B, C, Z>(fn:A->(B->(C->Z)), t:Trio<A, B, C>):Z return
         fn(t._1)(t._2)(t._3);
 
     static function map_1<A, B, C, Z>(t:Trio<A, B, C>, fn:A->Z):Trio<Z, B, C> return {
@@ -81,6 +84,9 @@ class Trio<X:NotVoid, Y:NotVoid, Z:NotVoid> {
     ,   _2: t._2
     ,   _3: fn(t._3)
     }
+
+    static function rotate<A, B, C>(t:Trio<A, B, C>):Trio<C, A, B> return
+        t._3.with3(t._1, t._2);
 
     inline static function thd<A>(tup:{final _3:A;}):A return
         tup._3;
