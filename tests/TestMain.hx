@@ -11,8 +11,8 @@ class TestMain {
 
     static function runTests() {
         var runner = new Runner();
-        runner.addCases('ds', false);
-        runner.addCases('iter', false);
+        runner.addCases('ds');
+        runner.addCases('iter');
         Report.create(runner, SuccessResultsDisplayMode.NeverShowSuccessResults, HeaderDisplayMode.AlwaysShowHeader);
         runner.run();
     }

@@ -14,6 +14,8 @@ typedef Trio<X, Y, Z>               = interlude.ds.Pair.Trio<X, Y, Z>;
 typedef Unit                        = interlude.ds.Unit;
 typedef Weighted<X>                 = interlude.ds.Weighted<X>;
 
+typedef ListZipper<X>               = interlude.ds.zippers.ListZipper<X>;
+
 @:dox(hide) typedef EitherTools     = interlude.ds.EitherTools;
 @:dox(hide) typedef MapTools        = interlude.ds.MapTools;
 @:dox(hide) typedef NullTools       = interlude.ds.NullTools;

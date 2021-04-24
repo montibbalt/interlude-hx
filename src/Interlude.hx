@@ -33,6 +33,8 @@ typedef Trio<X, Y, Z>       = interlude.ds.Pair.Trio<X, Y, Z>;
 typedef Unit                = interlude.ds.Unit;
 typedef Weighted<X>         = interlude.ds.Weighted<X>;
 
+typedef ListZipper<X>       = interlude.ds.zippers.ListZipper<X>;
+
 typedef IterableTools       = interlude.iter.IterableTools;
 typedef IteratorTools       = interlude.iter.IteratorTools;
 typedef KVIterableTools     = interlude.iter.KeyValueIterableTools;
