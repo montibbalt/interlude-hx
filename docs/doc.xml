@@ -5847,7 +5847,7 @@
 		<c path="toOutcome.A"/>
 		<c path="toOutcome.B"/>
 	</t>
-	<t path="haxe.PosInfos"/>
+	<x path="Null"><t path="haxe.PosInfos"/></x>
 	<t path="Outcome"><c path="toOutcome.B"/></t>
 </f></toOutcome>
 		<zip public="1" params="X:A:B" set="method" line="70" static="1"><f a="eA:eB">
@@ -6536,7 +6536,7 @@
 		<Success a="a"><c path="interlude.ds.Outcome.A"/></Success>
 		<Failure a="message:?pos">
 			<c path="String"/>
-			<t path="haxe.PosInfos"/>
+			<x path="Null"><t path="haxe.PosInfos"/></x>
 		</Failure>
 		<haxe_doc>The result of an operation that can succeed or fail.  
     A `Success` holds the output of the operation, and a `Failure` holds the
@@ -6577,7 +6577,7 @@
 </f></ap>
 		<asFailure public="1" params="A" get="inline" set="null" line="33" static="1"><f a="message:?pos">
 	<c path="String"/>
-	<t path="haxe.PosInfos"/>
+	<x path="Null"><t path="haxe.PosInfos"/></x>
 	<e path="interlude.ds.Outcome"><c path="asFailure.A"/></e>
 </f></asFailure>
 		<asOutcome public="1" params="A" get="inline" set="null" line="36" static="1"><f a="value">
@@ -8727,7 +8727,7 @@
 		<discardWithPos public="1" params="A" get="inline" set="null" line="81" static="1">
 			<f a="_:?pos">
 				<c path="discardWithPos.A"/>
-				<t path="haxe.PosInfos"/>
+				<x path="Null"><t path="haxe.PosInfos"/></x>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>An extension that drops its value and position info into a Void</haxe_doc>
@@ -9953,8 +9953,8 @@
 
     ...
 
-    var a:Example = {}; // Object requires field foo
-    var b:Example = { foo: "bar" }; // String should be Float
+    var a:Example = {}; // Compile error: Object requires field foo
+    var b:Example = { foo: "bar" }; // Compile error: String should be Float
     ```</haxe_doc>
 	</class>
 	<class path="interlude.reactive.BufferedRunner" params="" file="src/interlude/reactive/BufferedRunner.hx">
@@ -10343,7 +10343,7 @@
 		<t path="haxe.PosInfos"/>
 		<c path="String"/>
 	</f>
-	<t path="haxe.PosInfos"/>
+	<x path="Null"><t path="haxe.PosInfos"/></x>
 	<c path="interlude.reactive.Task"><c path="logMessage.A"/></c>
 </f></logMessage>
 		<unit public="1" params="A" set="method" line="99" static="1"><f a="t">
