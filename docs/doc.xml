@@ -9930,7 +9930,20 @@
 			<m n=":nullSafety"><e>Strict</e></m>
 		</meta>
 	</class>
-	<class path="interlude.macro.JsonProvider" params="" file="src/interlude/macro/JsonProvider.hx"><haxe_doc>Uses some example JSON data to add fields to a type at compile time. Can use
+	<class path="interlude.macro.JsonProvider" params="" file="src/interlude/macro/JsonProvider.hx">
+		<sampleString public="1" set="method" static="1"><f a="json">
+	<d/>
+	<d/>
+</f></sampleString>
+		<sampleFile public="1" set="method" static="1"><f a="jsonPath">
+	<d/>
+	<d/>
+</f></sampleFile>
+		<sampleWeb public="1" set="method" static="1"><f a="url">
+	<d/>
+	<d/>
+</f></sampleWeb>
+		<haxe_doc>Uses some example JSON data to add fields to a type at compile time. Can use
     an inline JSON string, a local file, or web content.
 
     ```haxe
@@ -9942,7 +9955,8 @@
 
     var a:Example = {}; // Object requires field foo
     var b:Example = { foo: "bar" }; // String should be Float
-    ```</haxe_doc></class>
+    ```</haxe_doc>
+	</class>
 	<class path="interlude.reactive.BufferedRunner" params="" file="src/interlude/reactive/BufferedRunner.hx">
 		<frontBuffer public="1" set="null" expr="[]">
 			<c path="Array"><f a=""><x path="Void"/></f></c>

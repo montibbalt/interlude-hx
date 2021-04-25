@@ -21,7 +21,6 @@ using sys.io.File;
     ```
 **/
 class JsonProvider {
-#if macro
     public static macro function sampleString(json:String):Array<Field> return
         json
             .parse()
@@ -39,6 +38,7 @@ class JsonProvider {
             .parse()
             .combineFields();
 
+#if macro
     static function combineFields(dyn:Dynamic):Array<Field> return
         Context
             .getBuildFields()
