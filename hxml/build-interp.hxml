@@ -1,7 +1,9 @@
 -cp src
 
 Interlude
+interlude.Constraints
 interlude.DS
 interlude.Func
 interlude.Iter
+interlude.Macro
 interlude.Reactive

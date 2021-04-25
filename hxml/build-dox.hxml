@@ -2,9 +2,11 @@
 -cp src
 -D doc-gen
 Interlude
+interlude.Constraints
 interlude.DS
 interlude.Func
 interlude.Iter
+interlude.Macro
 interlude.Reactive
 
 --each

@@ -1892,7 +1892,10 @@
 	Unlike String, an instance of StringBuf is not immutable in the sense that
 	it can be passed as argument to functions which modify it by appending more
 	values.</haxe_doc>
-		<meta><m n=":coreApi"/></meta>
+		<meta>
+			<m n=":directlyUsed"/>
+			<m n=":coreApi"/>
+		</meta>
 	</class>
 	<class path="Sys" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/Sys.hx">
 		<print public="1" set="method" static="1">
@@ -2344,6 +2347,137 @@
 	@see https://haxe.org/manual/types.html
 	@see https://haxe.org/manual/std-reflection.html</haxe_doc>
 	</class>
+	<abstract path="UInt" params="" file="C:\HaxeToolkit\haxe\std/UInt.hx">
+		<from><icast><x path="Int"/></icast></from>
+		<this><x path="Int"/></this>
+		<to>
+			<icast><x path="Int"/></icast>
+			<icast field="toFloat"><x path="Float"/></icast>
+		</to>
+		<haxe_doc>The unsigned `Int` type is only defined for Flash and C#.
+	Simulate it for other platforms.
+
+	@see https://haxe.org/manual/types-basic-types.html</haxe_doc>
+		<meta><m n=":transitive"/></meta>
+		<impl><class path="_UInt.UInt_Impl_" params="" file="C:\HaxeToolkit\haxe\std/UInt.hx" private="1" module="UInt" final="1"><meta><m n=":keep"/></meta></class></impl>
+	</abstract>
+	<class path="eval.vm.Context" params="" file="C:\HaxeToolkit\haxe\std/eval/vm/Context.hx" extern="1">
+		<addBreakpoint public="1" set="method" static="1"><f a="file:line">
+	<c path="String"/>
+	<x path="Int"/>
+	<x path="Void"/>
+</f></addBreakpoint>
+		<breakHere public="1" set="method" static="1"><f a=""><x path="Void"/></f></breakHere>
+		<callMacroApi public="1" set="method" static="1"><f a="s">
+	<c path="String"/>
+	<d/>
+</f></callMacroApi>
+		<loadPlugin public="1" params="T" set="method" static="1">
+			<f a="filePath">
+				<c path="String"/>
+				<c path="loadPlugin.T"/>
+			</f>
+			<haxe_doc><![CDATA[Loads and returns a plugin from file `filePath`.
+
+		If Haxe is built natively, the extension automatically defaults to `.cmxs`,
+		even if a different extension is provided in `filePath`. In bytecode mode,
+		the default extension is `.cmo`.
+
+		Sample plugin:
+
+		```ocaml
+		open EvalValue
+		open EvalContext
+		open EvalEncode
+
+		let add_int = vfun2 (fun v1 v2 -> match v1,v2 with
+			| VInt32 i1,VInt32 i2 -> vint32 (Int32.add i1 i2)
+			| _ -> exc_string "Expected int + int"
+		)
+		;;
+		EvalStdLib.StdContext.register ["add_int",add_int]
+		```
+
+		Usage from Haxe:
+
+		```haxe
+		var module:TestPlugin = eval.vm.Context.loadPlugin("testPlugin.cmo");
+		trace(module.add_int(4, 3));
+		```
+
+		Plugins have to be compiled with the same OCaml version as the Haxe compiler
+		and using the same Haxe version. If a plugin cannot be loaded, an exception
+		of type `String` is thrown.]]></haxe_doc>
+		</loadPlugin>
+	</class>
+	<class path="eval.vm.NativeSocket" params="" file="C:\HaxeToolkit\haxe\std/eval/vm/NativeSocket.hx" extern="1">
+		<select public="1" set="method" static="1"><f a="read:write:others:?timeout">
+	<c path="Array"><c path="sys.net.Socket"/></c>
+	<c path="Array"><c path="sys.net.Socket"/></c>
+	<c path="Array"><c path="sys.net.Socket"/></c>
+	<x path="Float"/>
+	<a>
+		<write><c path="Array"><c path="sys.net.Socket"/></c></write>
+		<read><c path="Array"><c path="sys.net.Socket"/></c></read>
+		<others><c path="Array"><c path="sys.net.Socket"/></c></others>
+	</a>
+</f></select>
+		<accept public="1" set="method"><f a=""><c path="eval.vm.NativeSocket"/></f></accept>
+		<bind public="1" set="method"><f a="host:port">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Void"/>
+</f></bind>
+		<close public="1" set="method"><f a=""><x path="Void"/></f></close>
+		<connect public="1" set="method"><f a="host:port">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Void"/>
+</f></connect>
+		<host public="1" set="method"><f a=""><a>
+	<port><x path="Int"/></port>
+	<ip><x path="Int"/></ip>
+</a></f></host>
+		<listen public="1" set="method"><f a="connections">
+	<x path="Int"/>
+	<x path="Void"/>
+</f></listen>
+		<peer public="1" set="method"><f a=""><a>
+	<port><x path="Int"/></port>
+	<ip><x path="Int"/></ip>
+</a></f></peer>
+		<receive public="1" set="method"><f a="buf:pos:len">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></receive>
+		<receiveChar public="1" set="method"><f a=""><x path="Int"/></f></receiveChar>
+		<send public="1" set="method"><f a="buf:pos:len">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></send>
+		<sendChar public="1" set="method"><f a="char">
+	<x path="Int"/>
+	<x path="Void"/>
+</f></sendChar>
+		<setFastSend public="1" set="method"><f a="b">
+	<x path="Bool"/>
+	<x path="Void"/>
+</f></setFastSend>
+		<setTimeout public="1" set="method"><f a="timeout">
+	<x path="Float"/>
+	<x path="Void"/>
+</f></setTimeout>
+		<shutdown public="1" set="method"><f a="read:write">
+	<x path="Bool"/>
+	<x path="Bool"/>
+	<x path="Void"/>
+</f></shutdown>
+		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
+	</class>
 	<enum path="haxe.StackItem" params="" file="C:\HaxeToolkit\haxe\std/haxe/CallStack.hx" module="haxe.CallStack">
 		<CFunction/>
 		<Module a="m"><c path="String"/></Module>
@@ -2684,6 +2818,7 @@
 			<m n=":coreApi"/>
 		</meta>
 	</class>
+	<typedef path="haxe.Http" params="" file="C:\HaxeToolkit\haxe\std/haxe/Http.hx"><c path="sys.Http"/></typedef>
 	<abstract path="haxe.Int32" params="" file="C:\HaxeToolkit\haxe\std/haxe/Int32.hx">
 		<from><icast><x path="Int"/></icast></from>
 		<this><x path="Int"/></this>
@@ -3334,6 +3469,45 @@
 
 	@see https://haxe.org/manual/std-Map.html</haxe_doc>
 	</class>
+	<class path="haxe.format.JsonPrinter" params="" file="C:\HaxeToolkit\haxe\std/haxe/format/JsonPrinter.hx">
+		<buf><c path="StringBuf"/></buf>
+		<replacer><f a="key:value">
+	<d/>
+	<d/>
+	<d/>
+</f></replacer>
+		<indent><c path="String"/></indent>
+		<pretty><x path="Bool"/></pretty>
+		<nind><x path="Int"/></nind>
+		<addChar get="inline" set="null" line="140"><f a="c">
+	<x path="Int"/>
+	<x path="Void"/>
+</f></addChar>
+		<add get="inline" set="null" line="148"><f a="v">
+	<c path="String"/>
+	<x path="Void"/>
+</f></add>
+		<new set="method" line="56"><f a="replacer:space">
+	<f a="key:value">
+		<d/>
+		<d/>
+		<d/>
+	</f>
+	<c path="String"/>
+	<x path="Void"/>
+</f></new>
+		<haxe_doc>An implementation of JSON printer in Haxe.
+
+	This class is used by `haxe.Json` when native JSON implementation
+	is not available.
+
+	@see https://haxe.org/manual/std-Json-encoding.html</haxe_doc>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<typedef path="haxe.http._HttpBase.StringKeyValue" params="" file="C:\HaxeToolkit\haxe\std/haxe/http/HttpBase.hx" private="1" module="haxe.http.HttpBase"><a>
+	<value><c path="String"/></value>
+	<name><c path="String"/></name>
+</a></typedef>
 	<class path="haxe.io.Bytes" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/Bytes.hx" extern="1">
 		<alloc public="1" set="method" static="1"><f a="length">
 	<x path="Int"/>
@@ -3506,6 +3680,13 @@
 		<impl><class path="haxe.io._BytesData.NativeBytesDataAbstract_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/BytesData.hx" private="1" module="haxe.io.BytesData" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
 	<typedef path="haxe.io.BytesData" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/haxe/io/BytesData.hx"><x path="haxe.io._BytesData.NativeBytesDataAbstract"/></typedef>
+	<class path="haxe.io.Output" params="" file="C:\HaxeToolkit\haxe\std/haxe/io/Output.hx">
+		<haxe_doc>An Output is an abstract write. A specific output implementation will only
+	have to override the `writeByte` and maybe the `write`, `flush` and `close`
+	methods. See `File.write` and `String.write` for two ways of creating an
+	Output.</haxe_doc>
+		<meta><m n=":keep"/></meta>
+	</class>
 	<enum path="haxe.io.Error" params="" file="C:\HaxeToolkit\haxe\std/haxe/io/Error.hx">
 		<Blocked><haxe_doc>The IO is set into nonblocking mode and some data cannot be read or written</haxe_doc></Blocked>
 		<Overflow><haxe_doc>An integer value is outside its allowed range</haxe_doc></Overflow>
@@ -3523,13 +3704,6 @@
 
 	All functions which read data throw `Eof` when the end of the stream
 	is reached.</haxe_doc>
-		<meta><m n=":keep"/></meta>
-	</class>
-	<class path="haxe.io.Output" params="" file="C:\HaxeToolkit\haxe\std/haxe/io/Output.hx">
-		<haxe_doc>An Output is an abstract write. A specific output implementation will only
-	have to override the `writeByte` and maybe the `write`, `flush` and `close`
-	methods. See `File.write` and `String.write` for two ways of creating an
-	Output.</haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
 	<class path="haxe.iterators.ArrayIterator" params="T" file="C:\HaxeToolkit\haxe\std/haxe/iterators/ArrayIterator.hx">
@@ -3612,6 +3786,961 @@
 			</m>
 		</meta>
 	</class>
+	<typedef path="haxe.macro.Position" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<min>
+				<x path="Int"/>
+				<haxe_doc>Position of the first character.</haxe_doc>
+			</min>
+			<max>
+				<x path="Int"/>
+				<haxe_doc>Position of the last character.</haxe_doc>
+			</max>
+			<file>
+				<c path="String"/>
+				<haxe_doc>Reference to the filename.</haxe_doc>
+			</file>
+		</a>
+		<haxe_doc>Represents a position in a file.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Expr" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx">
+		<a>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the expression.</haxe_doc>
+			</pos>
+			<expr>
+				<e path="haxe.macro.ExprDef"/>
+				<haxe_doc>The expression kind.</haxe_doc>
+			</expr>
+		</a>
+		<haxe_doc>Represents a node in the AST.
+	@see https://haxe.org/manual/macro-reification-expression.html</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.ExprOf" params="T" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<t path="haxe.macro.Expr"/>
+		<haxe_doc>Represents a AST node identical to `Expr`, but it allows constraining the
+	type of accepted expressions.
+	@see https://haxe.org/manual/macro-ExprOf.html</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Case" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<values>
+				<c path="Array"><t path="haxe.macro.Expr"/></c>
+				<haxe_doc>The value expressions of the case.</haxe_doc>
+			</values>
+			<guard>
+				<x path="Null"><t path="haxe.macro.Expr"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional guard expressions of the case, if available.</haxe_doc>
+			</guard>
+			<expr>
+				<x path="Null"><t path="haxe.macro.Expr"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The expression of the case, if available.</haxe_doc>
+			</expr>
+		</a>
+		<haxe_doc>Represents a switch case.
+	@see https://haxe.org/manual/expression-switch.html</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Var" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<type>
+				<x path="Null"><e path="haxe.macro.ComplexType"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The type-hint of the variable, if available.</haxe_doc>
+			</type>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the variable.</haxe_doc>
+			</name>
+			<meta>
+				<x path="Null"><t path="haxe.macro.Metadata"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>Metadata associatied with the variable, if available.</haxe_doc>
+			</meta>
+			<isFinal>
+				<x path="Null"><x path="Bool"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>Whether or not the variable can be assigned to.</haxe_doc>
+			</isFinal>
+			<expr>
+				<x path="Null"><t path="haxe.macro.Expr"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The expression of the variable, if available.</haxe_doc>
+			</expr>
+		</a>
+		<haxe_doc>Represents a variable in the AST.
+	@see https://haxe.org/manual/expression-var.html</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Catch" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<type>
+				<x path="Null"><e path="haxe.macro.ComplexType"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The type of the catch.</haxe_doc>
+			</type>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the catch variable.</haxe_doc>
+			</name>
+			<expr>
+				<t path="haxe.macro.Expr"/>
+				<haxe_doc>The expression of the catch.</haxe_doc>
+			</expr>
+		</a>
+		<haxe_doc>Represents a catch in the AST.
+	@see https://haxe.org/manual/expression-try-catch.html</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.ObjectField" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<quotes>
+				<x path="Null"><e path="haxe.macro.QuoteStatus"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>How the field name is quoted.</haxe_doc>
+			</quotes>
+			<field>
+				<c path="String"/>
+				<haxe_doc>The name of the field.</haxe_doc>
+			</field>
+			<expr>
+				<t path="haxe.macro.Expr"/>
+				<haxe_doc>The field expression.</haxe_doc>
+			</expr>
+		</a>
+		<haxe_doc>Represents the field of an object declaration.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TypePath" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<sub>
+				<x path="Null"><c path="String"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>Sub is set on module sub-type access:
+		`pack.Module.Type` has `name = "Module"`, `sub = "Type"`, if available.</haxe_doc>
+			</sub>
+			<params>
+				<x path="Null"><c path="Array"><e path="haxe.macro.TypeParam"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>Optional parameters of the type path.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>Represents the package of the type path.</haxe_doc>
+			</pack>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type path.</haxe_doc>
+			</name>
+		</a>
+		<haxe_doc>Represents a type path in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TypeParamDecl" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<params>
+				<x path="Null"><c path="Array"><t path="haxe.macro.TypeParamDecl"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional parameters of the type parameter.</haxe_doc>
+			</params>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type parameter.</haxe_doc>
+			</name>
+			<meta>
+				<x path="Null"><t path="haxe.macro.Metadata"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The metadata of the type parameter.</haxe_doc>
+			</meta>
+			<constraints>
+				<x path="Null"><c path="Array"><e path="haxe.macro.ComplexType"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional constraints of the type parameter.</haxe_doc>
+			</constraints>
+		</a>
+		<haxe_doc>Represents a type parameter declaration in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Function" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<ret>
+				<x path="Null"><e path="haxe.macro.ComplexType"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The return type-hint of the function, if available.</haxe_doc>
+			</ret>
+			<params>
+				<x path="Null"><c path="Array"><t path="haxe.macro.TypeParamDecl"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>An optional list of function parameter type declarations.</haxe_doc>
+			</params>
+			<expr>
+				<x path="Null"><t path="haxe.macro.Expr"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The expression of the function body, if available.</haxe_doc>
+			</expr>
+			<args>
+				<c path="Array"><t path="haxe.macro.FunctionArg"/></c>
+				<haxe_doc>A list of function arguments.</haxe_doc>
+			</args>
+		</a>
+		<haxe_doc>Represents a function in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.FunctionArg" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<value>
+				<x path="Null"><t path="haxe.macro.Expr"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional value of the function argument, if available.</haxe_doc>
+			</value>
+			<type>
+				<x path="Null"><e path="haxe.macro.ComplexType"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The type-hint of the function argument, if available.</haxe_doc>
+			</type>
+			<opt>
+				<x path="Null"><x path="Bool"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>Whether or not the function argument is optional.</haxe_doc>
+			</opt>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the function argument.</haxe_doc>
+			</name>
+			<meta>
+				<x path="Null"><t path="haxe.macro.Metadata"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The metadata of the function argument.</haxe_doc>
+			</meta>
+		</a>
+		<haxe_doc>Represents a function argument in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.MetadataEntry" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the metadata entry.</haxe_doc>
+			</pos>
+			<params>
+				<x path="Null"><c path="Array"><t path="haxe.macro.Expr"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional parameters of the metadata entry.</haxe_doc>
+			</params>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the metadata entry.</haxe_doc>
+			</name>
+		</a>
+		<haxe_doc>Represents a metadata entry in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Metadata" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<c path="Array"><t path="haxe.macro.MetadataEntry"/></c>
+		<haxe_doc>Represents metadata in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Field" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the field.</haxe_doc>
+			</pos>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the field.</haxe_doc>
+			</name>
+			<meta>
+				<x path="Null"><t path="haxe.macro.Metadata"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional metadata of the field.</haxe_doc>
+			</meta>
+			<kind>
+				<e path="haxe.macro.FieldType"/>
+				<haxe_doc>The kind of the field.</haxe_doc>
+			</kind>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The documentation of the field, if available. If the field has no
+		documentation, the value is `null`.</haxe_doc>
+			</doc>
+			<access>
+				<x path="Null"><c path="Array"><e path="haxe.macro.Access"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The access modifiers of the field. By default fields have private access.
+		@see https://haxe.org/manual/class-field-access-modifier.html</haxe_doc>
+			</access>
+		</a>
+		<haxe_doc>Represents a field in the AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TypeDefinition" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position to the type definition.</haxe_doc>
+			</pos>
+			<params>
+				<x path="Null"><c path="Array"><t path="haxe.macro.TypeParamDecl"/></c></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The parameter type declarations of the type definition.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>The package of the type definition.</haxe_doc>
+			</pack>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type definition.</haxe_doc>
+			</name>
+			<meta>
+				<x path="Null"><t path="haxe.macro.Metadata"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The optional metadata of the type definition.</haxe_doc>
+			</meta>
+			<kind>
+				<e path="haxe.macro.TypeDefKind"/>
+				<haxe_doc>The kind of the type definition.</haxe_doc>
+			</kind>
+			<isExtern>
+				<x path="Null"><x path="Bool"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>Whether or not the type is extern.</haxe_doc>
+			</isExtern>
+			<fields>
+				<c path="Array"><t path="haxe.macro.Field"/></c>
+				<haxe_doc>The fields of the type definition.</haxe_doc>
+			</fields>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<meta><m n=":optional"/></meta>
+				<haxe_doc>The documentation of the type, if available. If the type has no
+		documentation, the value is `null`.</haxe_doc>
+			</doc>
+		</a>
+		<haxe_doc>Represents a type definition.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.ImportExpr" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<a>
+			<path>
+				<c path="Array"><a>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<name><c path="String"/></name>
+</a></c>
+				<haxe_doc>The path to the import expression.</haxe_doc>
+			</path>
+			<mode>
+				<e path="haxe.macro.ImportMode"/>
+				<haxe_doc>The mode of the import expression.</haxe_doc>
+			</mode>
+		</a>
+		<haxe_doc>Represents the import expression.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.Ref" params="T" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<toString set="method"><f a=""><c path="String"/></f></toString>
+			<get set="method"><f a=""><c path="haxe.macro.Ref.T"/></f></get>
+		</a>
+		<haxe_doc>Represents a reference to internal compiler structure. It exists to avoid
+	expensive encoding if it is not required and to ensure that physical
+	equality remains intact.
+
+	A structure is only encoded when user requests it through `ref.get()`.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.AnonType" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<status>
+				<e path="haxe.macro.AnonStatus"/>
+				<haxe_doc>The status/kind of the structure.</haxe_doc>
+			</status>
+			<fields>
+				<c path="Array"><t path="haxe.macro.ClassField"/></c>
+				<haxe_doc>The class fields of the structure.</haxe_doc>
+			</fields>
+		</a>
+		<haxe_doc>Represents information for anonymous structure types.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TypeParameter" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<t>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The type of the type parameter. It is guaranteed to be a `TInst` with a
+		`KTypeParameter` kind.</haxe_doc>
+			</t>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type parameter.</haxe_doc>
+			</name>
+		</a>
+		<haxe_doc>Represents the declaration of type parameters.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.ClassField" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<type>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The type of the class field.</haxe_doc>
+			</type>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the class field.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the class field.</haxe_doc>
+			</params>
+			<overloads>
+				<t path="haxe.macro.Ref"><c path="Array"><t path="haxe.macro.ClassField"/></c></t>
+				<haxe_doc>The overload fields of the class field.</haxe_doc>
+			</overloads>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the class field.</haxe_doc>
+			</name>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the class field.</haxe_doc>
+			</meta>
+			<kind>
+				<e path="haxe.macro.FieldKind"/>
+				<haxe_doc>The class field kind.</haxe_doc>
+			</kind>
+			<isPublic>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the class field is public.</haxe_doc>
+			</isPublic>
+			<isFinal>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the class field is final.</haxe_doc>
+			</isFinal>
+			<isExtern>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the class field is extern.</haxe_doc>
+			</isExtern>
+			<isAbstract>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the class field is abstract.</haxe_doc>
+			</isAbstract>
+			<expr set="method">
+				<f a=""><x path="Null"><t path="haxe.macro.TypedExpr"/></x></f>
+				<haxe_doc>Returns the typed expression of the class field.</haxe_doc>
+			</expr>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the class field.</haxe_doc>
+			</doc>
+		</a>
+		<haxe_doc>Represents a class field.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.EnumField" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<type>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The type of the enum constructor.</haxe_doc>
+			</type>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the enum constructor.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the enum constructor.</haxe_doc>
+			</params>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the enum constructor.</haxe_doc>
+			</name>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the enum constructor.</haxe_doc>
+			</meta>
+			<index>
+				<x path="Int"/>
+				<haxe_doc>The index of the enum constructor, i.e. in which position it appears
+		in the syntax.</haxe_doc>
+			</index>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the enum constructor.</haxe_doc>
+			</doc>
+		</a>
+		<haxe_doc>Represents an enum constructor.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.BaseType" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the type.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the type.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>The package of the type.</haxe_doc>
+			</pack>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type.</haxe_doc>
+			</name>
+			<module>
+				<c path="String"/>
+				<haxe_doc>The module name of the type, which might be different.</haxe_doc>
+			</module>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the type.</haxe_doc>
+			</meta>
+			<isPrivate>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is private.</haxe_doc>
+			</isPrivate>
+			<isExtern>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is extern.</haxe_doc>
+			</isExtern>
+			<exclude set="method">
+				<f a=""><x path="Void"/></f>
+				<haxe_doc>Allows excluding the type from compilation.</haxe_doc>
+			</exclude>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the class field.</haxe_doc>
+			</doc>
+		</a>
+		<haxe_doc>The information that all types (`ClassType`, `EnumType`, `DefType`,
+	`AbstractType`) have in common.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.ClassType" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<superClass>
+				<x path="Null"><a>
+	<t><t path="haxe.macro.Ref"><t path="haxe.macro.ClassType"/></t></t>
+	<params><c path="Array"><e path="haxe.macro.Type"/></c></params>
+</a></x>
+				<haxe_doc>The parent class and its type parameters, if available.</haxe_doc>
+			</superClass>
+			<statics>
+				<t path="haxe.macro.Ref"><c path="Array"><t path="haxe.macro.ClassField"/></c></t>
+				<haxe_doc>The static fields of the class.</haxe_doc>
+			</statics>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the type.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the type.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>The package of the type.</haxe_doc>
+			</pack>
+			<overrides>
+				<c path="Array"><t path="haxe.macro.Ref"><t path="haxe.macro.ClassField"/></t></c>
+				<haxe_doc>The list of fields that have override status.</haxe_doc>
+			</overrides>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type.</haxe_doc>
+			</name>
+			<module>
+				<c path="String"/>
+				<haxe_doc>The module name of the type, which might be different.</haxe_doc>
+			</module>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the type.</haxe_doc>
+			</meta>
+			<kind>
+				<e path="haxe.macro.ClassKind"/>
+				<haxe_doc>The kind of the class.</haxe_doc>
+			</kind>
+			<isPrivate>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is private.</haxe_doc>
+			</isPrivate>
+			<isInterface>
+				<x path="Bool"/>
+				<haxe_doc>If true the type is an interface, otherwise it is a class.</haxe_doc>
+			</isInterface>
+			<isFinal>
+				<x path="Bool"/>
+				<haxe_doc>If true the class is final and cannot be extended.</haxe_doc>
+			</isFinal>
+			<isExtern>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is extern.</haxe_doc>
+			</isExtern>
+			<isAbstract>
+				<x path="Bool"/>
+				<haxe_doc>If true the class is abstract and cannot be instantiated directly.</haxe_doc>
+			</isAbstract>
+			<interfaces>
+				<c path="Array"><a>
+	<t><t path="haxe.macro.Ref"><t path="haxe.macro.ClassType"/></t></t>
+	<params><c path="Array"><e path="haxe.macro.Type"/></c></params>
+</a></c>
+				<haxe_doc>The implemented interfaces and their type parameters.</haxe_doc>
+			</interfaces>
+			<init>
+				<x path="Null"><t path="haxe.macro.TypedExpr"/></x>
+				<haxe_doc>The `__init__` expression of the class, if available.</haxe_doc>
+			</init>
+			<fields>
+				<t path="haxe.macro.Ref"><c path="Array"><t path="haxe.macro.ClassField"/></c></t>
+				<haxe_doc>The member fields of the class.</haxe_doc>
+			</fields>
+			<exclude set="method">
+				<f a=""><x path="Void"/></f>
+				<haxe_doc>Allows excluding the type from compilation.</haxe_doc>
+			</exclude>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the class field.</haxe_doc>
+			</doc>
+			<constructor>
+				<x path="Null"><t path="haxe.macro.Ref"><t path="haxe.macro.ClassField"/></t></x>
+				<haxe_doc>The constructor of the class, if available.</haxe_doc>
+			</constructor>
+		</a>
+		<haxe_doc>Represents a class type.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.EnumType" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the type.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the type.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>The package of the type.</haxe_doc>
+			</pack>
+			<names>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>An ordered list of enum constructor names.</haxe_doc>
+			</names>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type.</haxe_doc>
+			</name>
+			<module>
+				<c path="String"/>
+				<haxe_doc>The module name of the type, which might be different.</haxe_doc>
+			</module>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the type.</haxe_doc>
+			</meta>
+			<isPrivate>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is private.</haxe_doc>
+			</isPrivate>
+			<isExtern>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is extern.</haxe_doc>
+			</isExtern>
+			<exclude set="method">
+				<f a=""><x path="Void"/></f>
+				<haxe_doc>Allows excluding the type from compilation.</haxe_doc>
+			</exclude>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the class field.</haxe_doc>
+			</doc>
+			<constructs>
+				<t path="Map">
+					<c path="String"/>
+					<t path="haxe.macro.EnumField"/>
+				</t>
+				<haxe_doc>The available enum constructors.</haxe_doc>
+			</constructs>
+		</a>
+		<haxe_doc>Represents an enum type.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.DefType" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<type>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The target type of the typedef.</haxe_doc>
+			</type>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the type.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the type.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>The package of the type.</haxe_doc>
+			</pack>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type.</haxe_doc>
+			</name>
+			<module>
+				<c path="String"/>
+				<haxe_doc>The module name of the type, which might be different.</haxe_doc>
+			</module>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the type.</haxe_doc>
+			</meta>
+			<isPrivate>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is private.</haxe_doc>
+			</isPrivate>
+			<isExtern>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is extern.</haxe_doc>
+			</isExtern>
+			<exclude set="method">
+				<f a=""><x path="Void"/></f>
+				<haxe_doc>Allows excluding the type from compilation.</haxe_doc>
+			</exclude>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the class field.</haxe_doc>
+			</doc>
+		</a>
+		<haxe_doc>Represents a typedef.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.AbstractType" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<unops>
+				<c path="Array"><a>
+	<postFix><x path="Bool"/></postFix>
+	<op><e path="haxe.macro.Unop"/></op>
+	<field><t path="haxe.macro.ClassField"/></field>
+</a></c>
+				<haxe_doc>The defined unary operators of the abstract.</haxe_doc>
+			</unops>
+			<type>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The underlying type of the abstract.</haxe_doc>
+			</type>
+			<to>
+				<c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<field><x path="Null"><t path="haxe.macro.ClassField"/></x></field>
+</a></c>
+				<haxe_doc>The available implicit to-casts of the abstract.
+
+		@see https://haxe.org/manual/types-abstract-implicit-casts.html</haxe_doc>
+			</to>
+			<resolveWrite>
+				<x path="Null"><t path="haxe.macro.ClassField"/></x>
+				<haxe_doc>The method used for resolving unknown field access, if available.</haxe_doc>
+			</resolveWrite>
+			<resolve>
+				<x path="Null"><t path="haxe.macro.ClassField"/></x>
+				<haxe_doc>The method used for resolving unknown field access, if available.</haxe_doc>
+			</resolve>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the type.</haxe_doc>
+			</pos>
+			<params>
+				<c path="Array"><t path="haxe.macro.TypeParameter"/></c>
+				<haxe_doc>The type parameters of the type.</haxe_doc>
+			</params>
+			<pack>
+				<c path="Array"><c path="String"/></c>
+				<haxe_doc>The package of the type.</haxe_doc>
+			</pack>
+			<name>
+				<c path="String"/>
+				<haxe_doc>The name of the type.</haxe_doc>
+			</name>
+			<module>
+				<c path="String"/>
+				<haxe_doc>The module name of the type, which might be different.</haxe_doc>
+			</module>
+			<meta>
+				<t path="haxe.macro.MetaAccess"/>
+				<haxe_doc>The metadata of the type.</haxe_doc>
+			</meta>
+			<isPrivate>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is private.</haxe_doc>
+			</isPrivate>
+			<isExtern>
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the type is extern.</haxe_doc>
+			</isExtern>
+			<impl>
+				<x path="Null"><t path="haxe.macro.Ref"><t path="haxe.macro.ClassType"/></t></x>
+				<haxe_doc>The implementation class of the abstract, if available.</haxe_doc>
+			</impl>
+			<from>
+				<c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<field><x path="Null"><t path="haxe.macro.ClassField"/></x></field>
+</a></c>
+				<haxe_doc>The available implicit from-casts of the abstract.
+
+		@see https://haxe.org/manual/types-abstract-implicit-casts.html</haxe_doc>
+			</from>
+			<exclude set="method">
+				<f a=""><x path="Void"/></f>
+				<haxe_doc>Allows excluding the type from compilation.</haxe_doc>
+			</exclude>
+			<doc>
+				<x path="Null"><c path="String"/></x>
+				<haxe_doc>The associated documentation of the class field.</haxe_doc>
+			</doc>
+			<binops>
+				<c path="Array"><a>
+	<op><e path="haxe.macro.Binop"/></op>
+	<field><t path="haxe.macro.ClassField"/></field>
+</a></c>
+				<haxe_doc>The defined binary operators of the abstract.</haxe_doc>
+			</binops>
+			<array>
+				<c path="Array"><t path="haxe.macro.ClassField"/></c>
+				<haxe_doc>The defined array-access fields of the abstract.</haxe_doc>
+			</array>
+		</a>
+		<haxe_doc>Represents an abstract type.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.MetaAccess" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<remove set="method">
+				<f a="name">
+					<c path="String"/>
+					<x path="Void"/>
+				</f>
+				<haxe_doc>Removes all `name` metadata entries from the origin of `this`
+		MetaAccess.
+
+		This method might clear several metadata entries of the same name.
+
+		If a `Metadata` array is obtained through a call to `get`, a subsequent
+		call to `remove` has no effect on that array.
+
+		If `name` is null, compilation fails with an error.</haxe_doc>
+			</remove>
+			<has set="method">
+				<f a="name">
+					<c path="String"/>
+					<x path="Bool"/>
+				</f>
+				<haxe_doc>Tells if the origin of `this` MetaAccess has a `name` metadata entry.
+
+		If `name` is null, compilation fails with an error.</haxe_doc>
+			</has>
+			<get set="method">
+				<f a=""><t path="haxe.macro.Metadata"/></f>
+				<haxe_doc>Return the wrapped `Metadata` array.
+
+		Modifying this array has no effect on the origin of `this` MetaAccess.
+		The `add` and `remove` methods can be used for that.</haxe_doc>
+			</get>
+			<extract set="method">
+				<f a="name">
+					<c path="String"/>
+					<c path="Array"><t path="haxe.macro.MetadataEntry"/></c>
+				</f>
+				<haxe_doc>Extract metadata entries by given `name`.
+
+		If there's no metadata with such name, empty array `[]` is returned.
+
+		If `name` is null, compilation fails with an error.</haxe_doc>
+			</extract>
+			<add set="method">
+				<f a="name:params:pos">
+					<c path="String"/>
+					<c path="Array"><t path="haxe.macro.Expr"/></c>
+					<t path="haxe.macro.Position"/>
+					<x path="Void"/>
+				</f>
+				<haxe_doc>Adds the metadata specified by `name`, `params` and `pos` to the origin
+		of `this` MetaAccess.
+
+		Metadata names are not unique during compilation, so this method never
+		overwrites a previous metadata.
+
+		If a `Metadata` array is obtained through a call to `get`, a subsequent
+		call to `add` has no effect on that array.
+
+		If any argument is null, compilation fails with an error.</haxe_doc>
+			</add>
+		</a>
+		<haxe_doc>MetaAccess is a wrapper for the `Metadata` array. It can be used to add
+	metadata to and remove metadata from its origin.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TVar" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<t set="null">
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The type of the variable.</haxe_doc>
+			</t>
+			<name set="null">
+				<c path="String"/>
+				<haxe_doc>The name of the variable.</haxe_doc>
+			</name>
+			<meta set="null">
+				<x path="Null"><t path="haxe.macro.MetaAccess"/></x>
+				<haxe_doc>The metadata of the variable.</haxe_doc>
+			</meta>
+			<id set="null">
+				<x path="Int"/>
+				<haxe_doc>The unique ID of the variable.</haxe_doc>
+			</id>
+			<extra set="null">
+				<x path="Null"><a>
+	<params><c path="Array"><t path="haxe.macro.TypeParameter"/></c></params>
+	<expr><x path="Null"><t path="haxe.macro.TypedExpr"/></x></expr>
+</a></x>
+				<haxe_doc>Special information which is internally used to keep track of closure.
+		information</haxe_doc>
+			</extra>
+			<capture set="null">
+				<x path="Bool"/>
+				<haxe_doc>Whether or not the variable has been captured by a closure.</haxe_doc>
+			</capture>
+		</a>
+		<haxe_doc>Represents a variable in the typed AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TFunc" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<t>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The return type of the function.</haxe_doc>
+			</t>
+			<expr>
+				<t path="haxe.macro.TypedExpr"/>
+				<haxe_doc>The expression of the function body.</haxe_doc>
+			</expr>
+			<args>
+				<c path="Array"><a>
+	<value><x path="Null"><t path="haxe.macro.TypedExpr"/></x></value>
+	<v><t path="haxe.macro.TVar"/></v>
+</a></c>
+				<haxe_doc>A list of function arguments identified by an argument variable `v` and
+		an optional initialization `value`.</haxe_doc>
+			</args>
+		</a>
+		<haxe_doc>Represents a function in the typed AST.</haxe_doc>
+	</typedef>
+	<typedef path="haxe.macro.TypedExpr" params="" file="C:\HaxeToolkit\haxe\std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<a>
+			<t>
+				<e path="haxe.macro.Type"/>
+				<haxe_doc>The type of the expression.</haxe_doc>
+			</t>
+			<pos>
+				<t path="haxe.macro.Position"/>
+				<haxe_doc>The position of the expression.</haxe_doc>
+			</pos>
+			<expr>
+				<e path="haxe.macro.TypedExprDef"/>
+				<haxe_doc>The expression kind.</haxe_doc>
+			</expr>
+		</a>
+		<haxe_doc>Represents a typed AST node.</haxe_doc>
+	</typedef>
+	<typedef path="interlude.HasLengthProperty" params="" file="src/interlude/Constraints.hx" module="interlude.Constraints"><t path="interlude.constraints.HasLengthProperty"/></typedef>
+	<typedef path="interlude.SizedIterable" params="X" file="src/interlude/Constraints.hx" module="interlude.Constraints"><t path="interlude.constraints.SizedIterable"><c path="interlude.SizedIterable.X"/></t></typedef>
 	<typedef path="interlude.Array1" params="X" file="src/interlude/DS.hx" module="interlude.DS"><x path="interlude.ds.Array1"><c path="interlude.Array1.X"/></x></typedef>
 	<typedef path="interlude.Either" params="X:Y" file="src/interlude/DS.hx" module="interlude.DS"><e path="haxe.ds.Either">
 	<c path="interlude.Either.X"/>
@@ -3720,6 +4849,10 @@
 	</typedef>
 	<typedef path="interlude.KVIteratorTools" params="" file="src/interlude/Iter.hx" module="interlude.Iter">
 		<c path="interlude.iter.KeyValueIteratorTools"/>
+		<meta><m n=":dox"><e>hide</e></m></meta>
+	</typedef>
+	<typedef path="interlude.JsonProvider" params="" file="src/interlude/Macro.hx" module="interlude.Macro">
+		<c path="interlude.macro.JsonProvider"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
 	</typedef>
 	<typedef path="interlude.Task" params="X" file="src/interlude/Reactive.hx" module="interlude.Reactive"><c path="interlude.reactive.Task"><c path="interlude.Task.X"/></c></typedef>
@@ -8797,6 +9930,19 @@
 			<m n=":nullSafety"><e>Strict</e></m>
 		</meta>
 	</class>
+	<class path="interlude.macro.JsonProvider" params="" file="src/interlude/macro/JsonProvider.hx"><haxe_doc>Uses some example JSON data to add fields to a type at compile time. Can use
+    an inline JSON string, a local file, or web content.
+
+    ```haxe
+    @:structInit
+    @:build(interlude.macro.JsonProvider.sampleString('{ "foo": 123.45 }'))
+    class Example {}
+
+    ...
+
+    var a:Example = {}; // Object requires field foo
+    var b:Example = { foo: "bar" }; // String should be Float
+    ```</haxe_doc></class>
 	<class path="interlude.reactive.BufferedRunner" params="" file="src/interlude/reactive/BufferedRunner.hx">
 		<frontBuffer public="1" set="null" expr="[]">
 			<c path="Array"><f a=""><x path="Void"/></f></c>
@@ -9227,6 +10373,530 @@
 			<m n=":publicFields"/>
 		</meta>
 	</class>
+	<class path="mbedtls.Config" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/Config.hx" extern="1">
+		<authmode public="1" set="method"><f a="authmode">
+	<x path="mbedtls.SslAuthmode"/>
+	<x path="Void"/>
+</f></authmode>
+		<ca_chain public="1" set="method"><f a="ca_chain">
+	<c path="mbedtls.X509Crt"/>
+	<x path="Void"/>
+</f></ca_chain>
+		<defaults public="1" set="method"><f a="endpoint:transport:preset">
+	<x path="mbedtls.SslEndpoint"/>
+	<x path="mbedtls.SslTransport"/>
+	<x path="mbedtls.SslPreset"/>
+	<x path="Int"/>
+</f></defaults>
+		<rng public="1" params="T" set="method"><f a="p_rng">
+	<c path="rng.T"/>
+	<x path="Void"/>
+</f></rng>
+		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
+	</class>
+	<class path="mbedtls.CtrDrbg" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/CtrDrbg.hx" extern="1">
+		<random public="1" set="method"><f a="output:output_len">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></random>
+		<seed public="1" set="method"><f a="entropy:?custom">
+	<c path="mbedtls.Entropy"/>
+	<c path="String"/>
+	<x path="Int"/>
+</f></seed>
+		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
+	</class>
+	<class path="mbedtls.Entropy" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/Entropy.hx" extern="1"><new public="1" set="method"><f a=""><x path="Void"/></f></new></class>
+	<class path="mbedtls.Error" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/Error.hx">
+		<strerror public="1" set="method" static="1"><f a="code">
+	<x path="Int"/>
+	<c path="String"/>
+</f></strerror>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<class path="mbedtls.PkContext" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/PkContext.hx" extern="1">
+		<parse_key public="1" set="method"><f a="key:?pwd">
+	<c path="haxe.io.Bytes"/>
+	<c path="String"/>
+	<x path="Int"/>
+</f></parse_key>
+		<parse_keyfile public="1" set="method"><f a="path:?password">
+	<c path="String"/>
+	<c path="String"/>
+	<x path="Int"/>
+</f></parse_keyfile>
+		<parse_public_key public="1" set="method"><f a="key">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+</f></parse_public_key>
+		<parse_public_keyfile public="1" set="method"><f a="path">
+	<c path="String"/>
+	<x path="Int"/>
+</f></parse_public_keyfile>
+		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
+	</class>
+	<class path="mbedtls.Ssl" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/Ssl.hx" extern="1">
+		<get_peer_cert public="1" set="method"><f a=""><x path="Null"><c path="mbedtls.X509Crt"/></x></f></get_peer_cert>
+		<handshake public="1" set="method"><f a=""><x path="Int"/></f></handshake>
+		<read public="1" set="method"><f a="buf:pos:len">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></read>
+		<set_hostname public="1" set="method"><f a="hostname">
+	<c path="String"/>
+	<x path="Int"/>
+</f></set_hostname>
+		<setup public="1" set="method"><f a="conf">
+	<c path="mbedtls.Config"/>
+	<x path="Int"/>
+</f></setup>
+		<write public="1" set="method"><f a="buf:pos:len">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></write>
+		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
+	</class>
+	<abstract path="mbedtls.SslAuthmode" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslAuthmode.hx">
+		<this><x path="Int"/></this>
+		<meta>
+			<m n=":enum"/>
+			<m n=":native"><e>"mbedtls.SslAuthmode"</e></m>
+		</meta>
+		<impl><class path="mbedtls._SslAuthmode.SslAuthmode_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslAuthmode.hx" private="1" module="mbedtls.SslAuthmode" extern="1" final="1">
+	<SSL_VERIFY_NONE public="1" set="null" static="1">
+		<x path="mbedtls.SslAuthmode"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_VERIFY_NONE>
+	<SSL_VERIFY_OPTIONAL public="1" set="null" static="1">
+		<x path="mbedtls.SslAuthmode"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_VERIFY_OPTIONAL>
+	<SSL_VERIFY_REQUIRED public="1" set="null" static="1">
+		<x path="mbedtls.SslAuthmode"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_VERIFY_REQUIRED>
+	<meta>
+		<m n=":native"><e>"mbedtls.SslAuthmode"</e></m>
+		<m n=":enum"/>
+	</meta>
+</class></impl>
+	</abstract>
+	<class path="mbedtls._SslAuthmode.SslAuthmode_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslAuthmode.hx" private="1" module="mbedtls.SslAuthmode" extern="1" final="1">
+		<SSL_VERIFY_NONE public="1" set="null" static="1">
+			<x path="mbedtls.SslAuthmode"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_VERIFY_NONE>
+		<SSL_VERIFY_OPTIONAL public="1" set="null" static="1">
+			<x path="mbedtls.SslAuthmode"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_VERIFY_OPTIONAL>
+		<SSL_VERIFY_REQUIRED public="1" set="null" static="1">
+			<x path="mbedtls.SslAuthmode"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_VERIFY_REQUIRED>
+		<meta>
+			<m n=":native"><e>"mbedtls.SslAuthmode"</e></m>
+			<m n=":enum"/>
+		</meta>
+	</class>
+	<abstract path="mbedtls.SslEndpoint" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslEndpoint.hx">
+		<this><x path="Int"/></this>
+		<meta>
+			<m n=":enum"/>
+			<m n=":native"><e>"mbedtls.SslEndpoint"</e></m>
+		</meta>
+		<impl><class path="mbedtls._SslEndpoint.SslEndpoint_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslEndpoint.hx" private="1" module="mbedtls.SslEndpoint" extern="1" final="1">
+	<SSL_IS_CLIENT public="1" set="null" static="1">
+		<x path="mbedtls.SslEndpoint"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_IS_CLIENT>
+	<SSL_IS_SERVER public="1" set="null" static="1">
+		<x path="mbedtls.SslEndpoint"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_IS_SERVER>
+	<meta>
+		<m n=":native"><e>"mbedtls.SslEndpoint"</e></m>
+		<m n=":enum"/>
+	</meta>
+</class></impl>
+	</abstract>
+	<class path="mbedtls._SslEndpoint.SslEndpoint_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslEndpoint.hx" private="1" module="mbedtls.SslEndpoint" extern="1" final="1">
+		<SSL_IS_CLIENT public="1" set="null" static="1">
+			<x path="mbedtls.SslEndpoint"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_IS_CLIENT>
+		<SSL_IS_SERVER public="1" set="null" static="1">
+			<x path="mbedtls.SslEndpoint"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_IS_SERVER>
+		<meta>
+			<m n=":native"><e>"mbedtls.SslEndpoint"</e></m>
+			<m n=":enum"/>
+		</meta>
+	</class>
+	<abstract path="mbedtls.SslPreset" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslPreset.hx">
+		<this><x path="Int"/></this>
+		<meta>
+			<m n=":enum"/>
+			<m n=":native"><e>"mbedtls.SslPreset"</e></m>
+		</meta>
+		<impl><class path="mbedtls._SslPreset.SslPreset_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslPreset.hx" private="1" module="mbedtls.SslPreset" extern="1" final="1">
+	<SSL_PRESET_DEFAULT public="1" set="null" static="1">
+		<x path="mbedtls.SslPreset"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_PRESET_DEFAULT>
+	<SSL_PRESET_SUITEB public="1" set="null" static="1">
+		<x path="mbedtls.SslPreset"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_PRESET_SUITEB>
+	<meta>
+		<m n=":native"><e>"mbedtls.SslPreset"</e></m>
+		<m n=":enum"/>
+	</meta>
+</class></impl>
+	</abstract>
+	<class path="mbedtls._SslPreset.SslPreset_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslPreset.hx" private="1" module="mbedtls.SslPreset" extern="1" final="1">
+		<SSL_PRESET_DEFAULT public="1" set="null" static="1">
+			<x path="mbedtls.SslPreset"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_PRESET_DEFAULT>
+		<SSL_PRESET_SUITEB public="1" set="null" static="1">
+			<x path="mbedtls.SslPreset"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_PRESET_SUITEB>
+		<meta>
+			<m n=":native"><e>"mbedtls.SslPreset"</e></m>
+			<m n=":enum"/>
+		</meta>
+	</class>
+	<abstract path="mbedtls.SslTransport" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslTransport.hx">
+		<this><x path="Int"/></this>
+		<meta>
+			<m n=":enum"/>
+			<m n=":native"><e>"mbedtls.SslTransport"</e></m>
+		</meta>
+		<impl><class path="mbedtls._SslTransport.SslTransport_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslTransport.hx" private="1" module="mbedtls.SslTransport" extern="1" final="1">
+	<SSL_TRANSPORT_STREAM public="1" set="null" static="1">
+		<x path="mbedtls.SslTransport"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_TRANSPORT_STREAM>
+	<SSL_TRANSPORT_DATAGRAM public="1" set="null" static="1">
+		<x path="mbedtls.SslTransport"/>
+		<meta><m n=":enum"/></meta>
+	</SSL_TRANSPORT_DATAGRAM>
+	<meta>
+		<m n=":native"><e>"mbedtls.SslTransport"</e></m>
+		<m n=":enum"/>
+	</meta>
+</class></impl>
+	</abstract>
+	<class path="mbedtls._SslTransport.SslTransport_Impl_" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/SslTransport.hx" private="1" module="mbedtls.SslTransport" extern="1" final="1">
+		<SSL_TRANSPORT_STREAM public="1" set="null" static="1">
+			<x path="mbedtls.SslTransport"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_TRANSPORT_STREAM>
+		<SSL_TRANSPORT_DATAGRAM public="1" set="null" static="1">
+			<x path="mbedtls.SslTransport"/>
+			<meta><m n=":enum"/></meta>
+		</SSL_TRANSPORT_DATAGRAM>
+		<meta>
+			<m n=":native"><e>"mbedtls.SslTransport"</e></m>
+			<m n=":enum"/>
+		</meta>
+	</class>
+	<class path="mbedtls.X509Crt" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/mbedtls/X509Crt.hx" extern="1">
+		<next public="1" set="method"><f a=""><x path="Null"><c path="mbedtls.X509Crt"/></x></f></next>
+		<parse public="1" set="method"><f a="buf">
+	<c path="haxe.io.Bytes"/>
+	<x path="Int"/>
+</f></parse>
+		<parse_file public="1" set="method"><f a="path">
+	<c path="String"/>
+	<x path="Int"/>
+</f></parse_file>
+		<parse_path public="1" set="method"><f a="path">
+	<c path="String"/>
+	<x path="Int"/>
+</f></parse_path>
+		<new public="1" set="method"><f a=""><x path="Void"/></f></new>
+	</class>
+	<typedef path="sys.FileStat" params="" file="C:\HaxeToolkit\haxe\std/sys/FileStat.hx">
+		<a>
+			<uid>
+				<x path="Int"/>
+				<haxe_doc>The user id for the file owner.</haxe_doc>
+			</uid>
+			<size>
+				<x path="Int"/>
+				<haxe_doc>The size of the file, in bytes.</haxe_doc>
+			</size>
+			<rdev>
+				<x path="Int"/>
+				<haxe_doc>The device type on which stat resides (special files only).</haxe_doc>
+			</rdev>
+			<nlink>
+				<x path="Int"/>
+				<haxe_doc>The number of hard links to stat.</haxe_doc>
+			</nlink>
+			<mtime>
+				<c path="Date"/>
+				<haxe_doc>The last modification time for the file.</haxe_doc>
+			</mtime>
+			<mode>
+				<x path="Int"/>
+				<haxe_doc>The permission bits of stat. The meaning of the bits is platform dependent.</haxe_doc>
+			</mode>
+			<ino>
+				<x path="Int"/>
+				<haxe_doc>The inode number for stat.</haxe_doc>
+			</ino>
+			<gid>
+				<x path="Int"/>
+				<haxe_doc>The user group id for the file owner.</haxe_doc>
+			</gid>
+			<dev>
+				<x path="Int"/>
+				<haxe_doc>The device on which stat resides.</haxe_doc>
+			</dev>
+			<ctime>
+				<c path="Date"/>
+				<haxe_doc>The creation time for the file (not all file systems support this).</haxe_doc>
+			</ctime>
+			<atime>
+				<c path="Date"/>
+				<haxe_doc>The last access time for the file (when enabled by the file system).</haxe_doc>
+			</atime>
+		</a>
+		<haxe_doc>File information, as given by `sys.FileSystem.stat`.</haxe_doc>
+	</typedef>
+	<class path="sys.FileSystem" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/FileSystem.hx">
+		<exists public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>Returns `true` if the file or directory specified by `path` exists.</haxe_doc>
+		</exists>
+		<rename public="1" set="method" static="1">
+			<f a="path:newPath">
+				<c path="String"/>
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Renames/moves the file or directory specified by `path` to `newPath`.
+
+		If `path` is not a valid file system entry, or if it is not accessible,
+		or if `newPath` is not accessible, an exception is thrown.</haxe_doc>
+		</rename>
+		<stat public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<t path="sys.FileStat"/>
+			</f>
+			<haxe_doc>Returns `FileStat` information for the file or directory specified by
+		`path`.</haxe_doc>
+		</stat>
+		<fullPath public="1" set="method" static="1">
+			<f a="relPath">
+				<c path="String"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns the full path of the file or directory specified by `relPath`,
+		which is relative to the current working directory. Symlinks will be
+		followed and the path will be normalized.</haxe_doc>
+		</fullPath>
+		<isDirectory public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>Returns `true` if the file or directory specified by `path` is a directory.
+
+		If `path` is not a valid file system entry or if its destination is not
+		accessible, an exception is thrown.</haxe_doc>
+		</isDirectory>
+		<createDirectory public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Creates a directory specified by `path`.
+
+		This method is recursive: The parent directories don't have to exist.
+
+		If the directory cannot be created, an exception is thrown.</haxe_doc>
+		</createDirectory>
+		<deleteFile public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Deletes the file specified by `path`.
+
+		If `path` does not denote a valid file, or if that file cannot be
+		deleted, an exception is thrown.</haxe_doc>
+		</deleteFile>
+		<deleteDirectory public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Deletes the directory specified by `path`. Only empty directories can
+		be deleted.
+
+		If `path` does not denote a valid directory, or if that directory cannot
+		be deleted, an exception is thrown.</haxe_doc>
+		</deleteDirectory>
+		<readDirectory public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<c path="Array"><c path="String"/></c>
+			</f>
+			<haxe_doc>Returns the names of all files and directories in the directory specified
+		by `path`. `"."` and `".."` are not included in the output.
+
+		If `path` does not denote a valid directory, an exception is thrown.</haxe_doc>
+		</readDirectory>
+		<haxe_doc>This class provides information about files and directories.
+
+	If `null` is passed as a file path to any function in this class, the
+	result is unspecified, and may differ from target to target.
+
+	See `sys.io.File` for the complementary file API.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
+	<class path="sys.io.File" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/io/File.hx">
+		<getContent public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Retrieves the content of the file specified by `path` as a String.
+
+		If the file does not exist or can not be read, an exception is thrown.
+
+		`sys.FileSystem.exists` can be used to check for existence.
+
+		If `path` is null, the result is unspecified.</haxe_doc>
+		</getContent>
+		<saveContent public="1" set="method" static="1">
+			<f a="path:content">
+				<c path="String"/>
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Stores `content` in the file specified by `path`.
+
+		If the file cannot be written to, an exception is thrown.
+
+		If `path` or `content` are null, the result is unspecified.</haxe_doc>
+		</saveContent>
+		<getBytes public="1" set="method" static="1">
+			<f a="path">
+				<c path="String"/>
+				<c path="haxe.io.Bytes"/>
+			</f>
+			<haxe_doc>Retrieves the binary content of the file specified by `path`.
+
+		If the file does not exist or can not be read, an exception is thrown.
+
+		`sys.FileSystem.exists` can be used to check for existence.
+
+		If `path` is null, the result is unspecified.</haxe_doc>
+		</getBytes>
+		<saveBytes public="1" set="method" static="1">
+			<f a="path:bytes">
+				<c path="String"/>
+				<c path="haxe.io.Bytes"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Stores `bytes` in the file specified by `path` in binary mode.
+
+		If the file cannot be written to, an exception is thrown.
+
+		If `path` or `bytes` are null, the result is unspecified.</haxe_doc>
+		</saveBytes>
+		<read public="1" set="method" static="1">
+			<f a="path:?binary" v=":true">
+				<c path="String"/>
+				<x path="Bool"/>
+				<c path="sys.io.FileInput"/>
+			</f>
+			<meta><m n=":value"><e>{ binary : true }</e></m></meta>
+			<haxe_doc>Returns an `FileInput` handle to the file specified by `path`.
+
+		If `binary` is true, the file is opened in binary mode. Otherwise it is
+		opened in non-binary mode.
+
+		If the file does not exist or can not be read, an exception is thrown.
+
+		Operations on the returned `FileInput` handle read on the opened file.
+
+		File handles should be closed via `FileInput.close` once the operation
+		is complete.
+
+		If `path` is null, the result is unspecified.</haxe_doc>
+		</read>
+		<write public="1" set="method" static="1">
+			<f a="path:?binary" v=":true">
+				<c path="String"/>
+				<x path="Bool"/>
+				<c path="sys.io.FileOutput"/>
+			</f>
+			<meta><m n=":value"><e>{ binary : true }</e></m></meta>
+			<haxe_doc>Returns an `FileOutput` handle to the file specified by `path`.
+
+		If `binary` is true, the file is opened in binary mode. Otherwise it is
+		opened in non-binary mode.
+
+		If the file cannot be written to, an exception is thrown.
+
+		Operations on the returned `FileOutput` handle write to the opened file.
+		If the file existed, its previous content is overwritten.
+
+		File handles should be closed via `FileOutput.close` once the operation
+		is complete.
+
+		If `path` is null, the result is unspecified.</haxe_doc>
+		</write>
+		<append public="1" set="method" static="1">
+			<f a="path:?binary" v=":true">
+				<c path="String"/>
+				<x path="Bool"/>
+				<c path="sys.io.FileOutput"/>
+			</f>
+			<meta><m n=":value"><e>{ binary : true }</e></m></meta>
+			<haxe_doc>Similar to `sys.io.File.write`, but appends to the file if it exists
+		instead of overwriting its contents.</haxe_doc>
+		</append>
+		<update public="1" set="method" static="1">
+			<f a="path:?binary" v=":true">
+				<c path="String"/>
+				<x path="Bool"/>
+				<c path="sys.io.FileOutput"/>
+			</f>
+			<meta><m n=":value"><e>{ binary : true }</e></m></meta>
+			<haxe_doc>Similar to `sys.io.File.append`. While `append` can only seek or write
+		starting from the end of the file's previous contents, `update` can
+		seek to any position, so the file's previous contents can be
+		selectively overwritten.</haxe_doc>
+		</update>
+		<haxe_doc>API for reading and writing files.
+
+	See `sys.FileSystem` for the complementary file system API.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
 	<class path="sys.io.FileInput" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/io/FileInput.hx">
 		<extends path="haxe.io.Input"/>
 		<close public="1" set="method"><f a=""><x path="Void"/></f></close>
@@ -9282,4 +10952,57 @@
 		<SeekEnd/>
 		<meta><m n=":flatEnum"/></meta>
 	</enum>
+	<class path="sys.net.Host" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/net/Host.hx">
+		<localhost public="1" set="method" static="1"><f a=""><unknown/></f></localhost>
+		<hostReverse set="method" static="1"><f a="ip">
+	<x path="Int"/>
+	<unknown/>
+</f></hostReverse>
+		<hostToString set="method" static="1"><f a="ip">
+	<x path="Int"/>
+	<unknown/>
+</f></hostToString>
+		<resolve set="method" static="1"><f a="name">
+	<c path="String"/>
+	<x path="Int"/>
+</f></resolve>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<class path="sys.ssl.Certificate" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/ssl/Certificate.hx">
+		<native><c path="mbedtls.X509Crt"/></native>
+		<altNames public="1" get="accessor" set="null"><c path="Array"><c path="String"/></c></altNames>
+		<notBefore public="1" get="accessor" set="null"><c path="Date"/></notBefore>
+		<notAfter public="1" get="accessor" set="null"><c path="Date"/></notAfter>
+		<subject public="1" set="method"><f a="field">
+	<c path="String"/>
+	<x path="Null"><c path="String"/></x>
+</f></subject>
+		<issuer public="1" set="method"><f a="field">
+	<c path="String"/>
+	<x path="Null"><c path="String"/></x>
+</f></issuer>
+		<get_altNames set="method"><f a=""><c path="Array"><c path="String"/></c></f></get_altNames>
+		<get_notBefore set="method"><f a=""><c path="Date"/></f></get_notBefore>
+		<get_notAfter set="method"><f a=""><c path="Date"/></f></get_notAfter>
+		<new set="method" line="33"><f a="native">
+	<c path="mbedtls.X509Crt"/>
+	<x path="Void"/>
+</f></new>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
+	<class path="sys.ssl.Mbedtls" params="" file="C:\HaxeToolkit\haxe\std/eval/_std/sys/ssl/Mbedtls.hx">
+		<setSocket public="1" set="method" static="1"><f a="ssl:socket">
+	<c path="mbedtls.Ssl"/>
+	<c path="eval.vm.NativeSocket"/>
+	<x path="Int"/>
+</f></setSocket>
+		<loadDefaults set="method" static="1"><f a="certificate">
+	<c path="mbedtls.X509Crt"/>
+	<x path="Int"/>
+</f></loadDefaults>
+		<meta><m n=":keep"/></meta>
+	</class>
 </haxe>
