@@ -4856,6 +4856,10 @@
 		<c path="interlude.macro.JsonProvider"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
 	</typedef>
+	<typedef path="interlude.NotImplemented" params="" file="src/interlude/Macro.hx" module="interlude.Macro">
+		<c path="interlude.macro.NotImplemented"/>
+		<meta><m n=":dox"><e>hide</e></m></meta>
+	</typedef>
 	<typedef path="interlude.Todo" params="" file="src/interlude/Macro.hx" module="interlude.Macro">
 		<c path="interlude.macro.Todo"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
@@ -9445,11 +9449,21 @@
       natural() == [1, 2, 3, 4, 5, 6, ...];
       ```</haxe_doc>
 		</natural>
-		<opposite public="1" params="A" set="method" line="587" static="1"><f a="as">
+		<nonNull public="1" params="A" set="method" line="593" static="1">
+			<f a="as">
+				<t path="Iterable"><x path="Null"><c path="nonNull.A"/></x></t>
+				<t path="Iterable"><c path="nonNull.A"/></t>
+			</f>
+			<haxe_doc>Returns only the non-null elements of an Iterable
+        ```haxe
+        ['a', null, 'b', null, 'c'].nonNull() == ['a', 'b', 'c']
+        ```</haxe_doc>
+		</nonNull>
+		<opposite public="1" params="A" set="method" line="598" static="1"><f a="as">
 	<t path="Iterable"><c path="opposite.A"/></t>
 	<c path="Array"><c path="opposite.A"/></c>
 </f></opposite>
-		<orDefault public="1" params="A" set="method" line="597" static="1">
+		<orDefault public="1" params="A" set="method" line="608" static="1">
 			<f a="as:whenEmpty">
 				<t path="Iterable"><c path="orDefault.A"/></t>
 				<f a=""><t path="Iterable"><c path="orDefault.A"/></t></f>
@@ -9458,7 +9472,7 @@
 			<haxe_doc>Returns the input Iterable if it has any elements, or some default if
       empty</haxe_doc>
 		</orDefault>
-		<orDefault1 public="1" params="A" set="method" line="605" static="1">
+		<orDefault1 public="1" params="A" set="method" line="616" static="1">
 			<f a="as:whenEmpty">
 				<t path="Iterable"><c path="orDefault1.A"/></t>
 				<f a=""><t path="Iterable1"><c path="orDefault1.A"/></t></f>
@@ -9467,7 +9481,7 @@
 			<haxe_doc>Returns the input Iterable if it has any elements, or some default if empty
       The default is required to have at least one element</haxe_doc>
 		</orDefault1>
-		<orderByAsc public="1" params="A" set="method" line="609" static="1"><f a="as:selector">
+		<orderByAsc public="1" params="A" set="method" line="620" static="1"><f a="as:selector">
 	<t path="Iterable"><c path="orderByAsc.A"/></t>
 	<f a="">
 		<c path="orderByAsc.A"/>
@@ -9475,7 +9489,7 @@
 	</f>
 	<c path="Array"><c path="orderByAsc.A"/></c>
 </f></orderByAsc>
-		<orderByDesc public="1" params="A" set="method" line="612" static="1"><f a="as:selector">
+		<orderByDesc public="1" params="A" set="method" line="623" static="1"><f a="as:selector">
 	<t path="Iterable"><c path="orderByDesc.A"/></t>
 	<f a="">
 		<c path="orderByDesc.A"/>
@@ -9483,12 +9497,12 @@
 	</f>
 	<c path="Array"><c path="orderByDesc.A"/></c>
 </f></orderByDesc>
-		<orElse public="1" params="A" set="method" line="615" static="1"><f a="as:genOther">
+		<orElse public="1" params="A" set="method" line="626" static="1"><f a="as:genOther">
 	<t path="Iterable"><c path="orElse.A"/></t>
 	<f a=""><t path="Iterable"><c path="orElse.A"/></t></f>
 	<t path="Iterable"><c path="orElse.A"/></t>
 </f></orElse>
-		<pairs public="1" params="A" set="method" line="625" static="1">
+		<pairs public="1" params="A" set="method" line="636" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="pairs.A"/></t>
 				<t path="Iterable"><t path="Pair">
@@ -9501,7 +9515,7 @@
         [1, 2, 3, 4].pairs() == [(1, 2), (2, 3), (3, 4)];
         ```</haxe_doc>
 		</pairs>
-		<partition public="1" params="A" set="method" line="635" static="1">
+		<partition public="1" params="A" set="method" line="646" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="partition.A"/></t>
 				<f a="">
@@ -9519,7 +9533,7 @@
       ```
       TODO: add a lazy version that doesn't evaluate the source list twice</haxe_doc>
 		</partition>
-		<product public="1" params="A:B:C" set="method" line="650" static="1">
+		<product public="1" params="A:B:C" set="method" line="661" static="1">
 			<f a="as:bs:fn">
 				<t path="Iterable"><c path="product.A"/></t>
 				<t path="Iterable"><c path="product.B"/></t>
@@ -9534,7 +9548,7 @@
         A deck of playing cards could be represented as
         `suits.product(ranks, Card.new)`</haxe_doc>
 		</product>
-		<range public="1" get="inline" set="null" line="660" static="1">
+		<range public="1" get="inline" set="null" line="671" static="1">
 			<f a="start:count">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -9546,14 +9560,14 @@
         0.range(5) == [0, 1, 2, 3, 4];
         ```</haxe_doc>
 		</range>
-		<repeat public="1" params="A" set="method" line="666" static="1">
+		<repeat public="1" params="A" set="method" line="677" static="1">
 			<f a="a">
 				<c path="repeat.A"/>
 				<t path="Iterable"><c path="repeat.A"/></t>
 			</f>
 			<haxe_doc>Returns an `Iterable` where `a` is infinitely repeated</haxe_doc>
 		</repeat>
-		<replicate public="1" params="A" set="method" line="672" static="1">
+		<replicate public="1" params="A" set="method" line="683" static="1">
 			<f a="a:count">
 				<c path="replicate.A"/>
 				<x path="Int"/>
@@ -9561,7 +9575,7 @@
 			</f>
 			<haxe_doc>Returns an `Iterable` where `a` is repeated `count` times</haxe_doc>
 		</replicate>
-		<scan public="1" params="A:B" set="method" line="685" static="1">
+		<scan public="1" params="A:B" set="method" line="696" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="scan.A"/></t>
 				<c path="scan.B"/>
@@ -9579,7 +9593,7 @@
       [0, 1, 2, 3].scan(1, (x, y) -> x + y) == [1, 1, 2, 4, 7];
       ```]]></haxe_doc>
 		</scan>
-		<scan_ public="1" params="A:B" set="method" line="696" static="1">
+		<scan_ public="1" params="A:B" set="method" line="707" static="1">
 			<f a="as:seed:fn">
 				<t path="Iterable"><c path="scan_.A"/></t>
 				<c path="scan_.B"/>
@@ -9597,7 +9611,7 @@
       [0, 1, 2, 3].scan_(1, (x, y) -> x + y) == [1, 2, 4, 7];
       ```]]></haxe_doc>
 		</scan_>
-		<shuffled public="1" params="A" set="method" line="710" static="1">
+		<shuffled public="1" params="A" set="method" line="721" static="1">
 			<f a="as:genRandom">
 				<t path="Iterable"><c path="shuffled.A"/></t>
 				<f a="">
@@ -9609,7 +9623,7 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `genRandom` as a
         source of randomness</haxe_doc>
 		</shuffled>
-		<shuffledStd public="1" params="A" get="inline" set="null" line="719" static="1">
+		<shuffledStd public="1" params="A" get="inline" set="null" line="730" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="shuffledStd.A"/></t>
 				<c path="Array"><c path="shuffledStd.A"/></c>
@@ -9617,7 +9631,7 @@
 			<haxe_doc>Returns elements of `as` in a random order, using `Std.random` as a
         source of randomness</haxe_doc>
 		</shuffledStd>
-		<skip public="1" params="A" set="method" line="730" static="1">
+		<skip public="1" params="A" set="method" line="741" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="skip.A"/></t>
 				<x path="Int"/>
@@ -9630,7 +9644,7 @@
       [a, b, c].skip(200) == [];
       ```]]></haxe_doc>
 		</skip>
-		<skipWhile public="1" params="A" set="method" line="750" static="1">
+		<skipWhile public="1" params="A" set="method" line="761" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="skipWhile.A"/></t>
 				<f a="">
@@ -9648,14 +9662,14 @@
       *NOTE*: This may not terminate if every element of an infinite `Iterable`
       matches the `predicate`]]></haxe_doc>
 		</skipWhile>
-		<somes public="1" params="A" set="method" line="765" static="1">
+		<somes public="1" params="A" set="method" line="776" static="1">
 			<f a="as">
 				<t path="Iterable"><t path="Option"><c path="somes.A"/></t></t>
 				<t path="Iterable"><c path="somes.A"/></t>
 			</f>
 			<haxe_doc>Returns all the `Some` values from a set of `Option`s</haxe_doc>
 		</somes>
-		<span public="1" params="A" set="method" line="775" static="1">
+		<span public="1" params="A" set="method" line="786" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="span.A"/></t>
 				<f a="">
@@ -9673,14 +9687,14 @@
         [1, 2, 3, 4, 1, 2, 3].span(x -> x < 3) == ([1, 2], [3, 4, 1, 2, 3]);
         ```]]></haxe_doc>
 		</span>
-		<successes public="1" params="A" set="method" line="782" static="1">
+		<successes public="1" params="A" set="method" line="793" static="1">
 			<f a="as">
 				<t path="Iterable"><t path="Outcome"><c path="successes.A"/></t></t>
 				<t path="Iterable"><c path="successes.A"/></t>
 			</f>
 			<haxe_doc>Returns all the `Success` values from a set of `Outcome`s</haxe_doc>
 		</successes>
-		<tail public="1" params="A" get="inline" set="null" line="794" static="1">
+		<tail public="1" params="A" get="inline" set="null" line="805" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="tail.A"/></t>
 				<t path="Iterable"><c path="tail.A"/></t>
@@ -9693,7 +9707,7 @@
         [].tail() == [];
         ```</haxe_doc>
 		</tail>
-		<take public="1" params="A" set="method" line="805" static="1">
+		<take public="1" params="A" set="method" line="816" static="1">
 			<f a="as:count">
 				<t path="Iterable"><c path="take.A"/></t>
 				<x path="Int"/>
@@ -9706,7 +9720,7 @@
       [].take(2) == [];
       ```]]></haxe_doc>
 		</take>
-		<takeWhile public="1" params="A" set="method" line="823" static="1">
+		<takeWhile public="1" params="A" set="method" line="834" static="1">
 			<f a="as:predicate">
 				<t path="Iterable"><c path="takeWhile.A"/></t>
 				<f a="">
@@ -9722,7 +9736,7 @@
       [1, 2, 3, 4, 5, 6].takeWhile(x -> x < 4) == [1, 2, 3];
       ```]]></haxe_doc>
 		</takeWhile>
-		<toArray public="1" params="A" get="inline" set="null" line="839" static="1">
+		<toArray public="1" params="A" get="inline" set="null" line="850" static="1">
 			<f a="as">
 				<t path="Iterable"><c path="toArray.A"/></t>
 				<c path="Array"><c path="toArray.A"/></c>
@@ -9731,7 +9745,7 @@
         *NOTE*: Since this fully evaluates the `Iterable`, it may not terminate 
         if `as` is infinite.</haxe_doc>
 		</toArray>
-		<zip public="1" params="A:B:C" set="method" line="850" static="1">
+		<zip public="1" params="A:B:C" set="method" line="861" static="1">
 			<f a="as:bs">
 				<t path="Iterable"><c path="zip.A"/></t>
 				<t path="Iterable"><c path="zip.B"/></t>
@@ -9747,7 +9761,7 @@
         [1, 2, 3].zip([]) == [];
         ```</haxe_doc>
 		</zip>
-		<zipWith public="1" params="A:B:C" set="method" line="862" static="1">
+		<zipWith public="1" params="A:B:C" set="method" line="873" static="1">
 			<f a="as:bs:transform">
 				<t path="Iterable"><c path="zipWith.A"/></t>
 				<t path="Iterable"><c path="zipWith.B"/></t>
@@ -9962,6 +9976,27 @@
     var b:Example = { foo: "bar" }; // Compile error: String should be Float
     ```</haxe_doc>
 		<meta><m n=":nullSafety"><e>Strict</e></m></meta>
+	</class>
+	<class path="interlude.macro.NotImplemented" params="" file="src/interlude/macro/NotImplemented.hx">
+		<build public="1" set="method" static="1"><f a=""><d/></f></build>
+		<haxe_doc>Adds a new meta for functions which:  
+    - satisfies the function's return type automatically  
+    - at compile time, emits a warning  
+    - at runtime, throws a `NotImplementedException`  
+
+    ```haxe
+    @:build(interlude.macro.NotImplemented.build())
+    class Example {
+        @notimpl // Warning : Notimpl: `foo` is not implemented.
+        public static function foo();
+
+        @notimpl('MESSAGE') // Warning : Notimpl: `bar` is not implemented. ('MESSAGE')
+        public static function bar():Unit {
+            // @notimpl allows this to compile with an incomplete implementation
+            // At runtime, this will `throw new NotImplementedException('MESSAGE');`
+        }
+    }
+    ```</haxe_doc>
 	</class>
 	<class path="interlude.macro.Todo" params="" file="src/interlude/macro/Todo.hx">
 		<printNames expr="new Map&lt;String,String&gt;()" line="28" static="1">

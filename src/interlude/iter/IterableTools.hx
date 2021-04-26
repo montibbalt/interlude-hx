@@ -584,6 +584,17 @@ class IterableTools {
     inline static function natural():Iterable<Int> return
         1.iterate(add1);
 
+    /**
+        Returns only the non-null elements of an Iterable
+        ```haxe
+        ['a', null, 'b', null, 'c'].nonNull() == ['a', 'b', 'c']
+        ```
+    **/
+    static function nonNull<A>(as:Iterable<Null<A>>):Iterable<A> return
+        as.flatMap(a -> a != null
+            ? asIterable(cast a)
+            : empty());
+
     static function opposite<A>(as:Iterable<A>):Array<A> return {
         var out = as.toArray();
         out.reverse();

@@ -381,6 +381,14 @@ class TestIterableTools implements ITest {
         Assert.same(Some(3) , three.maybeLast());
     }
 
+    function testNonNull() {
+        var empty = [].nonNull();
+        var someNulls = ['a', null, 'b', null, 'c'].nonNull();
+
+        Assert.same([], empty.toArray());
+        Assert.same(['a', 'b', 'c'], someNulls.toArray());
+    }
+
     function testOpposite() {
         var empty = [];
         var three = [1, 2, 3];
