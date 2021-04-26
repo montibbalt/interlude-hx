@@ -23,6 +23,7 @@ using sys.io.File;
     var b:Example = { foo: "bar" }; // Compile error: String should be Float
     ```
 **/
+@:nullSafety(Strict)
 class JsonProvider {
     public static macro function sampleString(json:String):Array<Field> return
         combineFields(json.parse());

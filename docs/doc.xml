@@ -3468,6 +3468,7 @@
 	See `Map` for documentation details.
 
 	@see https://haxe.org/manual/std-Map.html</haxe_doc>
+		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<class path="haxe.format.JsonPrinter" params="" file="C:\HaxeToolkit\haxe\std/haxe/format/JsonPrinter.hx">
 		<buf><c path="StringBuf"/></buf>
@@ -4853,6 +4854,10 @@
 	</typedef>
 	<typedef path="interlude.JsonProvider" params="" file="src/interlude/Macro.hx" module="interlude.Macro">
 		<c path="interlude.macro.JsonProvider"/>
+		<meta><m n=":dox"><e>hide</e></m></meta>
+	</typedef>
+	<typedef path="interlude.Todo" params="" file="src/interlude/Macro.hx" module="interlude.Macro">
+		<c path="interlude.macro.Todo"/>
 		<meta><m n=":dox"><e>hide</e></m></meta>
 	</typedef>
 	<typedef path="interlude.Task" params="X" file="src/interlude/Reactive.hx" module="interlude.Reactive"><c path="interlude.reactive.Task"><c path="interlude.Task.X"/></c></typedef>
@@ -9956,6 +9961,38 @@
     var a:Example = {}; // Compile error: Object requires field foo
     var b:Example = { foo: "bar" }; // Compile error: String should be Float
     ```</haxe_doc>
+		<meta><m n=":nullSafety"><e>Strict</e></m></meta>
+	</class>
+	<class path="interlude.macro.Todo" params="" file="src/interlude/macro/Todo.hx">
+		<printNames expr="new Map&lt;String,String&gt;()" line="28" static="1">
+			<x path="haxe.ds.Map">
+				<c path="String"/>
+				<c path="String"/>
+			</x>
+			<meta><m n=":value"><e><![CDATA[new Map<String,String>()]]></e></m></meta>
+		</printNames>
+		<build public="1" set="method" static="1"><f a="?userDefined">
+	<d/>
+	<d/>
+</f></build>
+		<haxe_doc>Adds new metas that print strings as compiler messages. The user can
+    optionally pass an array of additional meta names which will be treated as
+    warnings.
+
+    ```haxe
+    @:build(interlude.macro.Todo.build(['foo'])) // adds @foo in addition to @note and @todo
+    class Example {
+        @note('This will print some info') // output: "Note: 'This will print some info'"
+        @todo(
+            'This will',        // output: "Warning : Todo: 'This will'"
+            'generate three',   //         "Warning : Todo: 'generate three'"
+            'compiler warnings' //         "Warning : Todo: 'compiler warnings'"
+        )
+        @foo('user-defined warning')   // output: "Warning : Foo: 'User-defined warning'"
+        final foo:Int = 0;
+    }
+    ```</haxe_doc>
+		<meta><m n=":nullSafety"><e>Strict</e></m></meta>
 	</class>
 	<class path="interlude.reactive.BufferedRunner" params="" file="src/interlude/reactive/BufferedRunner.hx">
 		<frontBuffer public="1" set="null" expr="[]">
