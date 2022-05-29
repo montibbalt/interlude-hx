@@ -6,6 +6,8 @@ typedef FilteredIterator<A> = { hasNextWhere:(A->Bool)->Bool, next: ()->A }
 /** A type of `Iterator` that can apply a function before yielding each element **/
 typedef MappableIterator<A, B> = { hasNext:()->Bool, next:(A->B)->B }
 
+typedef PeekableIterator<A> = { peek:()->Option<A>, hasNext:()->Bool, next:()->A }
+
 @:nullSafety(Strict)
 @:publicFields
 class IteratorTools {
@@ -60,6 +62,34 @@ class IteratorTools {
     static function mapped<A, B>(as:Iterator<A>):MappableIterator<A, B> return {
         hasNext : as.hasNext
     ,   next    : fn -> as.next().let(fn)
+    }
+
+    /**
+        Converts an `Iterator` into one with 1-element lookahead
+    **/
+    static function peekable<A>(as:Iterator<A>):PeekableIterator<A> return {
+        var cache:Null<A> = null;
+        {
+            peek: () -> {
+                if(cache != null) {
+                    cache.asOption();
+                }
+                else if(as.hasNext()) {
+                    cache = as.next();
+                    cache.asOption();
+                }
+                else None;
+            },
+            hasNext: () -> cache != null || as.hasNext(),
+            next: () -> {
+                if(cache != null) {
+                    var out = cache;
+                    cache = null;
+                    cast out;
+                }
+                else as.next();
+            }
+        }
     }
 
     /**

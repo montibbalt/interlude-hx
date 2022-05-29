@@ -15,6 +15,11 @@ class EitherTools {
     inline static function asRight<A, B:NotVoid>(b:B):Either<A, B> return
         Right(b);
 
+    static function biMap<A, B, X, Y>(e:Either<A, B>, whenLeft:A->X, whenRight:B->Y):Either<X, Y> return switch e {
+        case Left(a)    : whenLeft(a).asLeft();
+        case Right(b)   : whenRight(b).asRight();
+    }
+
     static function flatMap<A, B, C>(e:Either<A, B>, fn:B->Either<A, C>):Either<A, C> return switch e {
         case Left(a)    : Left(a);
         case Right(b)   : fn(b);

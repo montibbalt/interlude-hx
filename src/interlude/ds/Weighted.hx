@@ -37,14 +37,17 @@ abstract Weighted<A:NotVoid>(Iterable<Pair<A, Float>>) from Iterable<Pair<A, Flo
     public function asArray():Array<Pair<A, Float>> return
         this.toArray();
 
-    public function toString():String return
-        [for(pair in this.normalize()) '${pair._2} => ${pair._1}'].join('\n');
+    public function toString():String return [
+        for(pair in this.normalize())
+            '${pair._2} => ${pair._1}'
+    ].join('\n');
 
     /**
         Lifts a single value into a weighted distribution
     **/
-    public static function asWeighted<A>(t:A):Weighted<A> return
-        [t].uniform();
+    public static function asWeighted<A>(t:A):Weighted<A> return [
+        t.with(1.0)
+    ];
 
     /**
         Draws a single result from a weighted set. `randomGen` should be a
@@ -129,5 +132,5 @@ abstract Weighted<A:NotVoid>(Iterable<Pair<A, Float>>) from Iterable<Pair<A, Flo
         Creates an even set of weights from a list of elements
     **/
     public static function uniform<A>(vals:Iterable<A>):Weighted<A> return
-        vals.mapL(a -> a.with(1.0)).normalize().toArray();
+        vals.mapL(a -> a.with(1.0)).normalize();
 }

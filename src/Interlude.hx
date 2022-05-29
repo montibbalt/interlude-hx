@@ -30,6 +30,8 @@ typedef Pair<X, Y>          = interlude.ds.Pair<X, Y>;
 typedef State<X, Y>         = interlude.ds.State<X, Y>;
 typedef AsyncState<X, Y>    = interlude.ds.AsyncState<X, Y>;
 typedef Trio<X, Y, Z>       = interlude.ds.Pair.Trio<X, Y, Z>;
+typedef These<X, Y>         = interlude.ds.These<X, Y>;
+typedef TheseTools          = interlude.ds.These.TheseTools;
 typedef Unit                = interlude.ds.Unit;
 typedef Weighted<X>         = interlude.ds.Weighted<X>;
 

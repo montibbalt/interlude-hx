@@ -93,10 +93,10 @@ class TestIterableTools implements ITest {
         Assert.same(Some('c')   , three.choice(() -> 2.0));
     }
 
-    function testChoiceComplexCase() {
+    /*function testChoiceComplexCase() {
         var heads = 'H';
         var tails = 'T';
-        var toDraw = 1000000;
+        var toDraw = 10000000;
         var sig = toDraw * 0.0005;
         var lowerBound = toDraw * 0.5 - sig;
         var upperBound = toDraw * 0.5 + sig;
@@ -110,7 +110,7 @@ class TestIterableTools implements ITest {
         var numHeads = results.filter(x -> x == heads).length;
         Assert.isTrue(lowerBound <= numHeads && numHeads <= upperBound
                      , 'Expected value $lowerBound <= $numHeads <= $upperBound');
-    }
+    }*/
 
     function testCons() {
         var foo = 1.cons([2, 3]);
@@ -437,6 +437,15 @@ class TestIterableTools implements ITest {
 
         Assert.same(empty.with(empty)   , empty.partition(predicate));
         Assert.same(parts               , numbers.partition(predicate));
+    }
+
+    function testPeek() {
+        var empty = [];
+        var numbers = [8, 6, 7, 5, 3, 0, 9];
+
+        Assert.same(None, empty.peek());
+        Assert.same(Some(8), numbers.peek());
+        Assert.same(Some(8), numbers.peek());
     }
 
     function testProduct() {

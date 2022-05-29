@@ -40,4 +40,13 @@ class TestIteratorTools implements ITest {
 
         Assert.same(['1', '2', '3'], transformedIterable.toArray());
     }
+
+    function testPeekable() {
+        var it = [1, 2, 3].iterator().peekable();
+
+        Assert.same(Some(1), it.peek());
+        Assert.same(Some(1), it.peek());
+        Assert.same([1, 2, 3], it.toArray());
+        Assert.same(None, it.peek());
+    }
 }

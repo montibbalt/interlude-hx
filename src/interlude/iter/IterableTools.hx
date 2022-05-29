@@ -654,6 +654,17 @@ class IterableTools {
     }
 
     /**
+        Peeks at the next element of an `Iterable` without consuming it
+        ```haxe
+        [1, 2, 3].peek() == Some(1);
+        ```
+        *NOTE* This will *evaluate* the next element, so be careful if
+        evaulation causes side effects
+    **/
+    static function peek<A>(as:Iterable<A>):Option<A> return
+        as.iterator().peekable().peek();
+
+    /**
         Cartesian product of two `Iterable`s  
         A deck of playing cards could be represented as
         `suits.product(ranks, Card.new)`

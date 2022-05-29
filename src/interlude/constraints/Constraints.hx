@@ -6,3 +6,5 @@ typedef SizedIterable<X> = {
     > Iterable<X>,
     > HasLengthProperty,
 }
+
+typedef Appendable<A> = { function append(with:A):A; }

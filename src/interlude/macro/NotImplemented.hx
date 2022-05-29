@@ -1,7 +1,6 @@
 package interlude.macro;
 
 import haxe.macro.Printer;
-import haxe.exceptions.NotImplementedException;
 import haxe.macro.Context;
 import haxe.macro.Expr;
 
@@ -10,6 +9,7 @@ import haxe.macro.Expr;
     - satisfies the function's return type automatically  
     - at compile time, emits a warning  
     - at runtime, throws a `NotImplementedException`  
+    These properties help enable a basic form of *Type*-driven developmemt.
 
     ```haxe
     @:build(interlude.macro.NotImplemented.build())
