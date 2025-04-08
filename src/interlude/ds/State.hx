@@ -10,7 +10,7 @@ package interlude.ds;
 @:nullSafety(Strict)
 @:forward
 @:callable
-abstract State<X, A>(X->Pair<A, X>) from X->Pair<A, X> to X->Pair<A, X> {
+abstract State<X, A>((state:X)->Pair<A, X>) from X->Pair<A, X> to X->Pair<A, X> {
     inline public function new(s:X->Pair<A, X>) this = s;
 
     public static function ap<X, A, B>(fn:State<X, A->B>, s:State<X, A>):State<X, B> return
@@ -18,6 +18,9 @@ abstract State<X, A>(X->Pair<A, X>) from X->Pair<A, X> to X->Pair<A, X> {
 
     public static inline function asState<X, A>(a:A):State<X, A> return
         a.with;
+
+    public static inline function toAsyncState<X, A>(s:State<X, A>):AsyncState<X, A> return
+        sx -> s(sx).asTask();
 
     public static function eval<X, A>(s:State<X, A>, x:X):A return
         s(x)._1;
