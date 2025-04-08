@@ -1,20 +1,18 @@
 package interlude.reactive;
 
 /**
-    A type of double buffer meant to handle resolution of
-    `interlude.reactive.Task`s, but can work on any `Void` functions.
-
-    Consumes the entire buffer, swapping the front and back buffers until both
-    are empty
-
-    Call `resolve` in your event loop to resolve `Task`s
-**/
+ * An experimental version of `BufferedRunner` which passes a value into every
+ * callback.
+ * 
+ * For example, we could imagine a version of `AsyncState` that can pass around
+ * configuration settings alongside the state
+ */
 @:nullSafety(Strict)
 @:publicFields
 @:structInit
-class BufferedRunner {
-    var frontBuffer(default, null):Array<()->Void> = [];
-    var backBuffer(default, null):Array<()->Void> = [];
+class BufferedContextualRunner<Context> {
+    var frontBuffer(default, null):Array<Context->Void> = [];
+    var backBuffer(default, null):Array<Context->Void> = [];
 
     function new() {}
 
@@ -22,7 +20,7 @@ class BufferedRunner {
      * Pushes a callback function into the buffer
      * @return The new length of the buffer `fn` was added to
      */
-    function queue(fn:()->Void):Int return
+    function queue(fn:Context->Void):Int return
         frontBuffer.any()
             ? backBuffer.push(fn)
             : frontBuffer.push(fn);
@@ -31,19 +29,18 @@ class BufferedRunner {
      * Pushes an Array of callback functions into the buffer
      * @return A reference to the updated buffer
      */
-    function queueMany(fns:Array<()->Void>):Array<()->Void> return
+    function queueMany(fns:Array<Context->Void>):Array<Context->Void> return
         frontBuffer.any()
             ? backBuffer = backBuffer.concat(fns)
             : frontBuffer = fns;
 
     /**
-     * Calls every callback in the front buffer, then swaps buffers.
-     * Loops until both buffers are consumed, so some care must be taken to
-     * avoid infinite loops
+     * Passes a context into every callback in the front buffer, then swaps buffers.
+     * Loops until both buffers are consumed, so some care must be taken to avoid infinite loops
      */
-    function resolve():Void
+    function resolve(ctx:Context):Void
         do {
-            frontBuffer.mutate(gen);
+            frontBuffer.mutate(ctx.let);
             frontBuffer = backBuffer;
             backBuffer = [];
         } while (frontBuffer.length > 0);
@@ -53,9 +50,9 @@ class BufferedRunner {
      * This version only consumes the front buffer, so subsequent calls must be
      * made to continue processing
      */
-    function resolveOnce():Void {
+    function resolveOnce(ctx:Context):Void {
         if(frontBuffer.length > 0) {
-            frontBuffer.mutate(gen);
+            frontBuffer.mutate(ctx.let);
             frontBuffer = backBuffer;
             backBuffer = [];
         }

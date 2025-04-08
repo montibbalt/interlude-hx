@@ -41,7 +41,8 @@ class Task<A:NotVoid> {
     }
 
     /**
-     * When a given Task is resolved, discard its result and return `value` instead
+     * When a given Task is resolved, discard its result and return `value`
+     * instead
      */
     static function always<A, B>(t:Task<A>, value:B):Task<B> return
         t.map(value.v_);
@@ -67,7 +68,8 @@ class Task<A:NotVoid> {
 
     /**
      * Discards the result of a Task if it does not match a given predicate
-     * @return a Task that returns a Some(value) that matches a predicate, or None
+     * @return a Task that returns a Some(value) that matches a predicate,
+     * or None
      */
     static function filter<A>(t:Task<A>, predicate:A->Bool):Task<Option<A>> return
         t.map(new Task<A>().resolve.when(predicate));
@@ -81,8 +83,8 @@ class Task<A:NotVoid> {
             : None.asTask());
 
     /**
-     * Lifts a side-effect that accepts a callback into a Task that runs the side effect
-     * and returns the input to the callback
+     * Lifts a side-effect that accepts a callback into a Task that runs the
+     * side effect and returns the input to the callback
      * @return A Task that will contain the value passed to the callback
      */
     static function f_callbacks<A>(fn:(callback:A->Void)->Void):Task<A> return
