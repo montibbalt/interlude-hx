@@ -23,6 +23,9 @@ class Task<A:NotVoid> {
         }
     }
 
+    /**
+     * Completes a Task with a given result
+     */
     function resolve(data:A):A return {
         if(!this.isComplete) {
             this.data = data;
@@ -37,18 +40,35 @@ class Task<A:NotVoid> {
         data;
     }
 
+    /**
+     * When a given Task is resolved, discard its result and return `value` instead
+     */
     static function always<A, B>(t:Task<A>, value:B):Task<B> return
         t.map(value.v_);
 
+    /**
+     * @return `true` if this Task has already been resolved
+     */
     static function any<A>(t:Task<A>):Bool return
         t.isComplete;
 
+    /**
+     * Applies a function to a value within the context of `Task`s.
+     * Functions as a general sort of `liftM`
+     */
     static function ap<A, B>(fn:Task<A->B>, t:Task<A>):Task<B> return
         fn.flatMap(t.map);
 
+    /**
+     * Lifts a known value into a completed Task
+     */
     inline static function asTask<X>(data:X):Task<X> return
         new Task<X>(data);
 
+    /**
+     * Discards the result of a Task if it does not match a given predicate
+     * @return a Task that returns a Some(value) that matches a predicate, or None
+     */
     static function filter<A>(t:Task<A>, predicate:A->Bool):Task<Option<A>> return
         t.map(new Task<A>().resolve.when(predicate));
 
@@ -60,6 +80,11 @@ class Task<A:NotVoid> {
             ? fn(a).map(Some)
             : None.asTask());
 
+    /**
+     * Lifts a side-effect that accepts a callback into a Task that runs the side effect
+     * and returns the input to the callback
+     * @return A Task that will contain the value passed to the callback
+     */
     static function f_callbacks<A>(fn:(callback:A->Void)->Void):Task<A> return
         new Task<A>().mut(a -> fn(a.resolve));
 
@@ -75,6 +100,10 @@ class Task<A:NotVoid> {
     static function map<A, B>(t:Task<A>, fn:A->B):Task<B> return inline
         t.flatMap(Task.asTask.of(fn));
 
+    /**
+     * Queues a side effect to be performed when a Task is complete
+     * @return The original Task
+     */
     static function mutate<A>(t:Task<A>, fn:A->Void):Task<A> return {
         t.isComplete && t.data != null
             ? Task.runner.queue(fn.bind(cast t.data))
@@ -83,19 +112,34 @@ class Task<A:NotVoid> {
         t;
     }
 
+    /**
+     * @return A Task that returns a Pair of results from two Tasks
+     */
     static function zip<A, B>(ta:Task<A>, tb:Task<B>):Task<Pair<A, B>> return
         ta.zipWith(tb, Pair.with);
 
+    /**
+     * Apply a function to the results of 2 Tasks
+     */
     static function zipWith<A, B, C>(a:Task<A>, b:Task<B>, fn:A->B->C):Task<C> return
         a.flatMap(fn.curry().to(b.map));
         //a.flatMap(b.map.of(fn.curry()));
 
+    /**
+     * Apply a function to the results of 3 Tasks
+     */
     static function zipWith3<A, B, C, Z>(a:Task<A>, b:Task<B>, c:Task<C>, fn:A->B->C->Z):Task<Z> return
         a.flatMap(_a -> b.zipWith(c, fn.bind(_a)));
 
+    /**
+     * When a task is complete, log a message to the console
+     */
     static function logMessage<A>(t:Task<A>, genMessage:(data:A, ?pos:haxe.PosInfos)->String, ?pos:haxe.PosInfos):Task<A> return
         t.mutate(_ -> trace(genMessage(_, pos)));
 
+    /**
+     * Waits for a task to complete and discards its result
+     */
     static function unit<A>(t:Task<A>):Task<Unit> return
         t.always(Unit);
 }

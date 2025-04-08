@@ -21,40 +21,75 @@ class Pair<X:NotVoid, Y:NotVoid> {
         this._2 = _2;
     }
 
+    /**
+     * Applies a function to a Pair of values
+     */
     inline static function apply<A, B, Z>(t:Pair<A, B>, fn:(A, B)->Z):Z return
         fn(t._1, t._2);
 
+    /**
+     * Converts a Pair to a KeyValuePair, using Pair._1 as the key and Pair._2 as the value
+     */
     inline static function toKeyValue<A, B>(t:Pair<A, B>):KeyValuePair<A, B> return
         { key: t._1, value: t._2 };
 
+    /**
+     * Given a Pair of a function and a value, apply the function to the value
+     */
     inline static function eval<A, Z>(t:Pair<A->Z, A>):Z return
         t._1(t._2);
 
+    /**
+     * Swaps the order of values in a Pair
+     */
     static function flip<A, B>(t:Pair<A, B>):Pair<B, A> return
         t._2.with(t._1);
 
+    /**
+     * Applies a function to a Pair of values
+     */
     inline static function apply2<A, B, Z>(fn:(A, B)->Z, t:Pair<A, B>):Z return
         fn(t._1, t._2);
 
+    /**
+     * Applies a curried function to a Pair of values
+     */
     inline static function apply2c<A, B, Z>(fn:A->(B->Z), t:Pair<A, B>):Z return
         fn(t._1)(t._2);
 
+    /**
+     * Applies a function to the first value in a Pair
+     * @return A new Pair with `fn` applied
+     */
     static function map_1<A, B, Z>(t:Pair<A, B>, fn:A->Z):Pair<Z, B> return {
         _1: fn(t._1)
     ,   _2: t._2
     }
 
+    /**
+     * Applies a function to the second value in a Pair
+     * @return A new Pair with `fn` applied
+     */
     static function map_2<A, B, Z>(t:Pair<A, B>, fn:B->Z):Pair<A, Z> return {
         _1: t._1
     ,   _2: fn(t._2)
     }
 
+    /**
+     * Returns the first element of a Pair
+     */
     inline static function fst<A>(tup:{final _1:A;}):A return
         tup._1;
 
+    /**
+     * Returns the second element of a Pair
+     */
     inline static function snd<A>(tup:{final _2:A;}):A return
         tup._2;
 
+    /**
+     * Constructs a new Pair with `a` and `b` as the values
+     */
     inline static function with<A, B>(a:A, b:B):Pair<A, B> return
         { _1: a, _2: b };
 }
@@ -80,45 +115,79 @@ class Trio<X:NotVoid, Y:NotVoid, Z:NotVoid> {
         this._3 = _3;
     }
 
+    /**
+     * Applies a function to a Trio of values
+     */
     inline static function apply<A, B, C, Z>(t:Trio<A, B, C>, fn:(A, B, C)->Z):Z return
         fn(t._1, t._2, t._3);
 
+    /**
+     * Given a Trio of a function and two values, apply the function to the values
+     */
     inline static function eval<A, B, Z>(t:Trio<A->B->Z, A, B>):Z return
         t._1(t._2, t._3);
 
+    /**
+     * Applies a function to a Trio of values
+     */
     inline static function apply3<A, B, C, Z>(fn:(A, B, C)->Z, t:Trio<A, B, C>):Z return
         fn(t._1, t._2, t._3);
 
+    /**
+     * Applies a curried function to a Trio of values
+     */
     inline static function apply3c<A, B, C, Z>(fn:A->(B->(C->Z)), t:Trio<A, B, C>):Z return
         fn(t._1)(t._2)(t._3);
 
+    /**
+     * Applies a function to the first value in a Trio
+     * @return A new Trio with `fn` applied
+     */
     static function map_1<A, B, C, Z>(t:Trio<A, B, C>, fn:A->Z):Trio<Z, B, C> return {
         _1: fn(t._1)
     ,   _2: t._2
     ,   _3: t._3
     }
 
+    /**
+     * Applies a function to the second value in a Trio
+     * @return A new Trio with `fn` applied
+     */
     static function map_2<A, B, C, Z>(t:Trio<A, B, C>, fn:B->Z):Trio<A, Z, C> return {
         _1: t._1
     ,   _2: fn(t._2)
     ,   _3: t._3
     }
 
+    /**
+     * Applies a function to the third value in a Trio
+     * @return A new Trio with `fn` applied
+     */
     static function map_3<A, B, C, Z>(t:Trio<A, B, C>, fn:C->Z):Trio<A, B, Z> return {
         _1: t._1
     ,   _2: t._2
     ,   _3: fn(t._3)
     }
 
+    /**
+     * Rotates the order of elements in a Trio
+     * @return A new Trio with the third element moved to the first position
+     */
     static function rotate<A, B, C>(t:Trio<A, B, C>):Trio<C, A, B> return
         t._3.with3(t._1, t._2);
 
+    /**
+     * Returns the third element of a Trio
+     */
     inline static function thd<A>(tup:{final _3:A;}):A return
         tup._3;
 
     //inline static function with<A, B, C>(b:Pair<A, B>, a:C):Trio<A, B, C> return
     //    { _1: b._1, _2: b._2, _3: a };
 
+    /**
+     * Constructs a new Trio with `a`, `b`, and `c` as the values
+     */
     inline static function with3<A, B, C>(a:A, b:B, c:C):Trio<A, B, C> return
         { _1: a, _2: b, _3: c };
 }

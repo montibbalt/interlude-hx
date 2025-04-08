@@ -31,12 +31,21 @@ class Lazy<A:NotVoid> {
         ? '$result'
         : 'Lazy<>';
 
+    /**
+     * @return `true` if `l` has already been evaluated
+     */
     inline static function any<A>(l:Lazy<A>):Bool return
         l.result != null;
 
+    /**
+     * Applies a Lazy function to a Lazy value, Lazily
+     */
     static function ap<A, B>(fn:Lazy<A->B>, a:Lazy<A>):Lazy<B> return
         flatMap(fn, a.map);
 
+    /**
+     * Creates a Lazy from a known value
+     */
     inline static function asLazy<A>(a:A):Lazy<A> return
         new Lazy<A>(a.identity);
 
