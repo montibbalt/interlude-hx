@@ -1,5 +1,10 @@
 package interlude.iter;
 
+typedef PeekableKeyValueIterator<A, B> = {
+    > KeyValueIterator<A, B>,
+    peek:() -> Option<KeyValuePair<A, B>>
+}
+
 @:publicFields
 @:nullSafety(Strict)
 class KeyValueIteratorTools {
@@ -15,6 +20,13 @@ class KeyValueIteratorTools {
     **/
     static function toArray<K, V>(kvs:KeyValueIterator<K, V>):Array<KeyValuePair<K, V>> return inline
         IteratorTools.toArray(kvs);
+
+    /**
+        Converts a `KeyValueIterator` into one with 1-element lookahead
+    **/
+    static function peekable<K, V>(kvs:KeyValueIterator<K, V>):PeekableKeyValueIterator<K, V> return {
+        IteratorTools.peekable((kvs:Iterator<KeyValuePair<K, V>>));
+    }
 }
 
 @:publicFields

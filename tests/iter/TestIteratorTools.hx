@@ -49,4 +49,17 @@ class TestIteratorTools implements ITest {
         Assert.same([1, 2, 3], it.toArray());
         Assert.same(None, it.peek());
     }
+
+    function testKVPeekable() {
+        var it = [ 'Hello', 'World' ]
+            .keyValueIterator()
+            .peekable();
+        Assert.same(Some({key: 0, value: 'Hello'}), it.peek());
+        Assert.same(Some({key: 0, value: 'Hello'}), it.peek());
+        Assert.same([
+            { key: 0, value: 'Hello'},
+            { key: 1, value: 'World' }
+        ], it.toArray());
+        Assert.same(None, it.peek());
+    }
 }
